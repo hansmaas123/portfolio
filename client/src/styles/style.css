@@ -1,22 +1,33 @@
 @import url("https://use.typekit.net/eay2mvf.css");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body,
 html {
     margin: 0;
-    padding: 0;
     height: 100vh;
     width: 100vw;
-    /* overflow-y: hidden; */
+    box-sizing: inherit;
+        scroll-behavior: smooth;
 }
- .homepage__wrapper{
-        overflow-x: hidden;
+.hidden{
+    display: none;
+}
+.homepage__wrapper{
+    overflow-x: hidden;
     height: 100vh;
     width: 100vw;
     padding-top: 2rem;
     background-color: #272727;
-    background-image: url('../../homebg_trainworld.png');
+    background-image: url('../../homebg_trainworld.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 100rem;
+    overflow-y: hidden;
+
  }
 .nav__container{
     width: 100vw;
@@ -27,21 +38,23 @@ html {
 }
 .nav__wrapper{
     display: flex;
-    background-color: #efefef;
     border-radius: 50px;
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.30);
 }
-.active{
-    background-color: #EEEC76;
-}
+
+
 .nav__link1{
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
-
+    border: #efefef solid 2px;
+}
+.nav__link2{
+    border: #efefef solid 2px;
 }
 .nav__link3{
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
+    border: #efefef solid 2px;
 }
 .nav__link{
     padding: 0.7rem 2.7rem;
@@ -50,6 +63,31 @@ html {
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
+    color: #272727;
+    background-color: #efefef;
+}
+
+.nav__link1:hover{
+    background-color: transparent;
+    border: solid #EEEC76 2px;
+    color: #EEEC76;
+}
+.nav__link2:hover{
+    background-color: transparent;
+    border: solid #EEEC76 2px;
+    color: #EEEC76;
+}
+.nav__link3:hover{
+    background-color: transparent;
+    border: solid #EEEC76 2px;
+    color: #EEEC76;
+}
+.active {
+    background-color: #EEEC76;
+    border-color: #EEEC76;
+}
+.active:hover{
+    background-color: #EEEC76;
     color: #272727;
 }
 .home__title--wrapper{
@@ -74,6 +112,7 @@ html {
     grid-template-rows: 1fr;
     place-items: center;
     margin-top: -.5rem;
+    text-decoration: none;
 }
 .home__project--containers {
     margin-left: -38vw;
@@ -96,7 +135,8 @@ html {
     grid-column: 1;
     grid-row: 1;
     color: #efefef;
-    
+    text-decoration: none;
+    transition: opacity .4s;
 }
 .home__project--wrapper2 {
     transform: rotate(6deg);
@@ -109,6 +149,24 @@ html {
 }
 .home__project--wrapper5 {
     transform: rotate(5deg);
+}
+.home__project--wrapper6 {
+    transform: rotate(-3deg);
+}
+.home__project--wrapper7 {
+    transform: rotate(-6deg);
+}
+.home__project--wrapper8 {
+    transform: rotate(7deg);
+}
+.home__project--wrapper9 {
+    transform: rotate(8deg);
+}
+.home__project--wrapper10 {
+    transform: rotate(-10deg);
+}
+.home__project--wrapper11 {
+    transform: rotate(9deg);
 }
 .home__project--wrapper:hover {
     opacity: 0.9;
@@ -138,6 +196,24 @@ html {
 .project__thumbnail--equalmelodies{
     transform: rotate(5deg);
 }
+.project__thumbnail--reactartistique{
+    transform: rotate(-3deg);
+}
+.project__thumbnail--dishknob{
+    transform: rotate(-6deg);
+}
+.project__thumbnail--trimcraft{
+    transform: rotate(7deg);
+}
+.project__thumbnail--smashabutton{
+    transform: rotate(8deg);
+}
+.project__thumbnail--chessbase{
+    transform: rotate(-10deg);
+}
+.project__thumbnail--weatherdog{
+    transform: rotate(9deg);
+}
 .project__thumbnail{
     width: 35.5rem;
     height: 27.3rem;
@@ -159,4 +235,85 @@ html {
 .projects__wrapper{
     width: 1000vw;
     display: flex;
+}
+.pin-spacer{
+    padding: 0;
+}
+
+
+
+
+.aboutpage__wrapper{
+    width: 100vw;
+    background-color:#272727;
+    padding-top: 2rem;
+    background-image: url('../../aboutbg_trainworld.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about__title--wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.about__title{
+    font-family: neulis-neue, sans-serif;
+    font-weight: 700;
+    font-size: 90px;
+    color: #EEEC76;
+    margin: 0;
+    letter-spacing: 0.1125rem;
+}
+.about__title3{
+    color: #F0F0F0;
+}
+.about__arrow{
+margin-top: 3rem;
+}
+.about__intro--wrapper{
+    margin-top: -10rem;
+    padding-bottom: 10rem
+}
+.about__intro{
+    width: 32rem;
+    color: #EEEC76;
+    font-family: mundial, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-left: 50vw;
+    letter-spacing: 0.04rem;
+    line-height: 2.6rem;
+}
+.highlight{
+    font-weight: 700;
+    color: #F0F0F0;
+}
+.bold{
+    font-weight: 700;
+}
+.about__description{
+    color: #F0F0F0;
+    width: 34rem;
+    margin-left: 50vw;
+    font-family: mundial, sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.1125rem;
+    line-height: 1.87rem;
+}
+.about__description2{
+    width: 32rem;
+}
+.about__skillset--wrapper{
+
+}
+.about__skillset--title{
+    color: #EEEC76;
+    font-weight: neulis-neue, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.1125rem;
 }
