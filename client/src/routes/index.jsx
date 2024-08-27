@@ -19,14 +19,170 @@ const Index = () => {
             },
         });
         ScrollTrigger.create({
-            trigger: '.home__project--wrapper2', // Target the specific div
-            start: "top 0%", // When the left edge of the div hits 30% of the viewport width
-            end: "top -37%", // When the left edge of the div hits 70% of the viewport width
-            markers: true,
-            onEnter: () => gsap.to('.homepage__wrapper', { backgroundColor: '#FFFFFF' }), // Change to your desired color
-            onLeave: () => gsap.to('.homepage__wrapper', { backgroundColor: '#272727' }), // Revert to the original color
-            onEnterBack: () => gsap.to('.homepage__wrapper', { backgroundColor: '#FFFFFF' }), // Change color when scrolling back
-            onLeaveBack: () => gsap.to('.homepage__wrapper', { backgroundColor: '#272727' }), // Revert when leaving back
+            trigger: '.home__project--wrapper2', 
+            start: "left 0%", 
+            end: "left -37%", 
+            onEnter: () => {
+                document.querySelector('.home__title').innerHTML = 'APP DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#929948', backgroundImage: 'url(../../homebg_mixbox.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+            },
+            onLeave: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#492078', backgroundImage: 'url(../../homebg_stingstitute.svg)' })
+                gsap.to('.home__title', { color: '#FF53B7' })
+                gsap.to('.active', { backgroundColor: '#FF53B7', borderColor: '#FF53B7' })
+            },
+            onEnterBack: () => {
+                document.querySelector('.home__title').innerHTML = 'APP DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#929948', backgroundImage: 'url(../../homebg_mixbox.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+            },
+            onLeaveBack: () => {
+                document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(../../homebg_trainworld.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+            },
+        });
+
+        ScrollTrigger.create({
+            trigger: '.home__project--wrapper4', 
+            start: "left -80%", 
+            end: "left -130%", 
+            onEnter: () => {
+                document.querySelector('.home__title').innerHTML = 'APP DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#F0F0F0', backgroundImage: 'url(../../homebg_rotterdans.svg)' })
+                gsap.to('.home__title', { color: '#2C2D2C' })
+                gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeave: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(../../homebg_equalmelodies.svg)' })
+                gsap.to('.home__title', { color: '#D8595B' })
+                gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+
+            },
+            onEnterBack: () => {
+                document.querySelector('.home__title').innerHTML = 'APP DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#F0F0F0', backgroundImage: 'url(../../homebg_rotterdans.svg)' })
+                gsap.to('.home__title', { color: '#2C2D2C' })
+                gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeaveBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#492078', backgroundImage: 'url(../../homebg_stingstitute.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+            },
+        });
+        ScrollTrigger.create({
+            trigger: '.home__project--wrapper6', 
+            start: "left -185%", 
+            end: "left -245%", 
+            onEnter: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#366830', backgroundImage: 'url(../../homebg_reactartistique.svg)' })
+                gsap.to('.home__title', { color: '#FDFDFD' })
+                gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeave: () => {
+                document.querySelector('.home__title').innerHTML = 'MOTION DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#FDFDFD', backgroundImage: 'url(../../homebg_dishknob.svg)' })
+                gsap.to('.home__title', { color: '#4C984C' })
+                gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+
+            },
+            onEnterBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#366830', backgroundImage: 'url(../../homebg_reactartistique.svg)' })
+                gsap.to('.home__title', { color: '#FDFDFD' })
+                gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeaveBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(../../homebg_equalmelodies.svg)' })
+                gsap.to('.home__title', { color: '#D8595B' })
+                gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+            },
+        });
+        ScrollTrigger.create({
+            trigger: '.home__project--wrapper8', 
+            start: "left -305%", 
+            end: "left -385%", 
+            onEnter: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#434321', backgroundImage: 'url(../../homebg_trimcraft.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+            },
+            onLeave: () => {
+                document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#21432E', backgroundImage: 'url(../../homebg_smashabutton.svg)' })
+                gsap.to('.home__title', { color: '#FEA500' })
+                gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+
+            },
+            onEnterBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#434321', backgroundImage: 'url(../../homebg_trimcraft.svg)' })
+                gsap.to('.home__title', { color: '#EEEC76' })
+                gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+            },
+            onLeaveBack: () => {
+                document.querySelector('.home__title').innerHTML = 'MOTION DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#FDFDFD', backgroundImage: 'url(../../homebg_dishknob.svg)' })
+                gsap.to('.home__title', { color: '#4C984C' })
+                gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+        });
+        ScrollTrigger.create({
+            trigger: '.home__project--wrapper10', 
+            start: "left -470%", 
+            end: "left -600%", 
+            onEnter: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#7A9A57', backgroundImage: 'url(../../homebg_chessbase.svg)' })
+                gsap.to('.home__title', { color: '#ECEDCE' })
+                gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeave: () => {
+                document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#2E3495', backgroundImage: 'url(../../homebg_weatherdog.svg)' })
+                gsap.to('.home__title', { color: '#E69A8D' })
+                gsap.to('.active', { backgroundColor: '#E69A8D', borderColor: '#E69A8D' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+
+            },
+            onEnterBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#7A9A57', backgroundImage: 'url(../../homebg_chessbase.svg)' })
+                gsap.to('.home__title', { color: '#ECEDCE' })
+                gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
+            },
+            onLeaveBack: () => {
+                document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
+                gsap.to('.homepage__wrapper', { backgroundColor: '#21432E', backgroundImage: 'url(../../homebg_smashabutton.svg)' })
+                gsap.to('.home__title', { color: '#FEA500' })
+                gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
+                gsap.to('.nav__link.active', { color: '#272727' })
+            },
         });
     }, []);
 
