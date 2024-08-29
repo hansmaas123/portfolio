@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                 loader: ProjectDetail.loader
             },
             {
-                path: "/about",
+                path: "/about/:colorIdentifier",
                 element: <About />,
                 loader: About.loader,
             },

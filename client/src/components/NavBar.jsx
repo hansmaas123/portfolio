@@ -1,16 +1,21 @@
 import React from "react"
 import { NavLink } from "react-router-dom";
 import "../styles/style.css"
+import PropTypes from 'prop-types';
 
-const NavBar = () => {
+const NavBar = ({colorIdentifier}) => {
 return (
     <div className="nav__container">
     <div className="nav__wrapper">
         <NavLink activeclassname='active' className="nav__link nav__link1" to={`/`}>Home</NavLink>
-        <NavLink activeclassname='active' className="nav__link nav__link2" to={`/about`}>About</NavLink>
+        <NavLink activeclassname='active' className="nav__link nav__link2" to={`/about/${colorIdentifier}`}>About</NavLink>
         <NavLink activeclassname='active' className="nav__link nav__link3" to={`/contact`}>Contact</NavLink>
     </div>
     </div>
 )
 }
+NavBar.propTypes = {
+    colorIdentifier: PropTypes.string
+};
 export default NavBar
+

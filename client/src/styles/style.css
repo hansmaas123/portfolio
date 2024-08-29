@@ -12,7 +12,8 @@ html {
     height: 100vh;
     width: 100vw;
     box-sizing: inherit;
-        scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    background-color: #272727;
 }
 .hidden{
     display: none;
@@ -35,6 +36,7 @@ html {
     justify-content: center;
     align-items: center;
     position: fixed;
+    /* mix-blend-mode: difference; */
 }
 .nav__wrapper{
     display: flex;
@@ -65,6 +67,7 @@ html {
     text-decoration: none;
     color: #272727;
     background-color: #efefef;
+    transition: color .2s ease, border .2s ease, background-color .2s ease;
 }
 
 .nav__link1:hover{
@@ -96,6 +99,14 @@ html {
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
+    gap: 1rem;
+}
+.title__lines {
+    color: white;
+    font-size: 100px;
+    font-weight: 900;
+    color: #EEEC76;
+    margin: 0;
 }
 .home__title{
     font-size: 100px;
@@ -148,10 +159,10 @@ html {
     transform: rotate(7deg);
 }
 .home__project--wrapper5 {
-    transform: rotate(5deg);
+    transform: rotate(-5deg);
 }
 .home__project--wrapper6 {
-    transform: rotate(-3deg);
+    transform: rotate(3deg);
 }
 .home__project--wrapper7 {
     transform: rotate(-6deg);
@@ -160,13 +171,13 @@ html {
     transform: rotate(7deg);
 }
 .home__project--wrapper9 {
-    transform: rotate(8deg);
+    transform: rotate(-8deg);
 }
 .home__project--wrapper10 {
-    transform: rotate(-10deg);
+    transform: rotate(10deg);
 }
 .home__project--wrapper11 {
-    transform: rotate(9deg);
+    transform: rotate(-9deg);
 }
 .home__project--wrapper:hover {
     opacity: 0.9;
@@ -194,10 +205,10 @@ html {
     transform: rotate(7deg);
 }
 .project__thumbnail--equalmelodies{
-    transform: rotate(5deg);
+    transform: rotate(-5deg);
 }
 .project__thumbnail--reactartistique{
-    transform: rotate(-3deg);
+    transform: rotate(3deg);
 }
 .project__thumbnail--dishknob{
     transform: rotate(-6deg);
@@ -206,17 +217,18 @@ html {
     transform: rotate(7deg);
 }
 .project__thumbnail--smashabutton{
-    transform: rotate(8deg);
+    transform: rotate(-8deg);
 }
 .project__thumbnail--chessbase{
-    transform: rotate(-10deg);
+    transform: rotate(10deg);
 }
 .project__thumbnail--weatherdog{
-    transform: rotate(9deg);
+    transform: rotate(-9deg);
 }
 .project__thumbnail{
     width: 35.5rem;
     height: 27.3rem;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
 .project__thumbnail--wrapper{
     grid-column: 1;
@@ -236,17 +248,18 @@ html {
     width: 1000vw;
     display: flex;
 }
-.pin-spacer{
-    padding: 0;
-}
 
 
 
 
 .aboutpage__wrapper{
     width: 100vw;
-    background-color:#272727;
+    background-color: #272727;
+}
+.aboutpage__bg--wrapper{
     padding-top: 2rem;
+    width: 100vw;
+    height: 100%;
     background-image: url('../../aboutbg_trainworld.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -308,7 +321,8 @@ margin-top: 3rem;
     width: 32rem;
 }
 .about__skillset--wrapper{
-
+    padding-bottom: 3rem;
+    margin-bottom: 8rem;
 }
 .about__skillset--title{
     color: #EEEC76;
@@ -316,4 +330,258 @@ margin-top: 3rem;
     font-size: 50px;
     font-weight: 700;
     letter-spacing: 0.1125rem;
+    margin-left: 10rem;
+}
+.about__skillset--itemwrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 0;
+    
+}
+.about__skillset--item{
+    color: #FDFDFD;
+    font-family: mundial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.0225rem;
+}
+.about__skillset--itemwrapperall{
+    border-bottom: #EEEC76 solid 1px;
+    padding: 1rem 0rem;
+        margin: 0rem 10rem;
+}
+.about__skillset--itemhidden {
+    height: 0rem;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+.about__skillset--itemhidden2 {
+    height: 0rem;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+.about__skillset--itemhidden3 {
+    height: 0rem;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+.display{
+    height: 20rem;
+}
+.display2{
+    height: 12rem;
+}
+.arrow{
+    transition: transform .5s ease;
+}
+.arrow2{
+    transition: transform .5s ease;
+}
+.arrow3{
+    transition: transform .5s ease;
+}
+.about__skillset--itemwrapper:hover{
+    cursor: pointer;
+}
+.logo__wrapper{
+    background-color: #FDFDFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 7px;
+}
+.logo__wrapper--all{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.logo__wrapper--all2{
+    width: 27.27%;
+}
+.logo__wrapper--details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo__name{
+    color: #FDFDFD;
+    font-family: mundial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    width: 4rem;
+    text-align: center;
+}
+.logo__container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo__wrapper--alldesign{
+    display: flex;
+    gap: 1rem;
+}
+.logo__container--design2{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.logo__name--design{
+    background-color: #FDFDFD;
+    padding: .6rem;
+    border-radius: 5px;
+    font-family: mundial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.logo__name--design2{
+    font-family: mundial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #FDFDFD;
+    width: 13rem;
+    text-align: center;
+}
+.logo__wrapper--alldesign3 {
+    display: flex;
+    gap: 1rem;
+}
+.about__contact--container{
+background-color: #F0F0F0;
+    background-image: url('../../aboutbg_contact.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.about__contact--wrapper{
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about__contact--items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about__contact--title{
+ font-family: neulis-neue, sans-serif;
+ font-size: 150px;
+ font-weight: 700;
+ margin: 0;
+}
+.about__contact--button{
+    font-family: mundial, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #272727;
+    background-color: #E8E661;
+    border: #E8E661 solid 2px;
+    border-radius: 40px;
+    padding: .8rem 0rem;
+    width: 15rem;
+    text-align: center;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
+    transition: color .5s ease, border .5s ease, background-color .5s ease;
+}
+.about__contact--button:hover{
+    background-color: transparent;
+        border: solid #272727 2px;
+        color: #272727;
+}
+.social{
+    display: flex;
+    gap: .5rem;
+    text-decoration: none;
+    color: #272727;
+    justify-content: center;
+    align-items: center;
+}
+.social__contact{
+    color: #FDFDFD;
+}
+.bottom__left{
+    display: flex;
+    gap: 2rem;
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+}
+.contact__container{
+    padding-top: 2rem;
+    background-color: #272727;
+    background-image: url('../../contactbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.contact__wrapper{
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 7rem;
+}
+.contact__detail--wrapper{
+    margin-top: 2rem;
+}
+.contact__title{
+    color: #F0F0F0;
+    font-size: 140px;
+    font-family: neulis-neue, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    line-height: 8.75rem;
+}
+.contact__title2{
+    color: #EEEC76;
+}
+.contact__description{
+    color: white;
+    font-size: 25px;
+    font-family: neulis-neue, sans-serif;
+    font-weight: 400;
+}
+.color{
+    color: #E8E661;
+}
+.button__wrapper{
+    margin-top: 3rem;
+    display: flex;
+    gap: 3.5rem;
+}
+.contact__button:hover{
+    border-color: #EEEC76;
+    color: #EEEC76;
+    cursor: pointer;
+}
+.contact__button{
+    background-color: #EEEC76;
+}
+.contact__button--sec{
+    background-color: transparent;
+    color: #EEEC76;
+}
+.contact__button--sec:hover{
+    background-color: #EEEC76;
+    color: #272727;
+}
+.bottom__right--contact{
+    color: #FDFDFD;
 }
