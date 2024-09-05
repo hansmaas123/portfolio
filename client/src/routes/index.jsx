@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
+import { useLocation } from 'react-router-dom';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import '../styles/style.css'
 import NavBar from '../components/NavBar';
@@ -8,8 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
     let [colorIdentifier, setColorIdentifier] = useState('trainworld');
-
+    const location = useLocation();
+    
     useEffect(() => {
+        const initScrollTriggers = () => {
+            window.scrollTo(0, 0);
+
         gsap.to(".projects__wrapper", {
             x: '-620vw',
             scrollTrigger: {
@@ -30,6 +35,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#EEEC76' })
                 gsap.to('.title__lines', { color: '#EEEC76' })
                 gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        // link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 setColorIdentifier('mixbox')
             },
             onLeave: () => {
@@ -38,6 +50,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FF53B7' })
                 gsap.to('.title__lines', { color: '#FF53B7' })
                 gsap.to('.active', { backgroundColor: '#FF53B7', borderColor: '#FF53B7' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 setColorIdentifier('stingstitute')
             },
             onEnterBack: () => {
@@ -46,6 +65,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#EEEC76' })
                 gsap.to('.title__lines', { color: '#EEEC76' })
                 gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 setColorIdentifier('mixbox')
             },
             onLeaveBack: () => {
@@ -54,6 +80,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#EEEC76' })
                 gsap.to('.title__lines', { color: '#EEEC76' })
                 gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 setColorIdentifier('trainworld')
             },
         });
@@ -68,6 +101,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#2C2D2C' })
                 gsap.to('.title__lines', { color: '#2C2D2C' })
                 gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('rotterdans')
             },
@@ -77,6 +117,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#D8595B' })
                 gsap.to('.title__lines', { color: '#D8595B' })
                 gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('equalmelodies')
             },
@@ -86,6 +133,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#2C2D2C' })
                 gsap.to('.title__lines', { color: '#2C2D2C' })
                 gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('rotterdans')
 
@@ -96,6 +150,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FF53B7' })
                 gsap.to('.title__lines', { color: '#FF53B7' })
                 gsap.to('.active', { backgroundColor: '#FF53B7', borderColor: '#FF53B7' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#272727' })
                 setColorIdentifier('stingstitute')
 
@@ -111,6 +172,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FDFDFD' })
                 gsap.to('.title__lines', { color: '#FDFDFD' })
                 gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('reactartistique')
 
@@ -121,6 +189,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#4C984C' })
                 gsap.to('.title__lines', { color: '#4C984C' })
                 gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('dishknob')
 
@@ -132,6 +207,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FDFDFD' })
                 gsap.to('.title__lines', { color: '#FDFDFD' })
                 gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('reactartistique')
 
@@ -142,7 +224,14 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#D8595B' })
                 gsap.to('.title__lines', { color: '#D8595B' })
                 gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
-                gsap.to('.nav__link.active', { color: '#272727' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
+                    gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('equalmelodies')
 
             },
@@ -157,6 +246,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#EEEC76' })
                 gsap.to('.title__lines', { color: '#EEEC76' })
                 gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#272727' })
                 setColorIdentifier('trimcraft')
 
@@ -167,6 +263,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FEA500' })
                 gsap.to('.title__lines', { color: '#FEA500' })
                 gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#272727' })
                 setColorIdentifier('smashabutton')
 
@@ -178,6 +281,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#EEEC76' })
                 gsap.to('.title__lines', { color: '#EEEC76' })
                 gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#272727' })
                 setColorIdentifier('trimcraft')
 
@@ -188,6 +298,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#4C984C' })
                 gsap.to('.title__lines', { color: '#4C984C' })
                 gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('dishknob')
 
@@ -203,6 +320,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#ECEDCE' })
                 gsap.to('.title__lines', { color: '#ECEDCE' })
                 gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('chessbase')
 
@@ -213,7 +337,14 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#E69A8D' })
                 gsap.to('.title__lines', { color: '#E69A8D' })
                 gsap.to('.active', { backgroundColor: '#E69A8D', borderColor: '#E69A8D' })
-                gsap.to('.nav__link.active', { color: '#272727' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#E69A8D', link.style.color = '#E69A8D' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
+                gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('weatherdog')
 
 
@@ -224,6 +355,13 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#ECEDCE' })
                 gsap.to('.title__lines', { color: '#ECEDCE' })
                 gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#FDFDFD' })
                 setColorIdentifier('chessbase')
 
@@ -234,15 +372,28 @@ const Index = () => {
                 gsap.to('.home__title', { color: '#FEA500' })
                 gsap.to('.title__lines', { color: '#FEA500' })
                 gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
+                document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        if (!link.classList.contains('active')) {
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }
+                    }),
                 gsap.to('.nav__link.active', { color: '#272727' })
                 setColorIdentifier('smashabutton')
 
             },
         });
-    }, []);
+    }
+        initScrollTriggers();
 
+        return () => {
+            // Cleanup: kill all ScrollTriggers related to this component
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, [location]);
     return (
-        <div>
+        <main>
             <div className='homepage__wrapper'>
                 <NavBar colorIdentifier={colorIdentifier} />
                 <p className='name'>Hans Maas</p>
@@ -397,7 +548,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 

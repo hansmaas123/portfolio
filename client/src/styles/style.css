@@ -48,15 +48,10 @@ html {
 .nav__link1{
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
-    border: #efefef solid 2px;
-}
-.nav__link2{
-    border: #efefef solid 2px;
 }
 .nav__link3{
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
-    border: #efefef solid 2px;
 }
 .nav__link{
     padding: 0.7rem 2.7rem;
@@ -68,19 +63,10 @@ html {
     color: #272727;
     background-color: #efefef;
     transition: color .2s ease, border .2s ease, background-color .2s ease;
+    border: #efefef solid 2px;
 }
 
-.nav__link1:hover{
-    background-color: transparent;
-    border: solid #EEEC76 2px;
-    color: #EEEC76;
-}
-.nav__link2:hover{
-    background-color: transparent;
-    border: solid #EEEC76 2px;
-    color: #EEEC76;
-}
-.nav__link3:hover{
+.nav__link:hover{
     background-color: transparent;
     border: solid #EEEC76 2px;
     color: #EEEC76;
@@ -352,7 +338,7 @@ margin-top: 3rem;
 .about__skillset--itemwrapperall{
     border-bottom: #EEEC76 solid 1px;
     padding: 1rem 0rem;
-        margin: 0rem 10rem;
+    margin: 0rem 10rem;
 }
 .about__skillset--itemhidden {
     height: 0rem;
@@ -363,14 +349,20 @@ margin-top: 3rem;
     height: 0rem;
     overflow: hidden;
     transition: height 0.5s;
+    padding: 1.5rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
 }
 .about__skillset--itemhidden3 {
     height: 0rem;
     overflow: hidden;
     transition: height 0.5s;
+    padding: 1.5rem;
+        padding-bottom: 0rem;
+        padding-top: 0rem;
 }
 .display{
-    height: 20rem;
+    height: 21.5rem;
 }
 .display2{
     height: 12rem;
@@ -395,11 +387,13 @@ margin-top: 3rem;
     width: 5rem;
     height: 5rem;
     border-radius: 7px;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
 .logo__wrapper--all{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    padding-top: 1.5rem;
 }
 .logo__wrapper--all2{
     width: 27.27%;
@@ -425,6 +419,7 @@ margin-top: 3rem;
 .logo__wrapper--alldesign{
     display: flex;
     gap: 1rem;
+    margin-top: .5rem;
 }
 .logo__container--design2{
     display: flex;
@@ -438,6 +433,7 @@ margin-top: 3rem;
     font-family: mundial, sans-serif;
     font-size: 18px;
     font-weight: 300;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
 .logo__name--design2{
     font-family: mundial, sans-serif;
@@ -485,8 +481,6 @@ background-color: #F0F0F0;
     font-weight: 400;
     text-decoration: none;
     color: #272727;
-    background-color: #E8E661;
-    border: #E8E661 solid 2px;
     border-radius: 40px;
     padding: .8rem 0rem;
     width: 15rem;
@@ -522,8 +516,6 @@ background-color: #F0F0F0;
 }
 .contact__container{
     padding-top: 2rem;
-    background-color: #272727;
-    background-image: url('../../contactbg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -542,37 +534,34 @@ background-color: #F0F0F0;
     margin-top: 2rem;
 }
 .contact__title{
-    color: #F0F0F0;
     font-size: 140px;
     font-family: neulis-neue, sans-serif;
     font-weight: 700;
     margin: 0;
     line-height: 8.75rem;
 }
-.contact__title2{
-    color: #EEEC76;
-}
 .contact__description{
-    color: white;
     font-size: 25px;
     font-family: neulis-neue, sans-serif;
     font-weight: 400;
 }
-.color{
-    color: #E8E661;
-}
+
 .button__wrapper{
     margin-top: 3rem;
     display: flex;
     gap: 3.5rem;
 }
+.contact__button{
+    background-color: #EEEC76;
+}
+.button__color {
+    background-color: #E8E661;
+    border: #E8E661 solid 2px;
+}
 .contact__button:hover{
     border-color: #EEEC76;
     color: #EEEC76;
     cursor: pointer;
-}
-.contact__button{
-    background-color: #EEEC76;
 }
 .contact__button--sec{
     background-color: transparent;
@@ -584,4 +573,24 @@ background-color: #F0F0F0;
 }
 .bottom__right--contact{
     color: #FDFDFD;
+}
+
+.background1{
+    background-color: #272727;
+    background-image: url('../../contactbg_trainworld.svg');
+}
+.color1{
+    color: #FDFDFD;
+}
+.color2{
+    color: #EEEC76;
+}
+
+.button__color--sec{
+    color: #E8E661;
+    border: #E8E661 solid 3px;
+}
+
+.hover__stingstitute{
+    border: solid 2px #FF53B7;
 }

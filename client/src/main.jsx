@@ -28,7 +28,7 @@ const router = createBrowserRouter([
                 loader: About.loader,
             },
             {
-                path: "/contact",
+                path: "/contact/:colorIdentifier",
                 element: <Contact />,
                 loader: Contact.loader,
             },
