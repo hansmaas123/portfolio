@@ -357,7 +357,7 @@ const About = () => {
                                     )
                                         : colorIdentifier === 'trimcraft' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#434321',
                                             document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_trimcraft.svg")',
-                                            document.querySelector('.about__arrow').src = "../../about_arrow_trimcraft.svg",
+                                            document.querySelector('.about__arrow').src = "../../about_arrow_trainworld.svg",
 
 
 

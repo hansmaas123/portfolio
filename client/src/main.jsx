@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Index from "./routes";
 import ProjectDetail from './routes/ProjectDetail';
 import About from './routes/about';
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <Index />, loader: Index.loader },
             {
-                path: "/projectDetail",
+                path: "/project/:id",
                 element: <ProjectDetail />,
                 loader: ProjectDetail.loader
             },

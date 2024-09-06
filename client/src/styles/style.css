@@ -594,3 +594,112 @@ background-color: #F0F0F0;
 .hover__stingstitute{
     border: solid 2px #FF53B7;
 }
+
+.detail__title--wrapper{
+    width: 100vw;
+    /* height: 130vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../detailbg_trainworld.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.detail__title{
+    font-family: neulis-neue, sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+    letter-spacing: 0.39375rem;
+    margin: 0;
+    margin-top: 8rem;
+}
+.detail__year{
+    font-family: neulis-neue, sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: 0.39375rem;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+.detail__color1{
+    color: #E8E661;
+}
+.detail__color2{
+    color: #FDFDFD;
+}
+.highlighted {
+    color: #E8E661;
+    font-weight: 700;
+}
+.cover__image{
+    width: 70%;
+}
+.detail__wrapper{
+    padding-top: 2rem;
+}
+.cover__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+.detail__link{
+    margin-bottom: 10rem;
+}
+.detail__item--wrapper{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #EEEC76;
+    padding: 1rem 0rem;
+}
+.details__container--wrapper{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.details__container{
+    width: 80vw;
+}
+.scope__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.detail__item--descriptionscope{
+    margin: 0;
+    margin-bottom: .8rem;
+}
+
+.description__title{
+    font-family: neulis-neue, sans-serif;
+    font-size: 50px;
+    letter-spacing: 0.0625rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.assignment__wrapper{
+    margin-left: 10vw;
+}
+.assignment__description{
+    width: 41vw;
+}
+.approach__wrapper{
+    margin-left: 51vw;
+}
+.approach__description{
+    width: 39vw;
+}
+.detail__description--wrapper{
+    padding: 7rem 0rem;
+    background-image: url('../../detailbg2_trainworld.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.detail__description{
+    font-family: mundial, sans-serif;
+        font-size: 18px;
+        line-height: 1.53rem;
+        letter-spacing: 0.0225rem;
+        font-weight: 400;
+}

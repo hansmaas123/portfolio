@@ -407,7 +407,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--trainworld' src="../../home_trainworld.jpeg" alt="project tumbnail trainworld" />
                         </div>
-                        <Link className='home__project--wrapper'>
+                        <Link to={`project/${1}`} className='home__project--wrapper'>
                             <h2 className='home__project--title'>TRAINWORLD</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -420,7 +420,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--mixbox' src="../../home_mixbox.jpg" alt="project tumbnail mixbox" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper2'>
+                        <Link to={`project/${2}`} className='home__project--wrapper home__project--wrapper2'>
                             <h2 className='home__project--title'>MIXBOX</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -433,7 +433,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--stingstitute' src="../../home_stingstitute.jpg" alt="project tumbnail stingstitute" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper3'>
+                        <Link to={`project/${3}`} className='home__project--wrapper home__project--wrapper3'>
                             <h2 className='home__project--title'>STINGSTITUTE</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -446,7 +446,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--rotterdans' src="../../home_rotterdans.jpg" alt="project tumbnail rotterdans" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper4'>
+                        <Link to={`project/${4}`} className='home__project--wrapper home__project--wrapper4'>
                             <h2 className='home__project--title'>ROTTERDANS</h2>
                             <div className='home__project--details'>
                                 <p>Team</p>
@@ -459,7 +459,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--equalmelodies' src="../../home_equalmelodies.jpg" alt="project tumbnail equal melodies" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper5'>
+                        <Link to={`project/${5}`} className='home__project--wrapper home__project--wrapper5'>
                             <h2 className='home__project--title'>EQUAL MELODIES</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -472,7 +472,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--reactartistique' src="../../home_reactartistique.jpg" alt="project tumbnail react artistique" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper6'>
+                        <Link to={`project/${6}`} className='home__project--wrapper home__project--wrapper6'>
                             <h2 className='home__project--title'>REACT ARTISTIQUE</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -485,7 +485,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--dishknob' src="../../home_dishknob.jpg" alt="project tumbnail dishknob" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper7'>
+                        <Link to={`project/${7}`} className='home__project--wrapper home__project--wrapper7'>
                             <h2 className='home__project--title'>DISHKNOB</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -498,7 +498,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--trimcraft' src="../../home_trimcraft.jpg" alt="project tumbnail trimcraft" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper8'>
+                        <Link to={`project/${8}`} className='home__project--wrapper home__project--wrapper8'>
                             <h2 className='home__project--title'>TRIMCRAFT</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -511,7 +511,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--smashabutton' src="../../home_smashabutton.jpg" alt="project tumbnail smash a button" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper9'>
+                        <Link to={`project/${9}`} className='home__project--wrapper home__project--wrapper9'>
                             <h2 className='home__project--title'>SMASH A BUTOTN</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -524,7 +524,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--chessbase' src="../../home_chessbase.jpg" alt="project tumbnail chessbase" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper10'>
+                        <Link to={`project/${10}`} className='home__project--wrapper home__project--wrapper10'>
                             <h2 className='home__project--title'>CHESSBASE</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
@@ -537,7 +537,7 @@ const Index = () => {
                         <div className='project__thumbnail--wrapper'>
                             <img className='project__thumbnail project__thumbnail--weatherdog' src="../../home_weatherdog.jpg" alt="project tumbnail weather dog" />
                         </div>
-                        <Link className='home__project--wrapper home__project--wrapper11'>
+                        <Link to={`project/${11}`} className='home__project--wrapper home__project--wrapper11'>
                             <h2 className='home__project--title'>WEATHER DOG</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>
