@@ -8,3 +8,13 @@ export const getProjectById = async (id) => {
     const result = await response.json();
     return result;
 };
+// export const getProjects = async () => {
+//     const response = await fetch(`http://localhost:1337/api/projects${id}/?populate=*`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//     });
+//     const result = await response.json();
+//     return result;
+// }
