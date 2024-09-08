@@ -1,0 +1,19 @@
+<svg width="1280" height="941" viewBox="0 0 1280 941" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_362_7338)">
+<circle cx="78" cy="78" r="78" transform="matrix(1 0 0 -1 1023 465)" fill="#B3796F"/>
+<circle cx="37" cy="37" r="37" transform="matrix(1 0 0 -1 976 640)" fill="#B3796F"/>
+<circle cx="37" cy="37" r="37" transform="matrix(1 0 0 -1 1023 112)" fill="#B3796F"/>
+<circle cx="58" cy="58" r="58" transform="matrix(1 0 0 -1 60 229)" fill="#B3796F"/>
+<circle cx="37.5" cy="37.5" r="37.5" transform="matrix(1 0 0 -1 151 600)" fill="#B3796F"/>
+<circle cx="61" cy="61" r="61" transform="matrix(1 0 0 -1 29 525)" fill="#B3796F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1280 -10H1125V-9.99937C1125 75.6048 1194.4 145.001 1280 145.001L1280 -10Z" fill="#B3796F"/>
+<circle cx="1280" cy="626" r="179" fill="#B3796F"/>
+<circle cx="118" cy="118" r="118" transform="matrix(1 0 0 -1 -118 778)" fill="#B3796F"/>
+<circle cy="-1" r="114" fill="#B3796F"/>
+</g>
+<defs>
+<clipPath id="clip0_362_7338">
+<rect width="1280" height="941" fill="white"/>
+</clipPath>
+</defs>
+</svg>

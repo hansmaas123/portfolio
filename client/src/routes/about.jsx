@@ -62,8 +62,8 @@ const About = () => {
                 )
                 : colorIdentifier === 'mixbox' ?
                     (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#929948',
-                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_trainworld.svg")',
-                        document.querySelector('.about__arrow').src = "../../about_arrow_mixbox.svg",
+                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_mixbox.svg")',
+                        document.querySelector('.about__arrow').src = "../../about_arrow_trainworld.svg",
 
 
 
