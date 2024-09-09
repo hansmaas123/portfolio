@@ -789,15 +789,15 @@ const About = () => {
                 </div>
                 <div className="bottom">
                     <div className="bottom__left">
-                        <a href="https://www.instagram.com/maasdesign_studios/" className="social">
+                        <a href="https://www.instagram.com/maasdesign_studios/" target='__blank' className="social">
                             <img src="../../instagram.svg" alt="icon of instagram" />
                             <p>Instagram</p>
                         </a>
-                        <a href="https://www.behance.net/hansmaas" className="social">
+                        <a href="https://www.behance.net/hansmaas" target='__blank' className="social">
                             <img src="../../behance.svg" alt="icon of behance" />
                             <p>Behance</p>
                         </a>
-                        <a href="https://github.com/hansmaas123" className="social">
+                        <a href="https://github.com/hansmaas123" target='__blank' className="social">
                             <img src="../../github.svg" alt="icon of github" />
                             <p>Github</p>
                         </a>
