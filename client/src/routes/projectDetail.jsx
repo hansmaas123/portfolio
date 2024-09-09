@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/style.css'
 import { getProjectById } from "../services/project";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
@@ -17,17 +17,23 @@ const loader = async ({ params }) => {
 const ProjectDetail = () => {
     const { project, nextProject } = useLoaderData();
     const { pathname } = useLocation();
-
-    const projectImages = project.data.attributes.images.data
+    const projectImages = project.data.attributes.images.data;
     const cover = project.data.attributes.cover.data[0].attributes.formats.large.url
     const nextCover = nextProject.data.attributes.cover.data[0].attributes.formats.large.url
+    const [colorIdentifier, setColorIdentifier] = useState('trainworld')
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
     useEffect(() => {
         project.data.attributes.name === 'TRAINWORLD' ? (
             document.documentElement.style.backgroundColor = '#272727',
+            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+            setColorIdentifier('trainworld'),
+            document.querySelector('.backbutton').src = '../../backbutton_white.svg',
             document.querySelector('.detail__background').style.backgroundColor = '#272727',
             document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_trainworld.svg")',
             document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_trainworld.svg")',
@@ -35,10 +41,27 @@ const ProjectDetail = () => {
             document.querySelector('.next-project__wrapper').style.backgroundColor = '#929948',
             document.querySelector('.detail__button--color').style.backgroundColor = '#E8E661',
             document.querySelector('.detail__button--color').style.borderColor = '#E8E661',
+            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                document.querySelector('.detail__link').style.color = '#FDFDFD'
+                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                document.querySelector('.detail__button--color').style.borderColor = '#E8E661'
+                document.querySelector('.icon__external').src = '../../link_white.svg'
+            }),
+            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                document.querySelector('.icon__external').src = '../../link_black.svg'
+                document.querySelector('.detail__link').style.color = '#272727'
+                document.querySelector('.detail__button--color').style.backgroundColor = '#E8E661'
+                document.querySelector('.detail__button--color').style.borderColor = '#E8E661'
+            }),
             document.querySelector('.icon__external').src = '../../link_black.svg',
             document.querySelector('.detail__link').style.color = '#272727',
             document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
             document.querySelector('.assignment__wrapper').style.marginBottom = 0,
+            document.querySelectorAll('.nav__link').forEach(link => {
+                link.style.borderColor = '#efefef'
+                link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+            }),
             document.querySelectorAll('.highlighted').forEach(highlight => {
                 highlight.style.color = '#E8E661'
             }),
@@ -57,6 +80,11 @@ const ProjectDetail = () => {
         )
             : project.data.attributes.name === 'MIXBOX' ? (
                 document.documentElement.style.backgroundColor = '#929948',
+                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                setColorIdentifier('mixbox'),
+                document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                 document.querySelector('.detail__background').style.backgroundColor = '#929948',
                 document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_mixbox.svg")',
                 document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_mixbox.svg")',
@@ -64,10 +92,27 @@ const ProjectDetail = () => {
                 document.querySelector('.next-project__wrapper').style.backgroundColor = '#492078',
                 document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76',
                 document.querySelector('.detail__button--color').style.borderColor = '#EEEC76',
+                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                    document.querySelector('.detail__link').style.color = '#FDFDFD',
+                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                    document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
+                    document.querySelector('.icon__external').src = '../../link_white.svg'
+                }),
+                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                    document.querySelector('.icon__external').src = '../../link_black.svg'
+                    document.querySelector('.detail__link').style.color = '#272727'
+                    document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76'
+                    document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
+                }),
                 document.querySelector('.icon__external').src = '../../link_black.svg',
                 document.querySelector('.detail__link').style.color = '#272727',
                 document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                 document.querySelector('.assignment__wrapper').style.marginBottom = '5rem',
+                document.querySelectorAll('.nav__link').forEach(link => {
+                    link.style.borderColor = '#efefef'
+                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                }),
                 document.querySelectorAll('.highlighted').forEach(highlight => {
                     highlight.style.color = '#EEEC76'
                 }),
@@ -86,6 +131,11 @@ const ProjectDetail = () => {
             )
                 : project.data.attributes.name === 'STINGSTITUTE' ? (
                     document.documentElement.style.backgroundColor = '#492078',
+                    document.querySelector('.detail__hidden1').style.visibility = 'visible',
+                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                    setColorIdentifier('stingstitute'),
+                    document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                     document.querySelector('.detail__background').style.backgroundColor = '#492078',
                     document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_stingstitute.svg")',
                     document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_stingstitute.svg")',
@@ -93,9 +143,26 @@ const ProjectDetail = () => {
                     document.querySelector('.next-project__wrapper').style.backgroundColor = '#F0F0F0',
                     document.querySelector('.detail__button--color').style.backgroundColor = '#FF53B7',
                     document.querySelector('.detail__button--color').style.borderColor = '#FF53B7',
+                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                        document.querySelector('.detail__link').style.color = '#FDFDFD'
+                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                        document.querySelector('.detail__button--color').style.borderColor = '#FF53B7'
+                        document.querySelector('.icon__external').src = '../../link_white.svg'
+                    }),
+                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                        document.querySelector('.icon__external').src = '../../link_black.svg'
+                        document.querySelector('.detail__link').style.color = '#272727'
+                        document.querySelector('.detail__button--color').style.backgroundColor = '#FF53B7'
+                        document.querySelector('.detail__button--color').style.borderColor = '#FF53B7'
+                    }),
                     document.querySelector('.icon__external').src = '../../link_black.svg',
-                    document.querySelector('.assignment__wrapper').style.marginBottom = '18rem',
                     document.querySelector('.detail__link').style.color = '#272727',
+                    document.querySelector('.assignment__wrapper').style.marginBottom = '18rem',
+                    document.querySelectorAll('.nav__link').forEach(link => {
+                        link.style.borderColor = '#efefef'
+                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
+                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                    }),
                     document.querySelectorAll('.highlighted').forEach(highlight => {
                         highlight.style.color = '#FF53B7'
                     }),
@@ -114,6 +181,11 @@ const ProjectDetail = () => {
                 )
                     : project.data.attributes.name === 'ROTTERDANS' ? (
                         document.documentElement.style.backgroundColor = '#F0F0F0',
+                        document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                        document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                        document.querySelector('.detail__hidden').style.color = '#272727',
+                        setColorIdentifier('rotterdans'),
+                        document.querySelector('.backbutton').src = '../../backbutton_black.svg',
                         document.querySelector('.detail__background').style.backgroundColor = '#F0F0F0',
                         document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_rotterdans.svg")',
                         document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_rotterdans.svg")',
@@ -121,10 +193,27 @@ const ProjectDetail = () => {
                         document.querySelector('.next-project__wrapper').style.backgroundColor = '#272727',
                         document.querySelector('.detail__button--color').style.backgroundColor = '#272727',
                         document.querySelector('.detail__button--color').style.borderColor = '#272727',
+                        document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                            document.querySelector('.detail__link').style.color = '#272727'
+                            document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                            document.querySelector('.detail__button--color').style.borderColor = '#272727'
+                            document.querySelector('.icon__external').src = '../../link_black.svg'
+                        }),
+                        document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                            document.querySelector('.icon__external').src = '../../link_white.svg'
+                            document.querySelector('.detail__link').style.color = '#FDFDFD'
+                            document.querySelector('.detail__button--color').style.backgroundColor = '#272727'
+                            document.querySelector('.detail__button--color').style.borderColor = '#272727'
+                        }),
                         document.querySelector('.icon__external').src = '../../link_white.svg',
                         document.querySelector('.detail__link').style.color = '#FDFDFD',
                         document.querySelector('.detail__description--wrapper').style.backgroundSize = 'contain',
                         document.querySelector('.assignment__wrapper').style.marginBottom = 0,
+                        document.querySelectorAll('.nav__link').forEach(link => {
+                            link.style.borderColor = '#efefef'
+                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
+                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                        }),
                         document.querySelectorAll('.highlighted').forEach(highlight => {
                             highlight.style.color = '#272727'
                         }),
@@ -143,6 +232,11 @@ const ProjectDetail = () => {
                     )
                         : project.data.attributes.name === 'EQUAL MELODIES' ? (
                             document.documentElement.style.backgroundColor = '#272727',
+                            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                            setColorIdentifier('equalmelodies'),
+                            document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                             document.querySelector('.detail__background').style.backgroundColor = '#272727',
                             document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_equalmelodies.svg")',
                             document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_equalmelodies.svg")',
@@ -150,10 +244,27 @@ const ProjectDetail = () => {
                             document.querySelector('.next-project__wrapper').style.backgroundColor = '#366830',
                             document.querySelector('.detail__button--color').style.backgroundColor = '#D8595B',
                             document.querySelector('.detail__button--color').style.borderColor = '#D8595B',
+                            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                document.querySelector('.detail__button--color').style.borderColor = '#D8595B'
+                                document.querySelector('.icon__external').src = '../../link_white.svg'
+                            }),
+                            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                document.querySelector('.icon__external').src = '../../link_white.svg'
+                                document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                document.querySelector('.detail__button--color').style.backgroundColor = '#D8595B'
+                                document.querySelector('.detail__button--color').style.borderColor = '#D8595B'
+                            }),
                             document.querySelector('.icon__external').src = '../../link_white.svg',
                             document.querySelector('.detail__link').style.color = '#FDFDFD',
                             document.querySelector('.detail__description--wrapper').style.backgroundSize = 'contain',
                             document.querySelector('.assignment__wrapper').style.marginBottom = 0,
+                            document.querySelectorAll('.nav__link').forEach(link => {
+                                link.style.borderColor = '#efefef'
+                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
+                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                            }),
                             document.querySelectorAll('.highlighted').forEach(highlight => {
                                 highlight.style.color = '#D8595B'
                             }),
@@ -172,6 +283,11 @@ const ProjectDetail = () => {
                         )
                             : project.data.attributes.name === 'REACT ARTISTIQUE' ? (
                                 document.documentElement.style.backgroundColor = '#366830',
+                                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                document.querySelector('.detail__hidden2').style.visibility = 'visible',
+                                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                setColorIdentifier('reactartistique'),
+                                document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                                 document.querySelector('.detail__background').style.backgroundColor = '#366830',
                                 document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_reactartistique.svg")',
                                 document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_reactartistique.svg")',
@@ -179,10 +295,27 @@ const ProjectDetail = () => {
                                 document.querySelector('.next-project__wrapper').style.backgroundColor = '#FFF8F4',
                                 document.querySelector('.detail__button--color').style.backgroundColor = '#274A23',
                                 document.querySelector('.detail__button--color').style.borderColor = '#274A23',
+                                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                    document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                    document.querySelector('.detail__button--color').style.borderColor = '#274A23'
+                                    document.querySelector('.icon__external').src = '../../link_white.svg'
+                                }),
+                                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                    document.querySelector('.icon__external').src = '../../link_white.svg'
+                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                    document.querySelector('.detail__button--color').style.backgroundColor = '#274A23'
+                                    document.querySelector('.detail__button--color').style.borderColor = '#274A23'
+                                }),
                                 document.querySelector('.icon__external').src = '../../link_white.svg',
                                 document.querySelector('.detail__link').style.color = '#FDFDFD',
                                 document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                 document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
+                                document.querySelectorAll('.nav__link').forEach(link => {
+                                    link.style.borderColor = '#efefef'
+                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
+                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                }),
                                 document.querySelectorAll('.highlighted').forEach(highlight => {
                                     highlight.style.color = '#87EA7B'
                                 }),
@@ -201,6 +334,11 @@ const ProjectDetail = () => {
                             )
                                 : project.data.attributes.name === 'DISHKNOB' ? (
                                     document.documentElement.style.backgroundColor = '#FFF8F4',
+                                    document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                    setColorIdentifier('dishknob'),
+                                    document.querySelector('.backbutton').src = '../../backbutton_black.svg',
                                     document.querySelector('.detail__background').style.backgroundColor = '#FFF8F4',
                                     document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_dishknob.svg")',
                                     document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_dishknob.svg")',
@@ -208,10 +346,27 @@ const ProjectDetail = () => {
                                     document.querySelector('.next-project__wrapper').style.backgroundColor = '#434321',
                                     document.querySelector('.detail__button--color').style.backgroundColor = '#4C984C',
                                     document.querySelector('.detail__button--color').style.borderColor = '#4C984C',
+                                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                        document.querySelector('.detail__link').style.color = '#272727'
+                                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                        document.querySelector('.detail__button--color').style.borderColor = '#4C984C'
+                                        document.querySelector('.icon__external').src = '../../link_black.svg'
+                                    }),
+                                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                        document.querySelector('.icon__external').src = '../../link_white.svg'
+                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                        document.querySelector('.detail__button--color').style.backgroundColor = '#4C984C'
+                                        document.querySelector('.detail__button--color').style.borderColor = '#4C984C'
+                                    }),
                                     document.querySelector('.icon__external').src = '../../link_white.svg',
                                     document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                     document.querySelector('.assignment__wrapper').style.marginBottom = '27rem',
                                     document.querySelector('.detail__link').style.color = '#FDFDFD',
+                                    document.querySelectorAll('.nav__link').forEach(link => {
+                                        link.style.borderColor = '#efefef'
+                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
+                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                    }),
                                     document.querySelectorAll('.highlighted').forEach(highlight => {
                                         highlight.style.color = '#3A753A'
                                     }),
@@ -230,6 +385,11 @@ const ProjectDetail = () => {
                                 )
                                     : project.data.attributes.name === 'TRIMCRAFT' ? (
                                         document.documentElement.style.backgroundColor = '#434321',
+                                        document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                        document.querySelector('.detail__hidden2').style.visibility = 'visible',
+                                        document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                        setColorIdentifier('trimcraft'),
+                                        document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                                         document.querySelector('.detail__background').style.backgroundColor = '#434321',
                                         document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_trimcraft.svg")',
                                         document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_trimcraft.svg")',
@@ -237,9 +397,26 @@ const ProjectDetail = () => {
                                         document.querySelector('.next-project__wrapper').style.backgroundColor = '#21432E',
                                         document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76',
                                         document.querySelector('.detail__button--color').style.borderColor = '#EEEC76',
+                                        document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                            document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                            document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                            document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
+                                            document.querySelector('.icon__external').src = '../../link_white.svg'
+                                        }),
+                                        document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                            document.querySelector('.icon__external').src = '../../link_black.svg'
+                                            document.querySelector('.detail__link').style.color = '#272727'
+                                            document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76'
+                                            document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
+                                        }),
                                         document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                         document.querySelector('.assignment__wrapper').style.marginBottom = '18rem',
                                         document.querySelector('.icon__external').src = '../../link_black.svg',
+                                        document.querySelectorAll('.nav__link').forEach(link => {
+                                            link.style.borderColor = '#efefef'
+                                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
+                                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                        }),
                                         document.querySelector('.detail__link').style.color = '#272727',
                                         document.querySelectorAll('.highlighted').forEach(highlight => {
                                             highlight.style.color = '#EEEC76'
@@ -259,6 +436,11 @@ const ProjectDetail = () => {
                                     )
                                         : project.data.attributes.name === 'SMASH A BUTTON' ? (
                                             document.documentElement.style.backgroundColor = '#21432E',
+                                            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                                            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                            setColorIdentifier('smashabutton'),
+                                            document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                                             document.querySelector('.detail__background').style.backgroundColor = '#21432E',
                                             document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_smashabutton.svg")',
                                             document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_smashabutton.svg")',
@@ -266,10 +448,27 @@ const ProjectDetail = () => {
                                             document.querySelector('.next-project__wrapper').style.backgroundColor = '#7A9A57',
                                             document.querySelector('.detail__button--color').style.backgroundColor = '#FEA500',
                                             document.querySelector('.detail__button--color').style.borderColor = '#FEA500',
+                                            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                                document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                                document.querySelector('.detail__button--color').style.borderColor = '#FEA500'
+                                                document.querySelector('.icon__external').src = '../../link_white.svg'
+                                            }),
+                                            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                                document.querySelector('.icon__external').src = '../../link_black.svg'
+                                                document.querySelector('.detail__link').style.color = '#272727'
+                                                document.querySelector('.detail__button--color').style.backgroundColor = '#FEA500'
+                                                document.querySelector('.detail__button--color').style.borderColor = '#FEA500'
+                                            }),
                                             document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                             document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
                                             document.querySelector('.icon__external').src = '../../link_black.svg',
                                             document.querySelector('.detail__link').style.color = '#272727',
+                                            document.querySelectorAll('.nav__link').forEach(link => {
+                                                link.style.borderColor = '#efefef'
+                                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
+                                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                            }),
                                             document.querySelectorAll('.highlighted').forEach(highlight => {
                                                 highlight.style.color = '#FEA500'
                                             }),
@@ -288,6 +487,11 @@ const ProjectDetail = () => {
                                         )
                                             : project.data.attributes.name === 'CHESSBASE' ? (
                                                 document.documentElement.style.backgroundColor = '#7A9A57',
+                                                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                                document.querySelector('.detail__hidden2').style.visibility = 'visible',
+                                                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                                setColorIdentifier('chessbase'),
+                                                document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                                                 document.querySelector('.detail__background').style.backgroundColor = '#7A9A57',
                                                 document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_chessbase.svg")',
                                                 document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_chessbase.svg")',
@@ -295,10 +499,27 @@ const ProjectDetail = () => {
                                                 document.querySelector('.next-project__wrapper').style.backgroundColor = '#2E3495',
                                                 document.querySelector('.detail__button--color').style.backgroundColor = '#5A723F',
                                                 document.querySelector('.detail__button--color').style.borderColor = '#5A723F',
+                                                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                                    document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                                    document.querySelector('.detail__button--color').style.borderColor = '#5A723F'
+                                                    document.querySelector('.icon__external').src = '../../link_white.svg'
+                                                }),
+                                                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                                    document.querySelector('.icon__external').src = '../../link_white.svg'
+                                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                                    document.querySelector('.detail__button--color').style.backgroundColor = '#5A723F'
+                                                    document.querySelector('.detail__button--color').style.borderColor = '#5A723F'
+                                                }),
                                                 document.querySelector('.icon__external').src = '../../link_white.svg',
                                                 document.querySelector('.detail__link').style.color = '#FDFDFD',
                                                 document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                                 document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
+                                                document.querySelectorAll('.nav__link').forEach(link => {
+                                                    link.style.borderColor = '#efefef'
+                                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#ECEDCE', link.style.color = '#ECEDCE' })
+                                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                                }),
                                                 document.querySelectorAll('.highlighted').forEach(highlight => {
                                                     highlight.style.color = '#FDFDFD'
                                                 }),
@@ -317,6 +538,11 @@ const ProjectDetail = () => {
                                             )
                                                 : (
                                                     document.documentElement.style.backgroundColor = '#2E3495',
+                                                    document.querySelector('.detail__hidden1').style.visibility = 'hidden',
+                                                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
+                                                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
+                                                    setColorIdentifier('weatherdog'),
+                                                    document.querySelector('.backbutton').src = '../../backbutton_white.svg',
                                                     document.querySelector('.detail__background').style.backgroundColor = '#2E3495',
                                                     document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("../../detailbg_weatherdog.svg")',
                                                     document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("../../detailbg2_weatherdog.svg")',
@@ -324,10 +550,27 @@ const ProjectDetail = () => {
                                                     document.querySelector('.next-project__wrapper').style.backgroundColor = '#272727',
                                                     document.querySelector('.detail__button--color').style.backgroundColor = '#E69A8D',
                                                     document.querySelector('.detail__button--color').style.borderColor = '#E69A8D',
+                                                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
+                                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
+                                                        document.querySelector('.detail__button--color').style.borderColor = '#E69A8D'
+                                                        document.querySelector('.icon__external').src = '../../link_white.svg'
+                                                    }),
+                                                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
+                                                        document.querySelector('.icon__external').src = '../../link_white.svg'
+                                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
+                                                        document.querySelector('.detail__button--color').style.backgroundColor = '#E69A8D'
+                                                        document.querySelector('.detail__button--color').style.borderColor = '#E69A8D'
+                                                    }),
                                                     document.querySelector('.icon__external').src = '../../link_white.svg',
                                                     document.querySelector('.detail__link').style.color = '#FDFDFD',
                                                     document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
                                                     document.querySelector('.assignment__wrapper').style.marginBottom = '27rem',
+                                                    document.querySelectorAll('.nav__link').forEach(link => {
+                                                        link.style.borderColor = '#efefef'
+                                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#E69A8D', link.style.color = '#E69A8D' })
+                                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
+                                                    }),
                                                     document.querySelectorAll('.highlighted').forEach(highlight => {
                                                         highlight.style.color = '#E69A8D'
                                                     }),
@@ -347,8 +590,8 @@ const ProjectDetail = () => {
     }, [project.data.attributes.name])
 
     return (
-        <div className="detail__wrapper detail__background">
-            <NavBar />
+        <main className="detail__wrapper detail__background">
+            <NavBar colorIdentifier={colorIdentifier} />
             <Link to={'/'} className="backbutton__wrapper">
                 <img src="../../backbutton_white.svg" alt="back button" className="backbutton" />
             </Link>
@@ -356,7 +599,9 @@ const ProjectDetail = () => {
                 <h2 className="hidden">{project.data.attributes.name} intro</h2>
                 <p className="detail__title detail__color1">{project.data.attributes.name}</p>
                 <p className="detail__year detail__color2">{project.data.attributes.year}</p>
-                <a href="https://hansmaasdevine.be/int3/" className="detail__link about__contact--button button__color about__button--color detail__button--color">Visit Project <img src="../../link_black.svg" alt="icon" className="icon__external" /></a>
+                <a href={project.data.attributes.link} target="_blank" className="detail__link about__contact--button button__color about__button--color detail__button--color">Visit Project <img src="../../link_black.svg" alt="icon" className="icon__external" /></a>
+                <p className="detail__hidden detail__hidden1">(Note: this website is only made for pc)</p>
+                <p className="detail__hidden detail__hidden2">(Note: I did only focus on development, not design. Website only for pc)</p>
                 <div className="cover__wrapper">
                     <img src={'http://localhost:1337' + cover} alt="cover" className="cover__image" />
                 </div>
@@ -440,35 +685,42 @@ const ProjectDetail = () => {
                     </div>
                 )
                     : project.data.attributes.name === 'MIXBOX' ? (
-                        <div className="images__project--wrapper images__mixbox--wrapper">
+                        <div className="mixbox__img--wrapper">
+                        <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper1">
                             {projectImages.map((projectImage, index) => (
-                                <img key={index} className={`image__detail image__mixbox--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                (index < 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />)
                             ))}
+                        </div>
+                        <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper2">
+                            {projectImages.map((projectImage, index) => (
+                                (index >= 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />)
+                            ))}
+                        </div>
                         </div>
                     )
                         : project.data.attributes.name === 'STINGSTITUTE' ? (
-                            <div className="images__project--wrapper images__stingstitute--wrapper">
+                            <div key={project.data.attributes.name} className="images__project--wrapper images__stingstitute--wrapper">
                                 {projectImages.map((projectImage, index) => (
                                     <img key={index} className={`image__detail image__stingstitute--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                 ))}
                             </div>
                         )
                             : project.data.attributes.name === 'ROTTERDANS' ? (
-                                <div className="images__project--wrapper images__rotterdans--wrapper">
+                                <div key={project.data.attributes.name} className="images__project--wrapper images__rotterdans--wrapper">
                                     {projectImages.map((projectImage, index) => (
                                         <img key={index} className={`image__detail image__rotterdans--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                     ))}
                                 </div>
                             )
                                 : project.data.attributes.name === 'EQUAL MELODIES' ? (
-                                    <div className="images__project--wrapper images__equalmelodies--wrapper">
+                                    <div key={project.data.attributes.name} className="images__project--wrapper images__equalmelodies--wrapper">
                                         {projectImages.map((projectImage, index) => (
                                             <img key={index} className={`image__detail image__equalmelodies--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                         ))}
                                     </div>
                                 )
                                     : project.data.attributes.name === 'REACT ARTISTIQUE' ? (
-                                        <div className="images__project--wrapper images__reactartistique--wrapper">
+                                        <div key={project.data.attributes.name} className="images__project--wrapper images__reactartistique--wrapper">
                                             {projectImages.map((projectImage, index) => (
                                                 <video controls width={'90%'} key={index} className={`image__detail image__reactartistique--${index}`}>
                                                     <source src={`http://localhost:1337` + projectImage.attributes.url} type="video/mp4" />
@@ -477,7 +729,7 @@ const ProjectDetail = () => {
                                         </div>
                                     )
                                         : project.data.attributes.name === 'DISHKNOB' ? (
-                                            <div className="images__project--wrapper images__dishknob--wrapper">
+                                            <div key={project.data.attributes.name} className="images__project--wrapper images__dishknob--wrapper">
                                                 {projectImages.map((projectImage, index) => (
                                                     <video controls width={'90%'} key={index} className={`image__detail image__dishknob--${index}`}>
                                                         <source src={`http://localhost:1337` + projectImage.attributes.url} type="video/mp4" />
@@ -486,21 +738,21 @@ const ProjectDetail = () => {
                                             </div>
                                         )
                                             : project.data.attributes.name === 'TRIMCRAFT' ? (
-                                                <div className="images__project--wrapper images__trimcraft--wrapper">
+                                                <div key={project.data.attributes.name} className="images__project--wrapper images__trimcraft--wrapper">
                                                     {projectImages.map((projectImage, index) => (
                                                         <img key={index} className={`image__detail image__trimcraft--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                                     ))}
                                                 </div>
                                             )
                                                 : project.data.attributes.name === 'SMASH A BUTTON' ? (
-                                                    <div className="images__project--wrapper images__smashabutton--wrapper">
+                                                    <div key={project.data.attributes.name} className="images__project--wrapper images__smashabutton--wrapper">
                                                         {projectImages.map((projectImage, index) => (
                                                             <img key={index} className={`image__detail image__smashabutton--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                                         ))}
                                                     </div>
                                                 )
                                                     : project.data.attributes.name === 'CHESSBASE' ? (
-                                                        <div className="images__project--wrapper images__chessbase--wrapper">
+                                                        <div key={project.data.attributes.name} className="images__project--wrapper images__chessbase--wrapper">
                                                             {projectImages.map((projectImage, index) => (
                                                                 <img key={index} className={`image__detail image__chessbase--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
                                                             ))}
@@ -524,7 +776,7 @@ const ProjectDetail = () => {
                     </Link>
                 </div>
             </section>
-        </div>
+        </main>
     )
 }
 ProjectDetail.loader = loader;

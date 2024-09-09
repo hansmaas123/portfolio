@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 
 const Contact = () => {
     let { colorIdentifier } = useParams()
-
     useEffect(() => {
         {
 
