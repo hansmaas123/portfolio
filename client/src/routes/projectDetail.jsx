@@ -603,7 +603,7 @@ const ProjectDetail = () => {
                 <p className="detail__hidden detail__hidden1">(Note: this website is only made for pc)</p>
                 <p className="detail__hidden detail__hidden2">(Note: I did only focus on development, not design. Website only for pc)</p>
                 <div className="cover__wrapper">
-                    <img src={'http://localhost:1337' + cover} alt="cover" className="cover__image" />
+                    <img src={`${import.meta.env.VITE_STRAPI_URL}` + cover} alt="cover" className="cover__image" />
                 </div>
             </section>
             <section className="details__container--wrapper">
@@ -680,42 +680,42 @@ const ProjectDetail = () => {
                 {project.data.attributes.name === 'TRAINWORLD' ? (
                     <div className="images__project--wrapper images__trainworld--wrapper">
                         {projectImages.map((projectImage, index) => (
-                            <img key={index} className={`image__detail image__trainworld--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                            <img key={index} className={`image__detail image__trainworld--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                         ))}
                     </div>
                 )
                     : project.data.attributes.name === 'MIXBOX' ? (
                         <div className="mixbox__img--wrapper">
-                        <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper1">
-                            {projectImages.map((projectImage, index) => (
-                                (index < 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />)
-                            ))}
-                        </div>
-                        <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper2">
-                            {projectImages.map((projectImage, index) => (
-                                (index >= 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />)
-                            ))}
-                        </div>
+                            <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper1">
+                                {projectImages.map((projectImage, index) => (
+                                    (index < 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />)
+                                ))}
+                            </div>
+                            <div key={project.data.attributes.name} className="images__project--wrapper images__mixbox--wrapper2">
+                                {projectImages.map((projectImage, index) => (
+                                    (index >= 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />)
+                                ))}
+                            </div>
                         </div>
                     )
                         : project.data.attributes.name === 'STINGSTITUTE' ? (
                             <div key={project.data.attributes.name} className="images__project--wrapper images__stingstitute--wrapper">
                                 {projectImages.map((projectImage, index) => (
-                                    <img key={index} className={`image__detail image__stingstitute--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                    <img key={index} className={`image__detail image__stingstitute--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                 ))}
                             </div>
                         )
                             : project.data.attributes.name === 'ROTTERDANS' ? (
                                 <div key={project.data.attributes.name} className="images__project--wrapper images__rotterdans--wrapper">
                                     {projectImages.map((projectImage, index) => (
-                                        <img key={index} className={`image__detail image__rotterdans--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                        <img key={index} className={`image__detail image__rotterdans--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                     ))}
                                 </div>
                             )
                                 : project.data.attributes.name === 'EQUAL MELODIES' ? (
                                     <div key={project.data.attributes.name} className="images__project--wrapper images__equalmelodies--wrapper">
                                         {projectImages.map((projectImage, index) => (
-                                            <img key={index} className={`image__detail image__equalmelodies--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                            <img key={index} className={`image__detail image__equalmelodies--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                         ))}
                                     </div>
                                 )
@@ -723,7 +723,7 @@ const ProjectDetail = () => {
                                         <div key={project.data.attributes.name} className="images__project--wrapper images__reactartistique--wrapper">
                                             {projectImages.map((projectImage, index) => (
                                                 <video controls width={'90%'} key={index} className={`image__detail image__reactartistique--${index}`}>
-                                                    <source src={`http://localhost:1337` + projectImage.attributes.url} type="video/mp4" />
+                                                    <source src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.url} type="video/mp4" />
                                                 </video>
                                             ))}
                                         </div>
@@ -732,7 +732,7 @@ const ProjectDetail = () => {
                                             <div key={project.data.attributes.name} className="images__project--wrapper images__dishknob--wrapper">
                                                 {projectImages.map((projectImage, index) => (
                                                     <video controls width={'90%'} key={index} className={`image__detail image__dishknob--${index}`}>
-                                                        <source src={`http://localhost:1337` + projectImage.attributes.url} type="video/mp4" />
+                                                        <source src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.url} type="video/mp4" />
                                                     </video>
                                                 ))}
                                             </div>
@@ -740,21 +740,21 @@ const ProjectDetail = () => {
                                             : project.data.attributes.name === 'TRIMCRAFT' ? (
                                                 <div key={project.data.attributes.name} className="images__project--wrapper images__trimcraft--wrapper">
                                                     {projectImages.map((projectImage, index) => (
-                                                        <img key={index} className={`image__detail image__trimcraft--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                                        <img key={index} className={`image__detail image__trimcraft--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                                     ))}
                                                 </div>
                                             )
                                                 : project.data.attributes.name === 'SMASH A BUTTON' ? (
                                                     <div key={project.data.attributes.name} className="images__project--wrapper images__smashabutton--wrapper">
                                                         {projectImages.map((projectImage, index) => (
-                                                            <img key={index} className={`image__detail image__smashabutton--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                                            <img key={index} className={`image__detail image__smashabutton--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                                         ))}
                                                     </div>
                                                 )
                                                     : project.data.attributes.name === 'CHESSBASE' ? (
                                                         <div key={project.data.attributes.name} className="images__project--wrapper images__chessbase--wrapper">
                                                             {projectImages.map((projectImage, index) => (
-                                                                <img key={index} className={`image__detail image__chessbase--${index}`} src={`http://localhost:1337` + projectImage.attributes.formats.large.url} alt="image" />
+                                                                <img key={index} className={`image__detail image__chessbase--${index}`} src={`${import.meta.env.VITE_STRAPI_URL}` + projectImage.attributes.formats.large.url} alt="image" />
                                                             ))}
                                                         </div>
                                                     )
@@ -772,7 +772,7 @@ const ProjectDetail = () => {
                 </div>
                 <div className="next-project__cover--wrapper">
                     <Link className="next-project__cover--wrapper2" to={`/project/${nextProject.data.id}`}>
-                        <img src={'http://localhost:1337' + nextCover} alt="next project cover" className="next-project__cover" />
+                        <img src={`${import.meta.env.VITE_STRAPI_URL}` + nextCover} alt="next project cover" className="next-project__cover" />
                     </Link>
                 </div>
             </section>
