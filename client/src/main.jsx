@@ -7,13 +7,14 @@ import ProjectDetail from './routes/ProjectDetail';
 import About from './routes/about';
 import Contact from './routes/contact';
 import Root from "./routes/root";
-
+import ErrorPage from './routes/errorPage';
 
 const router = createBrowserRouter([
     {
         id: "root",
         path: "/",
         element: <Root />,
+        errorElement: <ErrorPage />,
         children: [
             { index: true, element: <Index /> },
             {

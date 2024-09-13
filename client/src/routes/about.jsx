@@ -1,19 +1,21 @@
 import NavBar from "../components/NavBar"
 import '../styles/style.css'
-import { Link, useParams } from "react-router-dom"
+import { Link, useOutletContext, useParams } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { useEffect } from "react";
 
 const About = () => {
     let { colorIdentifier } = useParams();
+    const { setScaling } = useOutletContext();
 
     useEffect(() => {
         {
             colorIdentifier === 'trainworld' ?
                 (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#272727',
-                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_trainworld.svg")',
-                    document.querySelector('.about__arrow').src = "../../about_arrow_trainworld.svg",
-
+                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_trainworld.svg")',
+                    document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
+                    document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
+                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
 
 
 
@@ -27,7 +29,7 @@ const About = () => {
                     }),
                     document.querySelector('.about__color3').style.color = "#FDFDFD",
                     document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                        arrow.src = '../../about_arrowdown_white.svg'
+                        arrow.src = '/about_arrowdown_white.svg'
                     }),
                     document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                         borderline.style.borderColor = "#EEEC76"
@@ -62,9 +64,10 @@ const About = () => {
                 )
                 : colorIdentifier === 'mixbox' ?
                     (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#929948',
-                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_mixbox.svg")',
-                        document.querySelector('.about__arrow').src = "../../about_arrow_trainworld.svg",
-
+                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_mixbox.svg")',
+                        document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
+                        document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
+                        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
 
 
 
@@ -78,7 +81,7 @@ const About = () => {
                         }),
                         document.querySelector('.about__color3').style.color = "#FDFDFD",
                         document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                            arrow.src = '../../about_arrowdown_white.svg'
+                            arrow.src = '/about_arrowdown_white.svg'
                         }),
                         document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                             borderline.style.borderColor = "#EEEC76"
@@ -112,9 +115,10 @@ const About = () => {
 
                     )
                     : colorIdentifier === 'stingstitute' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#492078',
-                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_stingstitute.svg")',
-                        document.querySelector('.about__arrow').src = "../../about_arrow_stingstitute.svg",
-
+                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_stingstitute.svg")',
+                        document.querySelector('.about__arrow').src = "/about_arrow_stingstitute.svg",
+                        document.querySelector('.small_circle').style.backgroundColor = '#FF53B7',
+                        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
 
                         document.querySelectorAll('.about__color1').forEach(color => {
                             color.style.color = "#FF53B7"
@@ -124,7 +128,7 @@ const About = () => {
                         }),
                         document.querySelector('.about__color3').style.color = "#FDFDFD",
                         document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                            arrow.src = '../../about_arrowdown_white.svg'
+                            arrow.src = '/about_arrowdown_white.svg'
                         }),
                         document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                             borderline.style.borderColor = "#FF53B7"
@@ -155,9 +159,10 @@ const About = () => {
 
                     )
                         : colorIdentifier === 'rotterdans' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#efefef',
-                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_rotterdans.svg")',
-                            document.querySelector('.about__arrow').src = "../../about_arrow_rotterdans.svg",
-
+                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_rotterdans.svg")',
+                            document.querySelector('.about__arrow').src = "/about_arrow_rotterdans.svg",
+                            document.querySelector('.small_circle').style.backgroundColor = '#2C2D2C',
+                            document.querySelector('.large_circle').style.backgroundColor = '#2C2D2C',
 
 
 
@@ -172,7 +177,7 @@ const About = () => {
                             document.querySelector('.about__color3').style.color = "#2C2D2C",
 
                             document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                arrow.src = '../../about_arrowdown_white.svg'
+                                arrow.src = '/about_arrowdown_white.svg'
                             }),
                             document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                 borderline.style.borderColor = "#2C2D2C"
@@ -206,9 +211,10 @@ const About = () => {
 
                         )
                             : colorIdentifier === 'equalmelodies' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#272727',
-                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_equalmelodies.svg")',
-                                document.querySelector('.about__arrow').src = "../../about_arrow_equalmelodies.svg",
-
+                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_equalmelodies.svg")',
+                                document.querySelector('.about__arrow').src = "/about_arrow_equalmelodies.svg",
+                                document.querySelector('.small_circle').style.backgroundColor = '#D8595B',
+                                document.querySelector('.large_circle').style.backgroundColor = '#272727',
 
 
 
@@ -222,7 +228,7 @@ const About = () => {
                                 }),
                                 document.querySelector('.about__color3').style.color = "#FDFDFD",
                                 document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                    arrow.src = '../../about_arrowdown_white.svg'
+                                    arrow.src = '/about_arrowdown_white.svg'
                                 }),
                                 document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                     borderline.style.borderColor = "#D8595B"
@@ -256,9 +262,10 @@ const About = () => {
 
                             )
                                 : colorIdentifier === 'reactartistique' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#366830',
-                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_reactartistique.svg")',
-                                    document.querySelector('.about__arrow').src = "../../about_arrow_reactartistique.svg",
-
+                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_reactartistique.svg")',
+                                    document.querySelector('.about__arrow').src = "/about_arrow_reactartistique.svg",
+                                    document.querySelector('.small_circle').style.backgroundColor = '#FDFDFD',
+                                    document.querySelector('.large_circle').style.backgroundColor = '#274A23',
 
 
 
@@ -272,7 +279,7 @@ const About = () => {
                                     }),
                                     document.querySelector('.about__color3').style.color = "#FDFDFD",
                                     document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                        arrow.src = '../../about_arrowdown_white.svg'
+                                        arrow.src = '/about_arrowdown_white.svg'
                                     }),
                                     document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                         borderline.style.borderColor = "#FDFDFD"
@@ -306,9 +313,10 @@ const About = () => {
 
                                 )
                                     : colorIdentifier === 'dishknob' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#FFF8F4',
-                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_dishknob.svg")',
-                                        document.querySelector('.about__arrow').src = "../../about_arrow_dishknob.svg",
-
+                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_dishknob.svg")',
+                                        document.querySelector('.about__arrow').src = "/about_arrow_dishknob.svg",
+                                        document.querySelector('.small_circle').style.backgroundColor = '#4C984C',
+                                        document.querySelector('.large_circle').style.backgroundColor = '#4C984C',
 
 
 
@@ -322,7 +330,7 @@ const About = () => {
                                         }),
                                         document.querySelector('.about__color3').style.color = "#2C2D2C",
                                         document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                            arrow.src = '../../about_arrowdown_black.svg'
+                                            arrow.src = '/about_arrowdown_black.svg'
                                         }),
                                         document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                             borderline.style.borderColor = "#4C984C"
@@ -356,9 +364,10 @@ const About = () => {
 
                                     )
                                         : colorIdentifier === 'trimcraft' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#434321',
-                                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_trimcraft.svg")',
-                                            document.querySelector('.about__arrow').src = "../../about_arrow_trainworld.svg",
-
+                                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_trimcraft.svg")',
+                                            document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
+                                            document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
+                                            document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
 
 
 
@@ -372,7 +381,7 @@ const About = () => {
                                             }),
                                             document.querySelector('.about__color3').style.color = "#FDFDFD",
                                             document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                arrow.src = '../../about_arrowdown_white.svg'
+                                                arrow.src = '/about_arrowdown_white.svg'
                                             }),
                                             document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                                 borderline.style.borderColor = "#EEEC76"
@@ -406,9 +415,10 @@ const About = () => {
 
                                         )
                                             : colorIdentifier === 'smashabutton' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#21432E',
-                                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_smashabutton.svg")',
-                                                document.querySelector('.about__arrow').src = "../../about_arrow_smashabutton.svg",
-
+                                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_smashabutton.svg")',
+                                                document.querySelector('.about__arrow').src = "/about_arrow_smashabutton.svg",
+                                                document.querySelector('.small_circle').style.backgroundColor = '#FEA500',
+                                                document.querySelector('.large_circle').style.backgroundColor = '#FEA500',
 
 
 
@@ -422,7 +432,7 @@ const About = () => {
                                                 }),
                                                 document.querySelector('.about__color3').style.color = "#FDFDFD",
                                                 document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                    arrow.src = '../../about_arrowdown_white.svg'
+                                                    arrow.src = '/about_arrowdown_white.svg'
                                                 }),
                                                 document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                                     borderline.style.borderColor = "#FEA500"
@@ -456,9 +466,10 @@ const About = () => {
 
                                             )
                                                 : colorIdentifier === 'chessbase' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#7A9A57',
-                                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_chessbase.svg")',
-                                                    document.querySelector('.about__arrow').src = "../../about_arrow_chessbase.svg",
-
+                                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_chessbase.svg")',
+                                                    document.querySelector('.about__arrow').src = "/about_arrow_chessbase.svg",
+                                                    document.querySelector('.small_circle').style.backgroundColor = '#ECEDCE',
+                                                    document.querySelector('.large_circle').style.backgroundColor = '#ECEDCE',
 
 
 
@@ -472,7 +483,7 @@ const About = () => {
                                                     }),
                                                     document.querySelector('.about__color3').style.color = "#2C2D2C",
                                                     document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                        arrow.src = '../../about_arrowdown_black.svg'
+                                                        arrow.src = '/about_arrowdown_black.svg'
                                                     }),
                                                     document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                                         borderline.style.borderColor = "#ECEDCE"
@@ -506,9 +517,10 @@ const About = () => {
 
                                                 )
                                                     : (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#2E3495',
-                                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("../../aboutbg_weatherdog.svg")',
-                                                        document.querySelector('.about__arrow').src = "../../about_arrow_weatherdog.svg",
-
+                                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_weatherdog.svg")',
+                                                        document.querySelector('.about__arrow').src = "/about_arrow_weatherdog.svg",
+                                                        document.querySelector('.small_circle').style.backgroundColor = '#E69A8D',
+                                                        document.querySelector('.large_circle').style.backgroundColor = '#E69A8D',
 
 
 
@@ -522,7 +534,7 @@ const About = () => {
                                                         }),
                                                         document.querySelector('.about__color3').style.color = "#FDFDFD",
                                                         document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                            arrow.src = '../../about_arrowdown_white.svg'
+                                                            arrow.src = '/about_arrowdown_white.svg'
                                                         }),
                                                         document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
                                                             borderline.style.borderColor = "#E69A8D"
@@ -568,7 +580,7 @@ const About = () => {
                         <p className="about__color1 about__title about__title1">CREATING TOMORROW&apos;S</p>
                         <p className="about__color1 about__title about__title2">EXPERIENCES</p>
                         <p className="about__color2 about__title about__title3">TODAY.</p>
-                        <img src="../../about_arrow_trainworld.svg" alt="arrow" className="about__arrow" />
+                        <img src="/about_arrow_trainworld.svg" alt="arrow" className="about__arrow" />
                     </div>
                 </section>
                 <section className="about__intro--wrapper">
@@ -582,84 +594,85 @@ const About = () => {
                 <h2 className="about__color1 about__skillset--title">MY SKILLSET</h2>
                 <div>
                     <div className="about__skillset--itemwrapperall">
-                        <button onClick={() => {
-                            document.querySelector('.about__skillset--itemhidden').classList.toggle('display');
-                            if (document.querySelector('.about__skillset--itemhidden').classList.contains('display')) {
-                                document.querySelector('.arrow').style.transform = 'rotate(180deg)'
-                            } else {
-                                document.querySelector('.arrow').style.transform = 'rotate(0deg)'
-                            }
-                        }}
+                        <button onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} onClick={() => {
+                                document.querySelector('.about__skillset--itemhidden').classList.toggle('display');
+                                if (document.querySelector('.about__skillset--itemhidden').classList.contains('display')) {
+                                    document.querySelector('.arrow').style.transform = 'rotate(180deg)'
+                                } else {
+                                    document.querySelector('.arrow').style.transform = 'rotate(0deg)'
+                                }
+                            }}
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">DEVELOPMENT</p>
-                            <img src="../../about_arrowdown_white.svg" alt="arrow down" className="arrow about__arrowdown" />
+                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden">
                             <div className="logo__wrapper--all">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../html.svg" alt="html icon" />
+                                        <img src="/html.svg" alt="html icon" />
                                     </div>
                                     <p className="about__color2 logo__name">HTML5</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../css.svg" alt="css icon" />
+                                        <img src="/css.svg" alt="css icon" />
                                     </div>
                                     <p className="about__color2 logo__name">CSS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../js.svg" alt="javascript icon" />
+                                        <img src="/js.svg" alt="javascript icon" />
                                     </div>
                                     <p className="about__color2 logo__name">JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../php.svg" alt="php icon" />
+                                        <img src="/php.svg" alt="php icon" />
                                     </div>
                                     <p className="about__color2 logo__name">PHP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../react.svg" alt="react icon" />
+                                        <img src="/react.svg" alt="react icon" />
                                     </div>
                                     <p className="about__color2 logo__name">REACT</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper logo__wrapper--long">
-                                        <img src="../../react.svg" alt="react native icon" />
+                                        <img src="/react.svg" alt="react native icon" />
                                     </div>
                                     <p className="about__color2 logo__name">REACT NATIVE</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../astro.svg" alt="astro icon" />
+                                        <img src="/astro.svg" alt="astro icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ASTRO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../strapi.svg" alt="strapi icon" />
+                                        <img src="/strapi.svg" alt="strapi icon" />
                                     </div>
                                     <p className="about__color2 logo__name">STRAPI</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../arduino.svg" alt="arduino icon" />
+                                        <img src="/arduino.svg" alt="arduino icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ARDUINO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../p5js.svg" alt="p5.js icon" />
+                                        <img src="/p5js.svg" alt="p5.js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">P5JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../sequelace.svg" alt="my sequel ace icon" />
+                                        <img src="/sequelace.svg" alt="my sequel ace icon" />
                                     </div>
                                     <p className="about__color2 logo__name">SEQUEL ACE</p>
                                 </div>
@@ -668,19 +681,19 @@ const About = () => {
                                 <div className="logo__wrapper--all logo__wrapper--all2">
                                     <div className="logo__wrapper--details">
                                         <div className="logo__wrapper">
-                                            <img src="../../gsap.svg" alt="gsap icon" />
+                                            <img src="/gsap.svg" alt="gsap icon" />
                                         </div>
                                         <p className="about__color2 logo__name">GSAP</p>
                                     </div>
                                     <div className="logo__wrapper--details">
                                         <div className="logo__wrapper">
-                                            <img src="../../gtm.svg" alt="google teachable machine icon" />
+                                            <img src="/gtm.svg" alt="google teachable machine icon" />
                                         </div>
                                         <p className="about__color2 logo__name">GTM</p>
                                     </div>
                                     <div className="logo__wrapper--details">
                                         <div className="logo__wrapper">
-                                            <img src="../../ml5.svg" alt="ml5js icon" />
+                                            <img src="/ml5.svg" alt="ml5js icon" />
                                         </div>
                                         <p className="about__color2 logo__name">ML5</p>
                                     </div>
@@ -689,18 +702,19 @@ const About = () => {
                         </div>
                     </div>
                     <div className="about__skillset--itemwrapperall">
-                        <button onClick={() => {
-                            document.querySelector('.about__skillset--itemhidden2').classList.toggle('display');
-                            if (document.querySelector('.about__skillset--itemhidden2').classList.contains('display')) {
-                                document.querySelector('.arrow2').style.transform = 'rotate(180deg)'
-                            } else {
-                                document.querySelector('.arrow2').style.transform = 'rotate(0deg)'
-                            }
-                        }}
+                        <button onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} onClick={() => {
+                                document.querySelector('.about__skillset--itemhidden2').classList.toggle('display');
+                                if (document.querySelector('.about__skillset--itemhidden2').classList.contains('display')) {
+                                    document.querySelector('.arrow2').style.transform = 'rotate(180deg)'
+                                } else {
+                                    document.querySelector('.arrow2').style.transform = 'rotate(0deg)'
+                                }
+                            }}
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">DESIGN</p>
-                            <img src="../../about_arrowdown_white.svg" alt="arrow down" className="arrow2 about__arrowdown" />
+                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow2 about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden2">
                             <div className="logo__wrapper--alldesign">
@@ -719,31 +733,31 @@ const About = () => {
                             <div className="logo__wrapper--alldesign3">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../ai.svg" alt="adobe illustrator icon" />
+                                        <img src="/ai.svg" alt="adobe illustrator icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE ILLUSTRATOR</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../ps.svg" alt="adobe photoshop icon" />
+                                        <img src="/ps.svg" alt="adobe photoshop icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE PHOTOSHOP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../ae.svg" alt="adobe after effects icon" />
+                                        <img src="/ae.svg" alt="adobe after effects icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AFTER EFFECTS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../au.svg" alt="adobe audition icon" />
+                                        <img src="/au.svg" alt="adobe audition icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AUDITION</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="../../figma.svg" alt="figma icon" />
+                                        <img src="/figma.svg" alt="figma icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">FIGMA</p>
                                 </div>
@@ -751,18 +765,19 @@ const About = () => {
                         </div>
                     </div>
                     <div className="about__skillset--itemwrapperall">
-                        <button onClick={() => {
-                            document.querySelector('.about__skillset--itemhidden3').classList.toggle('display2');
-                            if (document.querySelector('.about__skillset--itemhidden3').classList.contains('display2')) {
-                                document.querySelector('.arrow3').style.transform = 'rotate(180deg)'
-                            } else {
-                                document.querySelector('.arrow3').style.transform = 'rotate(0deg)'
-                            }
-                        }}
+                        <button onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} onClick={() => {
+                                document.querySelector('.about__skillset--itemhidden3').classList.toggle('display2');
+                                if (document.querySelector('.about__skillset--itemhidden3').classList.contains('display2')) {
+                                    document.querySelector('.arrow3').style.transform = 'rotate(180deg)'
+                                } else {
+                                    document.querySelector('.arrow3').style.transform = 'rotate(0deg)'
+                                }
+                            }}
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">UX RESEARCH</p>
-                            <img src="../../about_arrowdown_white.svg" alt="arrow down" className="arrow3 about__arrowdown" />
+                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow3 about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden3">
                             <div className="logo__wrapper--alldesign">
@@ -784,21 +799,28 @@ const About = () => {
                 <div className="about__contact--wrapper">
                     <div className="about__contact--items">
                         <h2 className="about__contact--title">Let&apos;s Talk</h2>
-                        <Link to={`/contact/${colorIdentifier}`} className="about__contact--button button__color about__button--color">Contact me</Link>
+                        <Link onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} onClick={(() => {
+                                document.querySelector('body').classList.add("scroll-up");
+                                document.querySelector('body').classList.remove("scroll-down")
+                            })} to={`/contact/${colorIdentifier}`} className="about__contact--button button__color about__button--color">Contact me</Link>
                     </div>
                 </div>
                 <div className="bottom">
                     <div className="bottom__left">
-                        <a href="https://www.instagram.com/maasdesign_studios/" target='__blank' className="social">
-                            <img src="../../instagram.svg" alt="icon of instagram" />
+                        <a onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} href="https://www.instagram.com/maasdesign_studios/" target='__blank' className="social">
+                            <img src="/instagram.svg" alt="icon of instagram" />
                             <p>Instagram</p>
                         </a>
-                        <a href="https://www.behance.net/hansmaas" target='__blank' className="social">
-                            <img src="../../behance.svg" alt="icon of behance" />
+                        <a onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} href="https://www.behance.net/hansmaas" target='__blank' className="social">
+                            <img src="/behance.svg" alt="icon of behance" />
                             <p>Behance</p>
                         </a>
-                        <a href="https://github.com/hansmaas123" target='__blank' className="social">
-                            <img src="../../github.svg" alt="icon of github" />
+                        <a onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)} href="https://github.com/hansmaas123" target='__blank' className="social">
+                            <img src="/github.svg" alt="icon of github" />
                             <p>Github</p>
                         </a>
                     </div>
