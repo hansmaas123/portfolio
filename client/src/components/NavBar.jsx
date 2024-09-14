@@ -10,14 +10,14 @@ const NavBar = ({ colorIdentifier }) => {
 
     window.addEventListener("scroll", () => {
         const currentScroll = window.scrollY;
-        if (currentScroll <= 0 && !document.querySelector('.nav__link1').classList.contains('.active')) {
+        if (currentScroll <= 0 && !document.querySelector('.nav__link1').classList.contains('.active') && !document.querySelector('.nav__link3').classList.contains('.active')) {
             body.classList.remove("scroll-up");
             return;
         }
-        if (currentScroll > lastScroll && !body.classList.contains("scroll-down") && !document.querySelector('.nav__link1').classList.contains('active')) {
+        if (currentScroll > lastScroll && !body.classList.contains("scroll-down") && !document.querySelector('.nav__link1').classList.contains('active') && !document.querySelector('.nav__link3').classList.contains('.active')) {
             body.classList.remove("scroll-up");
             body.classList.add("scroll-down");
-        } else if (currentScroll < lastScroll && body.classList.contains("scroll-down") && !document.querySelector('.nav__link1').classList.contains('active')) {
+        } else if (currentScroll < lastScroll && body.classList.contains("scroll-down") && !document.querySelector('.nav__link1').classList.contains('active') && !document.querySelector('.nav__link3').classList.contains('.active')) {
             body.classList.remove("scroll-down");
             body.classList.add("scroll-up");
         } 
