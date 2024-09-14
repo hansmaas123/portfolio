@@ -19,16 +19,16 @@ const Index = () => {
             window.scrollTo(0, 0);
             document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
                 document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-            gsap.to(".projects__wrapper", {
-                x: '-620vw',
-                scrollTrigger: {
-                    trigger: '.doesntexist',
-                    pin: '.projects__wrapper, .homepage__wrapper',
-                    scrub: 1,
-                    start: "top 0%",
-                    end: "bottom -700%",
-                },
-            });
+                gsap.to(".projects__wrapper", {
+                    x: '-620vw',
+                    scrollTrigger: {
+                        trigger: '.doesntexist',
+                        pin: '.projects__wrapper, .homepage__wrapper',
+                        scrub: 1,
+                        start: "top 0%",
+                        end: "bottom -700%",
+                    },
+                });
             ScrollTrigger.create({
                 trigger: '.home__project--wrapper2',
                 start: "left 0%",
@@ -440,7 +440,7 @@ const Index = () => {
 
 
 
-    
+
     return (
         <main>
             <div className='homepage__wrapper'>
@@ -457,7 +457,7 @@ const Index = () => {
                             <img className='project__thumbnail project__thumbnail--trainworld' src="/home_trainworld.jpeg" alt="project tumbnail trainworld" />
                         </div>
                         <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${1}`} className='home__project--wrapper'>
+                            onMouseLeave={() => setScaling(false)} onClick={() => setScaling(false)} to={`project/${1}`} className='home__project--wrapper'>
                             <h2 className='home__project--title'>TRAINWORLD</h2>
                             <div className='home__project--details'>
                                 <p>Solo</p>

@@ -11,8 +11,8 @@ const Contact = () => {
         {
 
             colorIdentifier === 'trainworld' ? (document.querySelector('.color1').style.color = '#FDFDFD',
-            document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
-            document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
+                document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
+                document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
                 document.querySelector('.color2').style.color = '#E8E661',
                 document.querySelector('.highlight').style.color = '#E8E661',
                 document.querySelectorAll('.nav__link').forEach(link => {
@@ -52,8 +52,8 @@ const Contact = () => {
 
                 : colorIdentifier === 'mixbox' ? (document.querySelector('.color1').style.color = '#FDFDFD',
                     document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
-                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',    
-                document.querySelector('.color2').style.color = '#EEEC76',
+                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
+                    document.querySelector('.color2').style.color = '#EEEC76',
                     document.querySelector('.highlight').style.color = '#EEEC76',
                     document.querySelectorAll('.nav__link').forEach(link => {
                         link.style.borderColor = '#efefef'
@@ -196,8 +196,8 @@ const Contact = () => {
                                 document.querySelector('.background1').style.backgroundColor = '#272727')
 
                                 : colorIdentifier === 'reactartistique' ? (document.querySelector('.color1').style.color = '#FDFDFD',
-                                    document.querySelector('.small_circle').style.backgroundColor = '#274A23',
-                                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
+                                    document.querySelector('.small_circle').style.backgroundColor = '#FDFDFD',
+                                    document.querySelector('.large_circle').style.backgroundColor = '#274A23',
                                     document.querySelector('.color2').style.color = '#11210F',
                                     document.querySelector('.highlight').style.color = '#11210F',
                                     document.querySelectorAll('.nav__link').forEach(link => {

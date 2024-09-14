@@ -5,9 +5,11 @@
 *::after {
     box-sizing: border-box;
 }
+
 * {
     cursor: none !important;
 }
+
 body,
 html {
     margin: 0;
@@ -454,8 +456,7 @@ html {
     transition: transform .5s ease;
 }
 
-.about__skillset--itemwrapper:hover {
-}
+.about__skillset--itemwrapper:hover {}
 
 .logo__wrapper {
     background-color: #FDFDFD;
@@ -1289,9 +1290,11 @@ html {
     transition: transform 0.1s;
     z-index: 99999999;
 }
+
 .large_circle {
     background-color: #FDFDFD;
 }
+
 .small_circle {
     width: 16px;
     height: 16px;
@@ -1386,7 +1389,8 @@ html {
     letter-spacing: 0.07rem;
     color: #FDFDFD;
 }
-.error__container{
+
+.error__container {
     padding-top: 2rem;
     align-items: center;
     background-image: url('/detailbg_next-trainworld.svg');
@@ -1395,14 +1399,16 @@ html {
     width: 100vw;
     height: 100vh;
 }
-.error__wrapper{
+
+.error__wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.error__title{
+
+.error__title {
     margin: 0;
     font-family: neulis-neue, sans-serif;
     font-size: 340px;
@@ -1411,7 +1417,8 @@ html {
     margin-top: -5rem;
     color: #E8E661;
 }
-.error__description{
+
+.error__description {
     margin: 0;
     font-family: mundial, sans-serif;
     font-size: 25px;
@@ -1421,7 +1428,8 @@ html {
     color: #E8E661;
     text-transform: uppercase;
 }
-.error__description2{
+
+.error__description2 {
     margin: 0;
     font-family: mundial, sans-serif;
     font-size: 18px;

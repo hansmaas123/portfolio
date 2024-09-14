@@ -10,7 +10,6 @@ const loader = async ({ params }) => {
     let nextId;
     { id == 11 ? nextId = 1 : nextId = idInteger + 1 }
     const project = await getProjectById(idInteger);
-    console.log('Project:', project);
     const nextProject = await getProjectById(nextId);
     return { project, nextProject };
 };
@@ -19,7 +18,6 @@ const ProjectDetail = () => {
     const { project, nextProject } = useLoaderData();
     const { pathname } = useLocation();
     const { setScaling } = useOutletContext();
-
     const projectImages = project.attributes.images.data;
     const cover = project.attributes.cover.data[0].attributes.formats.large.url
     const nextCover = nextProject.attributes.cover.data[0].attributes.formats.large.url
