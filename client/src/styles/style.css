@@ -380,7 +380,7 @@ html {
 
 .about__skillset--title {
     color: #EEEC76;
-    font-weight: neulis-neue, sans-serif;
+    font-family: neulis-neue, sans-serif;
     font-size: 50px;
     font-weight: 700;
     letter-spacing: 0.1125rem;
@@ -455,8 +455,6 @@ html {
 .arrow3 {
     transition: transform .5s ease;
 }
-
-.about__skillset--itemwrapper:hover {}
 
 .logo__wrapper {
     background-color: #FDFDFD;

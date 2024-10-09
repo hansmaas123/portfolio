@@ -1,13 +1,16 @@
 import NavBar from "../components/NavBar"
 import '../styles/style.css'
-import { Link, useOutletContext, useParams } from "react-router-dom"
+import { Link, useLocation, useOutletContext, useParams } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { useEffect } from "react";
 
 const About = () => {
     let { colorIdentifier } = useParams();
     const { setScaling } = useOutletContext();
-
+    const { pathname } = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     useEffect(() => {
         {
             colorIdentifier === 'trainworld' ?
