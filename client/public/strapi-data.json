@@ -221,18 +221,6 @@
                 "width": 1230,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_31_32_73f84771f3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.87,
-                    "sizeInBytes": 5869,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_31_32_73f84771f3.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-20 at 16.31.32.jpg",
                     "hash": "large_Screenshot_2024_08_20_at_16_31_32_73f84771f3",
@@ -243,31 +231,7 @@
                     "height": 782,
                     "size": 58.92,
                     "sizeInBytes": 58924,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_31_32_73f84771f3.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_31_32_73f84771f3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 587,
-                    "size": 40.12,
-                    "sizeInBytes": 40120,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_31_32_73f84771f3.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_31_32_73f84771f3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 22.88,
-                    "sizeInBytes": 22879,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_31_32_73f84771f3.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307629/trainworld/tzrgrqdiwtl0r7d34lgx.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_31_32_73f84771f3",
@@ -305,43 +269,7 @@
                     "height": 487,
                     "size": 46.27,
                     "sizeInBytes": 46265,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_31_32_abc2920881.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_31_32_abc2920881",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 119,
-                    "size": 5.65,
-                    "sizeInBytes": 5648,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_31_32_abc2920881.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_31_32_abc2920881",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 365,
-                    "size": 30.94,
-                    "sizeInBytes": 30940,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_31_32_abc2920881.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.31.32.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_31_32_abc2920881",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 243,
-                    "size": 16,
-                    "sizeInBytes": 16003,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_31_32_abc2920881.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307611/trainworld/ean12zch49vmkjk0cq1c.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_31_32_abc2920881",
@@ -375,43 +303,7 @@
                     "height": 485,
                     "size": 48.16,
                     "sizeInBytes": 48158,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.32.15.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 119,
-                    "size": 4.82,
-                    "sizeInBytes": 4817,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.32.15.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 364,
-                    "size": 31.65,
-                    "sizeInBytes": 31645,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.32.15.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 243,
-                    "size": 16.46,
-                    "sizeInBytes": 16457,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_32_15_0b69cfc02b.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307613/trainworld/wok9qqvmzp2ppeslmema.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_32_15_0b69cfc02b",
@@ -435,18 +327,6 @@
                 "width": 908,
                 "height": 1937,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.39.15.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_39_15_76d049ca87",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 73,
-                    "height": 156,
-                    "size": 1.83,
-                    "sizeInBytes": 1826,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_39_15_76d049ca87.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-20 at 16.39.15.jpg",
                     "hash": "large_Screenshot_2024_08_20_at_16_39_15_76d049ca87",
@@ -457,31 +337,7 @@
                     "height": 1000,
                     "size": 26.86,
                     "sizeInBytes": 26856,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_39_15_76d049ca87.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.39.15.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_39_15_76d049ca87",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 352,
-                    "height": 750,
-                    "size": 17.88,
-                    "sizeInBytes": 17879,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_39_15_76d049ca87.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.39.15.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_39_15_76d049ca87",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 235,
-                    "height": 500,
-                    "size": 10.16,
-                    "sizeInBytes": 10160,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_39_15_76d049ca87.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307607/trainworld/vpnsbopezgjtcyqbhhlg.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_39_15_76d049ca87",
@@ -505,18 +361,6 @@
                 "width": 908,
                 "height": 1937,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.39.28.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_39_28_73495e5c81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 73,
-                    "height": 156,
-                    "size": 2.04,
-                    "sizeInBytes": 2038,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_39_28_73495e5c81.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-20 at 16.39.28.jpg",
                     "hash": "large_Screenshot_2024_08_20_at_16_39_28_73495e5c81",
@@ -527,31 +371,7 @@
                     "height": 1000,
                     "size": 31.69,
                     "sizeInBytes": 31694,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_39_28_73495e5c81.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.39.28.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_39_28_73495e5c81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 352,
-                    "height": 750,
-                    "size": 21.64,
-                    "sizeInBytes": 21636,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_39_28_73495e5c81.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.39.28.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_39_28_73495e5c81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 235,
-                    "height": 500,
-                    "size": 12.34,
-                    "sizeInBytes": 12341,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_39_28_73495e5c81.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307607/trainworld/wef78qmyggih6k85gm7m.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_39_28_73495e5c81",
@@ -585,43 +405,7 @@
                     "height": 485,
                     "size": 47.6,
                     "sizeInBytes": 47603,
-                    "url": "/uploads/large_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-20 at 16.31.49.jpg",
-                    "hash": "medium_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 364,
-                    "size": 29.05,
-                    "sizeInBytes": 29046,
-                    "url": "/uploads/medium_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-20 at 16.31.49.jpg",
-                    "hash": "small_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 243,
-                    "size": 16.01,
-                    "sizeInBytes": 16007,
-                    "url": "/uploads/small_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-20 at 16.31.49.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 119,
-                    "size": 4.8,
-                    "sizeInBytes": 4802,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307609/trainworld/ciqpp2daqzefaiq6rgiu.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_20_at_16_31_49_2eed7c9bb4",
@@ -920,42 +704,6 @@
                 "width": 1230,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox.jpg",
-                    "hash": "thumbnail_mixbox_85edb9b821",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.38,
-                    "sizeInBytes": 5378,
-                    "url": "/uploads/thumbnail_mixbox_85edb9b821.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox.jpg",
-                    "hash": "small_mixbox_85edb9b821",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 24.42,
-                    "sizeInBytes": 24418,
-                    "url": "/uploads/small_mixbox_85edb9b821.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox.jpg",
-                    "hash": "medium_mixbox_85edb9b821",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 587,
-                    "size": 45.69,
-                    "sizeInBytes": 45690,
-                    "url": "/uploads/medium_mixbox_85edb9b821.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox.jpg",
                     "hash": "large_mixbox_85edb9b821",
@@ -966,7 +714,7 @@
                     "height": 782,
                     "size": 72.06,
                     "sizeInBytes": 72061,
-                    "url": "/uploads/large_mixbox_85edb9b821.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307920/mixbox/nfv8ngkr7gknblgvmayb.jpg"
                   }
                 },
                 "hash": "mixbox_85edb9b821",
@@ -994,42 +742,6 @@
                 "width": 2487,
                 "height": 6291,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox1.jpg",
-                    "hash": "thumbnail_mixbox1_f54f94fa64",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 62,
-                    "height": 156,
-                    "size": 3.26,
-                    "sizeInBytes": 3261,
-                    "url": "/uploads/thumbnail_mixbox1_f54f94fa64.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox1.jpg",
-                    "hash": "small_mixbox1_f54f94fa64",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 197,
-                    "height": 500,
-                    "size": 16.62,
-                    "sizeInBytes": 16620,
-                    "url": "/uploads/small_mixbox1_f54f94fa64.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox1.jpg",
-                    "hash": "medium_mixbox1_f54f94fa64",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 296,
-                    "height": 750,
-                    "size": 29.99,
-                    "sizeInBytes": 29994,
-                    "url": "/uploads/medium_mixbox1_f54f94fa64.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox1.jpg",
                     "hash": "large_mixbox1_f54f94fa64",
@@ -1040,7 +752,7 @@
                     "height": 1000,
                     "size": 44.13,
                     "sizeInBytes": 44126,
-                    "url": "/uploads/large_mixbox1_f54f94fa64.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307934/mixbox/kkomsekxmxoaabwkgqt2.jpg"
                   }
                 },
                 "hash": "mixbox1_f54f94fa64",
@@ -1064,18 +776,6 @@
                 "width": 2482,
                 "height": 4483,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox3.jpg",
-                    "hash": "thumbnail_mixbox3_e168128816",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 86,
-                    "height": 156,
-                    "size": 3.77,
-                    "sizeInBytes": 3767,
-                    "url": "/uploads/thumbnail_mixbox3_e168128816.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox3.jpg",
                     "hash": "large_mixbox3_e168128816",
@@ -1086,31 +786,7 @@
                     "height": 1000,
                     "size": 58.23,
                     "sizeInBytes": 58234,
-                    "url": "/uploads/large_mixbox3_e168128816.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox3.jpg",
-                    "hash": "medium_mixbox3_e168128816",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 415,
-                    "height": 750,
-                    "size": 38.24,
-                    "sizeInBytes": 38238,
-                    "url": "/uploads/medium_mixbox3_e168128816.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox3.jpg",
-                    "hash": "small_mixbox3_e168128816",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 277,
-                    "height": 500,
-                    "size": 22,
-                    "sizeInBytes": 21999,
-                    "url": "/uploads/small_mixbox3_e168128816.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307948/mixbox/uf3af1dehkfuliyoflot.jpg"
                   }
                 },
                 "hash": "mixbox3_e168128816",
@@ -1134,18 +810,6 @@
                 "width": 1138,
                 "height": 2051,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox4.jpg",
-                    "hash": "thumbnail_mixbox4_0eb8ddf916",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 87,
-                    "height": 156,
-                    "size": 4.65,
-                    "sizeInBytes": 4654,
-                    "url": "/uploads/thumbnail_mixbox4_0eb8ddf916.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox4.jpg",
                     "hash": "large_mixbox4_0eb8ddf916",
@@ -1156,31 +820,7 @@
                     "height": 1000,
                     "size": 58.44,
                     "sizeInBytes": 58443,
-                    "url": "/uploads/large_mixbox4_0eb8ddf916.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox4.jpg",
-                    "hash": "medium_mixbox4_0eb8ddf916",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 416,
-                    "height": 750,
-                    "size": 39.66,
-                    "sizeInBytes": 39662,
-                    "url": "/uploads/medium_mixbox4_0eb8ddf916.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox4.jpg",
-                    "hash": "small_mixbox4_0eb8ddf916",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 278,
-                    "height": 500,
-                    "size": 22.89,
-                    "sizeInBytes": 22888,
-                    "url": "/uploads/small_mixbox4_0eb8ddf916.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307938/mixbox/l7w7jexxhm8qldyvfeho.jpg"
                   }
                 },
                 "hash": "mixbox4_0eb8ddf916",
@@ -1204,30 +844,6 @@
                 "width": 1152,
                 "height": 2051,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox6.jpg",
-                    "hash": "thumbnail_mixbox6_abfcf2b2cf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 88,
-                    "height": 156,
-                    "size": 3.27,
-                    "sizeInBytes": 3269,
-                    "url": "/uploads/thumbnail_mixbox6_abfcf2b2cf.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox6.jpg",
-                    "hash": "medium_mixbox6_abfcf2b2cf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 421,
-                    "height": 750,
-                    "size": 31.55,
-                    "sizeInBytes": 31550,
-                    "url": "/uploads/medium_mixbox6_abfcf2b2cf.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox6.jpg",
                     "hash": "large_mixbox6_abfcf2b2cf",
@@ -1238,19 +854,7 @@
                     "height": 1000,
                     "size": 47.02,
                     "sizeInBytes": 47022,
-                    "url": "/uploads/large_mixbox6_abfcf2b2cf.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox6.jpg",
-                    "hash": "small_mixbox6_abfcf2b2cf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 281,
-                    "height": 500,
-                    "size": 17.75,
-                    "sizeInBytes": 17752,
-                    "url": "/uploads/small_mixbox6_abfcf2b2cf.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307936/mixbox/bzxc4uyzlgcetvsrgcsz.jpg"
                   }
                 },
                 "hash": "mixbox6_abfcf2b2cf",
@@ -1274,18 +878,6 @@
                 "width": 2482,
                 "height": 4478,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox2.jpg",
-                    "hash": "thumbnail_mixbox2_9d66320a81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 87,
-                    "height": 156,
-                    "size": 3.92,
-                    "sizeInBytes": 3922,
-                    "url": "/uploads/thumbnail_mixbox2_9d66320a81.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox2.jpg",
                     "hash": "large_mixbox2_9d66320a81",
@@ -1296,31 +888,7 @@
                     "height": 1000,
                     "size": 54.12,
                     "sizeInBytes": 54115,
-                    "url": "/uploads/large_mixbox2_9d66320a81.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox2.jpg",
-                    "hash": "medium_mixbox2_9d66320a81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 416,
-                    "height": 750,
-                    "size": 35.75,
-                    "sizeInBytes": 35747,
-                    "url": "/uploads/medium_mixbox2_9d66320a81.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox2.jpg",
-                    "hash": "small_mixbox2_9d66320a81",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 277,
-                    "height": 500,
-                    "size": 22.19,
-                    "sizeInBytes": 22189,
-                    "url": "/uploads/small_mixbox2_9d66320a81.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307944/mixbox/mhob7zbutvmknxh5fog9.jpg"
                   }
                 },
                 "hash": "mixbox2_9d66320a81",
@@ -1344,18 +912,6 @@
                 "width": 2487,
                 "height": 4437,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox5.jpg",
-                    "hash": "thumbnail_mixbox5_1df6f4a0be",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 87,
-                    "height": 156,
-                    "size": 3.33,
-                    "sizeInBytes": 3332,
-                    "url": "/uploads/thumbnail_mixbox5_1df6f4a0be.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox5.jpg",
                     "hash": "large_mixbox5_1df6f4a0be",
@@ -1366,31 +922,7 @@
                     "height": 1000,
                     "size": 39.54,
                     "sizeInBytes": 39538,
-                    "url": "/uploads/large_mixbox5_1df6f4a0be.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox5.jpg",
-                    "hash": "medium_mixbox5_1df6f4a0be",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 420,
-                    "height": 750,
-                    "size": 26.13,
-                    "sizeInBytes": 26134,
-                    "url": "/uploads/medium_mixbox5_1df6f4a0be.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox5.jpg",
-                    "hash": "small_mixbox5_1df6f4a0be",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 280,
-                    "height": 500,
-                    "size": 15.03,
-                    "sizeInBytes": 15026,
-                    "url": "/uploads/small_mixbox5_1df6f4a0be.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307949/mixbox/g1wmhqpkoskuaompm3zz.jpg"
                   }
                 },
                 "hash": "mixbox5_1df6f4a0be",
@@ -1414,30 +946,6 @@
                 "width": 2487,
                 "height": 4437,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_mixbox7.jpg",
-                    "hash": "thumbnail_mixbox7_522a945db4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 87,
-                    "height": 156,
-                    "size": 1.16,
-                    "sizeInBytes": 1155,
-                    "url": "/uploads/thumbnail_mixbox7_522a945db4.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_mixbox7.jpg",
-                    "hash": "medium_mixbox7_522a945db4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 420,
-                    "height": 750,
-                    "size": 18.14,
-                    "sizeInBytes": 18135,
-                    "url": "/uploads/medium_mixbox7_522a945db4.jpg"
-                  },
                   "large": {
                     "name": "large_mixbox7.jpg",
                     "hash": "large_mixbox7_522a945db4",
@@ -1448,19 +956,7 @@
                     "height": 1000,
                     "size": 53.53,
                     "sizeInBytes": 53532,
-                    "url": "/uploads/large_mixbox7_522a945db4.jpg"
-                  },
-                  "small": {
-                    "name": "small_mixbox7.jpg",
-                    "hash": "small_mixbox7_522a945db4",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 280,
-                    "height": 500,
-                    "size": 4.68,
-                    "sizeInBytes": 4677,
-                    "url": "/uploads/small_mixbox7_522a945db4.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307944/mixbox/fdbccwiwf0rqeth45ivq.jpg"
                   }
                 },
                 "hash": "mixbox7_522a945db4",
@@ -1679,18 +1175,6 @@
                 "width": 1231,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_stingstitute.jpg",
-                    "hash": "thumbnail_stingstitute_9a5329f672",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 4.78,
-                    "sizeInBytes": 4779,
-                    "url": "/uploads/thumbnail_stingstitute_9a5329f672.jpg"
-                  },
                   "large": {
                     "name": "large_stingstitute.jpg",
                     "hash": "large_stingstitute_9a5329f672",
@@ -1701,31 +1185,7 @@
                     "height": 781,
                     "size": 43.57,
                     "sizeInBytes": 43574,
-                    "url": "/uploads/large_stingstitute_9a5329f672.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_stingstitute.jpg",
-                    "hash": "medium_stingstitute_9a5329f672",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 30.44,
-                    "sizeInBytes": 30441,
-                    "url": "/uploads/medium_stingstitute_9a5329f672.jpg"
-                  },
-                  "small": {
-                    "name": "small_stingstitute.jpg",
-                    "hash": "small_stingstitute_9a5329f672",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 17.85,
-                    "sizeInBytes": 17850,
-                    "url": "/uploads/small_stingstitute_9a5329f672.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308172/stingstitute/yyyvdpgoiugse7dmi1ty.jpg"
                   }
                 },
                 "hash": "stingstitute_9a5329f672",
@@ -1753,30 +1213,6 @@
                 "width": 5157,
                 "height": 2535,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.48.00.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_48_00_1cc3331313",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 6.27,
-                    "sizeInBytes": 6274,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_48_00_1cc3331313.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.48.00.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_48_00_1cc3331313",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 368,
-                    "size": 29.71,
-                    "sizeInBytes": 29711,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_48_00_1cc3331313.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 15.48.00.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_15_48_00_1cc3331313",
@@ -1787,19 +1223,7 @@
                     "height": 491,
                     "size": 42.39,
                     "sizeInBytes": 42394,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_48_00_1cc3331313.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.48.00.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_48_00_1cc3331313",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 245,
-                    "size": 17.17,
-                    "sizeInBytes": 17174,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_48_00_1cc3331313.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308216/stingstitute/ht8h7lc0hsf0cozy8ddj.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_48_00_1cc3331313",
@@ -1833,43 +1257,7 @@
                     "height": 1000,
                     "size": 46.4,
                     "sizeInBytes": 46396,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.55.56.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 95,
-                    "height": 156,
-                    "size": 2.97,
-                    "sizeInBytes": 2965,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.55.56.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 458,
-                    "height": 750,
-                    "size": 32.46,
-                    "sizeInBytes": 32455,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.55.56.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 305,
-                    "height": 500,
-                    "size": 18.58,
-                    "sizeInBytes": 18581,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308214/stingstitute/dcgrxcpbq4q4xiegf7r7.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_55_56_bbb3e15f4f",
@@ -1903,43 +1291,7 @@
                     "height": 1000,
                     "size": 45.66,
                     "sizeInBytes": 45656,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_56_17_c1130bceaf.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.56.17.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_56_17_c1130bceaf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 95,
-                    "height": 156,
-                    "size": 2.89,
-                    "sizeInBytes": 2888,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_56_17_c1130bceaf.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.56.17.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_56_17_c1130bceaf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 458,
-                    "height": 750,
-                    "size": 31.85,
-                    "sizeInBytes": 31845,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_56_17_c1130bceaf.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.56.17.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_56_17_c1130bceaf",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 305,
-                    "height": 500,
-                    "size": 18.76,
-                    "sizeInBytes": 18764,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_56_17_c1130bceaf.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308215/stingstitute/hbowev69r4hj7wemmt7w.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_56_17_c1130bceaf",
@@ -1963,18 +1315,6 @@
                 "width": 3003,
                 "height": 1513,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.53.29.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_53_29_e5ce669a67",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 123,
-                    "size": 4.33,
-                    "sizeInBytes": 4330,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_53_29_e5ce669a67.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 15.53.29.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_15_53_29_e5ce669a67",
@@ -1985,31 +1325,7 @@
                     "height": 504,
                     "size": 34.12,
                     "sizeInBytes": 34124,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_53_29_e5ce669a67.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.53.29.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_53_29_e5ce669a67",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 378,
-                    "size": 22.72,
-                    "sizeInBytes": 22720,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_53_29_e5ce669a67.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.53.29.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_53_29_e5ce669a67",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 252,
-                    "size": 11.9,
-                    "sizeInBytes": 11902,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_53_29_e5ce669a67.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308213/stingstitute/cty2lgpjjp0sqpho9lji.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_53_29_e5ce669a67",
@@ -2033,18 +1349,6 @@
                 "width": 5157,
                 "height": 2531,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.49.14.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 5.99,
-                    "sizeInBytes": 5993,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 15.49.14.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2",
@@ -2055,31 +1359,7 @@
                     "height": 490,
                     "size": 46.23,
                     "sizeInBytes": 46231,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.49.14.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 368,
-                    "size": 31.52,
-                    "sizeInBytes": 31516,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.49.14.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 245,
-                    "size": 17.56,
-                    "sizeInBytes": 17558,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308217/stingstitute/lxgggpmjcc3gkbpaks6n.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_49_14_56ffe3cbf2",
@@ -2113,43 +1393,7 @@
                     "height": 490,
                     "size": 41.24,
                     "sizeInBytes": 41236,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.48.27.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 5.74,
-                    "sizeInBytes": 5742,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.48.27.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 245,
-                    "size": 15.76,
-                    "sizeInBytes": 15759,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.48.27.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 367,
-                    "size": 27.7,
-                    "sizeInBytes": 27700,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_48_27_7bf9e14b50.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308214/stingstitute/rdhy7gdvybkpywmk4hwj.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_48_27_7bf9e14b50",
@@ -2173,30 +1417,6 @@
                 "width": 1824,
                 "height": 2943,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.55.29.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_55_29_b9f74ee852",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 97,
-                    "height": 156,
-                    "size": 2.97,
-                    "sizeInBytes": 2974,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_55_29_b9f74ee852.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.55.29.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_55_29_b9f74ee852",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 310,
-                    "height": 500,
-                    "size": 15.68,
-                    "sizeInBytes": 15675,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_55_29_b9f74ee852.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 15.55.29.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_15_55_29_b9f74ee852",
@@ -2207,19 +1427,7 @@
                     "height": 1000,
                     "size": 38.34,
                     "sizeInBytes": 38335,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_55_29_b9f74ee852.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.55.29.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_55_29_b9f74ee852",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 465,
-                    "height": 750,
-                    "size": 26.92,
-                    "sizeInBytes": 26917,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_55_29_b9f74ee852.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308215/stingstitute/qygl3mp6hohes8ggbxvb.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_55_29_b9f74ee852",
@@ -2243,18 +1451,6 @@
                 "width": 4392,
                 "height": 2283,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.51.12.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 127,
-                    "size": 6.52,
-                    "sizeInBytes": 6516,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 15.51.12.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5",
@@ -2265,31 +1461,7 @@
                     "height": 520,
                     "size": 51.45,
                     "sizeInBytes": 51451,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.51.12.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 389,
-                    "size": 34.02,
-                    "sizeInBytes": 34020,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.51.12.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 260,
-                    "size": 19.3,
-                    "sizeInBytes": 19298,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_51_12_1050b0f1a5.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308213/stingstitute/nbbjopg5nqx9niylg7ow.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_51_12_1050b0f1a5",
@@ -2323,43 +1495,7 @@
                     "height": 490,
                     "size": 42.19,
                     "sizeInBytes": 42187,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_15_50_41_5008fb0931.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 15.50.41.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_15_50_41_5008fb0931",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 368,
-                    "size": 28.91,
-                    "sizeInBytes": 28911,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_15_50_41_5008fb0931.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 15.50.41.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_15_50_41_5008fb0931",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 245,
-                    "size": 15.88,
-                    "sizeInBytes": 15875,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_15_50_41_5008fb0931.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 15.50.41.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_15_50_41_5008fb0931",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 5.45,
-                    "sizeInBytes": 5451,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_15_50_41_5008fb0931.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308218/stingstitute/zldxgjvumcajwiso3iyj.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_15_50_41_5008fb0931",
@@ -2898,18 +2034,6 @@
                 "width": 1230,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans.jpg",
-                    "hash": "thumbnail_rotterdans_d791ec24b7",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.87,
-                    "sizeInBytes": 5870,
-                    "url": "/uploads/thumbnail_rotterdans_d791ec24b7.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans.jpg",
                     "hash": "large_rotterdans_d791ec24b7",
@@ -2920,31 +2044,7 @@
                     "height": 782,
                     "size": 57.07,
                     "sizeInBytes": 57067,
-                    "url": "/uploads/large_rotterdans_d791ec24b7.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans.jpg",
-                    "hash": "medium_rotterdans_d791ec24b7",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 587,
-                    "size": 40.3,
-                    "sizeInBytes": 40301,
-                    "url": "/uploads/medium_rotterdans_d791ec24b7.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans.jpg",
-                    "hash": "small_rotterdans_d791ec24b7",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 22.15,
-                    "sizeInBytes": 22154,
-                    "url": "/uploads/small_rotterdans_d791ec24b7.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308076/rotterdans/gp2aih3cwylgthqv5agc.jpg"
                   }
                 },
                 "hash": "rotterdans_d791ec24b7",
@@ -2972,42 +2072,6 @@
                 "width": 5162,
                 "height": 2517,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans10.jpg",
-                    "hash": "thumbnail_rotterdans10_14e1b1cab0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 119,
-                    "size": 4.62,
-                    "sizeInBytes": 4615,
-                    "url": "/uploads/thumbnail_rotterdans10_14e1b1cab0.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans10.jpg",
-                    "hash": "medium_rotterdans10_14e1b1cab0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 366,
-                    "size": 24.46,
-                    "sizeInBytes": 24460,
-                    "url": "/uploads/medium_rotterdans10_14e1b1cab0.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans10.jpg",
-                    "hash": "small_rotterdans10_14e1b1cab0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 243,
-                    "size": 13.16,
-                    "sizeInBytes": 13155,
-                    "url": "/uploads/small_rotterdans10_14e1b1cab0.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans10.jpg",
                     "hash": "large_rotterdans10_14e1b1cab0",
@@ -3018,7 +2082,7 @@
                     "height": 488,
                     "size": 36.53,
                     "sizeInBytes": 36530,
-                    "url": "/uploads/large_rotterdans10_14e1b1cab0.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308100/rotterdans/pf6nyjxadfptakfvwp82.jpg"
                   }
                 },
                 "hash": "rotterdans10_14e1b1cab0",
@@ -3042,42 +2106,6 @@
                 "width": 3846,
                 "height": 2448,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans6.jpg",
-                    "hash": "thumbnail_rotterdans6_ff356b4592",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 156,
-                    "size": 8.5,
-                    "sizeInBytes": 8498,
-                    "url": "/uploads/thumbnail_rotterdans6_ff356b4592.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans6.jpg",
-                    "hash": "medium_rotterdans6_ff356b4592",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 478,
-                    "size": 52.04,
-                    "sizeInBytes": 52037,
-                    "url": "/uploads/medium_rotterdans6_ff356b4592.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans6.jpg",
-                    "hash": "small_rotterdans6_ff356b4592",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 318,
-                    "size": 26.79,
-                    "sizeInBytes": 26788,
-                    "url": "/uploads/small_rotterdans6_ff356b4592.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans6.jpg",
                     "hash": "large_rotterdans6_ff356b4592",
@@ -3088,7 +2116,7 @@
                     "height": 637,
                     "size": 85.68,
                     "sizeInBytes": 85676,
-                    "url": "/uploads/large_rotterdans6_ff356b4592.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308099/rotterdans/hta8tt87b0dj4b9h5ljn.jpg"
                   }
                 },
                 "hash": "rotterdans6_ff356b4592",
@@ -3112,18 +2140,6 @@
                 "width": 1123,
                 "height": 2263,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_IMG_6204.jpg",
-                    "hash": "thumbnail_IMG_6204_d9170d3fac",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 77,
-                    "height": 156,
-                    "size": 2.6,
-                    "sizeInBytes": 2604,
-                    "url": "/uploads/thumbnail_IMG_6204_d9170d3fac.jpg"
-                  },
                   "large": {
                     "name": "large_IMG_6204.jpg",
                     "hash": "large_IMG_6204_d9170d3fac",
@@ -3134,31 +2150,7 @@
                     "height": 1000,
                     "size": 39.4,
                     "sizeInBytes": 39404,
-                    "url": "/uploads/large_IMG_6204_d9170d3fac.jpg"
-                  },
-                  "small": {
-                    "name": "small_IMG_6204.jpg",
-                    "hash": "small_IMG_6204_d9170d3fac",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 248,
-                    "height": 500,
-                    "size": 13.97,
-                    "sizeInBytes": 13973,
-                    "url": "/uploads/small_IMG_6204_d9170d3fac.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_IMG_6204.jpg",
-                    "hash": "medium_IMG_6204_d9170d3fac",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 372,
-                    "height": 750,
-                    "size": 25.53,
-                    "sizeInBytes": 25532,
-                    "url": "/uploads/medium_IMG_6204_d9170d3fac.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308085/rotterdans/iq2iazultplzvvm5xwnz.jpg"
                   }
                 },
                 "hash": "IMG_6204_d9170d3fac",
@@ -3182,42 +2174,6 @@
                 "width": 5162,
                 "height": 3441,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans8.jpg",
-                    "hash": "thumbnail_rotterdans8_6f2a03b49f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 234,
-                    "height": 156,
-                    "size": 14.15,
-                    "sizeInBytes": 14147,
-                    "url": "/uploads/thumbnail_rotterdans8_6f2a03b49f.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans8.jpg",
-                    "hash": "small_rotterdans8_6f2a03b49f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 333,
-                    "size": 53,
-                    "sizeInBytes": 52999,
-                    "url": "/uploads/small_rotterdans8_6f2a03b49f.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans8.jpg",
-                    "hash": "medium_rotterdans8_6f2a03b49f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 500,
-                    "size": 110.39,
-                    "sizeInBytes": 110392,
-                    "url": "/uploads/medium_rotterdans8_6f2a03b49f.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans8.jpg",
                     "hash": "large_rotterdans8_6f2a03b49f",
@@ -3228,7 +2184,7 @@
                     "height": 667,
                     "size": 177.07,
                     "sizeInBytes": 177065,
-                    "url": "/uploads/large_rotterdans8_6f2a03b49f.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308573/rotterdans/rjhys6qj1hxzobdo3dax.jpg"
                   }
                 },
                 "hash": "rotterdans8_6f2a03b49f",
@@ -3252,42 +2208,6 @@
                 "width": 2539,
                 "height": 1432,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans5.png",
-                    "hash": "thumbnail_rotterdans5_7a1039c134",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 245,
-                    "height": 138,
-                    "size": 31.66,
-                    "sizeInBytes": 31659,
-                    "url": "/uploads/thumbnail_rotterdans5_7a1039c134.png"
-                  },
-                  "small": {
-                    "name": "small_rotterdans5.png",
-                    "hash": "small_rotterdans5_7a1039c134",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 500,
-                    "height": 282,
-                    "size": 101.47,
-                    "sizeInBytes": 101468,
-                    "url": "/uploads/small_rotterdans5_7a1039c134.png"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans5.png",
-                    "hash": "medium_rotterdans5_7a1039c134",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 750,
-                    "height": 423,
-                    "size": 198.52,
-                    "sizeInBytes": 198521,
-                    "url": "/uploads/medium_rotterdans5_7a1039c134.png"
-                  },
                   "large": {
                     "name": "large_rotterdans5.png",
                     "hash": "large_rotterdans5_7a1039c134",
@@ -3298,7 +2218,7 @@
                     "height": 564,
                     "size": 324.49,
                     "sizeInBytes": 324485,
-                    "url": "/uploads/large_rotterdans5_7a1039c134.png"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308090/rotterdans/cbkulmj8iy1xjvgom10y.png"
                   }
                 },
                 "hash": "rotterdans5_7a1039c134",
@@ -3322,42 +2242,6 @@
                 "width": 2539,
                 "height": 1501,
                 "formats": {
-                  "medium": {
-                    "name": "medium_rotterdans4.jpg",
-                    "hash": "medium_rotterdans4_8e627badc3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 443,
-                    "size": 54.6,
-                    "sizeInBytes": 54595,
-                    "url": "/uploads/medium_rotterdans4_8e627badc3.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans4.jpg",
-                    "hash": "small_rotterdans4_8e627badc3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 296,
-                    "size": 26.99,
-                    "sizeInBytes": 26990,
-                    "url": "/uploads/small_rotterdans4_8e627badc3.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans4.jpg",
-                    "hash": "thumbnail_rotterdans4_8e627badc3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 145,
-                    "size": 8.14,
-                    "sizeInBytes": 8140,
-                    "url": "/uploads/thumbnail_rotterdans4_8e627badc3.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans4.jpg",
                     "hash": "large_rotterdans4_8e627badc3",
@@ -3368,7 +2252,7 @@
                     "height": 591,
                     "size": 86.65,
                     "sizeInBytes": 86654,
-                    "url": "/uploads/large_rotterdans4_8e627badc3.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308089/rotterdans/kux8kry6noxcyw7mgtyu.jpg"
                   }
                 },
                 "hash": "rotterdans4_8e627badc3",
@@ -3392,42 +2276,6 @@
                 "width": 2539,
                 "height": 3020,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans9.jpg",
-                    "hash": "thumbnail_rotterdans9_039b760bbd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 131,
-                    "height": 156,
-                    "size": 6.2,
-                    "sizeInBytes": 6202,
-                    "url": "/uploads/thumbnail_rotterdans9_039b760bbd.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans9.jpg",
-                    "hash": "small_rotterdans9_039b760bbd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 420,
-                    "height": 500,
-                    "size": 41.75,
-                    "sizeInBytes": 41746,
-                    "url": "/uploads/small_rotterdans9_039b760bbd.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans9.jpg",
-                    "hash": "medium_rotterdans9_039b760bbd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 630,
-                    "height": 750,
-                    "size": 84.07,
-                    "sizeInBytes": 84067,
-                    "url": "/uploads/medium_rotterdans9_039b760bbd.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans9.jpg",
                     "hash": "large_rotterdans9_039b760bbd",
@@ -3438,7 +2286,7 @@
                     "height": 1000,
                     "size": 134.23,
                     "sizeInBytes": 134227,
-                    "url": "/uploads/large_rotterdans9_039b760bbd.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308102/rotterdans/i42wcoczabwivkztalt2.jpg"
                   }
                 },
                 "hash": "rotterdans9_039b760bbd",
@@ -3462,42 +2310,6 @@
                 "width": 1196,
                 "height": 2769,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans7.png",
-                    "hash": "thumbnail_rotterdans7_a84b5c0130",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 67,
-                    "height": 156,
-                    "size": 21.01,
-                    "sizeInBytes": 21007,
-                    "url": "/uploads/thumbnail_rotterdans7_a84b5c0130.png"
-                  },
-                  "small": {
-                    "name": "small_rotterdans7.png",
-                    "hash": "small_rotterdans7_a84b5c0130",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 216,
-                    "height": 500,
-                    "size": 138.68,
-                    "sizeInBytes": 138676,
-                    "url": "/uploads/small_rotterdans7_a84b5c0130.png"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans7.png",
-                    "hash": "medium_rotterdans7_a84b5c0130",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 324,
-                    "height": 750,
-                    "size": 271.48,
-                    "sizeInBytes": 271481,
-                    "url": "/uploads/medium_rotterdans7_a84b5c0130.png"
-                  },
                   "large": {
                     "name": "large_rotterdans7.png",
                     "hash": "large_rotterdans7_a84b5c0130",
@@ -3508,7 +2320,7 @@
                     "height": 1000,
                     "size": 440.81,
                     "sizeInBytes": 440806,
-                    "url": "/uploads/large_rotterdans7_a84b5c0130.png"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308091/rotterdans/mhz3rj7ay3eynajmuumt.png"
                   }
                 },
                 "hash": "rotterdans7_a84b5c0130",
@@ -3532,30 +2344,6 @@
                 "width": 3713,
                 "height": 2769,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_rotterdans3.jpg",
-                    "hash": "thumbnail_rotterdans3_667cbcf726",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 209,
-                    "height": 156,
-                    "size": 8.26,
-                    "sizeInBytes": 8255,
-                    "url": "/uploads/thumbnail_rotterdans3_667cbcf726.jpg"
-                  },
-                  "small": {
-                    "name": "small_rotterdans3.jpg",
-                    "hash": "small_rotterdans3_667cbcf726",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 373,
-                    "size": 33.34,
-                    "sizeInBytes": 33343,
-                    "url": "/uploads/small_rotterdans3_667cbcf726.jpg"
-                  },
                   "large": {
                     "name": "large_rotterdans3.jpg",
                     "hash": "large_rotterdans3_667cbcf726",
@@ -3566,19 +2354,7 @@
                     "height": 746,
                     "size": 108.43,
                     "sizeInBytes": 108428,
-                    "url": "/uploads/large_rotterdans3_667cbcf726.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_rotterdans3.jpg",
-                    "hash": "medium_rotterdans3_667cbcf726",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 559,
-                    "size": 66.28,
-                    "sizeInBytes": 66280,
-                    "url": "/uploads/medium_rotterdans3_667cbcf726.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308098/rotterdans/wgd0cjakztlqhi0ks1em.jpg"
                   }
                 },
                 "hash": "rotterdans3_667cbcf726",
@@ -3883,18 +2659,6 @@
                 "width": 1232,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_equalmelodies.jpg",
-                    "hash": "thumbnail_equalmelodies_2b173f41ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 6.03,
-                    "sizeInBytes": 6033,
-                    "url": "/uploads/thumbnail_equalmelodies_2b173f41ee.jpg"
-                  },
                   "large": {
                     "name": "large_equalmelodies.jpg",
                     "hash": "large_equalmelodies_2b173f41ee",
@@ -3905,31 +2669,7 @@
                     "height": 781,
                     "size": 62.54,
                     "sizeInBytes": 62544,
-                    "url": "/uploads/large_equalmelodies_2b173f41ee.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_equalmelodies.jpg",
-                    "hash": "medium_equalmelodies_2b173f41ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 42.54,
-                    "sizeInBytes": 42541,
-                    "url": "/uploads/medium_equalmelodies_2b173f41ee.jpg"
-                  },
-                  "small": {
-                    "name": "small_equalmelodies.jpg",
-                    "hash": "small_equalmelodies_2b173f41ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 390,
-                    "size": 24.01,
-                    "sizeInBytes": 24009,
-                    "url": "/uploads/small_equalmelodies_2b173f41ee.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307880/equalmelodies/mf3jgtg83ncqdd4wi39l.jpg"
                   }
                 },
                 "hash": "equalmelodies_2b173f41ee",
@@ -3957,42 +2697,6 @@
                 "width": 5162,
                 "height": 3353,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus3.jpg",
-                    "hash": "thumbnail_lotus3_7f617223d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 240,
-                    "height": 156,
-                    "size": 6.51,
-                    "sizeInBytes": 6506,
-                    "url": "/uploads/thumbnail_lotus3_7f617223d3.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_lotus3.jpg",
-                    "hash": "medium_lotus3_7f617223d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 487,
-                    "size": 32.15,
-                    "sizeInBytes": 32148,
-                    "url": "/uploads/medium_lotus3_7f617223d3.jpg"
-                  },
-                  "small": {
-                    "name": "small_lotus3.jpg",
-                    "hash": "small_lotus3_7f617223d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 325,
-                    "size": 18.42,
-                    "sizeInBytes": 18416,
-                    "url": "/uploads/small_lotus3_7f617223d3.jpg"
-                  },
                   "large": {
                     "name": "large_lotus3.jpg",
                     "hash": "large_lotus3_7f617223d3",
@@ -4003,7 +2707,7 @@
                     "height": 650,
                     "size": 46.62,
                     "sizeInBytes": 46619,
-                    "url": "/uploads/large_lotus3_7f617223d3.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307892/equalmelodies/sa6de33ksmtaedyfq3kk.jpg"
                   }
                 },
                 "hash": "lotus3_7f617223d3",
@@ -4027,18 +2731,6 @@
                 "width": 2891,
                 "height": 1969,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus5.jpg",
-                    "hash": "thumbnail_lotus5_9147eb00ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 229,
-                    "height": 156,
-                    "size": 6,
-                    "sizeInBytes": 5996,
-                    "url": "/uploads/thumbnail_lotus5_9147eb00ee.jpg"
-                  },
                   "large": {
                     "name": "large_lotus5.jpg",
                     "hash": "large_lotus5_9147eb00ee",
@@ -4049,31 +2741,7 @@
                     "height": 681,
                     "size": 43.92,
                     "sizeInBytes": 43916,
-                    "url": "/uploads/large_lotus5_9147eb00ee.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_lotus5.jpg",
-                    "hash": "medium_lotus5_9147eb00ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 511,
-                    "size": 29.9,
-                    "sizeInBytes": 29901,
-                    "url": "/uploads/medium_lotus5_9147eb00ee.jpg"
-                  },
-                  "small": {
-                    "name": "small_lotus5.jpg",
-                    "hash": "small_lotus5_9147eb00ee",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 341,
-                    "size": 17.49,
-                    "sizeInBytes": 17491,
-                    "url": "/uploads/small_lotus5_9147eb00ee.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726314134/equalmelodies/at5rcwysgonbcld9gomx.jpg"
                   }
                 },
                 "hash": "lotus5_9147eb00ee",
@@ -4097,42 +2765,6 @@
                 "width": 964,
                 "height": 1969,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus1.png",
-                    "hash": "thumbnail_lotus1_ba3bf93bb3",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 76,
-                    "height": 156,
-                    "size": 14.14,
-                    "sizeInBytes": 14142,
-                    "url": "/uploads/thumbnail_lotus1_ba3bf93bb3.png"
-                  },
-                  "medium": {
-                    "name": "medium_lotus1.png",
-                    "hash": "medium_lotus1_ba3bf93bb3",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 367,
-                    "height": 750,
-                    "size": 125.37,
-                    "sizeInBytes": 125368,
-                    "url": "/uploads/medium_lotus1_ba3bf93bb3.png"
-                  },
-                  "small": {
-                    "name": "small_lotus1.png",
-                    "hash": "small_lotus1_ba3bf93bb3",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 245,
-                    "height": 500,
-                    "size": 69.94,
-                    "sizeInBytes": 69942,
-                    "url": "/uploads/small_lotus1_ba3bf93bb3.png"
-                  },
                   "large": {
                     "name": "large_lotus1.png",
                     "hash": "large_lotus1_ba3bf93bb3",
@@ -4143,7 +2775,7 @@
                     "height": 1000,
                     "size": 191.77,
                     "sizeInBytes": 191774,
-                    "url": "/uploads/large_lotus1_ba3bf93bb3.png"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307889/equalmelodies/zlgjltfuhi6dqfblsd3y.png"
                   }
                 },
                 "hash": "lotus1_ba3bf93bb3",
@@ -4167,42 +2799,6 @@
                 "width": 923,
                 "height": 1969,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus2.png",
-                    "hash": "thumbnail_lotus2_b55138e8dd",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 73,
-                    "height": 156,
-                    "size": 13.42,
-                    "sizeInBytes": 13418,
-                    "url": "/uploads/thumbnail_lotus2_b55138e8dd.png"
-                  },
-                  "medium": {
-                    "name": "medium_lotus2.png",
-                    "hash": "medium_lotus2_b55138e8dd",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 352,
-                    "height": 750,
-                    "size": 127.48,
-                    "sizeInBytes": 127477,
-                    "url": "/uploads/medium_lotus2_b55138e8dd.png"
-                  },
-                  "small": {
-                    "name": "small_lotus2.png",
-                    "hash": "small_lotus2_b55138e8dd",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 234,
-                    "height": 500,
-                    "size": 70.42,
-                    "sizeInBytes": 70423,
-                    "url": "/uploads/small_lotus2_b55138e8dd.png"
-                  },
                   "large": {
                     "name": "large_lotus2.png",
                     "hash": "large_lotus2_b55138e8dd",
@@ -4213,7 +2809,7 @@
                     "height": 1000,
                     "size": 198.5,
                     "sizeInBytes": 198500,
-                    "url": "/uploads/large_lotus2_b55138e8dd.png"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307889/equalmelodies/tjsocxbuwm4omvzpsdgq.png"
                   }
                 },
                 "hash": "lotus2_b55138e8dd",
@@ -4237,42 +2833,6 @@
                 "width": 2124,
                 "height": 1849,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus4.jpg",
-                    "hash": "thumbnail_lotus4_1469dd48eb",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 179,
-                    "height": 156,
-                    "size": 6.9,
-                    "sizeInBytes": 6901,
-                    "url": "/uploads/thumbnail_lotus4_1469dd48eb.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_lotus4.jpg",
-                    "hash": "medium_lotus4_1469dd48eb",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 653,
-                    "size": 59.92,
-                    "sizeInBytes": 59915,
-                    "url": "/uploads/medium_lotus4_1469dd48eb.jpg"
-                  },
-                  "small": {
-                    "name": "small_lotus4.jpg",
-                    "hash": "small_lotus4_1469dd48eb",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 435,
-                    "size": 33.44,
-                    "sizeInBytes": 33435,
-                    "url": "/uploads/small_lotus4_1469dd48eb.jpg"
-                  },
                   "large": {
                     "name": "large_lotus4.jpg",
                     "hash": "large_lotus4_1469dd48eb",
@@ -4283,7 +2843,7 @@
                     "height": 871,
                     "size": 87.45,
                     "sizeInBytes": 87450,
-                    "url": "/uploads/large_lotus4_1469dd48eb.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307892/equalmelodies/nhjbcdx4d312cfqp8eio.jpg"
                   }
                 },
                 "hash": "lotus4_1469dd48eb",
@@ -4307,18 +2867,6 @@
                 "width": 2844,
                 "height": 1845,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_lotus6.jpg",
-                    "hash": "thumbnail_lotus6_4946a14325",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 241,
-                    "height": 156,
-                    "size": 6.02,
-                    "sizeInBytes": 6016,
-                    "url": "/uploads/thumbnail_lotus6_4946a14325.jpg"
-                  },
                   "large": {
                     "name": "large_lotus6.jpg",
                     "hash": "large_lotus6_4946a14325",
@@ -4329,31 +2877,7 @@
                     "height": 649,
                     "size": 43.02,
                     "sizeInBytes": 43023,
-                    "url": "/uploads/large_lotus6_4946a14325.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_lotus6.jpg",
-                    "hash": "medium_lotus6_4946a14325",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 486,
-                    "size": 30.54,
-                    "sizeInBytes": 30535,
-                    "url": "/uploads/medium_lotus6_4946a14325.jpg"
-                  },
-                  "small": {
-                    "name": "small_lotus6.jpg",
-                    "hash": "small_lotus6_4946a14325",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 324,
-                    "size": 16.84,
-                    "sizeInBytes": 16840,
-                    "url": "/uploads/small_lotus6_4946a14325.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307893/equalmelodies/idy9tjki9j2lvzkkd6cn.jpg"
                   }
                 },
                 "hash": "lotus6_4946a14325",
@@ -4387,43 +2911,7 @@
                     "height": 450,
                     "size": 24.24,
                     "sizeInBytes": 24244,
-                    "url": "/uploads/large_lotus7_a96fc49bb2.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_lotus7.jpg",
-                    "hash": "medium_lotus7_a96fc49bb2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 337,
-                    "size": 16.59,
-                    "sizeInBytes": 16588,
-                    "url": "/uploads/medium_lotus7_a96fc49bb2.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_lotus7.jpg",
-                    "hash": "thumbnail_lotus7_a96fc49bb2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 110,
-                    "size": 3.69,
-                    "sizeInBytes": 3692,
-                    "url": "/uploads/thumbnail_lotus7_a96fc49bb2.jpg"
-                  },
-                  "small": {
-                    "name": "small_lotus7.jpg",
-                    "hash": "small_lotus7_a96fc49bb2",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 225,
-                    "size": 9.73,
-                    "sizeInBytes": 9733,
-                    "url": "/uploads/small_lotus7_a96fc49bb2.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307895/equalmelodies/pp97l0qyo29mlgn76qvf.jpg"
                   }
                 },
                 "hash": "lotus7_a96fc49bb2",
@@ -4609,42 +3097,6 @@
                 "width": 1231,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_reactartistique.jpg",
-                    "hash": "thumbnail_reactartistique_014b82d0de",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 9.63,
-                    "sizeInBytes": 9627,
-                    "url": "/uploads/thumbnail_reactartistique_014b82d0de.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_reactartistique.jpg",
-                    "hash": "medium_reactartistique_014b82d0de",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 59.02,
-                    "sizeInBytes": 59023,
-                    "url": "/uploads/medium_reactartistique_014b82d0de.jpg"
-                  },
-                  "small": {
-                    "name": "small_reactartistique.jpg",
-                    "hash": "small_reactartistique_014b82d0de",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 35.72,
-                    "sizeInBytes": 35715,
-                    "url": "/uploads/small_reactartistique_014b82d0de.jpg"
-                  },
                   "large": {
                     "name": "large_reactartistique.jpg",
                     "hash": "large_reactartistique_014b82d0de",
@@ -4655,7 +3107,7 @@
                     "height": 781,
                     "size": 81.96,
                     "sizeInBytes": 81955,
-                    "url": "/uploads/large_reactartistique_014b82d0de.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307982/reactartistique/cmfthg8jo4faav9bbgxb.jpg"
                   }
                 },
                 "hash": "reactartistique_014b82d0de",
@@ -4687,7 +3139,7 @@
                 "ext": ".mov",
                 "mime": "video/quicktime",
                 "size": 9279.52,
-                "url": "/uploads/Screen_Recording_2024_08_12_at_15_16_56_2f3b2ba817.mov",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726308015/reactartistique/zgdictt4am4jolkpq1nb.mov",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -4708,7 +3160,7 @@
                 "ext": ".mov",
                 "mime": "video/quicktime",
                 "size": 9859.22,
-                "url": "/uploads/Screen_Recording_2024_08_12_at_15_11_25_eb0773dfa8.mov",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726308009/reactartistique/ddhgklcfqrmflkp2jfvp.mov",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -4729,7 +3181,7 @@
                 "ext": ".mov",
                 "mime": "video/quicktime",
                 "size": 35106.65,
-                "url": "/uploads/Screen_Recording_2024_08_12_at_15_10_03_943e805027.mov",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726308051/reactartistique/t76koixqqgu4q6c9fwer.mov",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -4750,7 +3202,7 @@
                 "ext": ".mov",
                 "mime": "video/quicktime",
                 "size": 2584.47,
-                "url": "/uploads/Screen_Recording_2024_08_12_at_15_09_27_2e7a6cd41d.mov",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726307993/reactartistique/tk3hazaj161pa0ghapvo.mov",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -4771,7 +3223,7 @@
                 "ext": ".mov",
                 "mime": "video/quicktime",
                 "size": 34273.04,
-                "url": "/uploads/Screen_Recording_2024_08_12_at_15_08_32_2ea2c64bb4.mov",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726308041/reactartistique/mvskopjpjdgvge5zxj5e.mov",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -4904,18 +3356,6 @@
                 "width": 1231,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_dishknob.jpg",
-                    "hash": "thumbnail_dishknob_037b049a4c",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 3.14,
-                    "sizeInBytes": 3144,
-                    "url": "/uploads/thumbnail_dishknob_037b049a4c.jpg"
-                  },
                   "large": {
                     "name": "large_dishknob.jpg",
                     "hash": "large_dishknob_037b049a4c",
@@ -4926,31 +3366,7 @@
                     "height": 781,
                     "size": 28.81,
                     "sizeInBytes": 28809,
-                    "url": "/uploads/large_dishknob_037b049a4c.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_dishknob.jpg",
-                    "hash": "medium_dishknob_037b049a4c",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 19.85,
-                    "sizeInBytes": 19849,
-                    "url": "/uploads/medium_dishknob_037b049a4c.jpg"
-                  },
-                  "small": {
-                    "name": "small_dishknob.jpg",
-                    "hash": "small_dishknob_037b049a4c",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 11.44,
-                    "sizeInBytes": 11438,
-                    "url": "/uploads/small_dishknob_037b049a4c.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307764/dishknob/dx1q4gs7naapvki45wv5.jpg"
                   }
                 },
                 "hash": "dishknob_037b049a4c",
@@ -4982,7 +3398,7 @@
                 "ext": ".mp4",
                 "mime": "video/mp4",
                 "size": 18176.7,
-                "url": "/uploads/main_d8e3c067bd.mp4",
+                "url": "https://res.cloudinary.com/dbdwf6s2v/video/upload/v1726307836/dishknob/qy3xhnoaqasgh9ruwr2q.mp4",
                 "previewUrl": null,
                 "provider": "local",
                 "provider_metadata": null,
@@ -5190,42 +3606,6 @@
                 "width": 1231,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_trimcraft.jpg",
-                    "hash": "thumbnail_trimcraft_231505cdf8",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 6.29,
-                    "sizeInBytes": 6290,
-                    "url": "/uploads/thumbnail_trimcraft_231505cdf8.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_trimcraft.jpg",
-                    "hash": "medium_trimcraft_231505cdf8",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 55.11,
-                    "sizeInBytes": 55107,
-                    "url": "/uploads/medium_trimcraft_231505cdf8.jpg"
-                  },
-                  "small": {
-                    "name": "small_trimcraft.jpg",
-                    "hash": "small_trimcraft_231505cdf8",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 28.98,
-                    "sizeInBytes": 28979,
-                    "url": "/uploads/small_trimcraft_231505cdf8.jpg"
-                  },
                   "large": {
                     "name": "large_trimcraft.jpg",
                     "hash": "large_trimcraft_231505cdf8",
@@ -5236,7 +3616,7 @@
                     "height": 781,
                     "size": 87.11,
                     "sizeInBytes": 87106,
-                    "url": "/uploads/large_trimcraft_231505cdf8.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308314/trimcraft/bjutq6fsfthuzyur1c3g.jpg"
                   }
                 },
                 "hash": "trimcraft_231505cdf8",
@@ -5264,18 +3644,6 @@
                 "width": 5162,
                 "height": 2539,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 22.48.30.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_22_48_30_ded639c277",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 4.8,
-                    "sizeInBytes": 4804,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_22_48_30_ded639c277.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 22.48.30.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_22_48_30_ded639c277",
@@ -5286,31 +3654,7 @@
                     "height": 491,
                     "size": 46.2,
                     "sizeInBytes": 46198,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_22_48_30_ded639c277.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 22.48.30.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_22_48_30_ded639c277",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 246,
-                    "size": 14.64,
-                    "sizeInBytes": 14639,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_22_48_30_ded639c277.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 22.48.30.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_22_48_30_ded639c277",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 369,
-                    "size": 29.34,
-                    "sizeInBytes": 29340,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_22_48_30_ded639c277.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308311/trimcraft/ykkgrjk3eobsp9w4fjol.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_22_48_30_ded639c277",
@@ -5334,30 +3678,6 @@
                 "width": 2489,
                 "height": 1228,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 22.48.46.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 4.71,
-                    "sizeInBytes": 4709,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 22.48.46.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 247,
-                    "size": 14.61,
-                    "sizeInBytes": 14609,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 22.48.46.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9",
@@ -5368,19 +3688,7 @@
                     "height": 493,
                     "size": 46.83,
                     "sizeInBytes": 46832,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 22.48.46.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 370,
-                    "size": 28.52,
-                    "sizeInBytes": 28522,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_22_48_46_a1a6baaca9.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308304/trimcraft/mdomeprlqycvpjtofoia.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_22_48_46_a1a6baaca9",
@@ -5404,42 +3712,6 @@
                 "width": 2480,
                 "height": 1224,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 22.48.36.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_22_48_36_0622df99a6",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 5.41,
-                    "sizeInBytes": 5410,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_22_48_36_0622df99a6.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 22.48.36.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_22_48_36_0622df99a6",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 247,
-                    "size": 17.42,
-                    "sizeInBytes": 17422,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_22_48_36_0622df99a6.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 22.48.36.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_22_48_36_0622df99a6",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 370,
-                    "size": 33.75,
-                    "sizeInBytes": 33746,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_22_48_36_0622df99a6.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 22.48.36.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_22_48_36_0622df99a6",
@@ -5450,7 +3722,7 @@
                     "height": 494,
                     "size": 53.18,
                     "sizeInBytes": 53182,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_22_48_36_0622df99a6.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308305/trimcraft/qkncd4oe4gjvvwjmpymq.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_22_48_36_0622df99a6",
@@ -5474,42 +3746,6 @@
                 "width": 2489,
                 "height": 1228,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 22.48.50.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 5.15,
-                    "sizeInBytes": 5147,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 22.48.50.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 247,
-                    "size": 14.47,
-                    "sizeInBytes": 14465,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 22.48.50.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 370,
-                    "size": 24.78,
-                    "sizeInBytes": 24783,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-22 at 22.48.50.jpg",
                     "hash": "large_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab",
@@ -5520,7 +3756,7 @@
                     "height": 493,
                     "size": 37.98,
                     "sizeInBytes": 37984,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_22_48_50_7e1ca213ab.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308304/trimcraft/a9g2rxt3ljttqgzd6vsq.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_22_48_50_7e1ca213ab",
@@ -5554,43 +3790,7 @@
                     "height": 494,
                     "size": 14.31,
                     "sizeInBytes": 14309,
-                    "url": "/uploads/large_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-22 at 22.49.01 1.jpg",
-                    "hash": "medium_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 370,
-                    "size": 9.44,
-                    "sizeInBytes": 9441,
-                    "url": "/uploads/medium_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-22 at 22.49.01 1.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 2.06,
-                    "sizeInBytes": 2061,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-22 at 22.49.01 1.jpg",
-                    "hash": "small_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 247,
-                    "size": 5.11,
-                    "sizeInBytes": 5112,
-                    "url": "/uploads/small_Screenshot_2024_08_22_at_22_49_01_1_da47affbc0.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308304/trimcraft/oe855upvrzhdlkjn3abq.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_22_at_22_49_01_1_da47affbc0",
@@ -5793,30 +3993,6 @@
                 "width": 1231,
                 "height": 962,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_smashabutton.jpg",
-                    "hash": "thumbnail_smashabutton_f5c15f17cd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.18,
-                    "sizeInBytes": 5177,
-                    "url": "/uploads/thumbnail_smashabutton_f5c15f17cd.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_smashabutton.jpg",
-                    "hash": "medium_smashabutton_f5c15f17cd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 25.33,
-                    "sizeInBytes": 25326,
-                    "url": "/uploads/medium_smashabutton_f5c15f17cd.jpg"
-                  },
                   "large": {
                     "name": "large_smashabutton.jpg",
                     "hash": "large_smashabutton_f5c15f17cd",
@@ -5827,19 +4003,7 @@
                     "height": 781,
                     "size": 35.32,
                     "sizeInBytes": 35316,
-                    "url": "/uploads/large_smashabutton_f5c15f17cd.jpg"
-                  },
-                  "small": {
-                    "name": "small_smashabutton.jpg",
-                    "hash": "small_smashabutton_f5c15f17cd",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 15.88,
-                    "sizeInBytes": 15875,
-                    "url": "/uploads/small_smashabutton_f5c15f17cd.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726314906/smashabutton/i2mvyvuzx93b3cllp9dm.jpg"
                   }
                 },
                 "hash": "smashabutton_f5c15f17cd",
@@ -5867,18 +4031,6 @@
                 "width": 3840,
                 "height": 2160,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_910EF88A-E879-4570-91BB-7DC1A4FE3F09 2.JPG",
-                    "hash": "thumbnail_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30",
-                    "ext": ".JPG",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 138,
-                    "size": 10.46,
-                    "sizeInBytes": 10463,
-                    "url": "/uploads/thumbnail_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30.JPG"
-                  },
                   "large": {
                     "name": "large_910EF88A-E879-4570-91BB-7DC1A4FE3F09 2.JPG",
                     "hash": "large_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30",
@@ -5889,31 +4041,7 @@
                     "height": 563,
                     "size": 105.77,
                     "sizeInBytes": 105773,
-                    "url": "/uploads/large_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30.JPG"
-                  },
-                  "small": {
-                    "name": "small_910EF88A-E879-4570-91BB-7DC1A4FE3F09 2.JPG",
-                    "hash": "small_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30",
-                    "ext": ".JPG",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 281,
-                    "size": 33.93,
-                    "sizeInBytes": 33934,
-                    "url": "/uploads/small_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30.JPG"
-                  },
-                  "medium": {
-                    "name": "medium_910EF88A-E879-4570-91BB-7DC1A4FE3F09 2.JPG",
-                    "hash": "medium_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30",
-                    "ext": ".JPG",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 422,
-                    "size": 64.96,
-                    "sizeInBytes": 64958,
-                    "url": "/uploads/medium_910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30.JPG"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308150/smashabutton/h0u7u8yr66wxbpcm6hdv.jpg"
                   }
                 },
                 "hash": "910_EF_88_A_E879_4570_91_BB_7_DC_1_A4_FE_3_F09_2_ba2fcc3d30",
@@ -5937,42 +4065,6 @@
                 "width": 4032,
                 "height": 3024,
                 "formats": {
-                  "small": {
-                    "name": "small_IMG_2188.jpg",
-                    "hash": "small_IMG_2188_03dce31e68",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 375,
-                    "size": 33,
-                    "sizeInBytes": 32998,
-                    "url": "/uploads/small_IMG_2188_03dce31e68.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_IMG_2188.jpg",
-                    "hash": "medium_IMG_2188_03dce31e68",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 563,
-                    "size": 63.76,
-                    "sizeInBytes": 63757,
-                    "url": "/uploads/medium_IMG_2188_03dce31e68.jpg"
-                  },
-                  "thumbnail": {
-                    "name": "thumbnail_IMG_2188.jpg",
-                    "hash": "thumbnail_IMG_2188_03dce31e68",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 208,
-                    "height": 156,
-                    "size": 8.17,
-                    "sizeInBytes": 8171,
-                    "url": "/uploads/thumbnail_IMG_2188_03dce31e68.jpg"
-                  },
                   "large": {
                     "name": "large_IMG_2188.jpg",
                     "hash": "large_IMG_2188_03dce31e68",
@@ -5983,7 +4075,7 @@
                     "height": 750,
                     "size": 103.5,
                     "sizeInBytes": 103499,
-                    "url": "/uploads/large_IMG_2188_03dce31e68.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726308148/smashabutton/kiy9g9lb7urrrlw4pxee.jpg"
                   }
                 },
                 "hash": "IMG_2188_03dce31e68",
@@ -6166,18 +4258,6 @@
                 "width": 1229,
                 "height": 960,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_chessbase.jpg",
-                    "hash": "thumbnail_chessbase_6ca6192569",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.73,
-                    "sizeInBytes": 5725,
-                    "url": "/uploads/thumbnail_chessbase_6ca6192569.jpg"
-                  },
                   "large": {
                     "name": "large_chessbase.jpg",
                     "hash": "large_chessbase_6ca6192569",
@@ -6188,31 +4268,7 @@
                     "height": 781,
                     "size": 38.34,
                     "sizeInBytes": 38336,
-                    "url": "/uploads/large_chessbase_6ca6192569.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_chessbase.jpg",
-                    "hash": "medium_chessbase_6ca6192569",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 27.75,
-                    "sizeInBytes": 27745,
-                    "url": "/uploads/medium_chessbase_6ca6192569.jpg"
-                  },
-                  "small": {
-                    "name": "small_chessbase.jpg",
-                    "hash": "small_chessbase_6ca6192569",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 17.4,
-                    "sizeInBytes": 17403,
-                    "url": "/uploads/small_chessbase_6ca6192569.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307714/chessbase/l9fkfjumtccotawwoias.jpg"
                   }
                 },
                 "hash": "chessbase_6ca6192569",
@@ -6240,42 +4296,6 @@
                 "width": 5162,
                 "height": 2542,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-23 at 16.28.49.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_23_at_16_28_49_b015b21f1f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 11.51,
-                    "sizeInBytes": 11514,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_23_at_16_28_49_b015b21f1f.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-23 at 16.28.49.jpg",
-                    "hash": "medium_Screenshot_2024_08_23_at_16_28_49_b015b21f1f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 369,
-                    "size": 57.91,
-                    "sizeInBytes": 57909,
-                    "url": "/uploads/medium_Screenshot_2024_08_23_at_16_28_49_b015b21f1f.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-23 at 16.28.49.jpg",
-                    "hash": "small_Screenshot_2024_08_23_at_16_28_49_b015b21f1f",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 246,
-                    "size": 32.2,
-                    "sizeInBytes": 32199,
-                    "url": "/uploads/small_Screenshot_2024_08_23_at_16_28_49_b015b21f1f.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-23 at 16.28.49.jpg",
                     "hash": "large_Screenshot_2024_08_23_at_16_28_49_b015b21f1f",
@@ -6286,7 +4306,7 @@
                     "height": 492,
                     "size": 82.23,
                     "sizeInBytes": 82230,
-                    "url": "/uploads/large_Screenshot_2024_08_23_at_16_28_49_b015b21f1f.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307725/chessbase/qc2qkaelfzrvxsucnkil.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_23_at_16_28_49_b015b21f1f",
@@ -6310,42 +4330,6 @@
                 "width": 2482,
                 "height": 1225,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-23 at 16.29.23.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_23_at_16_29_23_e52de296c5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 10.45,
-                    "sizeInBytes": 10453,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_23_at_16_29_23_e52de296c5.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-23 at 16.29.23.jpg",
-                    "hash": "small_Screenshot_2024_08_23_at_16_29_23_e52de296c5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 247,
-                    "size": 32.46,
-                    "sizeInBytes": 32458,
-                    "url": "/uploads/small_Screenshot_2024_08_23_at_16_29_23_e52de296c5.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-23 at 16.29.23.jpg",
-                    "hash": "medium_Screenshot_2024_08_23_at_16_29_23_e52de296c5",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 370,
-                    "size": 54.18,
-                    "sizeInBytes": 54179,
-                    "url": "/uploads/medium_Screenshot_2024_08_23_at_16_29_23_e52de296c5.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-23 at 16.29.23.jpg",
                     "hash": "large_Screenshot_2024_08_23_at_16_29_23_e52de296c5",
@@ -6356,7 +4340,7 @@
                     "height": 494,
                     "size": 78.15,
                     "sizeInBytes": 78149,
-                    "url": "/uploads/large_Screenshot_2024_08_23_at_16_29_23_e52de296c5.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307722/chessbase/dgzgdht8jlhck3nhkcf7.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_23_at_16_29_23_e52de296c5",
@@ -6380,42 +4364,6 @@
                 "width": 2487,
                 "height": 1225,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-23 at 16.29.06.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 121,
-                    "size": 5,
-                    "sizeInBytes": 4999,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-23 at 16.29.06.jpg",
-                    "hash": "medium_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 369,
-                    "size": 26.41,
-                    "sizeInBytes": 26412,
-                    "url": "/uploads/medium_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-23 at 16.29.06.jpg",
-                    "hash": "small_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 246,
-                    "size": 14.9,
-                    "sizeInBytes": 14897,
-                    "url": "/uploads/small_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-23 at 16.29.06.jpg",
                     "hash": "large_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3",
@@ -6426,7 +4374,7 @@
                     "height": 493,
                     "size": 41.49,
                     "sizeInBytes": 41488,
-                    "url": "/uploads/large_Screenshot_2024_08_23_at_16_29_06_ba265ef0d3.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307721/chessbase/quymj0l9f7oimowahdut.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_23_at_16_29_06_ba265ef0d3",
@@ -6450,18 +4398,6 @@
                 "width": 5162,
                 "height": 2542,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_Screenshot 2024-08-23 at 16.29.11.jpg",
-                    "hash": "thumbnail_Screenshot_2024_08_23_at_16_29_11_7d6c33675e",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 245,
-                    "height": 120,
-                    "size": 5.92,
-                    "sizeInBytes": 5920,
-                    "url": "/uploads/thumbnail_Screenshot_2024_08_23_at_16_29_11_7d6c33675e.jpg"
-                  },
                   "large": {
                     "name": "large_Screenshot 2024-08-23 at 16.29.11.jpg",
                     "hash": "large_Screenshot_2024_08_23_at_16_29_11_7d6c33675e",
@@ -6472,31 +4408,7 @@
                     "height": 492,
                     "size": 41.59,
                     "sizeInBytes": 41594,
-                    "url": "/uploads/large_Screenshot_2024_08_23_at_16_29_11_7d6c33675e.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_Screenshot 2024-08-23 at 16.29.11.jpg",
-                    "hash": "medium_Screenshot_2024_08_23_at_16_29_11_7d6c33675e",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 369,
-                    "size": 29.04,
-                    "sizeInBytes": 29035,
-                    "url": "/uploads/medium_Screenshot_2024_08_23_at_16_29_11_7d6c33675e.jpg"
-                  },
-                  "small": {
-                    "name": "small_Screenshot 2024-08-23 at 16.29.11.jpg",
-                    "hash": "small_Screenshot_2024_08_23_at_16_29_11_7d6c33675e",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 246,
-                    "size": 16.54,
-                    "sizeInBytes": 16541,
-                    "url": "/uploads/small_Screenshot_2024_08_23_at_16_29_11_7d6c33675e.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726307723/chessbase/wfcotujzz37w2yi5avwy.jpg"
                   }
                 },
                 "hash": "Screenshot_2024_08_23_at_16_29_11_7d6c33675e",
@@ -6638,18 +4550,6 @@
                 "width": 1229,
                 "height": 960,
                 "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_weatherdog.jpg",
-                    "hash": "thumbnail_weatherdog_c6a31fda52",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 200,
-                    "height": 156,
-                    "size": 5.84,
-                    "sizeInBytes": 5842,
-                    "url": "/uploads/thumbnail_weatherdog_c6a31fda52.jpg"
-                  },
                   "large": {
                     "name": "large_weatherdog.jpg",
                     "hash": "large_weatherdog_c6a31fda52",
@@ -6660,31 +4560,7 @@
                     "height": 781,
                     "size": 46.97,
                     "sizeInBytes": 46969,
-                    "url": "/uploads/large_weatherdog_c6a31fda52.jpg"
-                  },
-                  "medium": {
-                    "name": "medium_weatherdog.jpg",
-                    "hash": "medium_weatherdog_c6a31fda52",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 750,
-                    "height": 586,
-                    "size": 33.35,
-                    "sizeInBytes": 33350,
-                    "url": "/uploads/medium_weatherdog_c6a31fda52.jpg"
-                  },
-                  "small": {
-                    "name": "small_weatherdog.jpg",
-                    "hash": "small_weatherdog_c6a31fda52",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 500,
-                    "height": 391,
-                    "size": 20.16,
-                    "sizeInBytes": 20161,
-                    "url": "/uploads/small_weatherdog_c6a31fda52.jpg"
+                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726315557/weatherdog/kxefy2j6jbfmdfsjyrlz.jpg"
                   }
                 },
                 "hash": "weatherdog_c6a31fda52",

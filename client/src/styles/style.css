@@ -20,7 +20,15 @@ html {
     background-color: #272727;
 }
 
-
+html:has(.detail__wrapper),
+body:has(.detail__wrapper),
+html:has(.aboutpage__wrapper),
+body:has(.aboutpage__wrapper),
+html:has(.homepage__wrapper),
+body:has(.homepage__wrapper) {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 .hidden {
     display: none;
@@ -35,8 +43,6 @@ html {
     background-image: url('/homebg_trainworld.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-y: hidden;
-
 }
 
 .nav__container {
@@ -294,13 +300,18 @@ html {
 
 
 .aboutpage__wrapper {
-    width: 100vw;
+    width: 100%;
     background-color: #272727;
+    overflow-x: hidden;
+}
+.about__section {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .aboutpage__bg--wrapper {
     padding-top: 2rem;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background-image: url('/aboutbg_trainworld.svg');
     background-repeat: no-repeat;
@@ -308,7 +319,7 @@ html {
 }
 
 .about__title--wrapper {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -413,35 +424,36 @@ html {
 }
 
 .about__skillset--itemhidden {
-    height: 0rem;
+    max-height: 0rem;
     overflow: hidden;
-    transition: height 0.5s;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-bottom: 0;
 }
 
 .about__skillset--itemhidden2 {
-    height: 0rem;
+    max-height: 0rem;
     overflow: hidden;
-    transition: height 0.5s;
-    padding: 1.5rem;
-    padding-bottom: 0rem;
-    padding-top: 0rem;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.5rem;
+    padding-bottom: 0;
 }
 
 .about__skillset--itemhidden3 {
-    height: 0rem;
+    max-height: 0rem;
     overflow: hidden;
-    transition: height 0.5s;
-    padding: 1.5rem;
-    padding-bottom: 0rem;
-    padding-top: 0rem;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.5rem;
+    padding-bottom: 0;
 }
 
 .display {
-    height: 21.5rem;
+    max-height: 38rem;
+    padding-bottom: 1.5rem;
 }
 
 .display2 {
-    height: 12rem;
+    max-height: 14rem;
+    padding-bottom: 1.5rem;
 }
 
 .arrow {
@@ -475,13 +487,14 @@ html {
 }
 
 .logo__wrapper--all2 {
-    width: 27.27%;
+    width: 46%;
 }
 
 .logo__wrapper--details {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 8rem;
 }
 
 .logo__name {
@@ -489,7 +502,7 @@ html {
     font-family: mundial, sans-serif;
     font-size: 16px;
     font-weight: 300;
-    width: 4rem;
+    max-width: 8rem;
     text-align: center;
 }
 
@@ -526,7 +539,7 @@ html {
     font-size: 18px;
     font-weight: 300;
     color: #FDFDFD;
-    width: 13rem;
+    width: 10.5rem;
     text-align: center;
 }
 
@@ -540,12 +553,12 @@ html {
     background-image: url('/aboutbg_contact.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
 .about__contact--wrapper {
-    width: 100vw;
+    width: 100%;
     height: 92vh;
     display: flex;
     justify-content: center;
@@ -651,7 +664,7 @@ html {
 .button__wrapper {
     margin-top: 3rem;
     display: flex;
-    gap: 3.5rem;
+    gap: 2rem;
 }
 
 .contact__button {
@@ -705,14 +718,14 @@ html {
 }
 
 .detail__title--wrapper {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url('/detailbg_trainworld.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .detail__title {
@@ -761,7 +774,9 @@ html {
 
 .detail__wrapper {
     padding-top: 2rem;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .cover__wrapper {
@@ -791,7 +806,7 @@ html {
 }
 
 .details__container--wrapper {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     font-family: mundial, sans-serif;
@@ -859,7 +874,7 @@ html {
 
 
 .images {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1301,7 +1316,7 @@ html {
 }
 
 .next-project__wrapper {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #929948;
     display: flex;
@@ -1332,7 +1347,7 @@ html {
 }
 
 .next-project__text--wrapper {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

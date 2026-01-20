@@ -4,580 +4,335 @@ import { Link, useLocation, useOutletContext, useParams } from "react-router-dom
 import PropTypes from 'prop-types';
 import { useEffect } from "react";
 
+// Theme configuration
+const THEMES = {
+    trainworld: {
+        bgColor: '#272727',
+        bgImage: 'url("/aboutbg_trainworld.svg")',
+        arrowSrc: '/about_arrow_trainworld.svg',
+        smallCircle: '#E8E661',
+        largeCircle: '#FDFDFD',
+        color1: '#EEEC76',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#EEEC76',
+        navHoverColor: '#EEEC76',
+        activeColor: '#EEEC76',
+        activeBg: '#EEEC76',
+        activeText: '#272727',
+        buttonColor: '#272727',
+        buttonBg: '#EEEC76',
+        buttonBorder: '#EEEC76',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+    },
+    mixbox: {
+        bgColor: '#929948',
+        bgImage: 'url("/aboutbg_mixbox.svg")',
+        arrowSrc: '/about_arrow_trainworld.svg',
+        smallCircle: '#EEEC76',
+        largeCircle: '#FDFDFD',
+        color1: '#EEEC76',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#EEEC76',
+        navHoverColor: '#EEEC76',
+        activeColor: '#EEEC76',
+        activeBg: '#EEEC76',
+        activeText: '#272727',
+        buttonColor: '#272727',
+        buttonBg: '#EEEC76',
+        buttonBorder: '#EEEC76',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+    },
+    stingstitute: {
+        bgColor: '#492078',
+        bgImage: 'url("/aboutbg_stingstitute.svg")',
+        arrowSrc: '/about_arrow_stingstitute.svg',
+        smallCircle: '#FF53B7',
+        largeCircle: '#FDFDFD',
+        color1: '#FF53B7',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#FF53B7',
+        navHoverColor: '#FF53B7',
+        activeColor: '#FF53B7',
+        activeBg: '#FF53B7',
+        activeText: '#492078',
+        buttonColor: '#492078',
+        buttonBg: '#FF53B7',
+        buttonBorder: '#FF53B7',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+        buttonLeaveColor: '#492078',
+    },
+    rotterdans: {
+        bgColor: '#efefef',
+        bgImage: 'url("/aboutbg_rotterdans.svg")',
+        arrowSrc: '/about_arrow_rotterdans.svg',
+        smallCircle: '#2C2D2C',
+        largeCircle: '#2C2D2C',
+        color1: '#2C2D2C',
+        color2: '#2C2D2C',
+        color3: '#2C2D2C',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#2C2D2C',
+        navHoverColor: '#2C2D2C',
+        activeColor: '#2C2D2C',
+        activeBg: '#2C2D2C',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#2C2D2C',
+        buttonBorder: '#2C2D2C',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#2C2D2C',
+        buttonHoverColor: '#2C2D2C',
+    },
+    equalmelodies: {
+        bgColor: '#272727',
+        bgImage: 'url("/aboutbg_equalmelodies.svg")',
+        arrowSrc: '/about_arrow_equalmelodies.svg',
+        smallCircle: '#D8595B',
+        largeCircle: '#272727',
+        color1: '#D8595B',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#D8595B',
+        navHoverColor: '#D8595B',
+        activeColor: '#D8595B',
+        activeBg: '#D8595B',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#D8595B',
+        buttonBorder: '#D8595B',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+    },
+    reactartistique: {
+        bgColor: '#366830',
+        bgImage: 'url("/aboutbg_reactartistique.svg")',
+        arrowSrc: '/about_arrow_reactartistique.svg',
+        smallCircle: '#FDFDFD',
+        largeCircle: '#274A23',
+        color1: '#11210F',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#FDFDFD',
+        navHoverColor: '#FDFDFD',
+        activeColor: '#FDFDFD',
+        activeBg: '#274A23',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#274A23',
+        buttonBorder: '#274A23',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+    },
+    dishknob: {
+        bgColor: '#FFF8F4',
+        bgImage: 'url("/aboutbg_dishknob.svg")',
+        arrowSrc: '/about_arrow_dishknob.svg',
+        smallCircle: '#4C984C',
+        largeCircle: '#4C984C',
+        color1: '#4C984C',
+        color2: '#2C2D2C',
+        color3: '#2C2D2C',
+        arrowDown: '/about_arrowdown_black.svg',
+        borderColor: '#4C984C',
+        navHoverColor: '#4C984C',
+        activeColor: '#4C984C',
+        activeBg: '#4C984C',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#4C984C',
+        buttonBorder: '#4C984C',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+    },
+    trimcraft: {
+        bgColor: '#434321',
+        bgImage: 'url("/aboutbg_trimcraft.svg")',
+        arrowSrc: '/about_arrow_trainworld.svg',
+        smallCircle: '#EEEC76',
+        largeCircle: '#FDFDFD',
+        color1: '#EEEC76',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#EEEC76',
+        navHoverColor: '#EEEC76',
+        activeColor: '#EEEC76',
+        activeBg: '#EEEC76',
+        activeText: '#272727',
+        buttonColor: '#272727',
+        buttonBg: '#EEEC76',
+        buttonBorder: '#EEEC76',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+    },
+    smashabutton: {
+        bgColor: '#21432E',
+        bgImage: 'url("/aboutbg_smashabutton.svg")',
+        arrowSrc: '/about_arrow_smashabutton.svg',
+        smallCircle: '#FEA500',
+        largeCircle: '#FEA500',
+        color1: '#FEA500',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#FEA500',
+        navHoverColor: '#FEA500',
+        activeColor: '#FEA500',
+        activeBg: '#FEA500',
+        activeText: '#272727',
+        buttonColor: '#272727',
+        buttonBg: '#FEA500',
+        buttonBorder: '#FEA500',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+    },
+    chessbase: {
+        bgColor: '#7A9A57',
+        bgImage: 'url("/aboutbg_chessbase.svg")',
+        arrowSrc: '/about_arrow_chessbase.svg',
+        smallCircle: '#ECEDCE',
+        largeCircle: '#ECEDCE',
+        color1: '#ECEDCE',
+        color2: '#2C2D2C',
+        color3: '#2C2D2C',
+        arrowDown: '/about_arrowdown_black.svg',
+        borderColor: '#ECEDCE',
+        navHoverColor: '#ECEDCE',
+        activeColor: '#ECEDCE',
+        activeBg: '#5A723F',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#5A723F',
+        buttonBorder: '#5A723F',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+    },
+    weatherdog: {
+        bgColor: '#2E3495',
+        bgImage: 'url("/aboutbg_weatherdog.svg")',
+        arrowSrc: '/about_arrow_weatherdog.svg',
+        smallCircle: '#E69A8D',
+        largeCircle: '#E69A8D',
+        color1: '#E69A8D',
+        color2: '#FDFDFD',
+        color3: '#FDFDFD',
+        arrowDown: '/about_arrowdown_white.svg',
+        borderColor: '#E69A8D',
+        navHoverColor: '#E69A8D',
+        activeColor: '#E69A8D',
+        activeBg: '#E69A8D',
+        activeText: '#FDFDFD',
+        buttonColor: '#FDFDFD',
+        buttonBg: '#E69A8D',
+        buttonBorder: '#E69A8D',
+        buttonHoverBg: 'transparent',
+        buttonHoverBorder: '#272727',
+        buttonHoverColor: '#272727',
+    }
+};
+
+const applyTheme = (theme) => {
+    if (!theme) return;
+
+    const wrapper = document.querySelector('.aboutpage__wrapper');
+    const bgWrapper = document.querySelector('.aboutpage__bg--wrapper');
+    const arrow = document.querySelector('.about__arrow');
+    const smallCircle = document.querySelector('.small_circle');
+    const largeCircle = document.querySelector('.large_circle');
+    const button = document.querySelector('.about__button--color');
+    const activeNav = document.querySelector('.active');
+
+    if (wrapper) wrapper.style.backgroundColor = theme.bgColor;
+    if (bgWrapper) bgWrapper.style.backgroundImage = theme.bgImage;
+    if (arrow) arrow.src = theme.arrowSrc;
+    if (smallCircle) smallCircle.style.backgroundColor = theme.smallCircle;
+    if (largeCircle) largeCircle.style.backgroundColor = theme.largeCircle;
+
+    // Apply colors
+    document.querySelectorAll('.about__color1').forEach(el => el.style.color = theme.color1);
+    document.querySelectorAll('.about__color2').forEach(el => el.style.color = theme.color2);
+    const color3 = document.querySelector('.about__color3');
+    if (color3) color3.style.color = theme.color3;
+
+    document.querySelectorAll('.about__arrowdown').forEach(el => el.src = theme.arrowDown);
+    document.querySelectorAll('.about__skillset--itemwrapperall').forEach(el => el.style.borderColor = theme.borderColor);
+
+    // Apply navigation styles
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.style.borderColor = '#efefef';
+        if (!link.classList.contains('active')) {
+            link.addEventListener('mouseenter', () => {
+                link.style.borderColor = theme.navHoverColor;
+                link.style.color = theme.navHoverColor;
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.borderColor = '#efefef';
+                link.style.color = '#272727';
+            });
+        }
+    });
+
+    if (activeNav) {
+        activeNav.style.backgroundColor = theme.activeBg;
+        activeNav.style.borderColor = theme.activeColor;
+        activeNav.style.color = theme.activeText;
+    }
+
+    // Apply button styles
+    if (button) {
+        button.style.color = theme.buttonColor;
+        button.style.backgroundColor = theme.buttonBg;
+        button.style.borderColor = theme.buttonBorder;
+
+        button.addEventListener('mouseenter', () => {
+            button.style.color = theme.buttonHoverColor || theme.buttonHoverBorder || '#272727';
+            button.style.backgroundColor = theme.buttonHoverBg;
+            button.style.borderColor = theme.buttonHoverBorder;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.style.color = theme.buttonLeaveColor || theme.buttonColor;
+            button.style.backgroundColor = theme.buttonBg;
+            button.style.borderColor = theme.buttonBorder;
+        });
+    }
+};
+
 const About = () => {
     let { colorIdentifier } = useParams();
     const { setScaling } = useOutletContext();
-    const { pathname } = useLocation()
+    const { pathname } = useLocation();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
     useEffect(() => {
-        {
-            colorIdentifier === 'trainworld' ?
-                (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#272727',
-                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_trainworld.svg")',
-                    document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
-                    document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
-                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-
-
-
-
-
-                    document.querySelectorAll('.about__color1').forEach(color => {
-                        color.style.color = "#EEEC76"
-                    }),
-                    document.querySelectorAll('.about__color2').forEach(color2 => {
-                        color2.style.color = "#FDFDFD"
-                    }),
-                    document.querySelector('.about__color3').style.color = "#FDFDFD",
-                    document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                        arrow.src = '/about_arrowdown_white.svg'
-                    }),
-                    document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                        borderline.style.borderColor = "#EEEC76"
-                    }),
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                    document.querySelector('.active').style.backgroundColor = '#EEEC76',
-                    document.querySelector('.active').style.borderColor = '#EEEC76',
-                    document.querySelector('.active').style.color = '#272727',
-                    document.querySelector('.about__button--color').style.color = '#272727',
-                    document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76',
-                    document.querySelector('.about__button--color').style.borderColor = '#EEEC76',
-                    document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                        document.querySelector('.about__button--color').style.color = '#272727'
-                        document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                        document.querySelector('.about__button--color').style.borderColor = '#272727'
-                    }),
-                    document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                        document.querySelector('.about__button--color').style.color = '#272727'
-                        document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76'
-                        document.querySelector('.about__button--color').style.borderColor = '#EEEC76'
-                    })
-
-
-
-
-                )
-                : colorIdentifier === 'mixbox' ?
-                    (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#929948',
-                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_mixbox.svg")',
-                        document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
-                        document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
-                        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-
-
-
-
-
-                        document.querySelectorAll('.about__color1').forEach(color => {
-                            color.style.color = "#EEEC76"
-                        }),
-                        document.querySelectorAll('.about__color2').forEach(color2 => {
-                            color2.style.color = "#FDFDFD"
-                        }),
-                        document.querySelector('.about__color3').style.color = "#FDFDFD",
-                        document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                            arrow.src = '/about_arrowdown_white.svg'
-                        }),
-                        document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                            borderline.style.borderColor = "#EEEC76"
-                        }),
-                        document.querySelectorAll('.nav__link').forEach(link => {
-                            link.style.borderColor = '#efefef'
-                            if (!link.classList.contains('active')) {
-                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                            }
-                        }),
-                        document.querySelector('.active').style.backgroundColor = '#EEEC76',
-                        document.querySelector('.active').style.borderColor = '#EEEC76',
-                        document.querySelector('.active').style.color = '#272727',
-                        document.querySelector('.about__button--color').style.color = '#272727',
-                        document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76',
-                        document.querySelector('.about__button--color').style.borderColor = '#EEEC76',
-                        document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                            document.querySelector('.about__button--color').style.color = '#272727'
-                            document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                            document.querySelector('.about__button--color').style.borderColor = '#272727'
-                        }),
-                        document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                            document.querySelector('.about__button--color').style.color = '#272727'
-                            document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76'
-                            document.querySelector('.about__button--color').style.borderColor = '#EEEC76'
-                        })
-
-
-
-
-                    )
-                    : colorIdentifier === 'stingstitute' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#492078',
-                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_stingstitute.svg")',
-                        document.querySelector('.about__arrow').src = "/about_arrow_stingstitute.svg",
-                        document.querySelector('.small_circle').style.backgroundColor = '#FF53B7',
-                        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-
-                        document.querySelectorAll('.about__color1').forEach(color => {
-                            color.style.color = "#FF53B7"
-                        }),
-                        document.querySelectorAll('.about__color2').forEach(color2 => {
-                            color2.style.color = "#FDFDFD"
-                        }),
-                        document.querySelector('.about__color3').style.color = "#FDFDFD",
-                        document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                            arrow.src = '/about_arrowdown_white.svg'
-                        }),
-                        document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                            borderline.style.borderColor = "#FF53B7"
-                        }),
-                        document.querySelectorAll('.nav__link').forEach(link => {
-                            link.style.borderColor = '#efefef'
-                            if (!link.classList.contains('active')) {
-                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
-                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                            }
-                        }),
-                        document.querySelector('.active').style.backgroundColor = '#FF53B7',
-                        document.querySelector('.active').style.borderColor = '#FF53B7',
-                        document.querySelector('.active').style.color = '#492078',
-                        document.querySelector('.about__button--color').style.color = '#492078',
-                        document.querySelector('.about__button--color').style.backgroundColor = '#FF53B7',
-                        document.querySelector('.about__button--color').style.borderColor = '#FF53B7',
-                        document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                            document.querySelector('.about__button--color').style.color = '#272727'
-                            document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                            document.querySelector('.about__button--color').style.borderColor = '#272727'
-                        }),
-                        document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                            document.querySelector('.about__button--color').style.color = '#492078'
-                            document.querySelector('.about__button--color').style.backgroundColor = '#FF53B7'
-                            document.querySelector('.about__button--color').style.borderColor = '#FF53B7'
-                        })
-
-                    )
-                        : colorIdentifier === 'rotterdans' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#efefef',
-                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_rotterdans.svg")',
-                            document.querySelector('.about__arrow').src = "/about_arrow_rotterdans.svg",
-                            document.querySelector('.small_circle').style.backgroundColor = '#2C2D2C',
-                            document.querySelector('.large_circle').style.backgroundColor = '#2C2D2C',
-
-
-
-
-
-                            document.querySelectorAll('.about__color1').forEach(color => {
-                                color.style.color = "#2C2D2C"
-                            }),
-                            document.querySelectorAll('.about__color2').forEach(color2 => {
-                                color2.style.color = "#2C2D2C"
-                            }),
-                            document.querySelector('.about__color3').style.color = "#2C2D2C",
-
-                            document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                arrow.src = '/about_arrowdown_white.svg'
-                            }),
-                            document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                borderline.style.borderColor = "#2C2D2C"
-                            }),
-                            document.querySelectorAll('.nav__link').forEach(link => {
-                                link.style.borderColor = '#efefef'
-                                if (!link.classList.contains('active')) {
-                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#2C2D2C', link.style.color = '#2C2D2C' })
-                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                }
-                            }),
-                            document.querySelector('.active').style.backgroundColor = '#2C2D2C',
-                            document.querySelector('.active').style.borderColor = '#2C2D2C',
-                            document.querySelector('.active').style.color = '#FDFDFD',
-                            document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                            document.querySelector('.about__button--color').style.backgroundColor = '#2C2D2C',
-                            document.querySelector('.about__button--color').style.borderColor = '#2C2D2C',
-                            document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                document.querySelector('.about__button--color').style.color = '#2C2D2C'
-                                document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                document.querySelector('.about__button--color').style.borderColor = '#2C2D2C'
-                            }),
-                            document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                document.querySelector('.about__button--color').style.backgroundColor = '#2C2D2C'
-                                document.querySelector('.about__button--color').style.borderColor = '#2C2D2C'
-                            })
-
-
-
-
-                        )
-                            : colorIdentifier === 'equalmelodies' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#272727',
-                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_equalmelodies.svg")',
-                                document.querySelector('.about__arrow').src = "/about_arrow_equalmelodies.svg",
-                                document.querySelector('.small_circle').style.backgroundColor = '#D8595B',
-                                document.querySelector('.large_circle').style.backgroundColor = '#272727',
-
-
-
-
-
-                                document.querySelectorAll('.about__color1').forEach(color => {
-                                    color.style.color = "#D8595B"
-                                }),
-                                document.querySelectorAll('.about__color2').forEach(color2 => {
-                                    color2.style.color = "#FDFDFD"
-                                }),
-                                document.querySelector('.about__color3').style.color = "#FDFDFD",
-                                document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                    arrow.src = '/about_arrowdown_white.svg'
-                                }),
-                                document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                    borderline.style.borderColor = "#D8595B"
-                                }),
-                                document.querySelectorAll('.nav__link').forEach(link => {
-                                    link.style.borderColor = '#efefef'
-                                    if (!link.classList.contains('active')) {
-                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
-                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                    }
-                                }),
-                                document.querySelector('.active').style.backgroundColor = '#D8595B',
-                                document.querySelector('.active').style.borderColor = '#D8595B',
-                                document.querySelector('.active').style.color = '#FDFDFD',
-                                document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                                document.querySelector('.about__button--color').style.backgroundColor = '#D8595B',
-                                document.querySelector('.about__button--color').style.borderColor = '#D8595B',
-                                document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                    document.querySelector('.about__button--color').style.color = '#272727'
-                                    document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                    document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                }),
-                                document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                    document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                    document.querySelector('.about__button--color').style.backgroundColor = '#D8595B'
-                                    document.querySelector('.about__button--color').style.borderColor = '#D8595B'
-                                })
-
-
-
-
-                            )
-                                : colorIdentifier === 'reactartistique' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#366830',
-                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_reactartistique.svg")',
-                                    document.querySelector('.about__arrow').src = "/about_arrow_reactartistique.svg",
-                                    document.querySelector('.small_circle').style.backgroundColor = '#FDFDFD',
-                                    document.querySelector('.large_circle').style.backgroundColor = '#274A23',
-
-
-
-
-
-                                    document.querySelectorAll('.about__color1').forEach(color => {
-                                        color.style.color = "#11210F"
-                                    }),
-                                    document.querySelectorAll('.about__color2').forEach(color2 => {
-                                        color2.style.color = "#FDFDFD"
-                                    }),
-                                    document.querySelector('.about__color3').style.color = "#FDFDFD",
-                                    document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                        arrow.src = '/about_arrowdown_white.svg'
-                                    }),
-                                    document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                        borderline.style.borderColor = "#FDFDFD"
-                                    }),
-                                    document.querySelectorAll('.nav__link').forEach(link => {
-                                        link.style.borderColor = '#efefef'
-                                        if (!link.classList.contains('active')) {
-                                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                        }
-                                    }),
-                                    document.querySelector('.active').style.backgroundColor = '#274A23',
-                                    document.querySelector('.active').style.borderColor = '#274A23',
-                                    document.querySelector('.active').style.color = '#FDFDFD',
-                                    document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                                    document.querySelector('.about__button--color').style.backgroundColor = '#274A23',
-                                    document.querySelector('.about__button--color').style.borderColor = '#274A23',
-                                    document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                        document.querySelector('.about__button--color').style.color = '#272727'
-                                        document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                        document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                    }),
-                                    document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                        document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                        document.querySelector('.about__button--color').style.backgroundColor = '#274A23'
-                                        document.querySelector('.about__button--color').style.borderColor = '#274A23'
-                                    })
-
-
-
-
-                                )
-                                    : colorIdentifier === 'dishknob' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#FFF8F4',
-                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_dishknob.svg")',
-                                        document.querySelector('.about__arrow').src = "/about_arrow_dishknob.svg",
-                                        document.querySelector('.small_circle').style.backgroundColor = '#4C984C',
-                                        document.querySelector('.large_circle').style.backgroundColor = '#4C984C',
-
-
-
-
-
-                                        document.querySelectorAll('.about__color1').forEach(color => {
-                                            color.style.color = "#4C984C"
-                                        }),
-                                        document.querySelectorAll('.about__color2').forEach(color2 => {
-                                            color2.style.color = "#2C2D2C"
-                                        }),
-                                        document.querySelector('.about__color3').style.color = "#2C2D2C",
-                                        document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                            arrow.src = '/about_arrowdown_black.svg'
-                                        }),
-                                        document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                            borderline.style.borderColor = "#4C984C"
-                                        }),
-                                        document.querySelectorAll('.nav__link').forEach(link => {
-                                            link.style.borderColor = '#efefef'
-                                            if (!link.classList.contains('active')) {
-                                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
-                                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                            }
-                                        }),
-                                        document.querySelector('.active').style.backgroundColor = '#4C984C',
-                                        document.querySelector('.active').style.borderColor = '#4C984C',
-                                        document.querySelector('.active').style.color = '#FDFDFD',
-                                        document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                                        document.querySelector('.about__button--color').style.backgroundColor = '#4C984C',
-                                        document.querySelector('.about__button--color').style.borderColor = '#4C984C',
-                                        document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                            document.querySelector('.about__button--color').style.color = '#272727'
-                                            document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                            document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                        }),
-                                        document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                            document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                            document.querySelector('.about__button--color').style.backgroundColor = '#4C984C'
-                                            document.querySelector('.about__button--color').style.borderColor = '#4C984C'
-                                        })
-
-
-
-
-                                    )
-                                        : colorIdentifier === 'trimcraft' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#434321',
-                                            document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_trimcraft.svg")',
-                                            document.querySelector('.about__arrow').src = "/about_arrow_trainworld.svg",
-                                            document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
-                                            document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-
-
-
-
-
-                                            document.querySelectorAll('.about__color1').forEach(color => {
-                                                color.style.color = "#EEEC76"
-                                            }),
-                                            document.querySelectorAll('.about__color2').forEach(color2 => {
-                                                color2.style.color = "#FDFDFD"
-                                            }),
-                                            document.querySelector('.about__color3').style.color = "#FDFDFD",
-                                            document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                arrow.src = '/about_arrowdown_white.svg'
-                                            }),
-                                            document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                                borderline.style.borderColor = "#EEEC76"
-                                            }),
-                                            document.querySelectorAll('.nav__link').forEach(link => {
-                                                link.style.borderColor = '#efefef'
-                                                if (!link.classList.contains('active')) {
-                                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                }
-                                            }),
-                                            document.querySelector('.active').style.backgroundColor = '#EEEC76',
-                                            document.querySelector('.active').style.borderColor = '#EEEC76',
-                                            document.querySelector('.active').style.color = '#272727',
-                                            document.querySelector('.about__button--color').style.color = '#272727',
-                                            document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76',
-                                            document.querySelector('.about__button--color').style.borderColor = '#EEEC76',
-                                            document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                                document.querySelector('.about__button--color').style.color = '#272727'
-                                                document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                                document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                            }),
-                                            document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                                document.querySelector('.about__button--color').style.color = '#272727'
-                                                document.querySelector('.about__button--color').style.backgroundColor = '#EEEC76'
-                                                document.querySelector('.about__button--color').style.borderColor = '#EEEC76'
-                                            })
-
-
-
-
-                                        )
-                                            : colorIdentifier === 'smashabutton' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#21432E',
-                                                document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_smashabutton.svg")',
-                                                document.querySelector('.about__arrow').src = "/about_arrow_smashabutton.svg",
-                                                document.querySelector('.small_circle').style.backgroundColor = '#FEA500',
-                                                document.querySelector('.large_circle').style.backgroundColor = '#FEA500',
-
-
-
-
-
-                                                document.querySelectorAll('.about__color1').forEach(color => {
-                                                    color.style.color = "#FEA500"
-                                                }),
-                                                document.querySelectorAll('.about__color2').forEach(color2 => {
-                                                    color2.style.color = "#FDFDFD"
-                                                }),
-                                                document.querySelector('.about__color3').style.color = "#FDFDFD",
-                                                document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                    arrow.src = '/about_arrowdown_white.svg'
-                                                }),
-                                                document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                                    borderline.style.borderColor = "#FEA500"
-                                                }),
-                                                document.querySelectorAll('.nav__link').forEach(link => {
-                                                    link.style.borderColor = '#efefef'
-                                                    if (!link.classList.contains('active')) {
-                                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
-                                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                    }
-                                                }),
-                                                document.querySelector('.active').style.backgroundColor = '#FEA500',
-                                                document.querySelector('.active').style.borderColor = '#FEA500',
-                                                document.querySelector('.active').style.color = '#272727',
-                                                document.querySelector('.about__button--color').style.color = '#272727',
-                                                document.querySelector('.about__button--color').style.backgroundColor = '#FEA500',
-                                                document.querySelector('.about__button--color').style.borderColor = '#FEA500',
-                                                document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                                    document.querySelector('.about__button--color').style.color = '#272727'
-                                                    document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                                    document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                                }),
-                                                document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                                    document.querySelector('.about__button--color').style.color = '#272727'
-                                                    document.querySelector('.about__button--color').style.backgroundColor = '#FEA500'
-                                                    document.querySelector('.about__button--color').style.borderColor = '#FEA500'
-                                                })
-
-
-
-
-                                            )
-                                                : colorIdentifier === 'chessbase' ? (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#7A9A57',
-                                                    document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_chessbase.svg")',
-                                                    document.querySelector('.about__arrow').src = "/about_arrow_chessbase.svg",
-                                                    document.querySelector('.small_circle').style.backgroundColor = '#ECEDCE',
-                                                    document.querySelector('.large_circle').style.backgroundColor = '#ECEDCE',
-
-
-
-
-
-                                                    document.querySelectorAll('.about__color1').forEach(color => {
-                                                        color.style.color = "#ECEDCE"
-                                                    }),
-                                                    document.querySelectorAll('.about__color2').forEach(color2 => {
-                                                        color2.style.color = "#2C2D2C"
-                                                    }),
-                                                    document.querySelector('.about__color3').style.color = "#2C2D2C",
-                                                    document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                        arrow.src = '/about_arrowdown_black.svg'
-                                                    }),
-                                                    document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                                        borderline.style.borderColor = "#ECEDCE"
-                                                    }),
-                                                    document.querySelectorAll('.nav__link').forEach(link => {
-                                                        link.style.borderColor = '#efefef'
-                                                        if (!link.classList.contains('active')) {
-                                                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#ECEDCE', link.style.color = '#ECEDCE' })
-                                                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                        }
-                                                    }),
-                                                    document.querySelector('.active').style.backgroundColor = '#5A723F',
-                                                    document.querySelector('.active').style.borderColor = '#5A723F',
-                                                    document.querySelector('.active').style.color = '#FDFDFD',
-                                                    document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                                                    document.querySelector('.about__button--color').style.backgroundColor = '#5A723F',
-                                                    document.querySelector('.about__button--color').style.borderColor = '#5A723F',
-                                                    document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                                        document.querySelector('.about__button--color').style.color = '#272727'
-                                                        document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                                        document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                                    }),
-                                                    document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                                        document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                                        document.querySelector('.about__button--color').style.backgroundColor = '#5A723F'
-                                                        document.querySelector('.about__button--color').style.borderColor = '#5A723F'
-                                                    })
-
-
-
-
-                                                )
-                                                    : (document.querySelector('.aboutpage__wrapper').style.backgroundColor = '#2E3495',
-                                                        document.querySelector('.aboutpage__bg--wrapper').style.backgroundImage = 'url("/aboutbg_weatherdog.svg")',
-                                                        document.querySelector('.about__arrow').src = "/about_arrow_weatherdog.svg",
-                                                        document.querySelector('.small_circle').style.backgroundColor = '#E69A8D',
-                                                        document.querySelector('.large_circle').style.backgroundColor = '#E69A8D',
-
-
-
-
-
-                                                        document.querySelectorAll('.about__color1').forEach(color => {
-                                                            color.style.color = "#E69A8D"
-                                                        }),
-                                                        document.querySelectorAll('.about__color2').forEach(color2 => {
-                                                            color2.style.color = "#FDFDFD"
-                                                        }),
-                                                        document.querySelector('.about__color3').style.color = "#FDFDFD",
-                                                        document.querySelectorAll('.about__arrowdown').forEach(arrow => {
-                                                            arrow.src = '/about_arrowdown_white.svg'
-                                                        }),
-                                                        document.querySelectorAll('.about__skillset--itemwrapperall').forEach(borderline => {
-                                                            borderline.style.borderColor = "#E69A8D"
-                                                        }),
-                                                        document.querySelectorAll('.nav__link').forEach(link => {
-                                                            link.style.borderColor = '#efefef'
-                                                            if (!link.classList.contains('active')) {
-                                                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#E69A8D', link.style.color = '#E69A8D' })
-                                                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                            }
-                                                        }),
-                                                        document.querySelector('.active').style.backgroundColor = '#E69A8D',
-                                                        document.querySelector('.active').style.borderColor = '#E69A8D',
-                                                        document.querySelector('.active').style.color = '#FDFDFD',
-                                                        document.querySelector('.about__button--color').style.color = '#FDFDFD',
-                                                        document.querySelector('.about__button--color').style.backgroundColor = '#E69A8D',
-                                                        document.querySelector('.about__button--color').style.borderColor = '#E69A8D',
-                                                        document.querySelector('.about__button--color').addEventListener('mouseenter', () => {
-                                                            document.querySelector('.about__button--color').style.color = '#272727'
-                                                            document.querySelector('.about__button--color').style.backgroundColor = 'transparent'
-                                                            document.querySelector('.about__button--color').style.borderColor = '#272727'
-                                                        }),
-                                                        document.querySelector('.about__button--color').addEventListener('mouseleave', () => {
-                                                            document.querySelector('.about__button--color').style.color = '#FDFDFD'
-                                                            document.querySelector('.about__button--color').style.backgroundColor = '#E69A8D'
-                                                            document.querySelector('.about__button--color').style.borderColor = '#E69A8D'
-                                                        })
-
-
-
-
-                                                    )
-        }
-    }, [colorIdentifier])
+        const theme = THEMES[colorIdentifier] || THEMES.weatherdog;
+        applyTheme(theme);
+    }, [colorIdentifier]);
 
     return (
         <main className="aboutpage__wrapper">
             <div className="aboutpage__bg--wrapper">
                 <NavBar colorIdentifier={colorIdentifier} />
-                <section className="about__title--wrapper">
+                <section className="about__title--wrapper about__section">
                     <h1 className="hidden">CREATING TOMMORROW&apos;S EXPERIENCES TODAY</h1>
                     <div>
                         <p className="about__color1 about__title about__title1">CREATING TOMORROW&apos;S</p>
@@ -588,12 +343,12 @@ const About = () => {
                 </section>
                 <section className="about__intro--wrapper">
                     <h2 className="hidden">Personal Info</h2>
-                    <p className="about__color1 about__intro">Hi, my name is <span className="highlight about__color3">Hans</span>. I am a Belgian student, currently studying <span className="bold">Digital Design and Development</span> (Devine) in Kortrijk.</p>
-                    <p className="about__color2 about__description about__color1"> I love to to get <span className="bold">out of my comfort zone</span>, creating things I never thought I could. I have gained a <span className="bold">lot of skills</span>, but I would like to expand my knowledge and dive deeper in mostly <span className="bold">Development</span> and a bit of <span className="bold">Design</span>.</p>
-                    <p className="about__color2 about__description about__color2">When i’m off work, I love to grab a drink at the <span className="bold">bar</span> with my friends, play the <span className="bold">piano</span> and go <span className="bold">bouldering</span> (indoor climbing).</p>
+                    <p className="about__color1 about__intro">Hi, my name is <span className="highlight about__color3">Hans</span>. I am a Belgian <span className="bold">Front-end Developer</span>, with a Bachelor&apos;s degree in <span className="bold">Digital Design and Development</span> (Devine) at Howest in Kortrijk, Belgium.</p>
+                    <p className="about__color2 about__description about__color1"> I love to to get <span className="bold">out of my comfort zone</span>, creating things I never thought I could. I have gained a <span className="bold">lot of skills</span>, but I would like to expand my knowledge and dive deeper in mostly <span className="bold">Development</span> while keeping <span className="bold">Design</span> as an extra skill.</p>
+                    <p className="about__color2 about__description about__color2">When i’m off work, I love to grab a drink at the <span className="bold">bar</span> with my friends, play the <span className="bold">piano</span> and go work out at the <span className="bold">gym</span>.</p>
                 </section>
             </div>
-            <section className="about__skillset--wrapper">
+            <section className="about__skillset--wrapper about__section">
                 <h2 className="about__color1 about__skillset--title">MY SKILLSET</h2>
                 <div>
                     <div className="about__skillset--itemwrapperall">
@@ -612,7 +367,7 @@ const About = () => {
                             <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden">
-                            <div className="logo__wrapper--all">
+                            <div className="logo__wrapper--all" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', rowGap: '2rem', columnGap: '2rem', justifyContent: 'center', maxWidth: '100%', boxSizing: 'border-box' }}>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
                                         <img src="/html.svg" alt="html icon" />
@@ -679,27 +434,65 @@ const About = () => {
                                     </div>
                                     <p className="about__color2 logo__name">SEQUEL ACE</p>
                                 </div>
-                            </div>
-                            <div className="logo__container2">
-                                <div className="logo__wrapper--all logo__wrapper--all2">
-                                    <div className="logo__wrapper--details">
-                                        <div className="logo__wrapper">
-                                            <img src="/gsap.svg" alt="gsap icon" />
-                                        </div>
-                                        <p className="about__color2 logo__name">GSAP</p>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/gsap.svg" alt="gsap icon" />
                                     </div>
-                                    <div className="logo__wrapper--details">
-                                        <div className="logo__wrapper">
-                                            <img src="/gtm.svg" alt="google teachable machine icon" />
-                                        </div>
-                                        <p className="about__color2 logo__name">GTM</p>
+                                    <p className="about__color2 logo__name">GSAP</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/gtm.svg" alt="google teachable machine icon" />
                                     </div>
-                                    <div className="logo__wrapper--details">
-                                        <div className="logo__wrapper">
-                                            <img src="/ml5.svg" alt="ml5js icon" />
-                                        </div>
-                                        <p className="about__color2 logo__name">ML5</p>
+                                    <p className="about__color2 logo__name">GTM</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/ml5.svg" alt="ml5js icon" />
                                     </div>
+                                    <p className="about__color2 logo__name">ML5</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/webgl.svg" alt="webgl icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">WEBGL</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/fresh.svg" alt="deno fresh icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">DENO FRESH</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                       <img src="/threejs.svg" alt="three.js icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">THREE.JS</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/quasar.svg" alt="quasar icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">QUASAR</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/sveltekit.svg" alt="sveltekit icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">SVELTEKIT</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/directus.svg" alt="directus icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">DIRECTUS</p>
+                                </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/wordpress.svg" alt="wordpress icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name">WORDPRESS</p>
                                 </div>
                             </div>
                         </div>
@@ -764,6 +557,12 @@ const About = () => {
                                     </div>
                                     <p className="about__color2 logo__name--design2">FIGMA</p>
                                 </div>
+                                <div className="logo__wrapper--details">
+                                    <div className="logo__wrapper">
+                                        <img src="/blender.svg" alt="blender icon" />
+                                    </div>
+                                    <p className="about__color2 logo__name--design2">BLENDER</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -798,7 +597,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section className="about__contact--container">
+            <section className="about__contact--container about__section">
                 <div className="about__contact--wrapper">
                     <div className="about__contact--items">
                         <h2 className="about__contact--title">Let&apos;s Talk</h2>

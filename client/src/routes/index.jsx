@@ -1,615 +1,148 @@
-import React, { useEffect, useState } from 'react';
-import gsap from 'gsap';
-import { useLocation, useOutletContext } from 'react-router-dom';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect, useState } from 'react'
+import gsap from 'gsap'
+import { Link, useLocation, useOutletContext } from 'react-router-dom'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import '../styles/style.css'
-import NavBar from '../components/NavBar';
-import { Link } from 'react-router-dom';
+import NavBar from '../components/NavBar'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
+
+const THEMES = {
+    trainworld: { title: 'CREATIVE DEVELOPER', bg: '#272727', bgImage: 'homebg_trainworld', titleColor: '#EEEC76', smallCircle: '#E8E661', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
+    mixbox: { title: 'APP DESIGNER', bg: '#929948', bgImage: 'homebg_mixbox', titleColor: '#EEEC76', smallCircle: '#EEEC76', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
+    stingstitute: { title: 'WEB DEVELOPER', bg: '#492078', bgImage: 'homebg_stingstitute', titleColor: '#FF53B7', smallCircle: '#FF53B7', largeCircle: '#FDFDFD', activeBg: '#FF53B7', navHover: '#FF53B7', activeText: '#272727' },
+    rotterdans: { title: 'APP DEVELOPER', bg: '#F0F0F0', bgImage: 'homebg_rotterdans', titleColor: '#2C2D2C', smallCircle: '#272727', largeCircle: '#272727', activeBg: '#2C2D2C', navHover: '#272727', activeText: '#FDFDFD' },
+    equalmelodies: { title: 'WEB DESIGNER', bg: '#272727', bgImage: 'homebg_equalmelodies', titleColor: '#D8595B', smallCircle: '#D8595B', largeCircle: '#272727', activeBg: '#D8595B', navHover: '#D8595B', activeText: '#FDFDFD' },
+    reactartistique: { title: 'WEB DEVELOPER', bg: '#366830', bgImage: 'homebg_reactartistique', titleColor: '#FDFDFD', smallCircle: '#FDFDFD', largeCircle: '#274A23', activeBg: '#274A23', navHover: '#FDFDFD', activeText: '#FDFDFD' },
+    dishknob: { title: 'MOTION DESIGNER', bg: '#FDFDFD', bgImage: 'homebg_dishknob', titleColor: '#4C984C', smallCircle: '#4C984C', largeCircle: '#4C984C', activeBg: '#4C984C', navHover: '#4C984C', activeText: '#FDFDFD' },
+    trimcraft: { title: 'WEB DEVELOPER', bg: '#434321', bgImage: 'homebg_trimcraft', titleColor: '#EEEC76', smallCircle: '#EEEC76', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
+    smashabutton: { title: 'CREATIVE DEVELOPER', bg: '#21432E', bgImage: 'homebg_smashabutton', titleColor: '#FEA500', smallCircle: '#FEA500', largeCircle: '#FEA500', activeBg: '#FEA500', navHover: '#FEA500', activeText: '#272727' },
+    chessbase: { title: 'WEB DEVELOPER', bg: '#7A9A57', bgImage: 'homebg_chessbase', titleColor: '#ECEDCE', smallCircle: '#ECEDCE', largeCircle: '#ECEDCE', activeBg: '#5A723F', navHover: '#FDFDFD', activeText: '#FDFDFD' },
+    weatherdog: { title: 'CREATIVE DEVELOPER', bg: '#2E3495', bgImage: 'homebg_weatherdog', titleColor: '#E69A8D', smallCircle: '#E69A8D', largeCircle: '#E69A8D', activeBg: '#E69A8D', navHover: '#E69A8D', activeText: '#FDFDFD' }
+}
+
+const PROJECTS = [
+    { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld' },
+    { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox' },
+    { id: 3, name: 'STINGSTITUTE', type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute' },
+    { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans' },
+    { id: 5, name: 'EQUAL MELODIES', type: 'Design', team: 'Solo', year: '2023', theme: 'equalmelodies' },
+    { id: 6, name: 'REACT ARTISTIQUE', type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique' },
+    { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob' },
+    { id: 8, name: 'TRIMCRAFT', type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft' },
+    { id: 9, name: 'SMASH A BUTTON', type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton' },
+    { id: 10, name: 'CHESSBASE', type: 'Development', team: 'Solo', year: '2023', theme: 'chessbase' },
+    { id: 11, name: 'WEATHER DOG', type: 'Development', team: 'Solo', year: '2024', theme: 'weatherdog' }
+]
+
+const SCROLL_TRIGGERS = [
+    { trigger: 2, start: 'left 0%', end: 'left -37%', enterTheme: 'mixbox', leaveTheme: 'stingstitute', enterBackTheme: 'mixbox', leaveBackTheme: 'trainworld' },
+    { trigger: 4, start: 'left -80%', end: 'left -130%', enterTheme: 'rotterdans', leaveTheme: 'equalmelodies', enterBackTheme: 'rotterdans', leaveBackTheme: 'stingstitute' },
+    { trigger: 6, start: 'left -185%', end: 'left -245%', enterTheme: 'reactartistique', leaveTheme: 'dishknob', enterBackTheme: 'reactartistique', leaveBackTheme: 'equalmelodies' },
+    { trigger: 8, start: 'left -305%', end: 'left -385%', enterTheme: 'trimcraft', leaveTheme: 'smashabutton', enterBackTheme: 'trimcraft', leaveBackTheme: 'dishknob' },
+    { trigger: 10, start: 'left -470%', end: 'left -600%', enterTheme: 'chessbase', leaveTheme: 'weatherdog', enterBackTheme: 'chessbase', leaveBackTheme: 'smashabutton' }
+]
 
 const Index = () => {
-    let [colorIdentifier, setColorIdentifier] = useState('trainworld');
-    const location = useLocation();
-    const { setScaling } = useOutletContext();
+    const [colorIdentifier, setColorIdentifier] = useState('trainworld')
+    const location = useLocation()
+    const { setScaling } = useOutletContext()
 
+    const applyTheme = (themeName) => {
+        const theme = THEMES[themeName]
+        if (!theme) return
+
+        document.querySelector('.home__title').innerHTML = theme.title
+        gsap.to('.homepage__wrapper', { backgroundColor: theme.bg, backgroundImage: `url(/${theme.bgImage}.svg)` })
+        gsap.to('.home__title', { color: theme.titleColor })
+        gsap.to('.title__lines', { color: theme.titleColor })
+        gsap.to('.small_circle', { backgroundColor: theme.smallCircle })
+        gsap.to('.large_circle', { backgroundColor: theme.largeCircle })
+        gsap.to('.active', { backgroundColor: theme.activeBg, borderColor: theme.activeBg })
+        gsap.to('.nav__link.active', { color: theme.activeText })
+
+        document.querySelectorAll('.nav__link').forEach(link => {
+            link.style.borderColor = '#efefef'
+            if (!link.classList.contains('active')) {
+                link.onmouseenter = () => { link.style.borderColor = theme.navHover; link.style.color = theme.navHover }
+                link.onmouseleave = () => { link.style.borderColor = '#efefef'; link.style.color = '#272727' }
+            }
+        })
+
+        setColorIdentifier(themeName)
+    }
 
     useEffect(() => {
-        const initScrollTriggers = () => {
-            window.scrollTo(0, 0);
-            document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
-                document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-                gsap.to(".projects__wrapper", {
-                    x: '-620vw',
-                    scrollTrigger: {
-                        trigger: '.doesntexist',
-                        pin: '.projects__wrapper, .homepage__wrapper',
-                        scrub: 1,
-                        start: "top 0%",
-                        end: "bottom -700%",
-                    },
-                });
+        window.scrollTo(0, 0)
+        document.querySelector('.small_circle').style.backgroundColor = '#E8E661'
+        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD'
+
+        gsap.to('.projects__wrapper', {
+            x: '-620vw',
+            scrollTrigger: {
+                trigger: '.doesntexist',
+                pin: '.projects__wrapper, .homepage__wrapper',
+                scrub: 1,
+                start: 'top 0%',
+                end: 'bottom -700%'
+            }
+        })
+
+        SCROLL_TRIGGERS.forEach(({ trigger, start, end, enterTheme, leaveTheme, enterBackTheme, leaveBackTheme }) => {
             ScrollTrigger.create({
-                trigger: '.home__project--wrapper2',
-                start: "left 0%",
-                end: "left -37%",
-                onEnter: () => {
-                    document.querySelector('.home__title').innerHTML = 'APP DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#929948', backgroundImage: 'url(/homebg_mixbox.svg)' })
-                    gsap.to('.home__title', { color: '#EEEC76' })
-                    gsap.to('.small_circle', { baclgroundColor: '#EEEC76' })
-                    gsap.to('.large_circle', { baclgroundColor: '#FDFDFD' })
-                    gsap.to('.title__lines', { color: '#EEEC76' })
-                    gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        setColorIdentifier('mixbox')
-                },
-                onLeave: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#492078', backgroundImage: 'url(/homebg_stingstitute.svg)' })
-                    gsap.to('.home__title', { color: '#FF53B7' })
-                    gsap.to('.title__lines', { color: '#FF53B7' })
-                    gsap.to('.small_circle', { backgroundColor: '#FF53B7' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#FF53B7', borderColor: '#FF53B7' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        setColorIdentifier('stingstitute')
-                },
-                onEnterBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'APP DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#929948', backgroundImage: 'url(/homebg_mixbox.svg)' })
-                    gsap.to('.home__title', { color: '#EEEC76' })
-                    gsap.to('.title__lines', { color: '#EEEC76' })
-                    gsap.to('.small_circle', { backgroundColor: '#EEEC76' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        setColorIdentifier('mixbox')
-                },
-                onLeaveBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(/homebg_trainworld.svg)' })
-                    gsap.to('.home__title', { color: '#EEEC76' })
-                    gsap.to('.title__lines', { color: '#EEEC76' })
-                    gsap.to('.small_circle', { backgroundColor: '#E8E661' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        setColorIdentifier('trainworld')
-                },
-            });
+                trigger: `.home__project--wrapper${trigger}`,
+                start,
+                end,
+                onEnter: () => applyTheme(enterTheme),
+                onLeave: () => applyTheme(leaveTheme),
+                onEnterBack: () => applyTheme(enterBackTheme),
+                onLeaveBack: () => applyTheme(leaveBackTheme)
+            })
+        })
 
-            ScrollTrigger.create({
-                trigger: '.home__project--wrapper4',
-                start: "left -80%",
-                end: "left -130%",
-                onEnter: () => {
-                    document.querySelector('.home__title').innerHTML = 'APP DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#F0F0F0', backgroundImage: 'url(/homebg_rotterdans.svg)' })
-                    gsap.to('.home__title', { color: '#2C2D2C' })
-                    gsap.to('.title__lines', { color: '#2C2D2C' })
-                    gsap.to('.small_circle', { backgroundColor: '#272727' })
-                    gsap.to('.large_circle', { backgroundColor: '#272727' })
-                    gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('rotterdans')
-                },
-                onLeave: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(/homebg_equalmelodies.svg)' })
-                    gsap.to('.home__title', { color: '#D8595B' })
-                    gsap.to('.title__lines', { color: '#D8595B' })
-                    gsap.to('.small_circle', { backgroundColor: '#D8595B' })
-                    gsap.to('.large_circle', { backgroundColor: '#272727' })
-                    gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('equalmelodies')
-                },
-                onEnterBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'APP DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#F0F0F0', backgroundImage: 'url(/homebg_rotterdans.svg)' })
-                    gsap.to('.home__title', { color: '#2C2D2C' })
-                    gsap.to('.title__lines', { color: '#2C2D2C' })
-                    gsap.to('.small_circle', { backgroundColor: '#272727' })
-                    gsap.to('.large_circle', { backgroundColor: '#272727' })
-                    gsap.to('.active', { backgroundColor: '#2C2D2C', borderColor: '#2C2D2C' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('rotterdans')
-
-                },
-                onLeaveBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#492078', backgroundImage: 'url(/homebg_stingstitute.svg)' })
-                    gsap.to('.home__title', { color: '#FF53B7' })
-                    gsap.to('.title__lines', { color: '#FF53B7' })
-                    gsap.to('.small_circle', { backgroundColor: '#FF53B7' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#FF53B7', borderColor: '#FF53B7' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#272727' })
-                    setColorIdentifier('stingstitute')
-
-                },
-            });
-            ScrollTrigger.create({
-                trigger: '.home__project--wrapper6',
-                start: "left -185%",
-                end: "left -245%",
-                onEnter: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#366830', backgroundImage: 'url(/homebg_reactartistique.svg)' })
-                    gsap.to('.home__title', { color: '#FDFDFD' })
-                    gsap.to('.title__lines', { color: '#FDFDFD' })
-                    gsap.to('.small_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.large_circle', { backgroundColor: '#274A23' })
-                    gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('reactartistique')
-
-                },
-                onLeave: () => {
-                    document.querySelector('.home__title').innerHTML = 'MOTION DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#FDFDFD', backgroundImage: 'url(/homebg_dishknob.svg)' })
-                    gsap.to('.home__title', { color: '#4C984C' })
-                    gsap.to('.title__lines', { color: '#4C984C' })
-                    gsap.to('.small_circle', { backgroundColor: '#4C984C' })
-                    gsap.to('.large_circle', { backgroundColor: '#4C984C' })
-                    gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('dishknob')
-
-
-                },
-                onEnterBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#366830', backgroundImage: 'url(/homebg_reactartistique.svg)' })
-                    gsap.to('.home__title', { color: '#FDFDFD' })
-                    gsap.to('.title__lines', { color: '#FDFDFD' })
-                    gsap.to('.small_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.large_circle', { backgroundColor: '#274A23' })
-                    gsap.to('.active', { backgroundColor: '#274A23', borderColor: '#274A23' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('reactartistique')
-
-                },
-                onLeaveBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#272727', backgroundImage: 'url(/homebg_equalmelodies.svg)' })
-                    gsap.to('.home__title', { color: '#D8595B' })
-                    gsap.to('.title__lines', { color: '#D8595B' })
-                    gsap.to('.small_circle', { backgroundColor: '#D8595B' })
-                    gsap.to('.large_circle', { backgroundColor: '#272727' })
-                    gsap.to('.active', { backgroundColor: '#D8595B', borderColor: '#D8595B' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('equalmelodies')
-
-                },
-            });
-            ScrollTrigger.create({
-                trigger: '.home__project--wrapper8',
-                start: "left -305%",
-                end: "left -385%",
-                onEnter: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#434321', backgroundImage: 'url(/homebg_trimcraft.svg)' })
-                    gsap.to('.home__title', { color: '#EEEC76' })
-                    gsap.to('.title__lines', { color: '#EEEC76' })
-                    gsap.to('.small_circle', { backgroundColor: '#EEEC76' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#272727' })
-                    setColorIdentifier('trimcraft')
-
-                },
-                onLeave: () => {
-                    document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#21432E', backgroundImage: 'url(/homebg_smashabutton.svg)' })
-                    gsap.to('.home__title', { color: '#FEA500' })
-                    gsap.to('.title__lines', { color: '#FEA500' })
-                    gsap.to('.small_circle', { backgroundColor: '#FEA500' })
-                    gsap.to('.large_circle', { backgroundColor: '#FEA500' })
-                    gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#272727' })
-                    setColorIdentifier('smashabutton')
-
-
-                },
-                onEnterBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#434321', backgroundImage: 'url(/homebg_trimcraft.svg)' })
-                    gsap.to('.home__title', { color: '#EEEC76' })
-                    gsap.to('.title__lines', { color: '#EEEC76' })
-                    gsap.to('.small_circle', { backgroundColor: '#E8E661' })
-                    gsap.to('.large_circle', { backgroundColor: '#FDFDFD' })
-                    gsap.to('.active', { backgroundColor: '#EEEC76', borderColor: '#EEEC76' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#272727' })
-                    setColorIdentifier('trimcraft')
-
-                },
-                onLeaveBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'MOTION DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#FDFDFD', backgroundImage: 'url(/homebg_dishknob.svg)' })
-                    gsap.to('.home__title', { color: '#4C984C' })
-                    gsap.to('.title__lines', { color: '#4C984C' })
-                    gsap.to('.small_circle', { backgroundColor: '#4C984C' })
-                    gsap.to('.large_circle', { backgroundColor: '#4C984C' })
-                    gsap.to('.active', { backgroundColor: '#4C984C', borderColor: '#4C984C' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('dishknob')
-
-                },
-            });
-            ScrollTrigger.create({
-                trigger: '.home__project--wrapper10',
-                start: "left -470%",
-                end: "left -600%",
-                onEnter: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#7A9A57', backgroundImage: 'url(/homebg_chessbase.svg)' })
-                    gsap.to('.home__title', { color: '#ECEDCE' })
-                    gsap.to('.title__lines', { color: '#ECEDCE' })
-                    gsap.to('.small_circle', { backgroundColor: '#ECEDCE' })
-                    gsap.to('.large_circle', { backgroundColor: '#ECEDCE' })
-                    gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('chessbase')
-
-                },
-                onLeave: () => {
-                    document.querySelector('.home__title').innerHTML = 'CREATIVE DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#2E3495', backgroundImage: 'url(/homebg_weatherdog.svg)' })
-                    gsap.to('.home__title', { color: '#E69A8D' })
-                    gsap.to('.title__lines', { color: '#E69A8D' })
-                    gsap.to('.small_circle', { backgroundColor: '#E69A8D' })
-                    gsap.to('.large_circle', { backgroundColor: '#E69A8D' })
-                    gsap.to('.active', { backgroundColor: '#E69A8D', borderColor: '#E69A8D' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#E69A8D', link.style.color = '#E69A8D' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('weatherdog')
-
-
-                },
-                onEnterBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DEVELOPER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#7A9A57', backgroundImage: 'url(/homebg_chessbase.svg)' })
-                    gsap.to('.home__title', { color: '#ECEDCE' })
-                    gsap.to('.title__lines', { color: '#ECEDCE' })
-                    gsap.to('.small_circle', { backgroundColor: '#ECEDCE' })
-                    gsap.to('.large_circle', { backgroundColor: '#ECEDCE' })
-                    gsap.to('.active', { backgroundColor: '#5A723F', borderColor: '#5A723F' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#FDFDFD' })
-                    setColorIdentifier('chessbase')
-
-                },
-                onLeaveBack: () => {
-                    document.querySelector('.home__title').innerHTML = 'WEB DESIGNER'
-                    gsap.to('.homepage__wrapper', { backgroundColor: '#21432E', backgroundImage: 'url(/homebg_smashabutton.svg)' })
-                    gsap.to('.home__title', { color: '#FEA500' })
-                    gsap.to('.title__lines', { color: '#FEA500' })
-                    gsap.to('.small_circle', { backgroundColor: '#FEA500' })
-                    gsap.to('.large_circle', { backgroundColor: '#FEA500' })
-                    gsap.to('.active', { backgroundColor: '#FEA500', borderColor: '#FEA500' })
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        if (!link.classList.contains('active')) {
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }
-                    }),
-                        gsap.to('.nav__link.active', { color: '#272727' })
-                    setColorIdentifier('smashabutton')
-
-                },
-            });
-        }
-        initScrollTriggers();
-
-        return () => {
-            // Cleanup: kill all ScrollTriggers related to this component
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, [location]);
-
-
-
-
+        return () => ScrollTrigger.getAll().forEach(t => t.kill())
+    }, [location])
 
     return (
         <main>
-            <div className='homepage__wrapper'>
+            <div className="homepage__wrapper">
                 <NavBar colorIdentifier={colorIdentifier} />
-                <p className='name'>Hans Maas</p>
-                <div className='home__title--wrapper'>
-                    <p className='title__lines'>|</p>
-                    <h1 className='home__title'>CREATIVE DEVELOPER</h1>
-                    <p className='title__lines'>|</p>
+                <p className="name">Hans Maas</p>
+                <div className="home__title--wrapper">
+                    <p className="title__lines">|</p>
+                    <h1 className="home__title">CREATIVE DEVELOPER</h1>
+                    <p className="title__lines">|</p>
                 </div>
-                <div className='projects__wrapper'>
-                    <div className='home__project--container home__project--container1'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--trainworld' src="/home_trainworld.jpeg" alt="project tumbnail trainworld" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} onClick={() => setScaling(false)} to={`project/${1}`} className='home__project--wrapper'>
-                            <h2 className='home__project--title'>TRAINWORLD</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Design & Development</p>
-                                <p>2024</p>
+                <div className="projects__wrapper">
+                    {PROJECTS.map((project, index) => (
+                        <div key={project.id} className={`home__project--container${index > 0 ? ' home__project--containers' : ''}`}>
+                            <div className="project__thumbnail--wrapper">
+                                <img
+                                    className={`project__thumbnail project__thumbnail--${project.theme}`}
+                                    src={`/home_${project.theme}.${project.theme === 'trainworld' ? 'jpeg' : 'jpg'}`}
+                                    alt={`project thumbnail ${project.name.toLowerCase()}`}
+                                />
                             </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--mixbox' src="/home_mixbox.jpg" alt="project tumbnail mixbox" />
+                            <Link
+                                onMouseEnter={() => setScaling(true)}
+                                onMouseLeave={() => setScaling(false)}
+                                onClick={() => setScaling(false)}
+                                to={`project/${project.id}`}
+                                className={`home__project--wrapper${index > 0 ? ` home__project--wrapper${index + 1}` : ''}`}
+                            >
+                                <h2 className="home__project--title">{project.name}</h2>
+                                <div className="home__project--details">
+                                    <p>{project.team}</p>
+                                    <p>{project.type}</p>
+                                    <p>{project.year}</p>
+                                </div>
+                            </Link>
                         </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${2}`} className='home__project--wrapper home__project--wrapper2'>
-                            <h2 className='home__project--title'>MIXBOX</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Design</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--stingstitute' src="/home_stingstitute.jpg" alt="project tumbnail stingstitute" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${3}`} className='home__project--wrapper home__project--wrapper3'>
-                            <h2 className='home__project--title'>STINGSTITUTE</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Design & Development</p>
-                                <p>2023</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--rotterdans' src="/home_rotterdans.jpg" alt="project tumbnail rotterdans" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${4}`} className='home__project--wrapper home__project--wrapper4'>
-                            <h2 className='home__project--title'>ROTTERDANS</h2>
-                            <div className='home__project--details'>
-                                <p>Team</p>
-                                <p>Design & Development</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--equalmelodies' src="/home_equalmelodies.jpg" alt="project tumbnail equal melodies" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${5}`} className='home__project--wrapper home__project--wrapper5'>
-                            <h2 className='home__project--title'>EQUAL MELODIES</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Design</p>
-                                <p>2023</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--reactartistique' src="/home_reactartistique.jpg" alt="project tumbnail react artistique" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${6}`} className='home__project--wrapper home__project--wrapper6'>
-                            <h2 className='home__project--title'>REACT ARTISTIQUE</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Development</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--dishknob' src="/home_dishknob.jpg" alt="project tumbnail dishknob" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${7}`} className='home__project--wrapper home__project--wrapper7'>
-                            <h2 className='home__project--title'>DISHKNOB</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Motion Design</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--trimcraft' src="/home_trimcraft.jpg" alt="project tumbnail trimcraft" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${8}`} className='home__project--wrapper home__project--wrapper8'>
-                            <h2 className='home__project--title'>TRIMCRAFT</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Development</p>
-                                <p>2023</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--smashabutton' src="/home_smashabutton.jpg" alt="project tumbnail smash a button" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${9}`} className='home__project--wrapper home__project--wrapper9'>
-                            <h2 className='home__project--title'>SMASH A BUTOTN</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Development</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--chessbase' src="/home_chessbase.jpg" alt="project tumbnail chessbase" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${10}`} className='home__project--wrapper home__project--wrapper10'>
-                            <h2 className='home__project--title'>CHESSBASE</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Development</p>
-                                <p>2023</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='home__project--container home__project--containers'>
-                        <div className='project__thumbnail--wrapper'>
-                            <img className='project__thumbnail project__thumbnail--weatherdog' src="/home_weatherdog.jpg" alt="project tumbnail weather dog" />
-                        </div>
-                        <Link onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} to={`project/${11}`} className='home__project--wrapper home__project--wrapper11'>
-                            <h2 className='home__project--title'>WEATHER DOG</h2>
-                            <div className='home__project--details'>
-                                <p>Solo</p>
-                                <p>Development</p>
-                                <p>2024</p>
-                            </div>
-                        </Link>
-                    </div>
+                    ))}
                 </div>
             </div>
         </main>
-    );
-};
+    )
+}
 
-export default Index;
+export default Index

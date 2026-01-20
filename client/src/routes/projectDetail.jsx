@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import '../styles/style.css'
 import { getProjectById } from "../services/project";
 import { Link, useLoaderData, useLocation, useOutletContext } from "react-router-dom";
@@ -14,13 +14,461 @@ const loader = async ({ params }) => {
     return { project, nextProject };
 };
 
+// Theme configuration
+const THEMES = {
+    'TRAINWORLD': {
+        identifier: 'trainworld',
+        bgColor: '#272727',
+        smallCircle: '#E8E661',
+        largeCircle: '#FDFDFD',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_trainworld.svg")',
+        descriptionBg: 'url("/detailbg2_trainworld.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-trainworld.svg")',
+        nextProjectBgColor: '#929948',
+        buttonBg: '#E8E661',
+        buttonBorder: '#E8E661',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#272727',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_black.svg',
+        linkColor: '#272727',
+        iconExternal: '/link_black.svg',
+        assignmentMargin: 0,
+        navHoverColor: '#E8E661',
+        highlightedColor: '#E8E661',
+        color1: '#E8E661',
+        color2: '#FDFDFD',
+        nextProjectColor: '#EEEC76',
+        borderColor: '#EEEC76',
+    },
+    'MIXBOX': {
+        identifier: 'mixbox',
+        bgColor: '#929948',
+        smallCircle: '#EEEC76',
+        largeCircle: '#FDFDFD',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_mixbox.svg")',
+        descriptionBg: 'url("/detailbg2_mixbox.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-mixbox.svg")',
+        nextProjectBgColor: '#492078',
+        buttonBg: '#EEEC76',
+        buttonBorder: '#EEEC76',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#272727',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_black.svg',
+        linkColor: '#272727',
+        iconExternal: '/link_black.svg',
+        assignmentMargin: '5rem',
+        navHoverColor: '#EEEC76',
+        highlightedColor: '#EEEC76',
+        color1: '#EEEC76',
+        color2: '#FDFDFD',
+        nextProjectColor: '#FF53B7',
+        borderColor: '#FDFDFD',
+    },
+    'STINGSTITUTE': {
+        identifier: 'stingstitute',
+        bgColor: '#492078',
+        smallCircle: '#FF53B7',
+        largeCircle: '#FDFDFD',
+        hidden1Visible: true,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_stingstitute.svg")',
+        descriptionBg: 'url("/detailbg2_stingstitute.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-stingstitute.svg")',
+        nextProjectBgColor: '#F0F0F0',
+        buttonBg: '#FF53B7',
+        buttonBorder: '#FF53B7',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#272727',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_black.svg',
+        linkColor: '#272727',
+        iconExternal: '/link_black.svg',
+        assignmentMargin: '18rem',
+        navHoverColor: '#FF53B7',
+        highlightedColor: '#FF53B7',
+        color1: '#FF53B7',
+        color2: '#FDFDFD',
+        nextProjectColor: '#272727',
+        borderColor: '#FDFDFD',
+    },
+    'ROTTERDANS': {
+        identifier: 'rotterdans',
+        bgColor: '#F0F0F0',
+        smallCircle: '#272727',
+        largeCircle: '#272727',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#272727',
+        backButtonSrc: '/backbutton_black.svg',
+        titleBg: 'url("/detailbg_rotterdans.svg")',
+        descriptionBg: 'url("/detailbg2_rotterdans.svg")',
+        descriptionBgSize: 'contain',
+        nextProjectBg: 'url("/detailbg_next-rotterdans.svg")',
+        nextProjectBgColor: '#272727',
+        buttonBg: '#272727',
+        buttonBorder: '#272727',
+        buttonHoverLinkColor: '#272727',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_black.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: 0,
+        navHoverColor: '#272727',
+        highlightedColor: '#272727',
+        color1: '#272727',
+        color2: '#272727',
+        nextProjectColor: '#D8595B',
+        borderColor: '#272727',
+    },
+    'EQUAL MELODIES': {
+        identifier: 'equalmelodies',
+        bgColor: '#272727',
+        smallCircle: '#D8595B',
+        largeCircle: '#272727',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_equalmelodies.svg")',
+        descriptionBg: 'url("/detailbg2_equalmelodies.svg")',
+        descriptionBgSize: 'contain',
+        nextProjectBg: 'url("/detailbg_next-equalmelodies.svg")',
+        nextProjectBgColor: '#366830',
+        buttonBg: '#D8595B',
+        buttonBorder: '#D8595B',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: 0,
+        navHoverColor: '#D8595B',
+        highlightedColor: '#D8595B',
+        color1: '#D8595B',
+        color2: '#FDFDFD',
+        nextProjectColor: '#FDFDFD',
+        borderColor: '#FDFDFD',
+    },
+    'REACT ARTISTIQUE': {
+        identifier: 'reactartistique',
+        bgColor: '#366830',
+        smallCircle: '#FDFDFD',
+        largeCircle: '#274A23',
+        hidden1Visible: false,
+        hidden2Visible: true,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_reactartistique.svg")',
+        descriptionBg: 'url("/detailbg2_reactartistique.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-reactartistique.svg")',
+        nextProjectBgColor: '#FFF8F4',
+        buttonBg: '#274A23',
+        buttonBorder: '#274A23',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: '25rem',
+        navHoverColor: '#FDFDFD',
+        highlightedColor: '#87EA7B',
+        color1: '#FDFDFD',
+        color2: '#FDFDFD',
+        nextProjectColor: '#4C984C',
+        borderColor: '#FDFDFD',
+    },
+    'DISHKNOB': {
+        identifier: 'dishknob',
+        bgColor: '#FFF8F4',
+        smallCircle: '#4C984C',
+        largeCircle: '#4C984C',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_black.svg',
+        titleBg: 'url("/detailbg_dishknob.svg")',
+        descriptionBg: 'url("/detailbg2_dishknob.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-dishknob.svg")',
+        nextProjectBgColor: '#434321',
+        buttonBg: '#4C984C',
+        buttonBorder: '#4C984C',
+        buttonHoverLinkColor: '#272727',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_black.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: '27rem',
+        navHoverColor: '#4C984C',
+        highlightedColor: '#3A753A',
+        color1: '#4C984C',
+        color2: '#3A753A',
+        nextProjectColor: '#EEEC76',
+        borderColor: '#3A753A',
+    },
+    'TRIMCRAFT': {
+        identifier: 'trimcraft',
+        bgColor: '#434321',
+        smallCircle: '#EEEC76',
+        largeCircle: '#FDFDFD',
+        hidden1Visible: false,
+        hidden2Visible: true,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_trimcraft.svg")',
+        descriptionBg: 'url("/detailbg2_trimcraft.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-trimcraft.svg")',
+        nextProjectBgColor: '#21432E',
+        buttonBg: '#EEEC76',
+        buttonBorder: '#EEEC76',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#272727',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_black.svg',
+        linkColor: '#272727',
+        iconExternal: '/link_black.svg',
+        assignmentMargin: '18rem',
+        navHoverColor: '#EEEC76',
+        highlightedColor: '#EEEC76',
+        color1: '#EEEC76',
+        color2: '#FDFDFD',
+        nextProjectColor: '#FEA500',
+        borderColor: '#FDFDFD',
+    },
+    'SMASH A BUTTON': {
+        identifier: 'smashabutton',
+        bgColor: '#21432E',
+        smallCircle: '#FEA500',
+        largeCircle: '#FEA500',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_smashabutton.svg")',
+        descriptionBg: 'url("/detailbg2_smashabutton.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-smashabutton.svg")',
+        nextProjectBgColor: '#7A9A57',
+        buttonBg: '#FEA500',
+        buttonBorder: '#FEA500',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#272727',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_black.svg',
+        linkColor: '#272727',
+        iconExternal: '/link_black.svg',
+        assignmentMargin: '25rem',
+        navHoverColor: '#FEA500',
+        highlightedColor: '#FEA500',
+        color1: '#FEA500',
+        color2: '#FDFDFD',
+        nextProjectColor: '#ECEDCE',
+        borderColor: '#FEA500',
+    },
+    'CHESSBASE': {
+        identifier: 'chessbase',
+        bgColor: '#7A9A57',
+        smallCircle: '#ECEDCE',
+        largeCircle: '#ECEDCE',
+        hidden1Visible: false,
+        hidden2Visible: true,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_chessbase.svg")',
+        descriptionBg: 'url("/detailbg2_chessbase.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-chessbase.svg")',
+        nextProjectBgColor: '#2E3495',
+        buttonBg: '#5A723F',
+        buttonBorder: '#5A723F',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: '25rem',
+        navHoverColor: '#ECEDCE',
+        highlightedColor: '#ECEDCE',
+        color1: '#ECEDCE',
+        color2: '#FDFDFD',
+        nextProjectColor: '#E69A8D',
+        borderColor: '#ECEDCE',
+    },
+    'WEATHERDOG': {
+        identifier: 'weatherdog',
+        bgColor: '#2E3495',
+        smallCircle: '#E69A8D',
+        largeCircle: '#E69A8D',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#FDFDFD',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_weatherdog.svg")',
+        descriptionBg: 'url("/detailbg2_weatherdog.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-weatherdog.svg")',
+        nextProjectBgColor: '#272727',
+        buttonBg: '#E69A8D',
+        buttonBorder: '#E69A8D',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: '27rem',
+        navHoverColor: '#E69A8D',
+        highlightedColor: '#E69A8D',
+        color1: '#E69A8D',
+        color2: '#FDFDFD',
+        nextProjectColor: '#E8E661',
+        borderColor: '#E69A8D',
+    },
+};
+
+const applyTheme = (theme, setColorIdentifier) => {
+    if (!theme) return;
+
+    // Set state
+    setColorIdentifier(theme.identifier);
+
+    // Apply background colors
+    document.documentElement.style.backgroundColor = theme.bgColor;
+    const detailBg = document.querySelector('.detail__background');
+    if (detailBg) detailBg.style.backgroundColor = theme.bgColor;
+
+    // Apply circle colors
+    const smallCircle = document.querySelector('.small_circle');
+    const largeCircle = document.querySelector('.large_circle');
+    if (smallCircle) smallCircle.style.backgroundColor = theme.smallCircle;
+    if (largeCircle) largeCircle.style.backgroundColor = theme.largeCircle;
+
+    // Apply hidden element visibility and color
+    const hidden1 = document.querySelector('.detail__hidden1');
+    const hidden2 = document.querySelector('.detail__hidden2');
+    const hidden = document.querySelector('.detail__hidden');
+    if (hidden1) hidden1.style.visibility = theme.hidden1Visible ? 'visible' : 'hidden';
+    if (hidden2) hidden2.style.visibility = theme.hidden2Visible ? 'visible' : 'hidden';
+    if (hidden) hidden.style.color = theme.hiddenColor;
+
+    // Apply back button
+    const backButton = document.querySelector('.backbutton');
+    if (backButton) backButton.src = theme.backButtonSrc;
+
+    // Apply backgrounds
+    const titleWrapper = document.querySelector('.detail__title--wrapper');
+    const descWrapper = document.querySelector('.detail__description--wrapper');
+    const nextWrapper = document.querySelector('.next-project__wrapper');
+    if (titleWrapper) titleWrapper.style.backgroundImage = theme.titleBg;
+    if (descWrapper) {
+        descWrapper.style.backgroundImage = theme.descriptionBg;
+        descWrapper.style.backgroundSize = theme.descriptionBgSize;
+    }
+    if (nextWrapper) {
+        nextWrapper.style.backgroundImage = theme.nextProjectBg;
+        nextWrapper.style.backgroundColor = theme.nextProjectBgColor;
+    }
+
+    // Apply button styles
+    const button = document.querySelector('.detail__button--color');
+    const link = document.querySelector('.detail__link');
+    const icon = document.querySelector('.icon__external');
+    
+    if (button) {
+        button.style.backgroundColor = theme.buttonBg;
+        button.style.borderColor = theme.buttonBorder;
+        
+        // Remove old event listeners by cloning
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.addEventListener('mouseenter', () => {
+            const detailLink = document.querySelector('.detail__link');
+            const detailButton = document.querySelector('.detail__button--color');
+            const iconExt = document.querySelector('.icon__external');
+            if (detailLink) detailLink.style.color = theme.buttonHoverLinkColor;
+            if (detailButton) {
+                detailButton.style.backgroundColor = 'transparent';
+                detailButton.style.borderColor = theme.buttonBorder;
+            }
+            if (iconExt) iconExt.src = theme.buttonHoverIcon;
+        });
+        
+        newButton.addEventListener('mouseleave', () => {
+            const detailLink = document.querySelector('.detail__link');
+            const detailButton = document.querySelector('.detail__button--color');
+            const iconExt = document.querySelector('.icon__external');
+            if (iconExt) iconExt.src = theme.buttonLeaveIcon;
+            if (detailLink) detailLink.style.color = theme.buttonLeaveLinkColor;
+            if (detailButton) {
+                detailButton.style.backgroundColor = theme.buttonBg;
+                detailButton.style.borderColor = theme.buttonBorder;
+            }
+        });
+    }
+
+    if (link) link.style.color = theme.linkColor;
+    if (icon) icon.src = theme.iconExternal;
+
+    // Apply assignment margin
+    const assignment = document.querySelector('.assignment__wrapper');
+    if (assignment) assignment.style.marginBottom = typeof theme.assignmentMargin === 'number' ? `${theme.assignmentMargin}px` : theme.assignmentMargin;
+
+    // Apply navigation styles
+    document.querySelectorAll('.nav__link').forEach(navLink => {
+        navLink.style.borderColor = '#efefef';
+        
+        const newNavLink = navLink.cloneNode(true);
+        navLink.parentNode.replaceChild(newNavLink, navLink);
+        
+        newNavLink.addEventListener('mouseenter', () => {
+            newNavLink.style.borderColor = theme.navHoverColor;
+            newNavLink.style.color = theme.navHoverColor;
+        });
+        
+        newNavLink.addEventListener('mouseleave', () => {
+            newNavLink.style.borderColor = '#efefef';
+            newNavLink.style.color = '#272727';
+        });
+    });
+
+    // Apply text colors
+    document.querySelectorAll('.highlighted').forEach(el => el.style.color = theme.highlightedColor);
+    document.querySelectorAll('.detail__color1').forEach(el => el.style.color = theme.color1);
+    document.querySelectorAll('.detail__color2').forEach(el => el.style.color = theme.color2);
+    document.querySelectorAll('.next-project__color').forEach(el => el.style.color = theme.nextProjectColor);
+    document.querySelectorAll('.detail__item--wrapper').forEach(el => el.style.borderColor = theme.borderColor);
+};
+
 const ProjectDetail = () => {
     const { project, nextProject } = useLoaderData();
     const { pathname } = useLocation();
     const { setScaling } = useOutletContext();
     const projectImages = project.attributes.images.data;
-    const cover = project.attributes.cover.data[0].attributes.formats.large.url
-    const nextCover = nextProject.attributes.cover.data[0].attributes.formats.large.url
+    const cover = project.attributes.cover.data[0].attributes.formats.large.url;
+    const nextCover = nextProject.attributes.cover.data[0].attributes.formats.large.url;
     const [colorIdentifier, setColorIdentifier] = useState('trainworld')
 
     useEffect(() => {
@@ -28,588 +476,8 @@ const ProjectDetail = () => {
     }, [pathname]);
 
     useEffect(() => {
-        project.attributes.name === 'TRAINWORLD' ? (
-            document.documentElement.style.backgroundColor = '#272727',
-            document.querySelector('.small_circle').style.backgroundColor = '#E8E661',
-            document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-            setColorIdentifier('trainworld'),
-            document.querySelector('.backbutton').src = '/backbutton_white.svg',
-            document.querySelector('.detail__background').style.backgroundColor = '#272727',
-            document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_trainworld.svg")',
-            document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_trainworld.svg")',
-            document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-trainworld.svg")',
-            document.querySelector('.next-project__wrapper').style.backgroundColor = '#929948',
-            document.querySelector('.detail__button--color').style.backgroundColor = '#E8E661',
-            document.querySelector('.detail__button--color').style.borderColor = '#E8E661',
-            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                document.querySelector('.detail__link').style.color = '#FDFDFD'
-                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                document.querySelector('.detail__button--color').style.borderColor = '#E8E661'
-                document.querySelector('.icon__external').src = '/link_white.svg'
-            }),
-            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                document.querySelector('.icon__external').src = '/link_black.svg'
-                document.querySelector('.detail__link').style.color = '#272727'
-                document.querySelector('.detail__button--color').style.backgroundColor = '#E8E661'
-                document.querySelector('.detail__button--color').style.borderColor = '#E8E661'
-            }),
-            document.querySelector('.icon__external').src = '/link_black.svg',
-            document.querySelector('.detail__link').style.color = '#272727',
-            document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-            document.querySelector('.assignment__wrapper').style.marginBottom = 0,
-            document.querySelectorAll('.nav__link').forEach(link => {
-                link.style.borderColor = '#efefef'
-                link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-            }),
-            document.querySelectorAll('.highlighted').forEach(highlight => {
-                highlight.style.color = '#E8E661'
-            }),
-            document.querySelectorAll('.detail__color1').forEach(color1 => {
-                color1.style.color = '#E8E661'
-            }),
-            document.querySelectorAll('.detail__color2').forEach(color1 => {
-                color1.style.color = '#FDFDFD'
-            }),
-            document.querySelectorAll('.next-project__color').forEach(text => {
-                text.style.color = '#EEEC76'
-            }),
-            document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                line.style.borderColor = '#EEEC76'
-            })
-        )
-            : project.attributes.name === 'MIXBOX' ? (
-                document.documentElement.style.backgroundColor = '#929948',
-                document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
-                document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                setColorIdentifier('mixbox'),
-                document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                document.querySelector('.detail__background').style.backgroundColor = '#929948',
-                document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_mixbox.svg")',
-                document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_mixbox.svg")',
-                document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-mixbox.svg")',
-                document.querySelector('.next-project__wrapper').style.backgroundColor = '#492078',
-                document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76',
-                document.querySelector('.detail__button--color').style.borderColor = '#EEEC76',
-                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                    document.querySelector('.detail__link').style.color = '#FDFDFD',
-                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                    document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
-                    document.querySelector('.icon__external').src = '/link_white.svg'
-                }),
-                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                    document.querySelector('.icon__external').src = '/link_black.svg'
-                    document.querySelector('.detail__link').style.color = '#272727'
-                    document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76'
-                    document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
-                }),
-                document.querySelector('.icon__external').src = '/link_black.svg',
-                document.querySelector('.detail__link').style.color = '#272727',
-                document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                document.querySelector('.assignment__wrapper').style.marginBottom = '5rem',
-                document.querySelectorAll('.nav__link').forEach(link => {
-                    link.style.borderColor = '#efefef'
-                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                }),
-                document.querySelectorAll('.highlighted').forEach(highlight => {
-                    highlight.style.color = '#EEEC76'
-                }),
-                document.querySelectorAll('.detail__color1').forEach(color1 => {
-                    color1.style.color = '#EEEC76'
-                }),
-                document.querySelectorAll('.detail__color2').forEach(color1 => {
-                    color1.style.color = '#FDFDFD'
-                }),
-                document.querySelectorAll('.next-project__color').forEach(text => {
-                    text.style.color = '#FF53B7'
-                }),
-                document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                    line.style.borderColor = '#FDFDFD'
-                })
-            )
-                : project.attributes.name === 'STINGSTITUTE' ? (
-                    document.documentElement.style.backgroundColor = '#492078',
-                    document.querySelector('.small_circle').style.backgroundColor = '#FF53B7',
-                    document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-                    document.querySelector('.detail__hidden1').style.visibility = 'visible',
-                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                    setColorIdentifier('stingstitute'),
-                    document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                    document.querySelector('.detail__background').style.backgroundColor = '#492078',
-                    document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_stingstitute.svg")',
-                    document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_stingstitute.svg")',
-                    document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-stingstitute.svg")',
-                    document.querySelector('.next-project__wrapper').style.backgroundColor = '#F0F0F0',
-                    document.querySelector('.detail__button--color').style.backgroundColor = '#FF53B7',
-                    document.querySelector('.detail__button--color').style.borderColor = '#FF53B7',
-                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                        document.querySelector('.detail__link').style.color = '#FDFDFD'
-                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                        document.querySelector('.detail__button--color').style.borderColor = '#FF53B7'
-                        document.querySelector('.icon__external').src = '/link_white.svg'
-                    }),
-                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                        document.querySelector('.icon__external').src = '/link_black.svg'
-                        document.querySelector('.detail__link').style.color = '#272727'
-                        document.querySelector('.detail__button--color').style.backgroundColor = '#FF53B7'
-                        document.querySelector('.detail__button--color').style.borderColor = '#FF53B7'
-                    }),
-                    document.querySelector('.icon__external').src = '/link_black.svg',
-                    document.querySelector('.detail__link').style.color = '#272727',
-                    document.querySelector('.assignment__wrapper').style.marginBottom = '18rem',
-                    document.querySelectorAll('.nav__link').forEach(link => {
-                        link.style.borderColor = '#efefef'
-                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#FF53B7', link.style.color = '#FF53B7' })
-                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                    }),
-                    document.querySelectorAll('.highlighted').forEach(highlight => {
-                        highlight.style.color = '#FF53B7'
-                    }),
-                    document.querySelectorAll('.detail__color1').forEach(color1 => {
-                        color1.style.color = '#FF53B7'
-                    }),
-                    document.querySelectorAll('.detail__color2').forEach(color1 => {
-                        color1.style.color = '#FDFDFD'
-                    }),
-                    document.querySelectorAll('.next-project__color').forEach(text => {
-                        text.style.color = '#272727'
-                    }),
-                    document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                        line.style.borderColor = '#FDFDFD'
-                    })
-                )
-                    : project.attributes.name === 'ROTTERDANS' ? (
-                        document.documentElement.style.backgroundColor = '#F0F0F0',
-                        document.querySelector('.small_circle').style.backgroundColor = '#272727',
-                        document.querySelector('.large_circle').style.backgroundColor = '#272727',
-                        document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                        document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                        document.querySelector('.detail__hidden').style.color = '#272727',
-                        setColorIdentifier('rotterdans'),
-                        document.querySelector('.backbutton').src = '/backbutton_black.svg',
-                        document.querySelector('.detail__background').style.backgroundColor = '#F0F0F0',
-                        document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_rotterdans.svg")',
-                        document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_rotterdans.svg")',
-                        document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-rotterdans.svg")',
-                        document.querySelector('.next-project__wrapper').style.backgroundColor = '#272727',
-                        document.querySelector('.detail__button--color').style.backgroundColor = '#272727',
-                        document.querySelector('.detail__button--color').style.borderColor = '#272727',
-                        document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                            document.querySelector('.detail__link').style.color = '#272727'
-                            document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                            document.querySelector('.detail__button--color').style.borderColor = '#272727'
-                            document.querySelector('.icon__external').src = '/link_black.svg'
-                        }),
-                        document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                            document.querySelector('.icon__external').src = '/link_white.svg'
-                            document.querySelector('.detail__link').style.color = '#FDFDFD'
-                            document.querySelector('.detail__button--color').style.backgroundColor = '#272727'
-                            document.querySelector('.detail__button--color').style.borderColor = '#272727'
-                        }),
-                        document.querySelector('.icon__external').src = '/link_white.svg',
-                        document.querySelector('.detail__link').style.color = '#FDFDFD',
-                        document.querySelector('.detail__description--wrapper').style.backgroundSize = 'contain',
-                        document.querySelector('.assignment__wrapper').style.marginBottom = 0,
-                        document.querySelectorAll('.nav__link').forEach(link => {
-                            link.style.borderColor = '#efefef'
-                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#272727', link.style.color = '#272727' })
-                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                        }),
-                        document.querySelectorAll('.highlighted').forEach(highlight => {
-                            highlight.style.color = '#272727'
-                        }),
-                        document.querySelectorAll('.detail__color1').forEach(color1 => {
-                            color1.style.color = '#272727'
-                        }),
-                        document.querySelectorAll('.detail__color2').forEach(color1 => {
-                            color1.style.color = '#272727'
-                        }),
-                        document.querySelectorAll('.next-project__color').forEach(text => {
-                            text.style.color = '#D8595B'
-                        }),
-                        document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                            line.style.borderColor = '#272727'
-                        })
-                    )
-                        : project.attributes.name === 'EQUAL MELODIES' ? (
-                            document.documentElement.style.backgroundColor = '#272727',
-                            document.querySelector('.small_circle').style.backgroundColor = '#D8595B',
-                            document.querySelector('.large_circle').style.backgroundColor = '#272727',
-                            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                            setColorIdentifier('equalmelodies'),
-                            document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                            document.querySelector('.detail__background').style.backgroundColor = '#272727',
-                            document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_equalmelodies.svg")',
-                            document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_equalmelodies.svg")',
-                            document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-equalmelodies.svg")',
-                            document.querySelector('.next-project__wrapper').style.backgroundColor = '#366830',
-                            document.querySelector('.detail__button--color').style.backgroundColor = '#D8595B',
-                            document.querySelector('.detail__button--color').style.borderColor = '#D8595B',
-                            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                document.querySelector('.detail__button--color').style.borderColor = '#D8595B'
-                                document.querySelector('.icon__external').src = '/link_white.svg'
-                            }),
-                            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                document.querySelector('.icon__external').src = '/link_white.svg'
-                                document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                document.querySelector('.detail__button--color').style.backgroundColor = '#D8595B'
-                                document.querySelector('.detail__button--color').style.borderColor = '#D8595B'
-                            }),
-                            document.querySelector('.icon__external').src = '/link_white.svg',
-                            document.querySelector('.detail__link').style.color = '#FDFDFD',
-                            document.querySelector('.detail__description--wrapper').style.backgroundSize = 'contain',
-                            document.querySelector('.assignment__wrapper').style.marginBottom = 0,
-                            document.querySelectorAll('.nav__link').forEach(link => {
-                                link.style.borderColor = '#efefef'
-                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#D8595B', link.style.color = '#D8595B' })
-                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                            }),
-                            document.querySelectorAll('.highlighted').forEach(highlight => {
-                                highlight.style.color = '#D8595B'
-                            }),
-                            document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                color1.style.color = '#D8595B'
-                            }),
-                            document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                color1.style.color = '#FDFDFD'
-                            }),
-                            document.querySelectorAll('.next-project__color').forEach(text => {
-                                text.style.color = '#FDFDFD'
-                            }),
-                            document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                line.style.borderColor = '#FDFDFD'
-                            })
-                        )
-                            : project.attributes.name === 'REACT ARTISTIQUE' ? (
-                                document.documentElement.style.backgroundColor = '#366830',
-                                document.querySelector('.small_circle').style.backgroundColor = '#FDFDFD',
-                                document.querySelector('.large_circle').style.backgroundColor = '#274A23',
-                                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                document.querySelector('.detail__hidden2').style.visibility = 'visible',
-                                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                setColorIdentifier('reactartistique'),
-                                document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                                document.querySelector('.detail__background').style.backgroundColor = '#366830',
-                                document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_reactartistique.svg")',
-                                document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_reactartistique.svg")',
-                                document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-reactartistique.svg")',
-                                document.querySelector('.next-project__wrapper').style.backgroundColor = '#FFF8F4',
-                                document.querySelector('.detail__button--color').style.backgroundColor = '#274A23',
-                                document.querySelector('.detail__button--color').style.borderColor = '#274A23',
-                                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                    document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                    document.querySelector('.detail__button--color').style.borderColor = '#274A23'
-                                    document.querySelector('.icon__external').src = '/link_white.svg'
-                                }),
-                                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                    document.querySelector('.icon__external').src = '/link_white.svg'
-                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                    document.querySelector('.detail__button--color').style.backgroundColor = '#274A23'
-                                    document.querySelector('.detail__button--color').style.borderColor = '#274A23'
-                                }),
-                                document.querySelector('.icon__external').src = '/link_white.svg',
-                                document.querySelector('.detail__link').style.color = '#FDFDFD',
-                                document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
-                                document.querySelectorAll('.nav__link').forEach(link => {
-                                    link.style.borderColor = '#efefef'
-                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#FDFDFD', link.style.color = '#FDFDFD' })
-                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                }),
-                                document.querySelectorAll('.highlighted').forEach(highlight => {
-                                    highlight.style.color = '#87EA7B'
-                                }),
-                                document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                    color1.style.color = '#FDFDFD'
-                                }),
-                                document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                    color1.style.color = '#FDFDFD'
-                                }),
-                                document.querySelectorAll('.next-project__color').forEach(text => {
-                                    text.style.color = '#4C984C'
-                                }),
-                                document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                    line.style.borderColor = '#FDFDFD'
-                                })
-                            )
-                                : project.attributes.name === 'DISHKNOB' ? (
-                                    document.documentElement.style.backgroundColor = '#FFF8F4',
-                                    document.querySelector('.small_circle').style.backgroundColor = '#4C984C',
-                                    document.querySelector('.large_circle').style.backgroundColor = '#4C984C',
-                                    document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                    setColorIdentifier('dishknob'),
-                                    document.querySelector('.backbutton').src = '/backbutton_black.svg',
-                                    document.querySelector('.detail__background').style.backgroundColor = '#FFF8F4',
-                                    document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_dishknob.svg")',
-                                    document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_dishknob.svg")',
-                                    document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-dishknob.svg")',
-                                    document.querySelector('.next-project__wrapper').style.backgroundColor = '#434321',
-                                    document.querySelector('.detail__button--color').style.backgroundColor = '#4C984C',
-                                    document.querySelector('.detail__button--color').style.borderColor = '#4C984C',
-                                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                        document.querySelector('.detail__link').style.color = '#272727'
-                                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                        document.querySelector('.detail__button--color').style.borderColor = '#4C984C'
-                                        document.querySelector('.icon__external').src = '/link_black.svg'
-                                    }),
-                                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                        document.querySelector('.icon__external').src = '/link_white.svg'
-                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                        document.querySelector('.detail__button--color').style.backgroundColor = '#4C984C'
-                                        document.querySelector('.detail__button--color').style.borderColor = '#4C984C'
-                                    }),
-                                    document.querySelector('.icon__external').src = '/link_white.svg',
-                                    document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                    document.querySelector('.assignment__wrapper').style.marginBottom = '27rem',
-                                    document.querySelector('.detail__link').style.color = '#FDFDFD',
-                                    document.querySelectorAll('.nav__link').forEach(link => {
-                                        link.style.borderColor = '#efefef'
-                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#4C984C', link.style.color = '#4C984C' })
-                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                    }),
-                                    document.querySelectorAll('.highlighted').forEach(highlight => {
-                                        highlight.style.color = '#3A753A'
-                                    }),
-                                    document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                        color1.style.color = '#4C984C'
-                                    }),
-                                    document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                        color1.style.color = '#3A753A'
-                                    }),
-                                    document.querySelectorAll('.next-project__color').forEach(text => {
-                                        text.style.color = '#EEEC76'
-                                    }),
-                                    document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                        line.style.borderColor = '#3A753A'
-                                    })
-                                )
-                                    : project.attributes.name === 'TRIMCRAFT' ? (
-                                        document.documentElement.style.backgroundColor = '#434321',
-                                        document.querySelector('.small_circle').style.backgroundColor = '#EEEC76',
-                                        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD',
-                                        document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                        document.querySelector('.detail__hidden2').style.visibility = 'visible',
-                                        document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                        setColorIdentifier('trimcraft'),
-                                        document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                                        document.querySelector('.detail__background').style.backgroundColor = '#434321',
-                                        document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_trimcraft.svg")',
-                                        document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_trimcraft.svg")',
-                                        document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-trimcraft.svg")',
-                                        document.querySelector('.next-project__wrapper').style.backgroundColor = '#21432E',
-                                        document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76',
-                                        document.querySelector('.detail__button--color').style.borderColor = '#EEEC76',
-                                        document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                            document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                            document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                            document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
-                                            document.querySelector('.icon__external').src = '/link_white.svg'
-                                        }),
-                                        document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                            document.querySelector('.icon__external').src = '/link_black.svg'
-                                            document.querySelector('.detail__link').style.color = '#272727'
-                                            document.querySelector('.detail__button--color').style.backgroundColor = '#EEEC76'
-                                            document.querySelector('.detail__button--color').style.borderColor = '#EEEC76'
-                                        }),
-                                        document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                        document.querySelector('.assignment__wrapper').style.marginBottom = '18rem',
-                                        document.querySelector('.icon__external').src = '/link_black.svg',
-                                        document.querySelectorAll('.nav__link').forEach(link => {
-                                            link.style.borderColor = '#efefef'
-                                            link.addEventListener('mouseenter', () => { link.style.borderColor = '#EEEC76', link.style.color = '#EEEC76' })
-                                            link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                        }),
-                                        document.querySelector('.detail__link').style.color = '#272727',
-                                        document.querySelectorAll('.highlighted').forEach(highlight => {
-                                            highlight.style.color = '#EEEC76'
-                                        }),
-                                        document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                            color1.style.color = '#EEEC76'
-                                        }),
-                                        document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                            color1.style.color = '#FDFDFD'
-                                        }),
-                                        document.querySelectorAll('.next-project__color').forEach(text => {
-                                            text.style.color = '#FEA500'
-                                        }),
-                                        document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                            line.style.borderColor = '#FDFDFD'
-                                        })
-                                    )
-                                        : project.attributes.name === 'SMASH A BUTTON' ? (
-                                            document.documentElement.style.backgroundColor = '#21432E',
-                                            document.querySelector('.small_circle').style.backgroundColor = '#FEA500',
-                                            document.querySelector('.large_circle').style.backgroundColor = '#FEA500',
-                                            document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                            document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                                            document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                            setColorIdentifier('smashabutton'),
-                                            document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                                            document.querySelector('.detail__background').style.backgroundColor = '#21432E',
-                                            document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_smashabutton.svg")',
-                                            document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_smashabutton.svg")',
-                                            document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-smashabutton.svg")',
-                                            document.querySelector('.next-project__wrapper').style.backgroundColor = '#7A9A57',
-                                            document.querySelector('.detail__button--color').style.backgroundColor = '#FEA500',
-                                            document.querySelector('.detail__button--color').style.borderColor = '#FEA500',
-                                            document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                                document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                                document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                                document.querySelector('.detail__button--color').style.borderColor = '#FEA500'
-                                                document.querySelector('.icon__external').src = '/link_white.svg'
-                                            }),
-                                            document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                                document.querySelector('.icon__external').src = '/link_black.svg'
-                                                document.querySelector('.detail__link').style.color = '#272727'
-                                                document.querySelector('.detail__button--color').style.backgroundColor = '#FEA500'
-                                                document.querySelector('.detail__button--color').style.borderColor = '#FEA500'
-                                            }),
-                                            document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                            document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
-                                            document.querySelector('.icon__external').src = '/link_black.svg',
-                                            document.querySelector('.detail__link').style.color = '#272727',
-                                            document.querySelectorAll('.nav__link').forEach(link => {
-                                                link.style.borderColor = '#efefef'
-                                                link.addEventListener('mouseenter', () => { link.style.borderColor = '#FEA500', link.style.color = '#FEA500' })
-                                                link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                            }),
-                                            document.querySelectorAll('.highlighted').forEach(highlight => {
-                                                highlight.style.color = '#FEA500'
-                                            }),
-                                            document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                                color1.style.color = '#FEA500'
-                                            }),
-                                            document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                                color1.style.color = '#FDFDFD'
-                                            }),
-                                            document.querySelectorAll('.next-project__color').forEach(text => {
-                                                text.style.color = '#ECEDCE'
-                                            }),
-                                            document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                                line.style.borderColor = '#FEA500'
-                                            })
-                                        )
-                                            : project.attributes.name === 'CHESSBASE' ? (
-                                                document.documentElement.style.backgroundColor = '#7A9A57',
-                                                document.querySelector('.small_circle').style.backgroundColor = '#ECEDCE',
-                                                document.querySelector('.large_circle').style.backgroundColor = '#ECEDCE',
-                                                document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                                document.querySelector('.detail__hidden2').style.visibility = 'visible',
-                                                document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                                setColorIdentifier('chessbase'),
-                                                document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                                                document.querySelector('.detail__background').style.backgroundColor = '#7A9A57',
-                                                document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_chessbase.svg")',
-                                                document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_chessbase.svg")',
-                                                document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-chessbase.svg")',
-                                                document.querySelector('.next-project__wrapper').style.backgroundColor = '#2E3495',
-                                                document.querySelector('.detail__button--color').style.backgroundColor = '#5A723F',
-                                                document.querySelector('.detail__button--color').style.borderColor = '#5A723F',
-                                                document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                                    document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                                    document.querySelector('.detail__button--color').style.borderColor = '#5A723F'
-                                                    document.querySelector('.icon__external').src = '/link_white.svg'
-                                                }),
-                                                document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                                    document.querySelector('.icon__external').src = '/link_white.svg'
-                                                    document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                                    document.querySelector('.detail__button--color').style.backgroundColor = '#5A723F'
-                                                    document.querySelector('.detail__button--color').style.borderColor = '#5A723F'
-                                                }),
-                                                document.querySelector('.icon__external').src = '/link_white.svg',
-                                                document.querySelector('.detail__link').style.color = '#FDFDFD',
-                                                document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                                document.querySelector('.assignment__wrapper').style.marginBottom = '25rem',
-                                                document.querySelectorAll('.nav__link').forEach(link => {
-                                                    link.style.borderColor = '#efefef'
-                                                    link.addEventListener('mouseenter', () => { link.style.borderColor = '#ECEDCE', link.style.color = '#ECEDCE' })
-                                                    link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                }),
-                                                document.querySelectorAll('.highlighted').forEach(highlight => {
-                                                    highlight.style.color = '#FDFDFD'
-                                                }),
-                                                document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                                    color1.style.color = '#ECEDCE'
-                                                }),
-                                                document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                                    color1.style.color = '#FDFDFD'
-                                                }),
-                                                document.querySelectorAll('.next-project__color').forEach(text => {
-                                                    text.style.color = '#E69A8D'
-                                                }),
-                                                document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                                    line.style.borderColor = '#FDFDFD'
-                                                })
-                                            )
-                                                : (
-                                                    document.documentElement.style.backgroundColor = '#2E3495',
-                                                    document.querySelector('.small_circle').style.backgroundColor = '#E69A8D',
-                                                    document.querySelector('.large_circle').style.backgroundColor = '#E69A8D',
-                                                    document.querySelector('.detail__hidden1').style.visibility = 'hidden',
-                                                    document.querySelector('.detail__hidden2').style.visibility = 'hidden',
-                                                    document.querySelector('.detail__hidden').style.color = '#FDFDFD',
-                                                    setColorIdentifier('weatherdog'),
-                                                    document.querySelector('.backbutton').src = '/backbutton_white.svg',
-                                                    document.querySelector('.detail__background').style.backgroundColor = '#2E3495',
-                                                    document.querySelector('.detail__title--wrapper').style.backgroundImage = 'url("/detailbg_weatherdog.svg")',
-                                                    document.querySelector('.detail__description--wrapper').style.backgroundImage = 'url("/detailbg2_weatherdog.svg")',
-                                                    document.querySelector('.next-project__wrapper').style.backgroundImage = 'url("/detailbg_next-weatherdog.svg")',
-                                                    document.querySelector('.next-project__wrapper').style.backgroundColor = '#272727',
-                                                    document.querySelector('.detail__button--color').style.backgroundColor = '#E69A8D',
-                                                    document.querySelector('.detail__button--color').style.borderColor = '#E69A8D',
-                                                    document.querySelector('.detail__button--color').addEventListener('mouseenter', () => {
-                                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                                        document.querySelector('.detail__button--color').style.backgroundColor = 'transparent'
-                                                        document.querySelector('.detail__button--color').style.borderColor = '#E69A8D'
-                                                        document.querySelector('.icon__external').src = '/link_white.svg'
-                                                    }),
-                                                    document.querySelector('.detail__button--color').addEventListener('mouseleave', () => {
-                                                        document.querySelector('.icon__external').src = '/link_white.svg'
-                                                        document.querySelector('.detail__link').style.color = '#FDFDFD'
-                                                        document.querySelector('.detail__button--color').style.backgroundColor = '#E69A8D'
-                                                        document.querySelector('.detail__button--color').style.borderColor = '#E69A8D'
-                                                    }),
-                                                    document.querySelector('.icon__external').src = '/link_white.svg',
-                                                    document.querySelector('.detail__link').style.color = '#FDFDFD',
-                                                    document.querySelector('.detail__description--wrapper').style.backgroundSize = 'cover',
-                                                    document.querySelector('.assignment__wrapper').style.marginBottom = '27rem',
-                                                    document.querySelectorAll('.nav__link').forEach(link => {
-                                                        link.style.borderColor = '#efefef'
-                                                        link.addEventListener('mouseenter', () => { link.style.borderColor = '#E69A8D', link.style.color = '#E69A8D' })
-                                                        link.addEventListener('mouseleave', () => { link.style.borderColor = '#efefef', link.style.color = '#272727' })
-                                                    }),
-                                                    document.querySelectorAll('.highlighted').forEach(highlight => {
-                                                        highlight.style.color = '#E69A8D'
-                                                    }),
-                                                    document.querySelectorAll('.detail__color1').forEach(color1 => {
-                                                        color1.style.color = '#FDFDFD'
-                                                    }),
-                                                    document.querySelectorAll('.detail__color2').forEach(color1 => {
-                                                        color1.style.color = '#FDFDFD'
-                                                    }),
-                                                    document.querySelectorAll('.next-project__color').forEach(text => {
-                                                        text.style.color = '#E8E661'
-                                                    }),
-                                                    document.querySelectorAll('.detail__item--wrapper').forEach(line => {
-                                                        line.style.borderColor = '#FDFDFD'
-                                                    })
-                                                )
+        const theme = THEMES[project.attributes.name] || THEMES.WEATHERDOG;
+        applyTheme(theme, setColorIdentifier);
     }, [project.attributes.name])
 
     return (
@@ -751,7 +619,7 @@ const ProjectDetail = () => {
                                         <div key={project.attributes.name} className="images__project--wrapper images__reactartistique--wrapper">
                                             {projectImages.map((projectImage, index) => (
                                                 <video controls width={'90%'} key={index} className={`image__detail image__reactartistique--${index}`}>
-                                                    <source src={projectImage.attributes.url} type="video/mp4" />
+                                                    <source src={projectImage.attributes.formats.large.url} type="video/mp4" />
                                                 </video>
                                             ))}
                                         </div>
@@ -760,7 +628,7 @@ const ProjectDetail = () => {
                                             <div key={project.attributes.name} className="images__project--wrapper images__dishknob--wrapper">
                                                 {projectImages.map((projectImage, index) => (
                                                     <video controls width={'90%'} key={index} className={`image__detail image__dishknob--${index}`}>
-                                                        <source src={projectImage.attributes.url} type="video/mp4" />
+                                                        <source src={projectImage.attributes.formats.large.url} type="video/mp4" />
                                                     </video>
                                                 ))}
                                             </div>
@@ -787,7 +655,10 @@ const ProjectDetail = () => {
                                                         </div>
                                                     )
                                                         : (
-                                                            <div>
+                                                            <div key={project.attributes.name} className="images__project--wrapper images__weatherdog--wrapper">
+                                                                {projectImages.map((projectImage, index) => (
+                                                                    <img key={index} className={`image__detail image__weatherdog--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                                                ))}
                                                             </div>
                                                         )
                 }
