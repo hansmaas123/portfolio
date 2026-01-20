@@ -1,8 +1,10 @@
 import NavBar from "../components/NavBar"
 import '../styles/style.css'
-import { Link, useLocation, useOutletContext, useParams } from "react-router-dom"
+import { useLocation, useOutletContext, useParams } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { useEffect } from "react";
+import PageTransition from '../components/PageTransition'
+import TransitionLink from '../components/TransitionLink'
 
 // Theme configuration
 const THEMES = {
@@ -329,7 +331,8 @@ const About = () => {
     }, [colorIdentifier]);
 
     return (
-        <main className="aboutpage__wrapper">
+        <PageTransition>
+            <main className="aboutpage__wrapper">
             <div className="aboutpage__bg--wrapper">
                 <NavBar colorIdentifier={colorIdentifier} />
                 <section className="about__title--wrapper about__section">
@@ -601,11 +604,11 @@ const About = () => {
                 <div className="about__contact--wrapper">
                     <div className="about__contact--items">
                         <h2 className="about__contact--title">Let&apos;s Talk</h2>
-                        <Link onMouseEnter={() => setScaling(true)}
+                        <TransitionLink onMouseEnter={() => setScaling(true)}
                             onMouseLeave={() => setScaling(false)} onClick={(() => {
                                 document.querySelector('body').classList.add("scroll-up");
                                 document.querySelector('body').classList.remove("scroll-down")
-                            })} to={`/contact/${colorIdentifier}`} className="about__contact--button button__color about__button--color">Contact me</Link>
+                            })} to={`/contact/${colorIdentifier}`} className="about__contact--button button__color about__button--color">Contact me</TransitionLink>
                     </div>
                 </div>
                 <div className="bottom">
@@ -630,7 +633,7 @@ const About = () => {
                 </div>
             </section>
         </main>
-
+        </PageTransition>
     )
 }
 

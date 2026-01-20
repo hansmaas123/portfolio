@@ -1,6 +1,7 @@
 import { useOutletContext, useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 import { useEffect, useRef } from 'react'
+import PageTransition from '../components/PageTransition'
 
 const THEMES = {
     trainworld: { color1: '#FDFDFD', color2: '#E8E661', smallCircle: '#E8E661', largeCircle: '#FDFDFD', bg: '#272727', bgImage: 'contactbg_trainworld', navHover: '#EEEC76', activeColor: '#272727', buttonPrimColor: '#272727', buttonPrimHoverColor: '#EEEC76', buttonSecColor: '#FDFDFD', buttonSecHoverColor: '#272727', icons: 'white' },
@@ -36,13 +37,10 @@ const Contact = () => {
         $('.contact__description').style.color = theme.color1
         Object.assign($('.background1').style, { backgroundColor: theme.bg, backgroundImage: `url("/${theme.bgImage}.svg")` })
 
-        // Active nav link
-        Object.assign($('.active').style, { backgroundColor: accentColor, borderColor: accentColor, color: theme.activeColor })
-
         // Nav links hover
         $$('.nav__link').forEach(link => {
-            link.style.borderColor = '#efefef'
             if (!link.classList.contains('active')) {
+                link.style.borderColor = '#efefef'
                 const enter = () => { link.style.borderColor = theme.navHover; link.style.color = theme.navHover }
                 const leave = () => { link.style.borderColor = '#efefef'; link.style.color = '#272727' }
                 link.addEventListener('mouseenter', enter)
@@ -50,6 +48,17 @@ const Contact = () => {
                 listenersRef.current.push({ el: link, event: 'mouseenter', handler: enter }, { el: link, event: 'mouseleave', handler: leave })
             }
         })
+
+        // Active nav link
+        const activeLink = $('.active')
+        Object.assign(activeLink.style, { backgroundColor: accentColor, borderColor: accentColor, color: theme.activeColor })
+        
+        // Active link hover to keep its color
+        const activeEnter = () => { activeLink.style.borderColor = accentColor; activeLink.style.backgroundColor = accentColor }
+        const activeLeave = () => { activeLink.style.borderColor = accentColor; activeLink.style.backgroundColor = accentColor }
+        activeLink.addEventListener('mouseenter', activeEnter)
+        activeLink.addEventListener('mouseleave', activeLeave)
+        listenersRef.current.push({ el: activeLink, event: 'mouseenter', handler: activeEnter }, { el: activeLink, event: 'mouseleave', handler: activeLeave })
 
         // Buttons
         Object.assign($('.button__color').style, { backgroundColor: accentColor, borderColor: accentColor, color: theme.buttonPrimColor })
@@ -85,7 +94,8 @@ const Contact = () => {
     }, [colorIdentifier])
 
     return (
-        <main>
+        <PageTransition>
+            <main>
             <section className="contact__container background1">
                 <NavBar colorIdentifier={colorIdentifier} />
                 <h1 className="hidden">Let&apos;s Connect</h1>
@@ -94,7 +104,7 @@ const Contact = () => {
                         <p className="contact__title color1">LET&apos;S<br /><span className="contact__title2 color2">CONNECT</span></p>
                         <p className="contact__description color1">I&apos;m looking forward to meet you so we could build our <span className="highlight color2">next project together</span></p>
                         <div className="button__wrapper">
-                            <a onMouseEnter={() => setScaling(true)} href="mailto:contact@hansmaasdevine.be" target="_blank" rel="noopener noreferrer" className="about__contact--button contact__button contact__button--prim button__color">E-mail</a>
+                            <a onMouseEnter={() => setScaling(true)} href="mailto:maashans117@gmail.com" target="_blank" rel="noopener noreferrer" className="about__contact--button contact__button contact__button--prim button__color">E-mail</a>
                             <a onMouseLeave={() => setScaling(false)} href="tel:+32499103827" className="about__contact--button contact__button contact__button--sec button__color--sec">Message</a>
                         </div>
                     </div>
@@ -118,6 +128,7 @@ const Contact = () => {
                 </div>
             </section>
         </main>
+        </PageTransition>
     )
 }
 

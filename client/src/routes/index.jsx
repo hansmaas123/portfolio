@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
-import { Link, useLocation, useOutletContext } from 'react-router-dom'
+import { useLocation, useOutletContext } from 'react-router-dom'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import '../styles/style.css'
 import NavBar from '../components/NavBar'
+import PageTransition from '../components/PageTransition'
+import TransitionLink from '../components/TransitionLink'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -104,8 +106,9 @@ const Index = () => {
     }, [location])
 
     return (
-        <main>
-            <div className="homepage__wrapper">
+        <PageTransition>
+            <main>
+                <div className="homepage__wrapper">
                 <NavBar colorIdentifier={colorIdentifier} />
                 <p className="name">Hans Maas</p>
                 <div className="home__title--wrapper">
@@ -123,7 +126,7 @@ const Index = () => {
                                     alt={`project thumbnail ${project.name.toLowerCase()}`}
                                 />
                             </div>
-                            <Link
+                            <TransitionLink
                                 onMouseEnter={() => setScaling(true)}
                                 onMouseLeave={() => setScaling(false)}
                                 onClick={() => setScaling(false)}
@@ -136,12 +139,13 @@ const Index = () => {
                                     <p>{project.type}</p>
                                     <p>{project.year}</p>
                                 </div>
-                            </Link>
+                            </TransitionLink>
                         </div>
                     ))}
                 </div>
             </div>
         </main>
+        </PageTransition>
     )
 }
 

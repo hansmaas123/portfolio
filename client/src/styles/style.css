@@ -14,20 +14,28 @@ body,
 html {
     margin: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     box-sizing: inherit;
     scroll-behavior: smooth;
     background-color: #272727;
+    scrollbar-gutter: stable;
 }
 
 html:has(.detail__wrapper),
 body:has(.detail__wrapper),
 html:has(.aboutpage__wrapper),
-body:has(.aboutpage__wrapper),
-html:has(.homepage__wrapper),
-body:has(.homepage__wrapper) {
+body:has(.aboutpage__wrapper) {
     overflow-x: hidden;
-    width: 100%;
+    height: auto;
+    width: 100vw;
+    overscroll-behavior-y: none;
+}
+
+html:has(.contact__container),
+body:has(.contact__container),
+html:has(.error__container),
+body:has(.error__container) {
+    overscroll-behavior-y: none;
 }
 
 .hidden {
@@ -37,7 +45,7 @@ body:has(.homepage__wrapper) {
 .homepage__wrapper {
     overflow-x: hidden;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     padding-top: 2rem;
     background-color: #272727;
     background-image: url('/homebg_trainworld.svg');
@@ -46,7 +54,7 @@ body:has(.homepage__wrapper) {
 }
 
 .nav__container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -776,7 +784,6 @@ body:has(.homepage__wrapper) {
     padding-top: 2rem;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 .cover__wrapper {
@@ -815,7 +822,7 @@ body:has(.homepage__wrapper) {
 }
 
 .details__container {
-    width: 80vw;
+    width: 80%;
 }
 
 .scope__wrapper {

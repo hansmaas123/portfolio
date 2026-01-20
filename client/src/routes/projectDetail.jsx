@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import '../styles/style.css'
 import { getProjectById } from "../services/project";
-import { Link, useLoaderData, useLocation, useOutletContext } from "react-router-dom";
+import { useLoaderData, useLocation, useOutletContext } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import PageTransition from '../components/PageTransition';
+import TransitionLink from '../components/TransitionLink';
 
 const loader = async ({ params }) => {
     const id = params.id;
@@ -436,22 +438,20 @@ const applyTheme = (theme, setColorIdentifier) => {
     const assignment = document.querySelector('.assignment__wrapper');
     if (assignment) assignment.style.marginBottom = typeof theme.assignmentMargin === 'number' ? `${theme.assignmentMargin}px` : theme.assignmentMargin;
 
-    // Apply navigation styles
+    // Apply navigation styles (without cloning to preserve React event handlers)
     document.querySelectorAll('.nav__link').forEach(navLink => {
         navLink.style.borderColor = '#efefef';
         
-        const newNavLink = navLink.cloneNode(true);
-        navLink.parentNode.replaceChild(newNavLink, navLink);
+        // Remove old hover listeners and add new ones
+        navLink.onmouseenter = () => {
+            navLink.style.borderColor = theme.navHoverColor;
+            navLink.style.color = theme.navHoverColor;
+        };
         
-        newNavLink.addEventListener('mouseenter', () => {
-            newNavLink.style.borderColor = theme.navHoverColor;
-            newNavLink.style.color = theme.navHoverColor;
-        });
-        
-        newNavLink.addEventListener('mouseleave', () => {
-            newNavLink.style.borderColor = '#efefef';
-            newNavLink.style.color = '#272727';
-        });
+        navLink.onmouseleave = () => {
+            navLink.style.borderColor = '#efefef';
+            navLink.style.color = '#272727';
+        };
     });
 
     // Apply text colors
@@ -481,15 +481,16 @@ const ProjectDetail = () => {
     }, [project.attributes.name])
 
     return (
-        <main className="detail__wrapper detail__background">
+        <PageTransition>
+            <main className="detail__wrapper detail__background">
             <NavBar colorIdentifier={colorIdentifier} />
-            <Link onMouseEnter={() => setScaling(true)}
+            <TransitionLink onMouseEnter={() => setScaling(true)}
                 onMouseLeave={() => setScaling(false)} onClick={(() => {
                     document.querySelector('body').classList.add("scroll-up");
                     document.querySelector('body').classList.remove("scroll-down")
                 })} to={'/'} className="backbutton__wrapper">
                 <img src="/backbutton_white.svg" alt="back button" className="backbutton" />
-            </Link>
+            </TransitionLink>
             <section className="detail__title--wrapper">
                 <h1 className="hidden">{project.attributes.name} intro</h1>
                 <p className="detail__title detail__color1">{project.attributes.name}</p>
@@ -670,13 +671,14 @@ const ProjectDetail = () => {
                     <p className="next-project__name next-project__color">{nextProject.attributes.name}</p>
                 </div>
                 <div className="next-project__cover--wrapper">
-                    <Link onMouseEnter={() => setScaling(true)}
+                    <TransitionLink onMouseEnter={() => setScaling(true)}
                         onMouseLeave={() => setScaling(false)} className="next-project__cover--wrapper2" to={`/project/${nextProject.id}`}>
                         <img src={nextCover} alt="next project cover" className="next-project__cover" />
-                    </Link>
+                    </TransitionLink>
                 </div>
             </section>
         </main>
+        </PageTransition>
     )
 }
 ProjectDetail.loader = loader;

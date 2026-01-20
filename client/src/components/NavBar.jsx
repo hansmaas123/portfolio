@@ -1,9 +1,23 @@
 import React from "react"
-import { NavLink, useOutletContext } from "react-router-dom";
+import { NavLink, useOutletContext, useNavigate } from "react-router-dom";
 import "../styles/style.css"
 import PropTypes from 'prop-types';
+import { useTransition } from '../contexts/TransitionContext';
+
 const NavBar = ({ colorIdentifier }) => {
-    const { setScaling } = useOutletContext();
+    const context = useOutletContext();
+    const setScaling = context?.setScaling || (() => {});
+    const safeColorIdentifier = colorIdentifier || 'trainworld';
+    const navigate = useNavigate();
+    const { startTransition, endTransition } = useTransition();
+
+    const handleNavClick = async (e, path) => {
+        e.preventDefault();
+        await startTransition();
+        navigate(path);
+        window.scrollTo(0, 0);
+        endTransition();
+    };
 
     const body = document.body;
     let lastScroll = 0;
@@ -31,11 +45,11 @@ const NavBar = ({ colorIdentifier }) => {
             <div className="nav__container">
                 <div className="nav__wrapper">
                     <NavLink onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} activeclassname='active' className="nav__link nav__link1" to={`/`}>Home</NavLink>
+                            onMouseLeave={() => setScaling(false)} onClick={(e) => handleNavClick(e, '/')} activeclassname='active' className="nav__link nav__link1" to={`/`}>Home</NavLink>
                     <NavLink onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} activeclassname='active' className="nav__link" to={`/about/${colorIdentifier}`}>About</NavLink>
+                            onMouseLeave={() => setScaling(false)} onClick={(e) => handleNavClick(e, `/about/${safeColorIdentifier}`)} activeclassname='active' className="nav__link" to={`/about/${safeColorIdentifier}`}>About</NavLink>
                     <NavLink onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)} activeclassname='active' className="nav__link nav__link3" to={`/contact/${colorIdentifier}`}>Contact</NavLink>
+                            onMouseLeave={() => setScaling(false)} onClick={(e) => handleNavClick(e, `/contact/${safeColorIdentifier}`)} activeclassname='active' className="nav__link nav__link3" to={`/contact/${safeColorIdentifier}`}>Contact</NavLink>
                 </div>
             </div>
     )
