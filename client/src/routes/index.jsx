@@ -60,8 +60,7 @@ const Index = () => {
         gsap.to('.title__lines', { color: theme.titleColor })
         gsap.to('.small_circle', { backgroundColor: theme.smallCircle })
         gsap.to('.large_circle', { backgroundColor: theme.largeCircle })
-        gsap.to('.active', { backgroundColor: theme.activeBg, borderColor: theme.activeBg })
-        gsap.to('.nav__link.active', { color: theme.activeText })
+        gsap.to('.active', { backgroundColor: 'transparent', borderColor: theme.activeBg, color: theme.activeBg })
 
         document.querySelectorAll('.nav__link').forEach(link => {
             link.style.borderColor = '#efefef'
@@ -72,20 +71,28 @@ const Index = () => {
         })
 
         setColorIdentifier(themeName)
+        
+        // Dispatch custom event to notify transition context and navbar
+        window.dispatchEvent(new CustomEvent('themeChange', { detail: { colorIdentifier: themeName } }))
     }
 
     useEffect(() => {
         window.scrollTo(0, 0)
         document.querySelector('.small_circle').style.backgroundColor = '#E8E661'
         document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD'
+        
+        // Apply default theme after full transition completes (600ms entry + 600ms exit = 1200ms)
+        setTimeout(() => {
+            applyTheme('trainworld')
+        }, 1250)
 
         gsap.to('.projects__wrapper', {
             x: '-620vw',
             scrollTrigger: {
-                trigger: '.doesntexist',
+                trigger: 'body',
                 pin: '.projects__wrapper, .homepage__wrapper',
                 scrub: 1,
-                start: 'top 0%',
+                start: 'top top',
                 end: 'bottom -700%'
             }
         })
@@ -129,8 +136,12 @@ const Index = () => {
                             <TransitionLink
                                 onMouseEnter={() => setScaling(true)}
                                 onMouseLeave={() => setScaling(false)}
-                                onClick={() => setScaling(false)}
-                                to={`project/${project.id}`}
+                                onClick={() => {
+                                    setScaling(false)
+                                    // Dispatch theme change based on clicked project
+                                    window.dispatchEvent(new CustomEvent('themeChange', { detail: { colorIdentifier: project.theme } }))
+                                }}
+                                to={`/project/${project.id}`}
                                 className={`home__project--wrapper${index > 0 ? ` home__project--wrapper${index + 1}` : ''}`}
                             >
                                 <h2 className="home__project--title">{project.name}</h2>

@@ -1,6 +1,7 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 const QUOTES = [
     "Design is not just what it looks like. Design is how it works.",
@@ -22,6 +23,22 @@ const QUOTES = [
 
 const TransitionContext = createContext()
 
+// Theme colors mapping based on project identifiers
+const THEME_COLORS = {
+    trainworld: { bg: '#272727', text: '#E8E661' },
+    mixbox: { bg: '#929948', text: '#EEEC76' },
+    stingstitute: { bg: '#492078', text: '#FF53B7' },
+    rotterdans: { bg: '#F0F0F0', text: '#272727' },
+    equalmelodies: { bg: '#272727', text: '#D8595B' },
+    reactartistique: { bg: '#366830', text: '#FDFDFD' },
+    dishknob: { bg: '#FFF8F4', text: '#4C984C' },
+    trimcraft: { bg: '#434321', text: '#EEEC76' },
+    smashabutton: { bg: '#21432E', text: '#FEA500' },
+    chessbase: { bg: '#7A9A57', text: '#ECEDCE' },
+    weatherdog: { bg: '#2E3495', text: '#E69A8D' },
+    default: { bg: '#272727', text: '#EEEC76' }
+}
+
 export const useTransition = () => {
     const context = useContext(TransitionContext)
     if (!context) {
@@ -37,6 +54,60 @@ export const useTransition = () => {
 export const TransitionProvider = ({ children }) => {
     const [isTransitioning, setIsTransitioning] = useState(false)
     const [quote, setQuote] = useState('')
+    const location = useLocation()
+    
+    // Extract colorIdentifier from the current URL path
+    const getColorIdentifierFromPath = () => {
+        const pathname = location.pathname
+        
+        // For /about/:colorIdentifier or /contact/:colorIdentifier
+        const aboutMatch = pathname.match(/^\/about\/(.+)$/)
+        const contactMatch = pathname.match(/^\/contact\/(.+)$/)
+        
+        if (aboutMatch) return aboutMatch[1]
+        if (contactMatch) return contactMatch[1]
+        
+        // For /project/:id - extract project id and map to color
+        const projectMatch = pathname.match(/^\/project\/(\d+)$/)
+        if (projectMatch) {
+            const projectId = parseInt(projectMatch[1])
+            // Map project IDs to their themes
+            const projectThemes = {
+                1: 'trainworld', 2: 'mixbox', 3: 'stingstitute', 4: 'rotterdans',
+                5: 'equalmelodies', 6: 'reactartistique', 7: 'dishknob', 8: 'trimcraft',
+                9: 'smashabutton', 10: 'chessbase', 11: 'weatherdog'
+            }
+            return projectThemes[projectId] || 'trainworld'
+        }
+        
+        // Default to trainworld for home and other pages
+        return 'trainworld'
+    }
+    
+    const [currentColorIdentifier, setCurrentColorIdentifier] = useState(getColorIdentifierFromPath())
+    
+    useEffect(() => {
+        const newIdentifier = getColorIdentifierFromPath()
+        // Don't change to homepage theme immediately - let homepage handle its own theme
+        if (location.pathname === '/') {
+            return
+        }
+        setCurrentColorIdentifier(newIdentifier)
+    }, [location.pathname])
+    
+    // Listen for custom events from pages that change themes (like homepage scroll)
+    useEffect(() => {
+        const handleThemeChange = (event) => {
+            if (event.detail && event.detail.colorIdentifier) {
+                setCurrentColorIdentifier(event.detail.colorIdentifier)
+            }
+        }
+        
+        window.addEventListener('themeChange', handleThemeChange)
+        return () => window.removeEventListener('themeChange', handleThemeChange)
+    }, [])
+    
+    const themeColors = THEME_COLORS[currentColorIdentifier] || THEME_COLORS.default
 
     const startTransition = () => {
         setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)])
@@ -70,7 +141,7 @@ export const TransitionProvider = ({ children }) => {
                             left: 0,
                             width: '100vw',
                             height: '100vh',
-                            backgroundColor: '#272727',
+                            backgroundColor: themeColors.bg,
                             zIndex: 10000,
                             display: 'flex',
                             alignItems: 'center',
@@ -84,13 +155,13 @@ export const TransitionProvider = ({ children }) => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.4, delay: 0.2 }}
                             style={{
-                                color: '#EEEC76',
+                                color: themeColors.text,
                                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                                 fontWeight: 600,
                                 textAlign: 'center',
                                 maxWidth: '800px',
                                 lineHeight: 1.4,
-                                fontFamily: 'new-spirit, serif'
+                                fontFamily: 'neulis-neue, serif'
                             }}
                         >
                             {quote}
@@ -105,3 +176,5 @@ export const TransitionProvider = ({ children }) => {
 TransitionProvider.propTypes = {
     children: PropTypes.node.isRequired
 }
+
+export default TransitionContext

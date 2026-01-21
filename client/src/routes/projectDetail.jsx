@@ -10,7 +10,7 @@ const loader = async ({ params }) => {
     const id = params.id;
     const idInteger = parseInt(id)
     let nextId;
-    { id == 11 ? nextId = 1 : nextId = idInteger + 1 }
+    { idInteger == 11 ? nextId = 1 : nextId = idInteger + 1 }
     const project = await getProjectById(idInteger);
     const nextProject = await getProjectById(nextId);
     return { project, nextProject };
@@ -431,8 +431,13 @@ const applyTheme = (theme, setColorIdentifier) => {
         });
     }
 
-    if (link) link.style.color = theme.linkColor;
-    if (icon) icon.src = theme.iconExternal;
+    // Set initial link and icon styling
+    setTimeout(() => {
+        const detailLink = document.querySelector('.detail__link');
+        const iconExt = document.querySelector('.icon__external');
+        if (detailLink) detailLink.style.color = theme.buttonLeaveLinkColor;
+        if (iconExt) iconExt.src = theme.iconExternal;
+    }, 0);
 
     // Apply assignment margin
     const assignment = document.querySelector('.assignment__wrapper');
@@ -466,9 +471,15 @@ const ProjectDetail = () => {
     const { project, nextProject } = useLoaderData();
     const { pathname } = useLocation();
     const { setScaling } = useOutletContext();
-    const projectImages = project.attributes.images.data;
-    const cover = project.attributes.cover.data[0].attributes.formats.large.url;
-    const nextCover = nextProject.attributes.cover.data[0].attributes.formats.large.url;
+    
+    // Helper function to safely get image URL
+    const getImageUrl = (imageData) => {
+        return imageData.attributes.formats?.large?.url || imageData.attributes.url;
+    };
+    
+    const projectImages = project.attributes.images?.data || [];
+    const cover = getImageUrl(project.attributes.cover.data[0]);
+    const nextCover = getImageUrl(nextProject.attributes.cover.data[0]);
     const [colorIdentifier, setColorIdentifier] = useState('trainworld')
 
     useEffect(() => {
@@ -577,20 +588,20 @@ const ProjectDetail = () => {
                 {project.attributes.name === 'TRAINWORLD' ? (
                     <div className="images__project--wrapper images__trainworld--wrapper">
                         {projectImages.map((projectImage, index) => (
-                            <img key={index} className={`image__detail image__trainworld--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                            <img key={index} className={`image__detail image__trainworld--${index}`} src={getImageUrl(projectImage)} alt="image" />
                         ))}
                     </div>
                 )
                     : project.attributes.name === 'MIXBOX' ? (
                         <div className="mixbox__img--wrapper">
-                            <div key={project.attributes.name} className="images__project--wrapper images__mixbox--wrapper1">
+                            <div key={`${project.attributes.name}-1`} className="images__project--wrapper images__mixbox--wrapper1">
                                 {projectImages.map((projectImage, index) => (
-                                    (index < 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />)
+                                    (index < 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={getImageUrl(projectImage)} alt="image" />)
                                 ))}
                             </div>
-                            <div key={project.attributes.name} className="images__project--wrapper images__mixbox--wrapper2">
+                            <div key={`${project.attributes.name}-2`} className="images__project--wrapper images__mixbox--wrapper2">
                                 {projectImages.map((projectImage, index) => (
-                                    (index >= 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />)
+                                    (index >= 4 && <img key={index} className={`image__detail image__mixbox--${index}`} src={getImageUrl(projectImage)} alt="image" />)
                                 ))}
                             </div>
                         </div>
@@ -598,21 +609,21 @@ const ProjectDetail = () => {
                         : project.attributes.name === 'STINGSTITUTE' ? (
                             <div key={project.attributes.name} className="images__project--wrapper images__stingstitute--wrapper">
                                 {projectImages.map((projectImage, index) => (
-                                    <img key={index} className={`image__detail image__stingstitute--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                    <img key={index} className={`image__detail image__stingstitute--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                 ))}
                             </div>
                         )
                             : project.attributes.name === 'ROTTERDANS' ? (
                                 <div key={project.attributes.name} className="images__project--wrapper images__rotterdans--wrapper">
                                     {projectImages.map((projectImage, index) => (
-                                        <img key={index} className={`image__detail image__rotterdans--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                        <img key={index} className={`image__detail image__rotterdans--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                     ))}
                                 </div>
                             )
                                 : project.attributes.name === 'EQUAL MELODIES' ? (
                                     <div key={project.attributes.name} className="images__project--wrapper images__equalmelodies--wrapper">
                                         {projectImages.map((projectImage, index) => (
-                                            <img key={index} className={`image__detail image__equalmelodies--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                            <img key={index} className={`image__detail image__equalmelodies--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                         ))}
                                     </div>
                                 )
@@ -620,7 +631,7 @@ const ProjectDetail = () => {
                                         <div key={project.attributes.name} className="images__project--wrapper images__reactartistique--wrapper">
                                             {projectImages.map((projectImage, index) => (
                                                 <video controls width={'90%'} key={index} className={`image__detail image__reactartistique--${index}`}>
-                                                    <source src={projectImage.attributes.formats.large.url} type="video/mp4" />
+                                                    <source src={getImageUrl(projectImage)} type="video/mp4" />
                                                 </video>
                                             ))}
                                         </div>
@@ -629,7 +640,7 @@ const ProjectDetail = () => {
                                             <div key={project.attributes.name} className="images__project--wrapper images__dishknob--wrapper">
                                                 {projectImages.map((projectImage, index) => (
                                                     <video controls width={'90%'} key={index} className={`image__detail image__dishknob--${index}`}>
-                                                        <source src={projectImage.attributes.formats.large.url} type="video/mp4" />
+                                                        <source src={getImageUrl(projectImage)} type="video/mp4" />
                                                     </video>
                                                 ))}
                                             </div>
@@ -637,28 +648,28 @@ const ProjectDetail = () => {
                                             : project.attributes.name === 'TRIMCRAFT' ? (
                                                 <div key={project.attributes.name} className="images__project--wrapper images__trimcraft--wrapper">
                                                     {projectImages.map((projectImage, index) => (
-                                                        <img key={index} className={`image__detail image__trimcraft--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                                        <img key={index} className={`image__detail image__trimcraft--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                                     ))}
                                                 </div>
                                             )
                                                 : project.attributes.name === 'SMASH A BUTTON' ? (
                                                     <div key={project.attributes.name} className="images__project--wrapper images__smashabutton--wrapper">
                                                         {projectImages.map((projectImage, index) => (
-                                                            <img key={index} className={`image__detail image__smashabutton--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                                            <img key={index} className={`image__detail image__smashabutton--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                                         ))}
                                                     </div>
                                                 )
                                                     : project.attributes.name === 'CHESSBASE' ? (
                                                         <div key={project.attributes.name} className="images__project--wrapper images__chessbase--wrapper">
                                                             {projectImages.map((projectImage, index) => (
-                                                                <img key={index} className={`image__detail image__chessbase--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                                                <img key={index} className={`image__detail image__chessbase--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                                             ))}
                                                         </div>
                                                     )
                                                         : (
                                                             <div key={project.attributes.name} className="images__project--wrapper images__weatherdog--wrapper">
                                                                 {projectImages.map((projectImage, index) => (
-                                                                    <img key={index} className={`image__detail image__weatherdog--${index}`} src={projectImage.attributes.formats.large.url} alt="image" />
+                                                                    <img key={index} className={`image__detail image__weatherdog--${index}`} src={getImageUrl(projectImage)} alt="image" />
                                                                 ))}
                                                             </div>
                                                         )
@@ -672,7 +683,17 @@ const ProjectDetail = () => {
                 </div>
                 <div className="next-project__cover--wrapper">
                     <TransitionLink onMouseEnter={() => setScaling(true)}
-                        onMouseLeave={() => setScaling(false)} className="next-project__cover--wrapper2" to={`/project/${nextProject.id}`}>
+                        onMouseLeave={() => setScaling(false)} 
+                        onClick={() => {
+                            setScaling(false);
+                            // Dispatch theme change for next project
+                            const nextTheme = THEMES[nextProject.attributes.name];
+                            if (nextTheme) {
+                                window.dispatchEvent(new CustomEvent('themeChange', { detail: { colorIdentifier: nextTheme.identifier } }));
+                            }
+                        }}
+                        className="next-project__cover--wrapper2" 
+                        to={`/project/${nextProject.id}`}>
                         <img src={nextCover} alt="next project cover" className="next-project__cover" />
                     </TransitionLink>
                 </div>
