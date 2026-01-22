@@ -774,6 +774,7 @@ body:has(.contact__container) main {
     color: #FDFDFD;
     font-family: 'mundial', sans-serif;
     font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 .bottom__left {
@@ -816,7 +817,7 @@ body:has(.contact__container) main {
 }
 
 .contact__title {
-    font-size: clamp(80px, 14vw, 140px);
+    font-size: clamp(64px, 14vw, 140px);
     font-family: neulis-neue, sans-serif;
     font-weight: 700;
     margin: 0;
@@ -826,7 +827,7 @@ body:has(.contact__container) main {
 
 .contact__description {
     font-size: clamp(16px, 2vw, 25px);
-    max-width: clamp(350px, 75vw, 1000px);
+    max-width: clamp(320px, 75vw, 1000px);
     font-family: neulis-neue, sans-serif;
     font-weight: 400;
 }
@@ -841,7 +842,7 @@ body:has(.contact__container) main {
 .contact__button {
     background-color: #EEEC76;
     font-size: clamp(16px, 2vw, 25px);
-    width: clamp(150px, 20vw, 250px);
+    width: clamp(140px, 20vw, 250px);
 }
 
 .button__color {

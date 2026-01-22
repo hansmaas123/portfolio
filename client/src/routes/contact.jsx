@@ -32,8 +32,10 @@ const Contact = () => {
         $('.color1').style.color = theme.color1
         $('.color2').style.color = theme.color2
         $('.highlight').style.color = theme.color2
-        $('.small_circle').style.backgroundColor = theme.smallCircle
-        $('.large_circle').style.backgroundColor = theme.largeCircle
+        const smallCircle = $('.small_circle');
+        const largeCircle = $('.large_circle');
+        if (smallCircle) smallCircle.style.backgroundColor = theme.smallCircle;
+        if (largeCircle) largeCircle.style.backgroundColor = theme.largeCircle;
         $('.contact__description').style.color = theme.color1
         Object.assign($('.background1').style, { backgroundColor: theme.bg, backgroundImage: `url("/${theme.bgImage}.svg")` })
 

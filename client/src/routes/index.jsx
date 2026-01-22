@@ -58,8 +58,15 @@ const Index = () => {
         gsap.to('.homepage__wrapper', { backgroundColor: theme.bg, backgroundImage: `url(/${theme.bgImage}.svg)` })
         gsap.to('.home__title', { color: theme.titleColor })
         gsap.to('.title__lines', { color: theme.titleColor })
-        gsap.to('.small_circle', { backgroundColor: theme.smallCircle })
-        gsap.to('.large_circle', { backgroundColor: theme.largeCircle })
+        
+        // Only animate cursor circles if they exist (not on mobile)
+        if (document.querySelector('.small_circle')) {
+            gsap.to('.small_circle', { backgroundColor: theme.smallCircle })
+        }
+        if (document.querySelector('.large_circle')) {
+            gsap.to('.large_circle', { backgroundColor: theme.largeCircle })
+        }
+        
         gsap.to('.active', { backgroundColor: 'transparent', borderColor: theme.activeBg, color: theme.activeBg })
 
         document.querySelectorAll('.nav__link').forEach(link => {
@@ -78,8 +85,10 @@ const Index = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        document.querySelector('.small_circle').style.backgroundColor = '#E8E661'
-        document.querySelector('.large_circle').style.backgroundColor = '#FDFDFD'
+        const smallCircle = document.querySelector('.small_circle');
+        const largeCircle = document.querySelector('.large_circle');
+        if (smallCircle) smallCircle.style.backgroundColor = '#E8E661';
+        if (largeCircle) largeCircle.style.backgroundColor = '#FDFDFD';
         
         // Apply default theme after full transition completes (600ms entry + 600ms exit = 1200ms)
         setTimeout(() => {
