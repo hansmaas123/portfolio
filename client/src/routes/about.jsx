@@ -323,6 +323,11 @@ const About = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Ensure body/html can scroll
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.documentElement.style.position = '';
     }, [pathname]);
 
     useEffect(() => {
@@ -370,130 +375,124 @@ const About = () => {
                             <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden">
-                            <div className="logo__wrapper--all" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', rowGap: '2rem', columnGap: '2rem', justifyContent: 'center', maxWidth: '100%', boxSizing: 'border-box' }}>
+                            <div className="logo__wrapper--all logo__wrapper--development">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/html.svg" alt="html icon" />
+                                        <img className="logo" src="/html.svg" alt="html icon" />
                                     </div>
                                     <p className="about__color2 logo__name">HTML5</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/css.svg" alt="css icon" />
+                                        <img className="logo" src="/css.svg" alt="css icon" />
                                     </div>
                                     <p className="about__color2 logo__name">CSS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/js.svg" alt="javascript icon" />
+                                        <img className="logo" src="/js.svg" alt="javascript icon" />
                                     </div>
                                     <p className="about__color2 logo__name">JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/php.svg" alt="php icon" />
+                                        <img className="logo" src="/php.svg" alt="php icon" />
                                     </div>
                                     <p className="about__color2 logo__name">PHP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
-                                    <div className="logo__wrapper">
-                                        <img src="/react.svg" alt="react icon" />
-                                    </div>
-                                    <p className="about__color2 logo__name">REACT</p>
-                                </div>
-                                <div className="logo__wrapper--details">
                                     <div className="logo__wrapper logo__wrapper--long">
-                                        <img src="/react.svg" alt="react native icon" />
+                                        <img className="logo" src="/react.svg" alt="react native icon" />
                                     </div>
-                                    <p className="about__color2 logo__name">REACT NATIVE</p>
+                                    <p className="about__color2 logo__name">REACT (+NATIVE)</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/astro.svg" alt="astro icon" />
+                                        <img className="logo" src="/astro.svg" alt="astro icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ASTRO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/strapi.svg" alt="strapi icon" />
+                                        <img className="logo" src="/strapi.svg" alt="strapi icon" />
                                     </div>
                                     <p className="about__color2 logo__name">STRAPI</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/arduino.svg" alt="arduino icon" />
+                                        <img className="logo" src="/arduino.svg" alt="arduino icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ARDUINO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/p5js.svg" alt="p5.js icon" />
+                                        <img className="logo" src="/p5js.svg" alt="p5.js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">P5JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/sequelace.svg" alt="my sequel ace icon" />
+                                        <img className="logo" src="/sequelace.svg" alt="my sequel ace icon" />
                                     </div>
                                     <p className="about__color2 logo__name">SEQUEL ACE</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/gsap.svg" alt="gsap icon" />
+                                        <img className="logo" src="/gsap.svg" alt="gsap icon" />
                                     </div>
                                     <p className="about__color2 logo__name">GSAP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/gtm.svg" alt="google teachable machine icon" />
+                                        <img className="logo" src="/gtm.svg" alt="google teachable machine icon" />
                                     </div>
                                     <p className="about__color2 logo__name">GTM</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/ml5.svg" alt="ml5js icon" />
+                                        <img className="logo" src="/ml5.svg" alt="ml5js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ML5</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/webgl.svg" alt="webgl icon" />
+                                        <img className="logo" src="/webgl.svg" alt="webgl icon" />
                                     </div>
                                     <p className="about__color2 logo__name">WEBGL</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/fresh.svg" alt="deno fresh icon" />
+                                        <img className="logo" src="/fresh.svg" alt="deno fresh icon" />
                                     </div>
                                     <p className="about__color2 logo__name">DENO FRESH</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                       <img src="/threejs.svg" alt="three.js icon" />
+                                       <img className="logo" src="/threejs.svg" alt="three.js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">THREE.JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/quasar.svg" alt="quasar icon" />
+                                        <img className="logo" src="/quasar.svg" alt="quasar icon" />
                                     </div>
                                     <p className="about__color2 logo__name">QUASAR</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/sveltekit.svg" alt="sveltekit icon" />
+                                        <img className="logo" src="/sveltekit.svg" alt="sveltekit icon" />
                                     </div>
                                     <p className="about__color2 logo__name">SVELTEKIT</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/directus.svg" alt="directus icon" />
+                                        <img className="logo" src="/directus.svg" alt="directus icon" />
                                     </div>
                                     <p className="about__color2 logo__name">DIRECTUS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/wordpress.svg" alt="wordpress icon" />
+                                        <img className="logo" src="/wordpress.svg" alt="wordpress icon" />
                                     </div>
                                     <p className="about__color2 logo__name">WORDPRESS</p>
                                 </div>
@@ -519,50 +518,48 @@ const About = () => {
                             <div className="logo__wrapper--alldesign">
                                 <p className="logo__name--design">Brand Identity</p>
                                 <p className="logo__name--design">Motion Design</p>
-                                <p className="logo__name--design">Campaign</p>
-                                <p className="logo__name--design">Storytelling & Tone of Voice</p>
-                                <p className="logo__name--design">Packaging</p>
-                            </div>
-                            <div className="logo__container--design2">
-                                <p className="logo__name--design">Logotypes & Brand Marks</p>
                                 <p className="logo__name--design">Web/App Design</p>
                                 <p className="logo__name--design">Graphic Design</p>
                                 <p className="logo__name--design">UX/UI Design</p>
+                                <p className="logo__name--design">Campaign</p>
+                                <p className="logo__name--design">Packaging Design</p>
+                                <p className="logo__name--design">Storytelling & Tone of Voice</p>
+                                <p className="logo__name--design">Logotypes & Brand Marks</p>
                             </div>
                             <div className="logo__wrapper--alldesign3">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/ai.svg" alt="adobe illustrator icon" />
+                                        <img className="logo" src="/ai.svg" alt="adobe illustrator icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE ILLUSTRATOR</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/ps.svg" alt="adobe photoshop icon" />
+                                        <img className="logo" src="/ps.svg" alt="adobe photoshop icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE PHOTOSHOP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/ae.svg" alt="adobe after effects icon" />
+                                        <img className="logo" src="/ae.svg" alt="adobe after effects icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AFTER EFFECTS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/au.svg" alt="adobe audition icon" />
+                                        <img className="logo" src="/au.svg" alt="adobe audition icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AUDITION</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/figma.svg" alt="figma icon" />
+                                        <img className="logo" src="/figma.svg" alt="figma icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">FIGMA</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img src="/blender.svg" alt="blender icon" />
+                                        <img className="logo" src="/blender.svg" alt="blender icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">BLENDER</p>
                                 </div>
@@ -590,10 +587,7 @@ const About = () => {
                                 <p className="logo__name--design">Usability & Concept Testing</p>
                                 <p className="logo__name--design">Heuristic Evaluation</p>
                                 <p className="logo__name--design">Cultural Probes</p>
-                            </div>
-                            <div className="logo__container--design2">
-                                <p className="logo__name--design">Primary Research</p>
-                                <p className="logo__name--design">Secondary Research</p>
+                                <p className="logo__name--design">Primary and Secondary Research</p>
                                 <p className="logo__name--design">Personas & Journey Mapping</p>
                             </div>
                         </div>

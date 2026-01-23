@@ -54,10 +54,17 @@ const Index = () => {
         const theme = THEMES[themeName]
         if (!theme) return
 
-        document.querySelector('.home__title').innerHTML = theme.title
+        // Check if we're still on the homepage before applying theme
+        const homeTitle = document.querySelector('.home__title');
+        const homepageWrapper = document.querySelector('.homepage__wrapper');
+        const titleLines = document.querySelector('.title__lines');
+        
+        if (!homeTitle || !homepageWrapper) return; // Exit if homepage elements don't exist
+        
+        homeTitle.innerHTML = theme.title
         gsap.to('.homepage__wrapper', { backgroundColor: theme.bg, backgroundImage: `url(/${theme.bgImage}.svg)` })
         gsap.to('.home__title', { color: theme.titleColor })
-        gsap.to('.title__lines', { color: theme.titleColor })
+        if (titleLines) gsap.to('.title__lines', { color: theme.titleColor })
         
         // Only animate cursor circles if they exist (not on mobile)
         if (document.querySelector('.small_circle')) {
@@ -118,7 +125,12 @@ const Index = () => {
             })
         })
 
-        return () => ScrollTrigger.getAll().forEach(t => t.kill())
+        return () => {
+            ScrollTrigger.getAll().forEach(t => t.kill())
+            // Ensure body/html can scroll after leaving homepage
+            document.body.style.overflow = ''
+            document.documentElement.style.overflow = ''
+        }
     }, [location])
 
     return (

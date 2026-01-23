@@ -1,19 +1,19 @@
 <svg width="1280" height="832" viewBox="0 0 1280 832" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2008_3288)">
+<g clip-path="url(#clip0_326_6532)">
 <circle cx="1088" cy="123" r="58" transform="rotate(180 1088 123)" fill="#272727"/>
-<circle cx="-0.5" cy="501.5" r="82.5" transform="rotate(180 -0.5 501.5)" fill="#272727"/>
+<circle cx="-0.5" cy="343.5" r="82.5" transform="rotate(180 -0.5 343.5)" fill="#272727"/>
 <circle cx="136.5" cy="134.5" r="48.5" transform="rotate(180 136.5 134.5)" fill="#272727"/>
-<circle cx="136.5" cy="574.5" r="48.5" transform="rotate(180 136.5 574.5)" fill="#272727"/>
 <circle cx="474.5" cy="74.5" r="23.5" transform="rotate(180 474.5 74.5)" fill="#272727"/>
-<circle cx="48.5" cy="618.5" r="23.5" transform="rotate(180 48.5 618.5)" fill="#272727"/>
 <circle cx="1279.5" cy="430.5" r="100.5" transform="rotate(180 1279.5 430.5)" fill="#272727"/>
 <circle cx="1215.5" cy="267.5" r="36.5" transform="rotate(180 1215.5 267.5)" fill="#272727"/>
 <circle cx="1039.5" cy="414.5" r="56.5" transform="rotate(180 1039.5 414.5)" fill="#272727"/>
-<path d="M366.997 0C366.728 38.1536 335.717 69 297.5 69C259.283 68.9999 228.272 38.1536 228.003 0H366.997Z" fill="#272727"/>
-<path d="M1280 134.996C1279.83 134.997 1279.67 135 1279.5 135C1204.83 135 1144.27 74.6046 1144 0H1280V134.996Z" fill="#272727"/>
+<circle cx="207.5" cy="410.5" r="44.5" transform="rotate(180 207.5 410.5)" fill="#272727"/>
+<circle cx="98.5" cy="512.5" r="24.5" transform="rotate(180 98.5 512.5)" fill="#272727"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M228.002 0C228.271 38.1536 259.283 69 297.5 69C335.717 69 366.73 38.1536 366.998 0H228.002Z" fill="#272727"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1280 0H1144C1144.27 74.6046 1204.83 135 1279.5 135C1279.67 135 1279.83 135 1280 134.999V0Z" fill="#272727"/>
 </g>
 <defs>
-<clipPath id="clip0_2008_3288">
+<clipPath id="clip0_326_6532">
 <rect width="1280" height="832" fill="white"/>
 </clipPath>
 </defs>

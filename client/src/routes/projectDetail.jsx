@@ -484,6 +484,11 @@ const ProjectDetail = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Ensure body/html can scroll
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.documentElement.style.position = '';
     }, [pathname]);
 
     useEffect(() => {

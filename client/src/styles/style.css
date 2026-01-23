@@ -28,10 +28,15 @@ html:has(.detail__wrapper),
 body:has(.detail__wrapper),
 html:has(.aboutpage__wrapper),
 body:has(.aboutpage__wrapper) {
-    overflow-x: hidden;
     height: auto;
-    width: 100vw;
+    width: 100%;
     overscroll-behavior-y: none;
+}
+
+.detail__wrapper,
+.aboutpage__wrapper {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 html:has(.contact__container),
@@ -251,9 +256,11 @@ body:has(.contact__container) main {
 }
 
 .nav__link:hover {
-    background-color: transparent;
-    border: solid #EEEC76 2px;
-    color: #EEEC76;
+    @media (min-width: 768px) {   
+        background-color: transparent;
+        border: solid #EEEC76 2px;
+        color: #EEEC76;
+    }
 }
 
 .active {
@@ -263,9 +270,11 @@ body:has(.contact__container) main {
 }
 
 .active:hover {
+    @media (min-width: 768px) {
     background-color: transparent;
     border-color: #EEEC76;
     color: #EEEC76;
+    }
 }
 
 .home__title--wrapper {
@@ -275,6 +284,8 @@ body:has(.contact__container) main {
     align-items: center;
     margin-top: 5rem;
     gap: 1rem;
+    min-width: 355px;
+    height: 126px;
 }
 
 .title__lines {
@@ -287,11 +298,14 @@ body:has(.contact__container) main {
 
 .home__title {
     font-size: 100px;
+    font-size: clamp(44px, 7vw, 100px);
     font-family: neulis-neue, sans-serif;
     font-weight: 900;
     font-style: normal;
+    text-align: center;
     margin: 0;
     color: #EEEC76;
+    max-width: 90vw;
 }
 
 .home__project--container {
@@ -306,18 +320,35 @@ body:has(.contact__container) main {
 
 .home__project--containers {
     margin-left: -38vw;
+    @media (max-width: 1200px) {
+        margin-left: -32vw;
+    }
+    @media (max-width: 1000px) {
+        margin-left: -27vw;
+    }
+    @media (max-width: 800px) {
+        margin-left: -24vw;
+    }
+    @media (max-width: 420px) {
+        margin-left: -18vw;
+    }
+    @media (max-width: 380px) {
+        margin-left: -16vw;
+    }
 }
 
 .home__project--title {
     font-size: 50px;
+    font-size: clamp(32px, 6vw, 50px);
     font-family: 'neulis-neue';
     font-weight: 700;
 }
 
 .home__project--wrapper {
     transform: rotate(-8deg);
-    width: 35.5rem;
-    height: 27.3rem;
+    width: clamp(270px, 60vw, 569px);
+    height: clamp(208px, 47vw, 445px);
+    translate: 0 -2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -372,7 +403,9 @@ body:has(.contact__container) main {
 }
 
 .home__project--wrapper:hover {
+    @media (min-width: 768px) {
     opacity: 0.9;
+    }
 }
 
 .home__project--details {
@@ -382,7 +415,8 @@ body:has(.contact__container) main {
     display: flex;
     justify-content: space-between;
     font-family: neulis-neue, sans-serif;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: clamp(14px, 1vw, 18px);
     font-weight: 300;
 }
 
@@ -431,16 +465,15 @@ body:has(.contact__container) main {
 }
 
 .project__thumbnail {
-    width: 35.5rem;
-    height: 27.3rem;
+    width: clamp(270px, 60vw, 568px);
+    height: auto;
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
 
 .project__thumbnail--wrapper {
     grid-column: 1;
     grid-row: 1;
-    width: 35.5rem;
-    height: 27.3rem;
+    width: clamp(270px, 60vw, 568px);
 }
 
 .name {
@@ -449,12 +482,16 @@ body:has(.contact__container) main {
     color: #efefef;
     position: fixed;
     bottom: 0%;
-    left: 2%;
+    /* left: 2%; */
+    left: clamp(1rem, 3vw, 2rem);
 }
 
 .projects__wrapper {
     width: 1000vw;
     display: flex;
+    @media (max-width: 800px) {
+        margin-top: 2rem;
+    }
 }
 
 
@@ -492,10 +529,16 @@ body:has(.contact__container) main {
 .about__title {
     font-family: neulis-neue, sans-serif;
     font-weight: 700;
-    font-size: 90px;
+    font-size: clamp(38px, 7vw, 90px);
     color: #EEEC76;
     margin: 0;
     letter-spacing: 0.1125rem;
+    
+    @media (max-width: 540px) {
+        margin-left: 2rem;
+    }
+    @media (max-width: 496px) {
+    }
 }
 
 .about__title3 {
@@ -504,6 +547,10 @@ body:has(.contact__container) main {
 
 .about__arrow {
     margin-top: 3rem;
+    width: clamp(25px, 4vw, 60px);
+    @media (max-width: 540px) {
+            margin-left: 2rem;
+        }
 }
 
 .about__intro--wrapper {
@@ -514,12 +561,22 @@ body:has(.contact__container) main {
 .about__intro {
     width: 32rem;
     color: #EEEC76;
-    font-family: mundial, sans-serif;
-    font-size: 32px;
+    font-family: 'mundial', sans-serif;
     font-weight: 400;
     margin-left: 50vw;
     letter-spacing: 0.04rem;
-    line-height: 2.6rem;
+    font-size: clamp(18px, 2vw, 32px);
+    line-height: clamp(24px, 3vw, 2.6rem);
+    max-width: clamp(330px, 50vw, 600px);
+    @media (max-width: 870px) {
+            margin-left: 20rem;
+    }
+    @media (max-width: 660px) {
+            margin-left: 10rem;
+    }
+    @media (max-width: 528px) {
+            margin-left: 2rem;
+    }
 }
 
 .highlight {
@@ -539,6 +596,21 @@ body:has(.contact__container) main {
     font-size: 22px;
     letter-spacing: 0.1125rem;
     line-height: 1.87rem;
+    font-size: clamp(18px, 2vw, 32px);
+        line-height: clamp(22px, 3vw, 2.6rem);
+        max-width: clamp(330px, 50vw, 600px);
+    
+        @media (max-width: 870px) {
+            margin-left: 20rem;
+        }
+    
+        @media (max-width: 660px) {
+            margin-left: 10rem;
+        }
+    
+        @media (max-width: 496px) {
+            margin-left: 2rem;
+        }
 }
 
 .about__description2 {
@@ -556,7 +628,8 @@ body:has(.contact__container) main {
     font-size: 50px;
     font-weight: 700;
     letter-spacing: 0.1125rem;
-    margin-left: 10rem;
+    margin-left: clamp(2rem, 10vw, 10rem);
+    
 }
 
 .about__skillset--itemwrapper {
@@ -581,7 +654,7 @@ body:has(.contact__container) main {
 .about__skillset--itemwrapperall {
     border-bottom: #EEEC76 solid 1px;
     padding: 1rem 0rem;
-    margin: 0rem 10rem;
+    margin: 0 clamp(2rem, 10vw, 10rem);
 }
 
 .about__skillset--itemhidden {
@@ -615,6 +688,9 @@ body:has(.contact__container) main {
 .display2 {
     max-height: 14rem;
     padding-bottom: 1.5rem;
+    @media (max-width: 540px) {
+        max-height: 20rem;
+    }
 }
 
 .arrow {
@@ -628,14 +704,17 @@ body:has(.contact__container) main {
 .arrow3 {
     transition: transform .5s ease;
 }
+.logo {
+    width: clamp(25px, 5vw, 50px);
+}
 
 .logo__wrapper {
     background-color: #FDFDFD;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
+    width: clamp(3rem, 7vw, 5rem);
+    height: clamp(3rem, 7vw, 5rem);
     border-radius: 7px;
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
@@ -646,6 +725,17 @@ body:has(.contact__container) main {
     justify-content: space-evenly;
     padding-top: 1.5rem;
 }
+.logo__wrapper--development {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    @media (max-width: 1359px) {
+        gap: 0rem;
+    }
+}
 
 .logo__wrapper--all2 {
     width: 46%;
@@ -655,13 +745,14 @@ body:has(.contact__container) main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 8rem;
+    width: clamp(4.5rem, 10vw, 8rem);
 }
 
 .logo__name {
     color: #FDFDFD;
     font-family: mundial, sans-serif;
     font-size: 16px;
+    font-size: clamp(10px, 1.5vw, 16px);
     font-weight: 300;
     max-width: 8rem;
     text-align: center;
@@ -675,38 +766,41 @@ body:has(.contact__container) main {
 
 .logo__wrapper--alldesign {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: .5rem;
-}
-
-.logo__container--design2 {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .logo__name--design {
     background-color: #FDFDFD;
     padding: .6rem;
     border-radius: 5px;
+    margin: 0;
     font-family: mundial, sans-serif;
-    font-size: 18px;
+    font-size: clamp(12px, 2vw, 18px);
     font-weight: 300;
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
 }
 
 .logo__name--design2 {
     font-family: mundial, sans-serif;
-    font-size: 18px;
+    font-size: clamp(10px, 1.5vw, 16px);
     font-weight: 300;
     color: #FDFDFD;
-    width: 10.5rem;
+    max-width: 8rem;
     text-align: center;
 }
 
 .logo__wrapper--alldesign3 {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    @media (max-width: 540px) {
+        gap: 0rem;
+    }
 }
 
 .about__contact--container {
@@ -737,6 +831,7 @@ body:has(.contact__container) main {
 .about__contact--title {
     font-family: neulis-neue, sans-serif;
     font-size: 150px;
+    font-size: clamp(64px, 14vw, 140px);
     font-weight: 700;
     margin: 0;
 }
@@ -753,21 +848,26 @@ body:has(.contact__container) main {
     text-align: center;
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
     transition: color .5s ease, border .5s ease, background-color .5s ease;
+    font-size: clamp(16px, 2vw, 25px);
+    width: clamp(140px, 20vw, 250px);
 }
 
 .about__contact--button:hover {
+    @media (min-width: 768px) {
     background-color: transparent;
     border: solid #272727 2px;
     color: #272727;
+    }
 }
 
 .social {
     display: flex;
     gap: .5rem;
     text-decoration: none;
-    color: #272727;
+    color: black;
     justify-content: center;
     align-items: center;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 .social__contact {
@@ -785,6 +885,7 @@ body:has(.contact__container) main {
 .bottom {
     display: flex;
     align-items: center;
+    font-family: 'mundial';
     justify-content: space-between;
     padding: 0rem 2rem;
 }
@@ -851,8 +952,10 @@ body:has(.contact__container) main {
 }
 
 .contact__button:hover {
+    @media (min-width: 768px) {
     border-color: #EEEC76;
     color: #EEEC76;
+    }
 }
 
 .contact__button--sec {
@@ -861,16 +964,20 @@ body:has(.contact__container) main {
 }
 
 .contact__button--sec:hover {
+    @media (min-width: 768px) {
     background-color: #EEEC76;
     color: #272727;
+    }
 }
 
+.bottom__right {
+    @media (max-width: 720px) {
+            display: none;
+        }
+}
 .bottom__right--contact {
     color: #FDFDFD;
     font-family: 'mundial', sans-serif;
-    @media (max-width: 720px) {
-        display: none;
-    }
 }
 
 .background1 {
@@ -1549,7 +1656,9 @@ body:has(.contact__container) main {
 }
 
 .next-project__cover:hover {
+    @media (min-width: 768px) {
     transform: scale(1.05);
+    }
 }
 
 .backbutton__wrapper {
@@ -1561,7 +1670,9 @@ body:has(.contact__container) main {
 }
 
 .backbutton__wrapper:hover {
+    @media (min-width: 768px) {
     transform: scale(1.2);
+    }
 }
 
 .detail__hidden1 {
