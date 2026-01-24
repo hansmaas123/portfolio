@@ -92,19 +92,6 @@ const NavBar = ({ colorIdentifier }) => {
     return (
             <>
             <div className="nav__container">
-                {/* Hamburger Icon for Mobile */}
-                <button 
-                    className={`hamburger ${isMenuOpen ? 'open' : ''}`}
-                    onClick={toggleMenu}
-                    onMouseEnter={() => setScaling(true)}
-                    onMouseLeave={() => setScaling(false)}
-                    aria-label="Toggle menu"
-                >
-                    <span className="hamburger__line"></span>
-                    <span className="hamburger__line"></span>
-                    <span className="hamburger__line"></span>
-                </button>
-
                 {/* Desktop Navigation */}
                 <div className="nav__wrapper">
                     <NavLink onMouseEnter={() => setScaling(true)}
@@ -151,6 +138,19 @@ const NavBar = ({ colorIdentifier }) => {
                     </NavLink>
                 </div>
             </div>
+
+            {/* Hamburger Icon for Mobile - Placed after menu for proper z-index stacking */}
+            <button 
+                className={`hamburger ${isMenuOpen ? 'open' : ''}`}
+                onClick={toggleMenu}
+                onMouseEnter={() => setScaling(true)}
+                onMouseLeave={() => setScaling(false)}
+                aria-label="Toggle menu"
+            >
+                <span className="hamburger__line"></span>
+                <span className="hamburger__line"></span>
+                <span className="hamburger__line"></span>
+            </button>
             </>
     )
 }

@@ -80,7 +80,7 @@ body:has(.contact__container) main {
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 9999;
+    z-index: 9998;
     transition: all 500ms ease-in-out;
 }
 
@@ -98,7 +98,7 @@ body:has(.contact__container) main {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10000;
+    z-index: 10002;
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.30);
     width: 60px;
     height: 60px;
@@ -137,7 +137,7 @@ body:has(.contact__container) main {
     width: 100%;
     height: 100vh;
     background-color: var(--mobile-menu-bg, #272727);
-    z-index: 9998;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,19 +320,19 @@ body:has(.contact__container) main {
 
 .home__project--containers {
     margin-left: -38vw;
-    @media (max-width: 1200px) {
+    @media (max-width: 1199px) {
         margin-left: -32vw;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 999px) {
         margin-left: -27vw;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 799px) {
         margin-left: -24vw;
     }
-    @media (max-width: 420px) {
+    @media (max-width: 419px) {
         margin-left: -18vw;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 379px) {
         margin-left: -16vw;
     }
 }
@@ -482,7 +482,6 @@ body:has(.contact__container) main {
     color: #efefef;
     position: fixed;
     bottom: 0%;
-    /* left: 2%; */
     left: clamp(1rem, 3vw, 2rem);
 }
 
@@ -491,6 +490,9 @@ body:has(.contact__container) main {
     display: flex;
     @media (max-width: 800px) {
         margin-top: 2rem;
+    }
+    @media (max-width: 500px) {
+        margin-top: 4rem;
     }
 }
 
@@ -567,7 +569,7 @@ body:has(.contact__container) main {
     letter-spacing: 0.04rem;
     font-size: clamp(18px, 2vw, 32px);
     line-height: clamp(24px, 3vw, 2.6rem);
-    max-width: clamp(330px, 50vw, 600px);
+    max-width: clamp(330px, 45vw, 600px);
     @media (max-width: 870px) {
             margin-left: 20rem;
     }
@@ -590,15 +592,14 @@ body:has(.contact__container) main {
 
 .about__description {
     color: #F0F0F0;
-    width: 34rem;
+    width: 32rem;
     margin-left: 50vw;
     font-family: mundial, sans-serif;
     font-size: 22px;
-    letter-spacing: 0.1125rem;
     line-height: 1.87rem;
     font-size: clamp(18px, 2vw, 32px);
-        line-height: clamp(22px, 3vw, 2.6rem);
-        max-width: clamp(330px, 50vw, 600px);
+    line-height: clamp(22px, 2vw, 2.6rem);
+    max-width: clamp(330px, 45vw, 600px);
     
         @media (max-width: 870px) {
             margin-left: 20rem;
@@ -608,7 +609,7 @@ body:has(.contact__container) main {
             margin-left: 10rem;
         }
     
-        @media (max-width: 496px) {
+        @media (max-width: 528px) {
             margin-left: 2rem;
         }
 }
@@ -936,7 +937,6 @@ body:has(.contact__container) main {
 .button__wrapper {
     margin-top: 3rem;
     display: flex;
-    gap: 2rem;
     gap: clamp(1rem, 5vw, 2rem);
 }
 
@@ -1015,7 +1015,7 @@ body:has(.contact__container) main {
 
 .detail__title {
     font-family: neulis-neue, sans-serif;
-    font-size: 90px;
+    font-size: clamp(38px, 7vw, 90px);
     font-weight: 700;
     letter-spacing: 0.39375rem;
     margin: 0;
@@ -1025,6 +1025,7 @@ body:has(.contact__container) main {
 .detail__year {
     font-family: neulis-neue, sans-serif;
     font-size: 55px;
+    font-size: clamp(32px, 5vw, 55px);
     font-weight: 700;
     letter-spacing: 0.39375rem;
     margin: 0;
@@ -1080,6 +1081,7 @@ body:has(.contact__container) main {
 
 .icon__external {
     margin-bottom: -.2rem;
+    width: clamp(14px, 2vw, 22px);
 }
 
 .detail__item--wrapper {
@@ -1094,7 +1096,7 @@ body:has(.contact__container) main {
     display: flex;
     justify-content: center;
     font-family: mundial, sans-serif;
-    font-size: 22px;
+    font-size: clamp(16px, 2vw, 22px);
     font-weight: 400;
 }
 
@@ -1108,6 +1110,13 @@ body:has(.contact__container) main {
     align-items: flex-end;
 }
 
+.detail__item--title {
+    font-weight: 600;
+}
+.detail__item--description {
+    text-align: right;
+    padding-left: 1rem;
+}
 .detail__item--descriptionscope {
     margin: 0;
     margin-bottom: .8rem;
@@ -1115,30 +1124,39 @@ body:has(.contact__container) main {
 
 .description__title {
     font-family: neulis-neue, sans-serif;
-    font-size: 50px;
+    font-size: clamp(28px, 6vw, 50px);
     letter-spacing: 0.0625rem;
     font-weight: 700;
     margin-bottom: 0;
 }
 
 .assignment__wrapper {
-    margin-left: 10vw;
+    margin: 0 10vw;
+    @media (max-width: 400px) {
+        margin: 0 2rem;
+    }
 }
 
 .assignment__description {
-    width: 41vw;
+    width: 32rem;
 }
 
 .approach__wrapper {
     margin-left: 51vw;
+    @media (max-width: 1100px) {
+        margin: 5rem 0;
+        margin-left: 10vw;
+    }
+    @media (max-width: 400px) {
+        margin: 0 2rem;
+    }
 }
 
 .approach__description {
-    width: 39vw;
+    width: 32rem;
 }
 
 .detail__description--wrapper {
-    padding: 7rem 0rem;
     background-image: url('/detailbg2_trainworld.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -1147,10 +1165,15 @@ body:has(.contact__container) main {
 
 .detail__description {
     font-family: mundial, sans-serif;
-    font-size: 18px;
-    line-height: 1.53rem;
+    font-size: clamp(12px, 2vw, 18px);
+    line-height: clamp(1rem, 3vw, 1.53rem);
+    max-width: clamp(290px, 60vw, 32rem);
     letter-spacing: 0.0225rem;
     font-weight: 400;
+    @media (max-width: 400px) {
+        max-width: none;
+        width: 100%;
+    }
 }
 
 
@@ -1661,11 +1684,14 @@ body:has(.contact__container) main {
     }
 }
 
+.backbutton {
+    width: clamp(14px, 4vw, 20px);
+}
 .backbutton__wrapper {
     position: fixed;
     top: 2.5rem;
-    left: 3%;
-    z-index: 10000;
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 9999;
     transition: transform 500ms ease;
 }
 
@@ -1685,10 +1711,12 @@ body:has(.contact__container) main {
 
 .detail__hidden {
     font-family: mundial;
-    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.07rem;
     color: #FDFDFD;
+    text-align: center;
+    margin: 0 2rem;
+    font-size: clamp(12px, 2vw, 16px);
 }
 
 .error__container {

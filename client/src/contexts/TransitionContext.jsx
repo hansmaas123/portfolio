@@ -142,7 +142,7 @@ export const TransitionProvider = ({ children }) => {
                             width: '100vw',
                             height: '100vh',
                             backgroundColor: themeColors.bg,
-                            zIndex: 10000,
+                            zIndex: 10003,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',

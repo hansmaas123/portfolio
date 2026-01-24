@@ -101,17 +101,79 @@ const Index = () => {
         setTimeout(() => {
             applyTheme('trainworld')
         }, 1250)
-
-        gsap.to('.projects__wrapper', {
-            x: '-620vw',
-            scrollTrigger: {
-                trigger: 'body',
-                pin: '.projects__wrapper, .homepage__wrapper',
-                scrub: 1,
-                start: 'top top',
-                end: 'bottom -700%'
-            }
-        })
+        if (window.screen.width >= 1200) {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-620vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        } else if (window.screen.width < 1200 && window.screen.width >= 1000) {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-681vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        } else if (window.screen.width < 1000 && window.screen.width >= 800) {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-730vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        } else if (window.screen.width < 800 && window.screen.width >= 420) {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-760vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        } else if (window.screen.width < 420 && window.screen.width >= 380) {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-820vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        } else {
+            gsap.killTweensOf('.projects__wrapper')
+            gsap.to('.projects__wrapper', {
+                x: '-840vw',
+                scrollTrigger: {
+                    trigger: 'body',
+                    pin: '.projects__wrapper, .homepage__wrapper',
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom -700%'
+                }
+            })
+        }
 
         SCROLL_TRIGGERS.forEach(({ trigger, start, end, enterTheme, leaveTheme, enterBackTheme, leaveBackTheme }) => {
             ScrollTrigger.create({

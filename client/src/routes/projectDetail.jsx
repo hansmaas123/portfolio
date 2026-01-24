@@ -440,8 +440,8 @@ const applyTheme = (theme, setColorIdentifier) => {
     }, 0);
 
     // Apply assignment margin
-    const assignment = document.querySelector('.assignment__wrapper');
-    if (assignment) assignment.style.marginBottom = typeof theme.assignmentMargin === 'number' ? `${theme.assignmentMargin}px` : theme.assignmentMargin;
+    // const assignment = document.querySelector('.assignment__wrapper');
+    // if (assignment) assignment.style.marginBottom = typeof theme.assignmentMargin === 'number' ? `${theme.assignmentMargin}px` : theme.assignmentMargin;
 
     // Apply navigation styles (without cloning to preserve React event handlers)
     document.querySelectorAll('.nav__link').forEach(navLink => {
