@@ -395,8 +395,6 @@ const applyTheme = (theme, setColorIdentifier) => {
 
     // Apply button styles
     const button = document.querySelector('.detail__button--color');
-    const link = document.querySelector('.detail__link');
-    const icon = document.querySelector('.icon__external');
     
     if (button) {
         button.style.backgroundColor = theme.buttonBg;

@@ -1025,7 +1025,7 @@ body:has(.contact__container) main {
 .detail__year {
     font-family: neulis-neue, sans-serif;
     font-size: 55px;
-    font-size: clamp(32px, 5vw, 55px);
+    font-size: clamp(24px, 5vw, 55px);
     font-weight: 700;
     letter-spacing: 0.39375rem;
     margin: 0;
@@ -1068,8 +1068,10 @@ body:has(.contact__container) main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6rem;
-    margin-top: 4rem;
+    /* margin-bottom: 6rem; */
+    margin-bottom: clamp(3rem, 8vw, 6rem);
+    /* margin-top: 4rem; */
+    margin-top: clamp(2rem, 6vw, 4rem);
 }
 
 .detail__link {
@@ -1637,7 +1639,7 @@ body:has(.contact__container) main {
 
 .next-project {
     font-family: neulis-neue, sans-serif;
-    font-size: 30px;
+    font-size: clamp(15px, 3vw, 30px);
     font-weight: 700;
     letter-spacing: 0.0375rem;
     margin: 0;
@@ -1645,12 +1647,14 @@ body:has(.contact__container) main {
 
 .next-project__name {
     font-family: neulis-neue, sans-serif;
-    font-size: 90px;
+    font-size: clamp(32px, 7vw, 90px);
     font-weight: 700;
-    letter-spacing: 0.39375rem;
+    letter-spacing: clamp(0.1rem, 1vw, 0.39375rem);
     margin: 0;
+    line-height: 1;
+    text-align: center;
     margin-bottom: 2rem;
-    margin-top: -1rem;
+    /* margin-top: -1rem; */
 }
 
 .next-project__text--wrapper {
@@ -1664,7 +1668,8 @@ body:has(.contact__container) main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    /* width: 50%; */
+    width: clamp(270px, 60vw, 568px);
 }
 
 .next-project__cover--wrapper {
