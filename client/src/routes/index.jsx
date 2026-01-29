@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const THEMES = {
     trainworld: { title: 'CREATIVE DEVELOPER', bg: '#272727', bgImage: 'homebg_trainworld', titleColor: '#EEEC76', smallCircle: '#E8E661', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
+    internship: { title: 'UI DEVELOPER', bg: '#18404A', bgImage: 'homebg_internship', titleColor: '#B2D8D8', smallCircle: '#227C8A', largeCircle: '#2C3A3A', activeBg: '#227C8A', navHover: '#227C8A', activeText: '#FDFDFD' },
     mixbox: { title: 'APP DESIGNER', bg: '#929948', bgImage: 'homebg_mixbox', titleColor: '#EEEC76', smallCircle: '#EEEC76', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
     stingstitute: { title: 'WEB DEVELOPER', bg: '#492078', bgImage: 'homebg_stingstitute', titleColor: '#FF53B7', smallCircle: '#FF53B7', largeCircle: '#FDFDFD', activeBg: '#FF53B7', navHover: '#FF53B7', activeText: '#272727' },
     rotterdans: { title: 'APP DEVELOPER', bg: '#F0F0F0', bgImage: 'homebg_rotterdans', titleColor: '#2C2D2C', smallCircle: '#272727', largeCircle: '#272727', activeBg: '#2C2D2C', navHover: '#272727', activeText: '#FDFDFD' },
@@ -25,6 +26,7 @@ const THEMES = {
 
 const PROJECTS = [
     { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld' },
+    { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship' },
     { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox' },
     { id: 3, name: 'STINGSTITUTE', type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute' },
     { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans' },
@@ -38,11 +40,12 @@ const PROJECTS = [
 ]
 
 const SCROLL_TRIGGERS = [
-    { trigger: 2, start: 'left 0%', end: 'left -37%', enterTheme: 'mixbox', leaveTheme: 'stingstitute', enterBackTheme: 'mixbox', leaveBackTheme: 'trainworld' },
-    { trigger: 4, start: 'left -80%', end: 'left -130%', enterTheme: 'rotterdans', leaveTheme: 'equalmelodies', enterBackTheme: 'rotterdans', leaveBackTheme: 'stingstitute' },
-    { trigger: 6, start: 'left -185%', end: 'left -245%', enterTheme: 'reactartistique', leaveTheme: 'dishknob', enterBackTheme: 'reactartistique', leaveBackTheme: 'equalmelodies' },
-    { trigger: 8, start: 'left -305%', end: 'left -385%', enterTheme: 'trimcraft', leaveTheme: 'smashabutton', enterBackTheme: 'trimcraft', leaveBackTheme: 'dishknob' },
-    { trigger: 10, start: 'left -470%', end: 'left -600%', enterTheme: 'chessbase', leaveTheme: 'weatherdog', enterBackTheme: 'chessbase', leaveBackTheme: 'smashabutton' }
+    { trigger: 2, start: 'left 0%', end: 'left -30%', enterTheme: 'internship', leaveTheme: 'mixbox', enterBackTheme: 'internship', leaveBackTheme: 'trainworld' },
+    { trigger: 3, start: 'left -60%', end: 'left -100%', enterTheme: 'mixbox', leaveTheme: 'stingstitute', enterBackTheme: 'mixbox', leaveBackTheme: 'internship' },
+    { trigger: 5, start: 'left -160%', end: 'left -210%', enterTheme: 'rotterdans', leaveTheme: 'equalmelodies', enterBackTheme: 'rotterdans', leaveBackTheme: 'stingstitute' },
+    { trigger: 7, start: 'left -265%', end: 'left -325%', enterTheme: 'reactartistique', leaveTheme: 'dishknob', enterBackTheme: 'reactartistique', leaveBackTheme: 'equalmelodies' },
+    { trigger: 9, start: 'left -385%', end: 'left -465%', enterTheme: 'trimcraft', leaveTheme: 'smashabutton', enterBackTheme: 'trimcraft', leaveBackTheme: 'dishknob' },
+    { trigger: 11, start: 'left -550%', end: 'left -680%', enterTheme: 'chessbase', leaveTheme: 'weatherdog', enterBackTheme: 'chessbase', leaveBackTheme: 'smashabutton' }
 ]
 
 const Index = () => {
@@ -104,73 +107,61 @@ const Index = () => {
         if (window.screen.width >= 1200) {
             gsap.killTweensOf('.projects__wrapper')
             gsap.to('.projects__wrapper', {
-                x: '-620vw',
+                x: '-680vw',
                 scrollTrigger: {
                     trigger: 'body',
                     pin: '.projects__wrapper, .homepage__wrapper',
                     scrub: 1,
                     start: 'top top',
-                    end: 'bottom -700%'
+                    end: 'bottom -760%'
                 }
             })
         } else if (window.screen.width < 1200 && window.screen.width >= 1000) {
             gsap.killTweensOf('.projects__wrapper')
             gsap.to('.projects__wrapper', {
-                x: '-681vw',
+                x: '-745vw',
                 scrollTrigger: {
                     trigger: 'body',
                     pin: '.projects__wrapper, .homepage__wrapper',
                     scrub: 1,
                     start: 'top top',
-                    end: 'bottom -700%'
+                    end: 'bottom -760%'
                 }
             })
         } else if (window.screen.width < 1000 && window.screen.width >= 800) {
             gsap.killTweensOf('.projects__wrapper')
             gsap.to('.projects__wrapper', {
-                x: '-730vw',
+                x: '-800vw',
                 scrollTrigger: {
                     trigger: 'body',
                     pin: '.projects__wrapper, .homepage__wrapper',
                     scrub: 1,
                     start: 'top top',
-                    end: 'bottom -700%'
+                    end: 'bottom -760%'
                 }
             })
         } else if (window.screen.width < 800 && window.screen.width >= 420) {
             gsap.killTweensOf('.projects__wrapper')
             gsap.to('.projects__wrapper', {
-                x: '-760vw',
+                x: '-835vw',
                 scrollTrigger: {
                     trigger: 'body',
                     pin: '.projects__wrapper, .homepage__wrapper',
                     scrub: 1,
                     start: 'top top',
-                    end: 'bottom -700%'
-                }
-            })
-        } else if (window.screen.width < 420 && window.screen.width >= 380) {
-            gsap.killTweensOf('.projects__wrapper')
-            gsap.to('.projects__wrapper', {
-                x: '-820vw',
-                scrollTrigger: {
-                    trigger: 'body',
-                    pin: '.projects__wrapper, .homepage__wrapper',
-                    scrub: 1,
-                    start: 'top top',
-                    end: 'bottom -700%'
+                    end: 'bottom -760%'
                 }
             })
         } else {
             gsap.killTweensOf('.projects__wrapper')
             gsap.to('.projects__wrapper', {
-                x: '-840vw',
+                x: '-900vw',
                 scrollTrigger: {
                     trigger: 'body',
                     pin: '.projects__wrapper, .homepage__wrapper',
                     scrub: 1,
                     start: 'top top',
-                    end: 'bottom -700%'
+                    end: 'bottom -760%'
                 }
             })
         }
@@ -225,7 +216,7 @@ const Index = () => {
                                     window.dispatchEvent(new CustomEvent('themeChange', { detail: { colorIdentifier: project.theme } }))
                                 }}
                                 to={`/project/${project.id}`}
-                                className={`home__project--wrapper${index > 0 ? ` home__project--wrapper${index + 1}` : ''}`}
+                                className={`home__project--wrapper${project.id > 1 ? ` home__project--wrapper${project.id}` : ''}`}
                             >
                                 <h2 className="home__project--title">{project.name}</h2>
                                 <div className="home__project--details">

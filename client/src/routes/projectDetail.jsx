@@ -10,7 +10,15 @@ const loader = async ({ params }) => {
     const id = params.id;
     const idInteger = parseInt(id)
     let nextId;
-    { idInteger == 11 ? nextId = 1 : nextId = idInteger + 1 }
+    if (idInteger == 1) {
+        nextId = 12;
+    } else if (idInteger == 12) {
+        nextId = 2;
+    } else if (idInteger == 11) {
+        nextId = 1;
+    } else {
+        nextId = idInteger + 1;
+    }
     const project = await getProjectById(idInteger);
     const nextProject = await getProjectById(nextId);
     return { project, nextProject };
@@ -30,8 +38,8 @@ const THEMES = {
         titleBg: 'url("/detailbg_trainworld.svg")',
         descriptionBg: 'url("/detailbg2_trainworld.svg")',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-trainworld.svg")',
-        nextProjectBgColor: '#929948',
+        nextProjectBg: 'url("/detailbg_next-internship.svg")',
+        nextProjectBgColor: '#18404A',
         buttonBg: '#E8E661',
         buttonBorder: '#E8E661',
         buttonHoverLinkColor: '#FDFDFD',
@@ -45,8 +53,38 @@ const THEMES = {
         highlightedColor: '#E8E661',
         color1: '#E8E661',
         color2: '#FDFDFD',
-        nextProjectColor: '#EEEC76',
+        nextProjectColor: '#B2D8D8',
         borderColor: '#EEEC76',
+    },
+    'DEV INTERNSHIP': {
+        identifier: 'internship',
+        bgColor: '#18404A',
+        smallCircle: '#227C8A',
+        largeCircle: '#2C3A3A',
+        hidden1Visible: false,
+        hidden2Visible: false,
+        hiddenColor: '#B2D8D8',
+        backButtonSrc: '/backbutton_white.svg',
+        titleBg: 'url("/detailbg_internship.svg")',
+        descriptionBg: 'url("/detailbg2_internship.svg")',
+        descriptionBgSize: 'cover',
+        nextProjectBg: 'url("/detailbg_next-trainworld.svg")',
+        nextProjectBgColor: '#929948',
+        buttonBg: '#227C8A',
+        buttonBorder: '#227C8A',
+        buttonHoverLinkColor: '#FDFDFD',
+        buttonLeaveLinkColor: '#FDFDFD',
+        buttonHoverIcon: '/link_white.svg',
+        buttonLeaveIcon: '/link_white.svg',
+        linkColor: '#FDFDFD',
+        iconExternal: '/link_white.svg',
+        assignmentMargin: 0,
+        navHoverColor: '#227C8A',
+        highlightedColor: '#227C8A',
+        color1: '#227C8A',
+        color2: '#B2D8D8',
+        nextProjectColor: '#EEEC76',
+        borderColor: '#227C8A',
     },
     'MIXBOX': {
         identifier: 'mixbox',
@@ -595,6 +633,13 @@ const ProjectDetail = () => {
                         ))}
                     </div>
                 )
+                    : project.attributes.name === 'DEV INTERNSHIP' ? (
+                        <div key={project.attributes.name} className="images__project--wrapper images__internship--wrapper">
+                            {projectImages.map((projectImage, index) => (
+                                <img key={index} className={`image__detail image__internship--${index}`} src={getImageUrl(projectImage)} alt="image" />
+                            ))}
+                        </div>
+                    )
                     : project.attributes.name === 'MIXBOX' ? (
                         <div className="mixbox__img--wrapper">
                             <div key={`${project.attributes.name}-1`} className="images__project--wrapper images__mixbox--wrapper1">

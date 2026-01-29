@@ -7,7 +7,7 @@
         "updatedAt": "2024-09-07T19:02:57.258Z",
         "name": "TRAINWORLD",
         "year": 2024,
-        "link": "https://hansmaasdevine.be/int3/",
+        "link": "https://tuinenko.be/int3/",
         "focus": "Storytelling Design - Interactive Development",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -982,7 +982,7 @@
         "updatedAt": "2024-09-09T10:32:34.289Z",
         "name": "STINGSTITUTE",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/int2/stingstitute/",
+        "link": "https://tuinenko.be/int2/stingstitute/",
         "focus": "Storytelling Design - Interactive Development",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -2937,7 +2937,7 @@
         "updatedAt": "2024-09-07T23:27:12.263Z",
         "name": "REACT ARTISTIQUE",
         "year": 2024,
-        "link": "https://hansmaasdevine.be/react/",
+        "link": "https://tuinenko.be/react/",
         "focus": "Back-end Development - React JS",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -3417,7 +3417,7 @@
         "updatedAt": "2024-09-07T18:30:06.531Z",
         "name": "TRIMCRAFT",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/trimcraft/",
+        "link": "https://tuinenko.be/trimcraft/",
         "focus": "Back-end Development - Astro - Strapi",
         "scope": "Web Development",
         "location": "Kortrijk, Belgium",
@@ -4101,7 +4101,7 @@
         "updatedAt": "2024-09-07T18:33:29.305Z",
         "name": "CHESSBASE",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/chess/",
+        "link": "https://tuinenko.be/chess/",
         "focus": "Back-end Development - Sequel Ace - PHP",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -4581,6 +4581,310 @@
           "data": null
         }
       }
+    },
+    {
+      "id": 12,
+      "attributes": {
+        "createdAt": "2025-01-28T10:00:00.000Z",
+        "updatedAt": "2025-01-28T10:00:00.000Z",
+        "name": "DEV INTERNSHIP",
+        "year": 2025,
+        "link": "#",
+        "focus": "Full-Stack Development - Team Collaboration",
+        "scope": "Web Development",
+        "location": "Belgium",
+        "scope2": "Backend Development",
+        "scope3": "Frontend Development",
+        "scope4": null,
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "During my development internship, I worked on "
+              },
+              {
+                "type": "text",
+                "text": "various full-stack projects",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " as part of a collaborative team environment. The internship focused on real-world application development, working with modern technologies and frameworks to deliver "
+              },
+              {
+                "type": "text",
+                "text": "production-ready solutions",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " for clients."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The experience involved collaborating with "
+              },
+              {
+                "type": "text",
+                "text": "senior developers",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", participating in "
+              },
+              {
+                "type": "text",
+                "text": "agile workflows",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and learning industry best practices for code quality, version control, and project management."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I focused on developing "
+              },
+              {
+                "type": "text",
+                "text": "scalable solutions",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " using modern web technologies. The projects involved working with "
+              },
+              {
+                "type": "text",
+                "text": "React",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", "
+              },
+              {
+                "type": "text",
+                "text": "Node.js",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and various database systems to create robust applications."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Throughout the internship, I gained valuable experience in "
+              },
+              {
+                "type": "text",
+                "text": "code review processes",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", "
+              },
+              {
+                "type": "text",
+                "text": "testing methodologies",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and "
+              },
+              {
+                "type": "text",
+                "text": "deployment workflows",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ". This hands-on experience strengthened my understanding of professional development practices."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 100,
+              "attributes": {
+                "name": "placeholder_cover.jpg",
+                "alternativeText": "Dev Internship Cover",
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_cover_large",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_cover.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  },
+                  "small": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_cover_small",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_cover.jpg",
+                    "path": null,
+                    "size": 50,
+                    "width": 500,
+                    "height": 281
+                  },
+                  "medium": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_cover_medium",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_cover.jpg",
+                    "path": null,
+                    "size": 75,
+                    "width": 750,
+                    "height": 422
+                  },
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_cover_thumbnail",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_cover.jpg",
+                    "path": null,
+                    "size": 25,
+                    "width": 245,
+                    "height": 138
+                  }
+                },
+                "hash": "placeholder_cover",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "/placeholder.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 101,
+              "attributes": {
+                "name": "placeholder_1.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_1_large",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_1.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  },
+                  "small": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_1_small",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_1.jpg",
+                    "path": null,
+                    "size": 50,
+                    "width": 500,
+                    "height": 281
+                  },
+                  "medium": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_1_medium",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_1.jpg",
+                    "path": null,
+                    "size": 75,
+                    "width": 750,
+                    "height": 422
+                  },
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/placeholder.jpg",
+                    "hash": "placeholder_1_thumbnail",
+                    "mime": "image/jpeg",
+                    "name": "placeholder_1.jpg",
+                    "path": null,
+                    "size": 25,
+                    "width": 245,
+                    "height": 138
+                  }
+                },
+                "hash": "placeholder_1",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "/placeholder.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -4588,7 +4892,7 @@
       "page": 1,
       "pageSize": 25,
       "pageCount": 1,
-      "total": 11
+      "total": 12
     }
   }
 }

@@ -7,7 +7,7 @@
         "updatedAt": "2024-09-07T19:02:57.258Z",
         "name": "TRAINWORLD",
         "year": 2024,
-        "link": "https://hansmaasdevine.be/int3/",
+        "link": "https://tuinenko.be/int3/",
         "focus": "Storytelling Design - Interactive Development",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -982,7 +982,7 @@
         "updatedAt": "2024-09-09T10:32:34.289Z",
         "name": "STINGSTITUTE",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/int2/stingstitute/",
+        "link": "https://tuinenko.be/int2/stingstitute/",
         "focus": "Storytelling Design - Interactive Development",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -2937,7 +2937,7 @@
         "updatedAt": "2024-09-07T23:27:12.263Z",
         "name": "REACT ARTISTIQUE",
         "year": 2024,
-        "link": "https://hansmaasdevine.be/react/",
+        "link": "https://tuinenko.be/react/",
         "focus": "Back-end Development - React JS",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -3417,7 +3417,7 @@
         "updatedAt": "2024-09-07T18:30:06.531Z",
         "name": "TRIMCRAFT",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/trimcraft/",
+        "link": "https://tuinenko.be/trimcraft/",
         "focus": "Back-end Development - Astro - Strapi",
         "scope": "Web Development",
         "location": "Kortrijk, Belgium",
@@ -4101,7 +4101,7 @@
         "updatedAt": "2024-09-07T18:33:29.305Z",
         "name": "CHESSBASE",
         "year": 2023,
-        "link": "https://hansmaasdevine.be/chess/",
+        "link": "https://tuinenko.be/chess/",
         "focus": "Back-end Development - Sequel Ace - PHP",
         "scope": "Web Development ",
         "location": "Kortrijk, Belgium",
@@ -4581,6 +4581,673 @@
           "data": null
         }
       }
+    },
+    {
+      "id": 12,
+      "attributes": {
+        "createdAt": "2025-01-28T10:00:00.000Z",
+        "updatedAt": "2025-01-28T10:00:00.000Z",
+        "name": "DEV INTERNSHIP",
+        "year": 2025,
+        "link": "#",
+        "focus": "Full-Stack Development - Team Collaboration",
+        "scope": "Web Development",
+        "location": "Belgium",
+        "scope2": "Backend Development",
+        "scope3": "Frontend Development",
+        "scope4": null,
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "During my development internship, I worked on "
+              },
+              {
+                "type": "text",
+                "text": "various full-stack projects",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " as part of a collaborative team environment. The internship focused on real-world application development, working with modern technologies and frameworks to deliver "
+              },
+              {
+                "type": "text",
+                "text": "production-ready solutions",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " for clients."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The experience involved collaborating with "
+              },
+              {
+                "type": "text",
+                "text": "senior developers",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", participating in "
+              },
+              {
+                "type": "text",
+                "text": "agile workflows",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and learning industry best practices for code quality, version control, and project management."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I focused on developing "
+              },
+              {
+                "type": "text",
+                "text": "scalable solutions",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " using modern web technologies. The projects involved working with "
+              },
+              {
+                "type": "text",
+                "text": "React",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", "
+              },
+              {
+                "type": "text",
+                "text": "Node.js",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and various database systems to create robust applications."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Throughout the internship, I gained valuable experience in "
+              },
+              {
+                "type": "text",
+                "text": "code review processes",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", "
+              },
+              {
+                "type": "text",
+                "text": "testing methodologies",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and "
+              },
+              {
+                "type": "text",
+                "text": "deployment workflows",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ". This hands-on experience strengthened my understanding of professional development practices."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 100,
+              "attributes": {
+                "name": "internship_cover.jpg",
+                "alternativeText": "Dev Internship Cover",
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769642968/internship_at81jc.jpg",
+                    "hash": "internship_cover_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_cover.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_cover",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769642968/internship_at81jc.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 101,
+              "attributes": {
+                "name": "internship_0.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-06_at_13.27.03_srgbb7.jpg",
+                    "hash": "internship_0_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_0.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_0",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-06_at_13.27.03_srgbb7.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 102,
+              "attributes": {
+                "name": "internship_1.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.16_yd23ap.jpg",
+                    "hash": "internship_1_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_1.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_1",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.16_yd23ap.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 103,
+              "attributes": {
+                "name": "internship_2.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.24_slful0.jpg",
+                    "hash": "internship_2_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_2.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_2",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.24_slful0.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 104,
+              "attributes": {
+                "name": "internship_3.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/catSceneFirstIteration_1_kjiuwt.jpg",
+                    "hash": "internship_3_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_3.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_3",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/catSceneFirstIteration_1_kjiuwt.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 105,
+              "attributes": {
+                "name": "internship_4.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/renderIteration_1_hi3fwy.jpg",
+                    "hash": "internship_4_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_4.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_4",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/renderIteration_1_hi3fwy.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 106,
+              "attributes": {
+                "name": "internship_5.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640564/Screenshot_2025-03-24_at_17.22.13_1_bebx8g.jpg",
+                    "hash": "internship_5_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_5.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_5",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640564/Screenshot_2025-03-24_at_17.22.13_1_bebx8g.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 107,
+              "attributes": {
+                "name": "internship_6.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640566/Screenshot_2025-03-24_at_17.20.11_vjyioh.jpg",
+                    "hash": "internship_6_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_6.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_6",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640566/Screenshot_2025-03-24_at_17.20.11_vjyioh.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 108,
+              "attributes": {
+                "name": "internship_7.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640565/Screenshot_2025-04-01_at_10.53.35_1_lt7zyz.jpg",
+                    "hash": "internship_7_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_7.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_7",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640565/Screenshot_2025-04-01_at_10.53.35_1_lt7zyz.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 109,
+              "attributes": {
+                "name": "internship_8.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641659/Screenshot_2025-04-08_at_10.19.56_1_xtec57.jpg",
+                    "hash": "internship_8_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_8.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_8",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641659/Screenshot_2025-04-08_at_10.19.56_1_xtec57.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 110,
+              "attributes": {
+                "name": "internship_9.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.52.49_1_hxatcc.jpg",
+                    "hash": "internship_9_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_9.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_9",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.52.49_1_hxatcc.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 111,
+              "attributes": {
+                "name": "internship_10.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.50.37_1_kbnp1y.jpg",
+                    "hash": "internship_10_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_10.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_10",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.50.37_1_kbnp1y.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 112,
+              "attributes": {
+                "name": "internship_11.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-03-24_at_17.20.29_jyurag.jpg",
+                    "hash": "internship_11_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_11.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_11",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-03-24_at_17.20.29_jyurag.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 113,
+              "attributes": {
+                "name": "internship_12.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-13_at_20.29.14_hzfm78.jpg",
+                    "hash": "internship_12_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_12.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_12",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-13_at_20.29.14_hzfm78.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            },
+            {
+              "id": 114,
+              "attributes": {
+                "name": "internship_13.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1920,
+                "height": 1080,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640569/Screenshot_2025-05-13_at_20.34.36_1_hmuzvb.jpg",
+                    "hash": "internship_13_large",
+                    "mime": "image/jpeg",
+                    "name": "internship_13.jpg",
+                    "path": null,
+                    "size": 100,
+                    "width": 1000,
+                    "height": 563
+                  }
+                },
+                "hash": "internship_13",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 150,
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640569/Screenshot_2025-05-13_at_20.34.36_1_hmuzvb.jpg",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": null,
+                "createdAt": "2025-01-28T10:00:00.000Z",
+                "updatedAt": "2025-01-28T10:00:00.000Z"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -4588,7 +5255,7 @@
       "page": 1,
       "pageSize": 25,
       "pageCount": 1,
-      "total": 11
+      "total": 12
     }
   }
 }

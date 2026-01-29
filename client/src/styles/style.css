@@ -404,6 +404,10 @@ body:has(.contact__container) main {
     transform: rotate(-9deg);
 }
 
+.home__project--wrapper12 {
+    transform: rotate(9deg);
+}
+
 .home__project--wrapper:hover {
     @media (min-width: 768px) {
     opacity: 0.9;
@@ -424,6 +428,10 @@ body:has(.contact__container) main {
 
 .project__thumbnail--trainworld {
     transform: rotate(-8deg);
+}
+
+.project__thumbnail--internship {
+    transform: rotate(9deg);
 }
 
 .project__thumbnail--mixbox {
@@ -1235,6 +1243,98 @@ body:has(.contact__container) main {
     width: 100%;
     grid-row: 3;
     grid-column: 2 / span 4;
+}
+
+.images__internship--wrapper {
+    width: 90vw;
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.image__internship--0 {
+    width: 100%;
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 4;
+}
+
+.image__internship--1 {
+    width: 100%;
+    grid-row: 3;
+    grid-column: 1 / span 2;
+}
+
+.image__internship--2 {
+    width: 100%;
+    grid-row: 3;
+    grid-column: 3 / span 2;
+}
+
+.image__internship--3 {
+    width: 100%;
+    grid-row: 4 / span 2;
+    grid-column: 1 / span 4;
+}
+
+.image__internship--4 {
+    width: 100%;
+    grid-row: 6 / span 2;
+    grid-column: 1 / span 4;
+}
+
+.image__internship--5 {
+    width: 100%;
+    grid-row: 8;
+    grid-column: 1;
+}
+
+.image__internship--6 {
+    width: 100%;
+    grid-row: 8 / span 2;
+    grid-column: 2 / span 3;
+}
+
+.image__internship--7 {
+    width: 100%;
+    grid-row: 9;
+    grid-column: 1;
+}
+
+.image__internship--8 {
+    width: 100%;
+    grid-row: 10 / span 2;
+    grid-column: 1 / span 2;
+}
+
+.image__internship--9 {
+    width: 100%;
+    grid-row: 10;
+    grid-column: 3;
+}
+
+.image__internship--10 {
+    width: 100%;
+    grid-row: 10;
+    grid-column: 4;
+}
+
+.image__internship--11 {
+    width: 100%;
+    grid-row: 11;
+    grid-column: 3 / span 2;
+}
+
+.image__internship--12 {
+    width: 100%;
+    grid-row: 12;
+    grid-column: 1 / span 2;
+}
+
+.image__internship--13 {
+    width: 100%;
+    grid-row: 12;
+    grid-column: 3 / span 2;
 }
 
 .mixbox__img--wrapper {
