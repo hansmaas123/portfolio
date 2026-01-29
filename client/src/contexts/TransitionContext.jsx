@@ -26,6 +26,7 @@ const TransitionContext = createContext()
 // Theme colors mapping based on project identifiers
 const THEME_COLORS = {
     trainworld: { bg: '#272727', text: '#E8E661' },
+    internship: { bg: '#18404A', text: '#227C8A' },
     mixbox: { bg: '#929948', text: '#EEEC76' },
     stingstitute: { bg: '#492078', text: '#FF53B7' },
     rotterdans: { bg: '#F0F0F0', text: '#272727' },
@@ -73,7 +74,7 @@ export const TransitionProvider = ({ children }) => {
             const projectId = parseInt(projectMatch[1])
             // Map project IDs to their themes
             const projectThemes = {
-                1: 'trainworld', 2: 'mixbox', 3: 'stingstitute', 4: 'rotterdans',
+                1: 'trainworld', 12: 'internship', 2: 'mixbox', 3: 'stingstitute', 4: 'rotterdans',
                 5: 'equalmelodies', 6: 'reactartistique', 7: 'dishknob', 8: 'trimcraft',
                 9: 'smashabutton', 10: 'chessbase', 11: 'weatherdog'
             }

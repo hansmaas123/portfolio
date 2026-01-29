@@ -350,7 +350,6 @@ body:has(.contact__container) main {
     transform: rotate(-8deg);
     width: clamp(270px, 60vw, 569px);
     height: clamp(208px, 47vw, 445px);
-    translate: 0 -2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -478,6 +477,23 @@ body:has(.contact__container) main {
     width: clamp(270px, 60vw, 568px);
     height: auto;
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
+}
+
+.thumbnail__loader--wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(270px, 60vw, 568px);
+    min-height: 300px;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
+}
+
+.thumbnail__loader--wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
 }
 
 .project__thumbnail--wrapper {
@@ -1205,6 +1221,41 @@ body:has(.contact__container) main {
 
 .image__detail {
     box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.30);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.image__detail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.image__loader {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(178, 216, 216, 0.2);
+    border-top: 4px solid #B2D8D8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .images__trainworld--wrapper {

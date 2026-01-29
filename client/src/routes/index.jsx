@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import gsap from 'gsap'
 import { useLocation, useOutletContext } from 'react-router-dom'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -8,6 +9,48 @@ import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
 
 gsap.registerPlugin(ScrollTrigger)
+
+// Image component with loading state for homepage
+const ThumbnailWithLoader = ({ src, className, alt, bgColor }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // Function to darken a hex color
+    const darkenColor = (hex, amount = 0.2) => {
+        hex = hex.replace('#', '');
+        let r = parseInt(hex.substring(0, 2), 16);
+        let g = parseInt(hex.substring(2, 4), 16);
+        let b = parseInt(hex.substring(4, 6), 16);
+        r = Math.floor(r * (1 - amount));
+        g = Math.floor(g * (1 - amount));
+        b = Math.floor(b * (1 - amount));
+        return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    };
+
+    const loaderBgColor = darkenColor(bgColor);
+
+    return (
+        <div className={`thumbnail__loader--wrapper ${className}`} style={{ backgroundColor: loaderBgColor }}>
+            {!isLoaded && (
+                <div className="image__loader">
+                    <div className="spinner"></div>
+                </div>
+            )}
+            <img 
+                src={src} 
+                alt={alt}
+                onLoad={() => setIsLoaded(true)}
+                style={{ opacity: isLoaded ? 1 : 0 }}
+            />
+        </div>
+    );
+};
+
+ThumbnailWithLoader.propTypes = {
+    src: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    bgColor: PropTypes.string.isRequired
+};
 
 const THEMES = {
     trainworld: { title: 'CREATIVE DEVELOPER', bg: '#272727', bgImage: 'homebg_trainworld', titleColor: '#EEEC76', smallCircle: '#E8E661', largeCircle: '#FDFDFD', activeBg: '#EEEC76', navHover: '#EEEC76', activeText: '#272727' },
@@ -201,10 +244,11 @@ const Index = () => {
                     {PROJECTS.map((project, index) => (
                         <div key={project.id} className={`home__project--container${index > 0 ? ' home__project--containers' : ''}`}>
                             <div className="project__thumbnail--wrapper">
-                                <img
+                                <ThumbnailWithLoader
                                     className={`project__thumbnail project__thumbnail--${project.theme}`}
                                     src={`/home_${project.theme}.${project.theme === 'trainworld' ? 'jpeg' : 'jpg'}`}
                                     alt={`project thumbnail ${project.name.toLowerCase()}`}
+                                    bgColor={THEMES[project.theme].bg}
                                 />
                             </div>
                             <TransitionLink

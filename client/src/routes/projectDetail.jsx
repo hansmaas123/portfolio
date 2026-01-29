@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import '../styles/style.css'
 import { getProjectById } from "../services/project";
 import { useLoaderData, useLocation, useOutletContext } from "react-router-dom";
@@ -22,6 +23,55 @@ const loader = async ({ params }) => {
     const project = await getProjectById(idInteger);
     const nextProject = await getProjectById(nextId);
     return { project, nextProject };
+};
+
+// Image component with loading state
+const ImageWithLoader = ({ src, className, alt, bgColor }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // Function to darken a hex color
+    const darkenColor = (hex, amount = 0.2) => {
+        // Remove # if present
+        hex = hex.replace('#', '');
+        
+        // Convert to RGB
+        let r = parseInt(hex.substring(0, 2), 16);
+        let g = parseInt(hex.substring(2, 4), 16);
+        let b = parseInt(hex.substring(4, 6), 16);
+        
+        // Darken
+        r = Math.floor(r * (1 - amount));
+        g = Math.floor(g * (1 - amount));
+        b = Math.floor(b * (1 - amount));
+        
+        // Convert back to hex
+        return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    };
+
+    const loaderBgColor = darkenColor(bgColor);
+
+    return (
+        <div className={`image__detail ${className}`} style={{ backgroundColor: loaderBgColor }}>
+            {!isLoaded && (
+                <div className="image__loader">
+                    <div className="spinner"></div>
+                </div>
+            )}
+            <img 
+                src={src} 
+                alt={alt}
+                onLoad={() => setIsLoaded(true)}
+                style={{ opacity: isLoaded ? 1 : 0 }}
+            />
+        </div>
+    );
+};
+
+ImageWithLoader.propTypes = {
+    src: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    bgColor: PropTypes.string.isRequired
 };
 
 // Theme configuration
@@ -517,6 +567,7 @@ const ProjectDetail = () => {
     const cover = getImageUrl(project.attributes.cover.data[0]);
     const nextCover = getImageUrl(nextProject.attributes.cover.data[0]);
     const [colorIdentifier, setColorIdentifier] = useState('trainworld')
+    const theme = THEMES[project.attributes.name] || THEMES.WEATHERDOG;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -528,7 +579,6 @@ const ProjectDetail = () => {
     }, [pathname]);
 
     useEffect(() => {
-        const theme = THEMES[project.attributes.name] || THEMES.WEATHERDOG;
         applyTheme(theme, setColorIdentifier);
     }, [project.attributes.name])
 
@@ -552,7 +602,12 @@ const ProjectDetail = () => {
                 <p className="detail__hidden detail__hidden1">(Note: this website is only made for pc)</p>
                 <p className="detail__hidden detail__hidden2">(Note: I did only focus on development, not design. Website only for pc)</p>
                 <div className="cover__wrapper">
-                    <img src={cover} alt="cover" className="cover__image" />
+                    <ImageWithLoader 
+                        src={cover} 
+                        alt="cover" 
+                        className="cover__image"
+                        bgColor={theme.bgColor}
+                    />
                 </div>
             </section>
             <section className="details__container--wrapper">
@@ -629,14 +684,26 @@ const ProjectDetail = () => {
                 {project.attributes.name === 'TRAINWORLD' ? (
                     <div className="images__project--wrapper images__trainworld--wrapper">
                         {projectImages.map((projectImage, index) => (
-                            <img key={index} className={`image__detail image__trainworld--${index}`} src={getImageUrl(projectImage)} alt="image" />
+                            <img 
+                                key={index} 
+                                className={`image__detail image__trainworld--${index}`} 
+                                src={getImageUrl(projectImage)} 
+                                alt="image" 
+                                onLoad={(e) => e.target.classList.add('loaded')}
+                            />
                         ))}
                     </div>
                 )
                     : project.attributes.name === 'DEV INTERNSHIP' ? (
                         <div key={project.attributes.name} className="images__project--wrapper images__internship--wrapper">
                             {projectImages.map((projectImage, index) => (
-                                <img key={index} className={`image__detail image__internship--${index}`} src={getImageUrl(projectImage)} alt="image" />
+                                <ImageWithLoader 
+                                    key={index}
+                                    src={getImageUrl(projectImage)}
+                                    className={`image__internship--${index}`}
+                                    alt="image"
+                                    bgColor={theme.bgColor}
+                                />
                             ))}
                         </div>
                     )
