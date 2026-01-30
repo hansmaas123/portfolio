@@ -6,18 +6,21 @@ import { useEffect } from "react";
 import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
 
+// Helper to get asset path with base URL
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 // Theme configuration
 const THEMES = {
     trainworld: {
         bgColor: '#272727',
-        bgImage: 'url("/aboutbg_trainworld.svg")',
-        arrowSrc: '/about_arrow_trainworld.svg',
+        bgImage: 'aboutbg_trainworld.svg',
+        arrowSrc: 'about_arrow_trainworld.svg',
         smallCircle: '#E8E661',
         largeCircle: '#FDFDFD',
         color1: '#EEEC76',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#EEEC76',
         navHoverColor: '#EEEC76',
         activeColor: '#EEEC76',
@@ -31,14 +34,14 @@ const THEMES = {
     },
     internship: {
         bgColor: '#18404A',
-        bgImage: 'url("/aboutbg_internship.svg")',
-        arrowSrc: '/about_arrow_internship.svg',
+        bgImage: 'aboutbg_internship.svg',
+        arrowSrc: 'about_arrow_internship.svg',
         smallCircle: '#227C8A',
         largeCircle: '#2C3A3A',
         color1: '#227C8A',
         color2: '#B2D8D8',
         color3: '#B2D8D8',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#227C8A',
         navHoverColor: '#227C8A',
         activeColor: '#227C8A',
@@ -53,14 +56,14 @@ const THEMES = {
     },
     mixbox: {
         bgColor: '#929948',
-        bgImage: 'url("/aboutbg_mixbox.svg")',
-        arrowSrc: '/about_arrow_trainworld.svg',
+        bgImage: 'aboutbg_mixbox.svg',
+        arrowSrc: 'about_arrow_trainworld.svg',
         smallCircle: '#EEEC76',
         largeCircle: '#FDFDFD',
         color1: '#EEEC76',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#EEEC76',
         navHoverColor: '#EEEC76',
         activeColor: '#EEEC76',
@@ -74,14 +77,14 @@ const THEMES = {
     },
     stingstitute: {
         bgColor: '#492078',
-        bgImage: 'url("/aboutbg_stingstitute.svg")',
-        arrowSrc: '/about_arrow_stingstitute.svg',
+        bgImage: 'aboutbg_stingstitute.svg',
+        arrowSrc: 'about_arrow_stingstitute.svg',
         smallCircle: '#FF53B7',
         largeCircle: '#FDFDFD',
         color1: '#FF53B7',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#FF53B7',
         navHoverColor: '#FF53B7',
         activeColor: '#FF53B7',
@@ -97,14 +100,14 @@ const THEMES = {
     },
     rotterdans: {
         bgColor: '#efefef',
-        bgImage: 'url("/aboutbg_rotterdans.svg")',
-        arrowSrc: '/about_arrow_rotterdans.svg',
+        bgImage: 'aboutbg_rotterdans.svg',
+        arrowSrc: 'about_arrow_rotterdans.svg',
         smallCircle: '#2C2D2C',
         largeCircle: '#2C2D2C',
         color1: '#2C2D2C',
         color2: '#2C2D2C',
         color3: '#2C2D2C',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#2C2D2C',
         navHoverColor: '#2C2D2C',
         activeColor: '#2C2D2C',
@@ -119,14 +122,14 @@ const THEMES = {
     },
     equalmelodies: {
         bgColor: '#272727',
-        bgImage: 'url("/aboutbg_equalmelodies.svg")',
-        arrowSrc: '/about_arrow_equalmelodies.svg',
+        bgImage: 'aboutbg_equalmelodies.svg',
+        arrowSrc: 'about_arrow_equalmelodies.svg',
         smallCircle: '#D8595B',
         largeCircle: '#272727',
         color1: '#D8595B',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#D8595B',
         navHoverColor: '#D8595B',
         activeColor: '#D8595B',
@@ -141,14 +144,14 @@ const THEMES = {
     },
     reactartistique: {
         bgColor: '#366830',
-        bgImage: 'url("/aboutbg_reactartistique.svg")',
-        arrowSrc: '/about_arrow_reactartistique.svg',
+        bgImage: 'aboutbg_reactartistique.svg',
+        arrowSrc: 'about_arrow_reactartistique.svg',
         smallCircle: '#FDFDFD',
         largeCircle: '#274A23',
         color1: '#11210F',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#FDFDFD',
         navHoverColor: '#FDFDFD',
         activeColor: '#FDFDFD',
@@ -163,14 +166,14 @@ const THEMES = {
     },
     dishknob: {
         bgColor: '#FFF8F4',
-        bgImage: 'url("/aboutbg_dishknob.svg")',
-        arrowSrc: '/about_arrow_dishknob.svg',
+        bgImage: 'aboutbg_dishknob.svg',
+        arrowSrc: 'about_arrow_dishknob.svg',
         smallCircle: '#4C984C',
         largeCircle: '#4C984C',
         color1: '#4C984C',
         color2: '#2C2D2C',
         color3: '#2C2D2C',
-        arrowDown: '/about_arrowdown_black.svg',
+        arrowDown: 'about_arrowdown_black.svg',
         borderColor: '#4C984C',
         navHoverColor: '#4C984C',
         activeColor: '#4C984C',
@@ -185,14 +188,14 @@ const THEMES = {
     },
     trimcraft: {
         bgColor: '#434321',
-        bgImage: 'url("/aboutbg_trimcraft.svg")',
-        arrowSrc: '/about_arrow_trainworld.svg',
+        bgImage: 'aboutbg_trimcraft.svg',
+        arrowSrc: 'about_arrow_trainworld.svg',
         smallCircle: '#EEEC76',
         largeCircle: '#FDFDFD',
         color1: '#EEEC76',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#EEEC76',
         navHoverColor: '#EEEC76',
         activeColor: '#EEEC76',
@@ -206,14 +209,14 @@ const THEMES = {
     },
     smashabutton: {
         bgColor: '#21432E',
-        bgImage: 'url("/aboutbg_smashabutton.svg")',
-        arrowSrc: '/about_arrow_smashabutton.svg',
+        bgImage: 'aboutbg_smashabutton.svg',
+        arrowSrc: 'about_arrow_smashabutton.svg',
         smallCircle: '#FEA500',
         largeCircle: '#FEA500',
         color1: '#FEA500',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#FEA500',
         navHoverColor: '#FEA500',
         activeColor: '#FEA500',
@@ -227,14 +230,14 @@ const THEMES = {
     },
     chessbase: {
         bgColor: '#7A9A57',
-        bgImage: 'url("/aboutbg_chessbase.svg")',
-        arrowSrc: '/about_arrow_chessbase.svg',
+        bgImage: 'aboutbg_chessbase.svg',
+        arrowSrc: 'about_arrow_chessbase.svg',
         smallCircle: '#ECEDCE',
         largeCircle: '#ECEDCE',
         color1: '#ECEDCE',
         color2: '#2C2D2C',
         color3: '#2C2D2C',
-        arrowDown: '/about_arrowdown_black.svg',
+        arrowDown: 'about_arrowdown_black.svg',
         borderColor: '#ECEDCE',
         navHoverColor: '#ECEDCE',
         activeColor: '#ECEDCE',
@@ -249,14 +252,14 @@ const THEMES = {
     },
     weatherdog: {
         bgColor: '#2E3495',
-        bgImage: 'url("/aboutbg_weatherdog.svg")',
-        arrowSrc: '/about_arrow_weatherdog.svg',
+        bgImage: 'aboutbg_weatherdog.svg',
+        arrowSrc: 'about_arrow_weatherdog.svg',
         smallCircle: '#E69A8D',
         largeCircle: '#E69A8D',
         color1: '#E69A8D',
         color2: '#FDFDFD',
         color3: '#FDFDFD',
-        arrowDown: '/about_arrowdown_white.svg',
+        arrowDown: 'about_arrowdown_white.svg',
         borderColor: '#E69A8D',
         navHoverColor: '#E69A8D',
         activeColor: '#E69A8D',
@@ -283,8 +286,8 @@ const applyTheme = (theme) => {
     const activeNav = document.querySelector('.active');
 
     if (wrapper) wrapper.style.backgroundColor = theme.bgColor;
-    if (bgWrapper) bgWrapper.style.backgroundImage = theme.bgImage;
-    if (arrow) arrow.src = theme.arrowSrc;
+    if (bgWrapper) bgWrapper.style.backgroundImage = `url("${import.meta.env.BASE_URL}${theme.bgImage}")`;
+    if (arrow) arrow.src = `${import.meta.env.BASE_URL}${theme.arrowSrc}`;
     if (smallCircle) smallCircle.style.backgroundColor = theme.smallCircle;
     if (largeCircle) largeCircle.style.backgroundColor = theme.largeCircle;
 
@@ -294,7 +297,7 @@ const applyTheme = (theme) => {
     const color3 = document.querySelector('.about__color3');
     if (color3) color3.style.color = theme.color3;
 
-    document.querySelectorAll('.about__arrowdown').forEach(el => el.src = theme.arrowDown);
+    document.querySelectorAll('.about__arrowdown').forEach(el => el.src = `${import.meta.env.BASE_URL}${theme.arrowDown}`);
     document.querySelectorAll('.about__skillset--itemwrapperall').forEach(el => el.style.borderColor = theme.borderColor);
 
     // Apply navigation styles
@@ -368,7 +371,7 @@ const About = () => {
                         <p className="about__color1 about__title about__title1">CREATING TOMORROW&apos;S</p>
                         <p className="about__color1 about__title about__title2">EXPERIENCES</p>
                         <p className="about__color2 about__title about__title3">TODAY.</p>
-                        <img src="/about_arrow_trainworld.svg" alt="arrow" className="about__arrow" />
+                        <img src={getAssetPath("about_arrow_trainworld.svg")} alt="arrow" className="about__arrow" />
                     </div>
                 </section>
                 <section className="about__intro--wrapper">
@@ -394,127 +397,127 @@ const About = () => {
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">DEVELOPMENT</p>
-                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow about__arrowdown" />
+                            <img src={getAssetPath("about_arrowdown_white.svg")} alt="arrow down" className="arrow about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden">
                             <div className="logo__wrapper--all logo__wrapper--development">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/html.svg" alt="html icon" />
+                                        <img className="logo" src={getAssetPath("html.svg")} alt="html icon" />
                                     </div>
                                     <p className="about__color2 logo__name">HTML5</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/css.svg" alt="css icon" />
+                                        <img className="logo" src={getAssetPath("css.svg")} alt="css icon" />
                                     </div>
                                     <p className="about__color2 logo__name">CSS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/js.svg" alt="javascript icon" />
+                                        <img className="logo" src={getAssetPath("js.svg")} alt="javascript icon" />
                                     </div>
                                     <p className="about__color2 logo__name">JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/php.svg" alt="php icon" />
+                                        <img className="logo" src={getAssetPath("php.svg")} alt="php icon" />
                                     </div>
                                     <p className="about__color2 logo__name">PHP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper logo__wrapper--long">
-                                        <img className="logo" src="/react.svg" alt="react native icon" />
+                                        <img className="logo" src={getAssetPath("react.svg")} alt="react native icon" />
                                     </div>
                                     <p className="about__color2 logo__name">REACT (+NATIVE)</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/astro.svg" alt="astro icon" />
+                                        <img className="logo" src={getAssetPath("astro.svg")} alt="astro icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ASTRO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/strapi.svg" alt="strapi icon" />
+                                        <img className="logo" src={getAssetPath("strapi.svg")} alt="strapi icon" />
                                     </div>
                                     <p className="about__color2 logo__name">STRAPI</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/arduino.svg" alt="arduino icon" />
+                                        <img className="logo" src={getAssetPath("arduino.svg")} alt="arduino icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ARDUINO</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/p5js.svg" alt="p5.js icon" />
+                                        <img className="logo" src={getAssetPath("p5js.svg")} alt="p5.js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">P5JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/sequelace.svg" alt="my sequel ace icon" />
+                                        <img className="logo" src={getAssetPath("sequelace.svg")} alt="my sequel ace icon" />
                                     </div>
                                     <p className="about__color2 logo__name">SEQUEL ACE</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/gsap.svg" alt="gsap icon" />
+                                        <img className="logo" src={getAssetPath("gsap.svg")} alt="gsap icon" />
                                     </div>
                                     <p className="about__color2 logo__name">GSAP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/gtm.svg" alt="google teachable machine icon" />
+                                        <img className="logo" src={getAssetPath("gtm.svg")} alt="google teachable machine icon" />
                                     </div>
                                     <p className="about__color2 logo__name">GTM</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/ml5.svg" alt="ml5js icon" />
+                                        <img className="logo" src={getAssetPath("ml5.svg")} alt="ml5js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">ML5</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/webgl.svg" alt="webgl icon" />
+                                        <img className="logo" src={getAssetPath("webgl.svg")} alt="webgl icon" />
                                     </div>
                                     <p className="about__color2 logo__name">WEBGL</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/fresh.svg" alt="deno fresh icon" />
+                                        <img className="logo" src={getAssetPath("fresh.svg")} alt="deno fresh icon" />
                                     </div>
                                     <p className="about__color2 logo__name">DENO FRESH</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                       <img className="logo" src="/threejs.svg" alt="three.js icon" />
+                                       <img className="logo" src={getAssetPath("threejs.svg")} alt="three.js icon" />
                                     </div>
                                     <p className="about__color2 logo__name">THREE.JS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/quasar.svg" alt="quasar icon" />
+                                        <img className="logo" src={getAssetPath("quasar.svg")} alt="quasar icon" />
                                     </div>
                                     <p className="about__color2 logo__name">QUASAR</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/sveltekit.svg" alt="sveltekit icon" />
+                                        <img className="logo" src={getAssetPath("sveltekit.svg")} alt="sveltekit icon" />
                                     </div>
                                     <p className="about__color2 logo__name">SVELTEKIT</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/directus.svg" alt="directus icon" />
+                                        <img className="logo" src={getAssetPath("directus.svg")} alt="directus icon" />
                                     </div>
                                     <p className="about__color2 logo__name">DIRECTUS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/wordpress.svg" alt="wordpress icon" />
+                                        <img className="logo" src={getAssetPath("wordpress.svg")} alt="wordpress icon" />
                                     </div>
                                     <p className="about__color2 logo__name">WORDPRESS</p>
                                 </div>
@@ -534,7 +537,7 @@ const About = () => {
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">DESIGN</p>
-                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow2 about__arrowdown" />
+                            <img src={getAssetPath("about_arrowdown_white.svg")} alt="arrow down" className="arrow2 about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden2">
                             <div className="logo__wrapper--alldesign">
@@ -551,37 +554,37 @@ const About = () => {
                             <div className="logo__wrapper--alldesign3">
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/ai.svg" alt="adobe illustrator icon" />
+                                        <img className="logo" src={getAssetPath("ai.svg")} alt="adobe illustrator icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE ILLUSTRATOR</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/ps.svg" alt="adobe photoshop icon" />
+                                        <img className="logo" src={getAssetPath("ps.svg")} alt="adobe photoshop icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE PHOTOSHOP</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/ae.svg" alt="adobe after effects icon" />
+                                        <img className="logo" src={getAssetPath("ae.svg")} alt="adobe after effects icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AFTER EFFECTS</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/au.svg" alt="adobe audition icon" />
+                                        <img className="logo" src={getAssetPath("au.svg")} alt="adobe audition icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">ADOBE AUDITION</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/figma.svg" alt="figma icon" />
+                                        <img className="logo" src={getAssetPath("figma.svg")} alt="figma icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">FIGMA</p>
                                 </div>
                                 <div className="logo__wrapper--details">
                                     <div className="logo__wrapper">
-                                        <img className="logo" src="/blender.svg" alt="blender icon" />
+                                        <img className="logo" src={getAssetPath("blender.svg")} alt="blender icon" />
                                     </div>
                                     <p className="about__color2 logo__name--design2">BLENDER</p>
                                 </div>
@@ -601,7 +604,7 @@ const About = () => {
                             href="#development" className="about__skillset--itemwrapper"
                         >
                             <p className="about__color2 about__skillset--item">UX RESEARCH</p>
-                            <img src="/about_arrowdown_white.svg" alt="arrow down" className="arrow3 about__arrowdown" />
+                            <img src={getAssetPath("about_arrowdown_white.svg")} alt="arrow down" className="arrow3 about__arrowdown" />
                         </button>
                         <div className="about__skillset--itemhidden3">
                             <div className="logo__wrapper--alldesign">
@@ -631,17 +634,17 @@ const About = () => {
                     <div className="bottom__left">
                         <a onMouseEnter={() => setScaling(true)}
                             onMouseLeave={() => setScaling(false)} href="https://www.instagram.com/maasdesign_studios/" target='__blank' className="social">
-                            <img src="/instagram.svg" alt="icon of instagram" />
+                            <img src={getAssetPath("instagram.svg")} alt="icon of instagram" />
                             <p>Instagram</p>
                         </a>
                         <a onMouseEnter={() => setScaling(true)}
                             onMouseLeave={() => setScaling(false)} href="https://www.behance.net/hansmaas" target='__blank' className="social">
-                            <img src="/behance.svg" alt="icon of behance" />
+                            <img src={getAssetPath("behance.svg")} alt="icon of behance" />
                             <p>Behance</p>
                         </a>
                         <a onMouseEnter={() => setScaling(true)}
                             onMouseLeave={() => setScaling(false)} href="https://github.com/hansmaas123" target='__blank' className="social">
-                            <img src="/github.svg" alt="icon of github" />
+                            <img src={getAssetPath("github.svg")} alt="icon of github" />
                             <p>Github</p>
                         </a>
                     </div>

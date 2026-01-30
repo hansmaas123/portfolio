@@ -7,6 +7,8 @@ import NavBar from "../components/NavBar";
 import PageTransition from '../components/PageTransition';
 import TransitionLink from '../components/TransitionLink';
 
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const loader = async ({ params }) => {
     const id = params.id;
     const idInteger = parseInt(id)
@@ -84,20 +86,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_trainworld.svg")',
-        descriptionBg: 'url("/detailbg2_trainworld.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_trainworld.svg',
+        descriptionBg: 'detailbg2_trainworld.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-internship.svg")',
+        nextProjectBg: 'detailbg_next-internship.svg',
         nextProjectBgColor: '#18404A',
         buttonBg: '#E8E661',
         buttonBorder: '#E8E661',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#272727',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_black.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_black.svg',
         linkColor: '#272727',
-        iconExternal: '/link_black.svg',
+        iconExternal: 'link_black.svg',
         assignmentMargin: 0,
         navHoverColor: '#E8E661',
         highlightedColor: '#E8E661',
@@ -114,20 +116,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#B2D8D8',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_internship.svg")',
-        descriptionBg: 'url("/detailbg2_internship.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_internship.svg',
+        descriptionBg: 'detailbg2_internship.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-trainworld.svg")',
+        nextProjectBg: 'detailbg_next-trainworld.svg',
         nextProjectBgColor: '#929948',
         buttonBg: '#227C8A',
         buttonBorder: '#227C8A',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: 0,
         navHoverColor: '#227C8A',
         highlightedColor: '#227C8A',
@@ -144,20 +146,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_mixbox.svg")',
-        descriptionBg: 'url("/detailbg2_mixbox.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_mixbox.svg',
+        descriptionBg: 'detailbg2_mixbox.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-mixbox.svg")',
+        nextProjectBg: 'detailbg_next-mixbox.svg',
         nextProjectBgColor: '#492078',
         buttonBg: '#EEEC76',
         buttonBorder: '#EEEC76',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#272727',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_black.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_black.svg',
         linkColor: '#272727',
-        iconExternal: '/link_black.svg',
+        iconExternal: 'link_black.svg',
         assignmentMargin: '5rem',
         navHoverColor: '#EEEC76',
         highlightedColor: '#EEEC76',
@@ -174,20 +176,20 @@ const THEMES = {
         hidden1Visible: true,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_stingstitute.svg")',
-        descriptionBg: 'url("/detailbg2_stingstitute.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_stingstitute.svg',
+        descriptionBg: 'detailbg2_stingstitute.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-stingstitute.svg")',
+        nextProjectBg: 'detailbg_next-stingstitute.svg',
         nextProjectBgColor: '#F0F0F0',
         buttonBg: '#FF53B7',
         buttonBorder: '#FF53B7',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#272727',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_black.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_black.svg',
         linkColor: '#272727',
-        iconExternal: '/link_black.svg',
+        iconExternal: 'link_black.svg',
         assignmentMargin: '18rem',
         navHoverColor: '#FF53B7',
         highlightedColor: '#FF53B7',
@@ -204,20 +206,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#272727',
-        backButtonSrc: '/backbutton_black.svg',
-        titleBg: 'url("/detailbg_rotterdans.svg")',
-        descriptionBg: 'url("/detailbg2_rotterdans.svg")',
+        backButtonSrc: 'backbutton_black.svg',
+        titleBg: 'detailbg_rotterdans.svg',
+        descriptionBg: 'detailbg2_rotterdans.svg',
         descriptionBgSize: 'contain',
-        nextProjectBg: 'url("/detailbg_next-rotterdans.svg")',
+        nextProjectBg: 'detailbg_next-rotterdans.svg',
         nextProjectBgColor: '#272727',
         buttonBg: '#272727',
         buttonBorder: '#272727',
         buttonHoverLinkColor: '#272727',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_black.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_black.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: 0,
         navHoverColor: '#272727',
         highlightedColor: '#272727',
@@ -234,20 +236,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_equalmelodies.svg")',
-        descriptionBg: 'url("/detailbg2_equalmelodies.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_equalmelodies.svg',
+        descriptionBg: 'detailbg2_equalmelodies.svg',
         descriptionBgSize: 'contain',
-        nextProjectBg: 'url("/detailbg_next-equalmelodies.svg")',
+        nextProjectBg: 'detailbg_next-equalmelodies.svg',
         nextProjectBgColor: '#366830',
         buttonBg: '#D8595B',
         buttonBorder: '#D8595B',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: 0,
         navHoverColor: '#D8595B',
         highlightedColor: '#D8595B',
@@ -264,20 +266,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: true,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_reactartistique.svg")',
-        descriptionBg: 'url("/detailbg2_reactartistique.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_reactartistique.svg',
+        descriptionBg: 'detailbg2_reactartistique.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-reactartistique.svg")',
+        nextProjectBg: 'detailbg_next-reactartistique.svg',
         nextProjectBgColor: '#FFF8F4',
         buttonBg: '#274A23',
         buttonBorder: '#274A23',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: '25rem',
         navHoverColor: '#FDFDFD',
         highlightedColor: '#87EA7B',
@@ -294,20 +296,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_black.svg',
-        titleBg: 'url("/detailbg_dishknob.svg")',
-        descriptionBg: 'url("/detailbg2_dishknob.svg")',
+        backButtonSrc: 'backbutton_black.svg',
+        titleBg: 'detailbg_dishknob.svg',
+        descriptionBg: 'detailbg2_dishknob.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-dishknob.svg")',
+        nextProjectBg: 'detailbg_next-dishknob.svg',
         nextProjectBgColor: '#434321',
         buttonBg: '#4C984C',
         buttonBorder: '#4C984C',
         buttonHoverLinkColor: '#272727',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_black.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_black.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: '27rem',
         navHoverColor: '#4C984C',
         highlightedColor: '#3A753A',
@@ -324,20 +326,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: true,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_trimcraft.svg")',
-        descriptionBg: 'url("/detailbg2_trimcraft.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_trimcraft.svg',
+        descriptionBg: 'detailbg2_trimcraft.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-trimcraft.svg")',
+        nextProjectBg: 'detailbg_next-trimcraft.svg',
         nextProjectBgColor: '#21432E',
         buttonBg: '#EEEC76',
         buttonBorder: '#EEEC76',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#272727',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_black.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_black.svg',
         linkColor: '#272727',
-        iconExternal: '/link_black.svg',
+        iconExternal: 'link_black.svg',
         assignmentMargin: '18rem',
         navHoverColor: '#EEEC76',
         highlightedColor: '#EEEC76',
@@ -354,20 +356,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_smashabutton.svg")',
-        descriptionBg: 'url("/detailbg2_smashabutton.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_smashabutton.svg',
+        descriptionBg: 'detailbg2_smashabutton.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-smashabutton.svg")',
+        nextProjectBg: 'detailbg_next-smashabutton.svg',
         nextProjectBgColor: '#7A9A57',
         buttonBg: '#FEA500',
         buttonBorder: '#FEA500',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#272727',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_black.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_black.svg',
         linkColor: '#272727',
-        iconExternal: '/link_black.svg',
+        iconExternal: 'link_black.svg',
         assignmentMargin: '25rem',
         navHoverColor: '#FEA500',
         highlightedColor: '#FEA500',
@@ -384,20 +386,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: true,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_chessbase.svg")',
-        descriptionBg: 'url("/detailbg2_chessbase.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_chessbase.svg',
+        descriptionBg: 'detailbg2_chessbase.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-chessbase.svg")',
+        nextProjectBg: 'detailbg_next-chessbase.svg',
         nextProjectBgColor: '#2E3495',
         buttonBg: '#5A723F',
         buttonBorder: '#5A723F',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: '25rem',
         navHoverColor: '#ECEDCE',
         highlightedColor: '#ECEDCE',
@@ -414,20 +416,20 @@ const THEMES = {
         hidden1Visible: false,
         hidden2Visible: false,
         hiddenColor: '#FDFDFD',
-        backButtonSrc: '/backbutton_white.svg',
-        titleBg: 'url("/detailbg_weatherdog.svg")',
-        descriptionBg: 'url("/detailbg2_weatherdog.svg")',
+        backButtonSrc: 'backbutton_white.svg',
+        titleBg: 'detailbg_weatherdog.svg',
+        descriptionBg: 'detailbg2_weatherdog.svg',
         descriptionBgSize: 'cover',
-        nextProjectBg: 'url("/detailbg_next-weatherdog.svg")',
+        nextProjectBg: 'detailbg_next-weatherdog.svg',
         nextProjectBgColor: '#272727',
         buttonBg: '#E69A8D',
         buttonBorder: '#E69A8D',
         buttonHoverLinkColor: '#FDFDFD',
         buttonLeaveLinkColor: '#FDFDFD',
-        buttonHoverIcon: '/link_white.svg',
-        buttonLeaveIcon: '/link_white.svg',
+        buttonHoverIcon: 'link_white.svg',
+        buttonLeaveIcon: 'link_white.svg',
         linkColor: '#FDFDFD',
-        iconExternal: '/link_white.svg',
+        iconExternal: 'link_white.svg',
         assignmentMargin: '27rem',
         navHoverColor: '#E69A8D',
         highlightedColor: '#E69A8D',
@@ -465,19 +467,19 @@ const applyTheme = (theme, setColorIdentifier) => {
 
     // Apply back button
     const backButton = document.querySelector('.backbutton');
-    if (backButton) backButton.src = theme.backButtonSrc;
+    if (backButton) backButton.src = `${import.meta.env.BASE_URL}${theme.backButtonSrc}`;
 
     // Apply backgrounds
     const titleWrapper = document.querySelector('.detail__title--wrapper');
     const descWrapper = document.querySelector('.detail__description--wrapper');
     const nextWrapper = document.querySelector('.next-project__wrapper');
-    if (titleWrapper) titleWrapper.style.backgroundImage = theme.titleBg;
+    if (titleWrapper) titleWrapper.style.backgroundImage = `url("${import.meta.env.BASE_URL}${theme.titleBg}")`;
     if (descWrapper) {
-        descWrapper.style.backgroundImage = theme.descriptionBg;
+        descWrapper.style.backgroundImage = `url("${import.meta.env.BASE_URL}${theme.descriptionBg}")`;
         descWrapper.style.backgroundSize = theme.descriptionBgSize;
     }
     if (nextWrapper) {
-        nextWrapper.style.backgroundImage = theme.nextProjectBg;
+        nextWrapper.style.backgroundImage = `url("${import.meta.env.BASE_URL}${theme.nextProjectBg}")`;
         nextWrapper.style.backgroundColor = theme.nextProjectBgColor;
     }
 
@@ -501,14 +503,14 @@ const applyTheme = (theme, setColorIdentifier) => {
                 detailButton.style.backgroundColor = 'transparent';
                 detailButton.style.borderColor = theme.buttonBorder;
             }
-            if (iconExt) iconExt.src = theme.buttonHoverIcon;
+            if (iconExt) iconExt.src = `${import.meta.env.BASE_URL}${theme.buttonHoverIcon}`;
         });
         
         newButton.addEventListener('mouseleave', () => {
             const detailLink = document.querySelector('.detail__link');
             const detailButton = document.querySelector('.detail__button--color');
             const iconExt = document.querySelector('.icon__external');
-            if (iconExt) iconExt.src = theme.buttonLeaveIcon;
+            if (iconExt) iconExt.src = `${import.meta.env.BASE_URL}${theme.buttonLeaveIcon}`;
             if (detailLink) detailLink.style.color = theme.buttonLeaveLinkColor;
             if (detailButton) {
                 detailButton.style.backgroundColor = theme.buttonBg;
@@ -522,7 +524,7 @@ const applyTheme = (theme, setColorIdentifier) => {
         const detailLink = document.querySelector('.detail__link');
         const iconExt = document.querySelector('.icon__external');
         if (detailLink) detailLink.style.color = theme.buttonLeaveLinkColor;
-        if (iconExt) iconExt.src = theme.iconExternal;
+        if (iconExt) iconExt.src = `${import.meta.env.BASE_URL}${theme.iconExternal}`;
     }, 0);
 
     // Apply assignment margin
@@ -591,14 +593,14 @@ const ProjectDetail = () => {
                     document.querySelector('body').classList.add("scroll-up");
                     document.querySelector('body').classList.remove("scroll-down")
                 })} to={'/'} className="backbutton__wrapper">
-                <img src="/backbutton_white.svg" alt="back button" className="backbutton" />
+                <img src={getAssetPath("backbutton_white.svg")} alt="back button" className="backbutton" />
             </TransitionLink>
             <section className="detail__title--wrapper">
                 <h1 className="hidden">{project.attributes.name} intro</h1>
                 <p className="detail__title detail__color1">{project.attributes.name}</p>
                 <p className="detail__year detail__color2">{project.attributes.year}</p>
                 <a onMouseEnter={() => setScaling(true)}
-                    onMouseLeave={() => setScaling(false)} href={project.attributes.link} target="_blank" className="detail__link about__contact--button button__color about__button--color detail__button--color">Visit Project <img src="/link_black.svg" alt="icon" className="icon__external" /></a>
+                    onMouseLeave={() => setScaling(false)} href={project.attributes.link} target="_blank" className="detail__link about__contact--button button__color about__button--color detail__button--color">Visit Project <img src={getAssetPath("link_black.svg")} alt="icon" className="icon__external" /></a>
                 <p className="detail__hidden detail__hidden1">(Note: this website is only made for pc)</p>
                 <p className="detail__hidden detail__hidden2">(Note: I did only focus on development, not design. Website only for pc)</p>
                 <div className="cover__wrapper">

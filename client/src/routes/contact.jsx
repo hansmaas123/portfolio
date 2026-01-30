@@ -3,6 +3,9 @@ import NavBar from "../components/NavBar"
 import { useEffect, useRef } from 'react'
 import PageTransition from '../components/PageTransition'
 
+// Helper to get asset path with base URL
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const THEMES = {
     trainworld: { color1: '#FDFDFD', color2: '#E8E661', smallCircle: '#E8E661', largeCircle: '#FDFDFD', bg: '#272727', bgImage: 'contactbg_trainworld', navHover: '#EEEC76', activeColor: '#272727', buttonPrimColor: '#272727', buttonPrimHoverColor: '#EEEC76', buttonSecColor: '#FDFDFD', buttonSecHoverColor: '#272727', icons: 'white' },
     internship: { color1: '#B2D8D8', color2: '#227C8A', smallCircle: '#227C8A', largeCircle: '#2C3A3A', bg: '#18404A', bgImage: 'contactbg_internship', navHover: '#227C8A', activeColor: '#FDFDFD', buttonPrimColor: '#FDFDFD', buttonPrimHoverColor: '#227C8A', buttonSecColor: '#B2D8D8', buttonSecHoverColor: '#FDFDFD', icons: 'white' },
@@ -38,7 +41,7 @@ const Contact = () => {
         if (smallCircle) smallCircle.style.backgroundColor = theme.smallCircle;
         if (largeCircle) largeCircle.style.backgroundColor = theme.largeCircle;
         $('.contact__description').style.color = theme.color1
-        Object.assign($('.background1').style, { backgroundColor: theme.bg, backgroundImage: `url("/${theme.bgImage}.svg")` })
+        Object.assign($('.background1').style, { backgroundColor: theme.bg, backgroundImage: `url("${import.meta.env.BASE_URL}${theme.bgImage}.svg")` })
 
         // Nav links hover
         $$('.nav__link').forEach(link => {
@@ -86,9 +89,9 @@ const Contact = () => {
         // Social icons
         $('.bottom__right').style.color = theme.color1
         $$('.social__contact').forEach(s => s.style.color = theme.color1)
-        $('.social__icon--instagram').src = `/instagram${theme.icons}.svg`
-        $('.social__icon--behance').src = `/behance${theme.icons}.svg`
-        $('.social__icon--github').src = `/github${theme.icons}.svg`
+        $('.social__icon--instagram').src = `${import.meta.env.BASE_URL}instagram${theme.icons}.svg`
+        $('.social__icon--behance').src = `${import.meta.env.BASE_URL}behance${theme.icons}.svg`
+        $('.social__icon--github').src = `${import.meta.env.BASE_URL}github${theme.icons}.svg`
 
         return () => {
             listenersRef.current.forEach(({ el, event, handler }) => el.removeEventListener(event, handler))
@@ -115,15 +118,15 @@ const Contact = () => {
                 <div className="bottom">
                     <div className="bottom__left">
                         <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.instagram.com/maasdesign_studios/" target="_blank" rel="noopener noreferrer" className="social social__contact">
-                            <img src="/instagramwhite.svg" alt="Instagram" className="social__icon--instagram" />
+                            <img src={getAssetPath("instagramwhite.svg")} alt="Instagram" className="social__icon--instagram" />
                             <p>Instagram</p>
                         </a>
                         <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.behance.net/hansmaas" target="_blank" rel="noopener noreferrer" className="social social__contact">
-                            <img src="/behancewhite.svg" alt="Behance" className="social__icon--behance" />
+                            <img src={getAssetPath("behancewhite.svg")} alt="Behance" className="social__icon--behance" />
                             <p>Behance</p>
                         </a>
                         <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://github.com/hansmaas123" target="_blank" rel="noopener noreferrer" className="social social__contact">
-                            <img src="/githubwhite.svg" alt="Github" className="social__icon--github" />
+                            <img src={getAssetPath("githubwhite.svg")} alt="Github" className="social__icon--github" />
                             <p>Github</p>
                         </a>
                     </div>

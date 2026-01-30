@@ -108,7 +108,7 @@ const Index = () => {
         if (!homeTitle || !homepageWrapper) return; // Exit if homepage elements don't exist
         
         homeTitle.innerHTML = theme.title
-        gsap.to('.homepage__wrapper', { backgroundColor: theme.bg, backgroundImage: `url(/${theme.bgImage}.svg)` })
+        gsap.to('.homepage__wrapper', { backgroundColor: theme.bg, backgroundImage: `url(${import.meta.env.BASE_URL}${theme.bgImage}.svg)` })
         gsap.to('.home__title', { color: theme.titleColor })
         if (titleLines) gsap.to('.title__lines', { color: theme.titleColor })
         
@@ -246,7 +246,7 @@ const Index = () => {
                             <div className="project__thumbnail--wrapper">
                                 <ThumbnailWithLoader
                                     className={`project__thumbnail project__thumbnail--${project.theme}`}
-                                    src={`/home_${project.theme}.${project.theme === 'trainworld' ? 'jpeg' : 'jpg'}`}
+                                    src={`${import.meta.env.BASE_URL}home_${project.theme}.${project.theme === 'trainworld' ? 'jpeg' : 'jpg'}`}
                                     alt={`project thumbnail ${project.name.toLowerCase()}`}
                                     bgColor={THEMES[project.theme].bg}
                                 />

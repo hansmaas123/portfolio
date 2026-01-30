@@ -34,7 +34,9 @@ const router = createBrowserRouter([
             },
         ]
     }
-]);
+], {
+    basename: "/hansmaas"
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
