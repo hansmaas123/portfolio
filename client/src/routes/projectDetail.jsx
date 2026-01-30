@@ -639,7 +639,9 @@ const ProjectDetail = () => {
             <section className="detail__description--wrapper">
                 <h2 className="hidden">description</h2>
                 <div className="assignment__wrapper">
-                    <h3 className="detail__color1 description__title assignment__title">THE ASSIGNMENT</h3>
+                    <h3 className="detail__color1 description__title assignment__title">
+                        {project.attributes.name === 'DEV INTERNSHIP' ? 'INTRODUCTION' : 'THE ASSIGNMENT'}
+                    </h3>
                     {project.attributes.assignment.map((block, index) => (
                         <p className="detail__description detail__color2 assignment__description" key={index}>
                             {block.children.map((child, childIndex) => {
@@ -659,7 +661,9 @@ const ProjectDetail = () => {
                     ))}
                 </div>
                 <div className="approach__wrapper">
-                    <h2 className="detail__color1 description__title approach__title">APPROACH</h2>
+                    <h2 className="detail__color1 description__title approach__title">
+                        {project.attributes.name === 'DEV INTERNSHIP' ? 'REFLECTION' : 'APPROACH'}
+                    </h2>
                     {project.attributes.approach.map((block, index) => (
                         <p className="detail__description detail__color2 approach__description" key={index}>
                             {block.children.map((child, childIndex) => {

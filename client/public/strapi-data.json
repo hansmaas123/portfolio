@@ -4589,7 +4589,7 @@
         "updatedAt": "2025-01-28T10:00:00.000Z",
         "name": "DEV INTERNSHIP",
         "year": 2025,
-        "link": "#",
+        "link": "https://youtu.be/Sl4_dAmqUS8",
         "focus": "Full-Stack Development - Team Collaboration",
         "scope": "Web Development",
         "location": "Belgium",
@@ -4602,25 +4602,16 @@
             "children": [
               {
                 "type": "text",
-                "text": "During my development internship, I worked on "
+                "text": "I interned at "
               },
               {
                 "type": "text",
-                "text": "various full-stack projects",
+                "text": "Robot Kittens",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": " as part of a collaborative team environment. The internship focused on real-world application development, working with modern technologies and frameworks to deliver "
-              },
-              {
-                "type": "text",
-                "text": "production-ready solutions",
-                "bold": true
-              },
-              {
-                "type": "text",
-                "text": " for clients."
+                "text": ", a creative agency in Hilversum, as a Front-End Developer. What drew me to them was their portfolio. It was packed with creative, interesting projects that really stood out."
               }
             ]
           },
@@ -4638,25 +4629,16 @@
             "children": [
               {
                 "type": "text",
-                "text": "The experience involved collaborating with "
+                "text": "The studio had a great vibe with separate spaces for development, design, and project management, plus a big dining area, kitchen, and game room. The team was "
               },
               {
                 "type": "text",
-                "text": "senior developers",
+                "text": "super friendly and supportive",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", participating in "
-              },
-              {
-                "type": "text",
-                "text": "agile workflows",
-                "bold": true
-              },
-              {
-                "type": "text",
-                "text": ", and learning industry best practices for code quality, version control, and project management."
+                "text": ", making it a really fun place to work. Most days kicked off with stand-up meetings where we'd sync on progress and tackle any challenges together."
               }
             ]
           }
@@ -4667,34 +4649,25 @@
             "children": [
               {
                 "type": "text",
-                "text": "I focused on developing "
+                "text": "This internship really "
               },
               {
                 "type": "text",
-                "text": "scalable solutions",
+                "text": "leveled up my technical skills",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": " using modern web technologies. The projects involved working with "
+                "text": ". Going in, I wasn't sure what to expect. I hoped to learn new frameworks and get a feel for working as a developer professionally. I thought it would be mostly bug fixes and simple sites, but it turned out "
               },
               {
                 "type": "text",
-                "text": "React",
+                "text": "way more creative and varied",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", "
-              },
-              {
-                "type": "text",
-                "text": "Node.js",
-                "bold": true
-              },
-              {
-                "type": "text",
-                "text": ", and various database systems to create robust applications."
+                "text": " than that."
               }
             ]
           },
@@ -4712,34 +4685,43 @@
             "children": [
               {
                 "type": "text",
-                "text": "Throughout the internship, I gained valuable experience in "
+                "text": "I worked on a bunch of different projects, which pushed me to "
               },
               {
                 "type": "text",
-                "text": "code review processes",
+                "text": "improve my coding habits",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", "
+                "text": ". I learned to write clean code from the start instead of making a mess and cleaning it up later, which made me much faster and more efficient."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The whole experience, the projects, the team, the environment, made me realize I want to "
               },
               {
                 "type": "text",
-                "text": "testing methodologies",
+                "text": "focus on development",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", and "
-              },
-              {
-                "type": "text",
-                "text": "deployment workflows",
-                "bold": true
-              },
-              {
-                "type": "text",
-                "text": ". This hands-on experience strengthened my understanding of professional development practices."
+                "text": " moving forward. I used to be torn between design and development, but this internship helped me see that to become really good at something, I needed to choose. And I chose to become a great developer."
               }
             ]
           }
