@@ -37,12 +37,14 @@ jobs:
         working-directory: client
         run: npm run build
 
-      - name: Deploy over FTPS
+      # Plain FTP: the host (ProFTPD at ftp.tuinenko.be) supports neither
+      # FTPS (500 AUTH not understood) nor SFTP (port 22 closed).
+      - name: Deploy over FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           local-dir: client/dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
