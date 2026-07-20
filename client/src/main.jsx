@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Index from "./routes";
-import ProjectDetail from './routes/ProjectDetail';
+import ProjectDetail from './routes/projectDetail';
 import About from './routes/about';
 import Contact from './routes/contact';
 import Root from "./routes/root";

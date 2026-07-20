@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Cursor from '../components/cursor';
+import Cursor from '../components/Cursor';
 import { TransitionProvider } from '../contexts/TransitionContext';
 
 const Root = () => {
