@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
+import { THEMES } from '../theme'
 
 const QUOTES = [
     "Design is not just what it looks like. Design is how it works.",
@@ -22,23 +23,6 @@ const QUOTES = [
 ]
 
 const TransitionContext = createContext()
-
-// Theme colors mapping based on project identifiers
-const THEME_COLORS = {
-    trainworld: { bg: '#272727', text: '#E8E661' },
-    internship: { bg: '#18404A', text: '#227C8A' },
-    mixbox: { bg: '#929948', text: '#EEEC76' },
-    stingstitute: { bg: '#492078', text: '#FF53B7' },
-    rotterdans: { bg: '#F0F0F0', text: '#272727' },
-    equalmelodies: { bg: '#272727', text: '#D8595B' },
-    reactartistique: { bg: '#366830', text: '#FDFDFD' },
-    dishknob: { bg: '#FFF8F4', text: '#4C984C' },
-    trimcraft: { bg: '#434321', text: '#EEEC76' },
-    smashabutton: { bg: '#21432E', text: '#FEA500' },
-    chessbase: { bg: '#7A9A57', text: '#ECEDCE' },
-    weatherdog: { bg: '#2E3495', text: '#E69A8D' },
-    default: { bg: '#272727', text: '#EEEC76' }
-}
 
 export const useTransition = () => {
     const context = useContext(TransitionContext)
@@ -108,7 +92,7 @@ export const TransitionProvider = ({ children }) => {
         return () => window.removeEventListener('themeChange', handleThemeChange)
     }, [])
     
-    const themeColors = THEME_COLORS[currentColorIdentifier] || THEME_COLORS.default
+    const theme = THEMES[currentColorIdentifier] || THEMES.trainworld
 
     const startTransition = () => {
         setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)])
@@ -142,7 +126,7 @@ export const TransitionProvider = ({ children }) => {
                             left: 0,
                             width: '100vw',
                             height: '100vh',
-                            backgroundColor: themeColors.bg,
+                            backgroundColor: theme.bg,
                             zIndex: 10003,
                             display: 'flex',
                             alignItems: 'center',
@@ -156,7 +140,7 @@ export const TransitionProvider = ({ children }) => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.4, delay: 0.2 }}
                             style={{
-                                color: themeColors.text,
+                                color: theme.accent,
                                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                                 fontWeight: 600,
                                 textAlign: 'center',

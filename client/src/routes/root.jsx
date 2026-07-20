@@ -21,7 +21,7 @@ const Root = () => {
     }, []);
     
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector('.favicon').setAttribute('href', "/icon.svg")
+        document.querySelector('.favicon')?.setAttribute('href', `${import.meta.env.BASE_URL}icon.svg`)
     }
     return (
         <TransitionProvider>
