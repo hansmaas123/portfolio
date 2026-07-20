@@ -127,6 +127,7 @@ export const TransitionProvider = ({ children }) => {
                             width: '100vw',
                             height: '100vh',
                             backgroundColor: theme.bg,
+                            transition: 'background-color 0.5s ease',
                             zIndex: 10003,
                             display: 'flex',
                             alignItems: 'center',
@@ -141,6 +142,7 @@ export const TransitionProvider = ({ children }) => {
                             transition={{ duration: 0.4, delay: 0.2 }}
                             style={{
                                 color: theme.accent,
+                                transition: 'color 0.5s ease',
                                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                                 fontWeight: 600,
                                 textAlign: 'center',

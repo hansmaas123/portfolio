@@ -30,7 +30,7 @@ const Cursor = ({ scaling }) => {
             <div
                 className="small_circle"
                 style={{
-                    transform: `translate(${position.x - 5}px, ${position.y - 5}px) scale(${scaling ? 0 : 1})`,
+                    transform: `translate(${position.x - 5}px, ${position.y - 5}px) scale(1)`,
                 }}
             ></div>
         </div>
