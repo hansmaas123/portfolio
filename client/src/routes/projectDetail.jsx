@@ -6,22 +6,12 @@ import { useLoaderData, useLocation, useOutletContext, useParams } from "react-r
 import NavBar from "../components/NavBar";
 import PageTransition from '../components/PageTransition';
 import TransitionLink from '../components/TransitionLink';
-import { THEMES, applyTheme, getProjectMetaById } from '../theme';
+import { THEMES, applyTheme, getProjectMetaById, getNextProjectId } from '../theme';
 
 const loader = async ({ params }) => {
     const id = parseInt(params.id)
-    let nextId;
-    if (id === 1) {
-        nextId = 12;
-    } else if (id === 12) {
-        nextId = 2;
-    } else if (id === 11) {
-        nextId = 1;
-    } else {
-        nextId = id + 1;
-    }
     const project = await getProjectById(id);
-    const nextProject = await getProjectById(nextId);
+    const nextProject = await getProjectById(getNextProjectId(id));
     return { project, nextProject };
 };
 

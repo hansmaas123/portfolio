@@ -5230,6 +5230,305 @@
           ]
         }
       }
+    },
+    {
+      "id": 13,
+      "attributes": {
+        "createdAt": "2026-07-21T00:00:00.000Z",
+        "updatedAt": "2026-07-21T00:00:00.000Z",
+        "name": "SQUAREBRACKET",
+        "year": 2026,
+        "link": "https://squarebracket.cloud",
+        "focus": "Brand-Driven Design – Full-Stack Development",
+        "scope": "Web Design",
+        "location": "Mechelen, Belgium",
+        "scope2": "Front-End Development",
+        "scope3": "Directus CMS & Database",
+        "scope4": "Motion & Interaction",
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "SquareBracket is an independent "
+              },
+              {
+                "type": "text",
+                "text": "web and software development studio",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " based in Mechelen, Belgium. Because their website was outdated, they needed a new website that could act as their digital business card, something that felt as polished and technical as the work they build for their own clients."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The site had to communicate two things at once: "
+              },
+              {
+                "type": "text",
+                "text": "strong engineering craft",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " and enough "
+              },
+              {
+                "type": "text",
+                "text": "design maturity",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " to be taken seriously. It needed to present their services, showcase selected work and make it effortless to get in touch while the team could keep every section "
+              },
+              {
+                "type": "text",
+                "text": "up to date themselves",
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ", without touching code."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I built the site "
+              },
+              {
+                "type": "text",
+                "text": "end to end",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ". The front-end is a React and TypeScript single-page application, animated with GSAP for the scroll-driven hero, the split-panel loader and the page transitions that tie the whole experience together."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Behind it sits a "
+              },
+              {
+                "type": "text",
+                "text": "Directus CMS on a MySQL database",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", so the hero, services, project showcase and even the contact-form fields are fully editable from an admin panel. I modelled the content, wired up the API layer and built the studio's project pages on top of it."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The visual identity leans on a single confident gesture: a "
+              },
+              {
+                "type": "text",
+                "text": "warm orange gradient ribbon",
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " against a calm neutral canvas, oversized type and generous whitespace. The result is a fast, "
+              },
+              {
+                "type": "text",
+                "text": "self-manageable",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " site that gives SquareBracket a professional presence to grow into."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 1300,
+              "attributes": {
+                "name": "squarebracket_cover.jpg",
+                "alternativeText": "SquareBracket Cover",
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665003/cover_c5ysup.jpg",
+                    "hash": "squarebracket_cover_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_cover.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665003/cover_c5ysup.jpg"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 1301,
+              "attributes": {
+                "name": "squarebracket_intro.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665001/1-intro_amcsl4.jpg",
+                    "hash": "squarebracket_intro_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_intro.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665001/1-intro_amcsl4.jpg"
+              }
+            },
+            {
+              "id": 1302,
+              "attributes": {
+                "name": "squarebracket_services.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/2-services_b3vpbx.jpg",
+                    "hash": "squarebracket_services_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_services.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/2-services_b3vpbx.jpg"
+              }
+            },
+            {
+              "id": 1303,
+              "attributes": {
+                "name": "squarebracket_about.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/3-about_bhuo8e.jpg",
+                    "hash": "squarebracket_about_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_about.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/3-about_bhuo8e.jpg"
+              }
+            },
+            {
+              "id": 1304,
+              "attributes": {
+                "name": "squarebracket_values.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/4-values_bydhz6.jpg",
+                    "hash": "squarebracket_values_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_values.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/4-values_bydhz6.jpg"
+              }
+            },
+            {
+              "id": 1305,
+              "attributes": {
+                "name": "squarebracket_contact.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/5-contact_rusn62.jpg",
+                    "hash": "squarebracket_contact_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_contact.jpg",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665002/5-contact_rusn62.jpg"
+              }
+            },
+            {
+              "id": 1306,
+              "attributes": {
+                "name": "squarebracket_mobile.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 740,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665001/6-mobile_euexnj.jpg",
+                    "hash": "squarebracket_mobile_large",
+                    "mime": "image/jpeg",
+                    "name": "squarebracket_mobile.jpg",
+                    "width": 740,
+                    "height": 1600
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1784665001/6-mobile_euexnj.jpg"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -5237,7 +5536,7 @@
       "page": 1,
       "pageSize": 25,
       "pageCount": 1,
-      "total": 12
+      "total": 13
     }
   }
 }

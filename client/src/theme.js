@@ -62,12 +62,18 @@ export const THEMES = {
         role: 'CREATIVE DEVELOPER',
         bg: '#2B318C', text: '#F4F5FF', accent: '#F0A08F', onAccent: '#33150F',
         isLight: false
+    },
+    squarebracket: {
+        role: 'WEB DEVELOPER',
+        bg: '#1E1E1E', text: '#EDEDED', accent: '#E9531F', onAccent: '#1E1E1E',
+        isLight: false
     }
 }
 
 // Homepage order. `id` matches the Strapi project ids.
 export const PROJECTS = [
     { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.jpeg' },
+    { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.jpg' },
     { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.jpg' },
     { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.jpg' },
     { id: 3, name: 'STINGSTITUTE', type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.jpg' },
@@ -82,6 +88,14 @@ export const PROJECTS = [
 ]
 
 export const getProjectMetaById = (id) => PROJECTS.find(p => p.id === Number(id)) || PROJECTS[0]
+
+// The "next project" follows homepage order in PROJECTS and wraps around,
+// so adding/reordering projects here keeps the detail-page chain correct.
+export const getNextProjectId = (id) => {
+    const index = PROJECTS.findIndex(p => p.id === Number(id))
+    if (index === -1) return PROJECTS[0].id
+    return PROJECTS[(index + 1) % PROJECTS.length].id
+}
 
 // Writes the palette to CSS variables and notifies listeners (nav, transition overlay).
 export const applyTheme = (identifier) => {
