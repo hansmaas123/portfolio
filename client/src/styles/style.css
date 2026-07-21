@@ -608,6 +608,16 @@ video {
     .slide {
         width: min(78vw, 420px);
     }
+
+    /* Reserve two lines of title height so a role that wraps
+       (e.g. "CREATIVE DEVELOPER") doesn't push the card down.
+       Shorter one-line roles stay vertically centered in the same box. */
+    .home__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(2 * 1.02em);
+    }
 }
 
 /* ---------------------------------------------------------------------------
