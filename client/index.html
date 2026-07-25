@@ -8,6 +8,18 @@
   <meta name="description"
     content="Discover Hans Maas, a web designer, developer, and creative expert in digital design and development. Explore my portfolio and let's build something amazing!">
   <title>Hans Maas Portfolio</title>
+
+  <!-- Fonts: load Typekit without blocking first paint (media=print flips to all on load) -->
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/eay2mvf.css" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://use.typekit.net/eay2mvf.css" />
+  </noscript>
+
+  <!-- Preload the homepage LCP image (first project thumbnail) -->
+  <link rel="preload" as="image" href="/hansmaas/home_trainworld.webp" fetchpriority="high" />
 </head>
 
 <body>

@@ -1,4 +1,5 @@
-@import url("https://use.typekit.net/eay2mvf.css");
+/* Fonts (Typekit) are loaded non-render-blocking from index.html.
+   Fallbacks below are applied until the web fonts finish loading. */
 
 /* ---------------------------------------------------------------------------
    Theme variables — overwritten per project by applyTheme() in src/theme.js.
@@ -391,13 +392,13 @@ video {
 }
 
 /* ---------------------------------------------------------------------------
-   Homepage — pinned horizontal project rail
+   Homepage — endless horizontal project rail
 --------------------------------------------------------------------------- */
 .home {
     width: 100%;
 }
 
-/* the element that gets pinned while scroll drives the rail */
+/* full-screen stage: wheel, touch and drag move the rail, the page never scrolls */
 .home__pin {
     height: 100dvh;
     display: flex;
@@ -422,7 +423,9 @@ video {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(38px, 7vw, 108px);
+    /* the dvh cap keeps the role from eating the rail's headroom on short,
+       wide screens — a 13" laptop is the tight case, not a phone */
+    font-size: clamp(38px, min(7vw, 11dvh), 108px);
     line-height: 1.02;
     letter-spacing: .01em;
     color: var(--accent);
@@ -466,9 +469,10 @@ video {
     text-decoration: none;
     color: var(--text);
     flex: 0 0 auto;
-    /* card width is capped by both viewport width and remaining viewport height,
-       so the pinned screen never overflows vertically */
-    width: clamp(220px, min(46vw, calc((100dvh - 24rem) * 1.3333)), 560px);
+    /* card width is capped by both viewport width and remaining viewport height.
+       The 29rem reserve covers the title block, the footer row and clear space
+       above and below the card, so the role never crowds the projects. */
+    width: clamp(220px, min(46vw, calc((100dvh - 29rem) * 1.3333)), 560px);
     display: block;
 }
 

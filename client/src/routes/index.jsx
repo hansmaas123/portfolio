@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import Observer from 'gsap/Observer'
 import { useOutletContext } from 'react-router-dom'
 import '../styles/style.css'
 import NavBar from '../components/NavBar'
@@ -9,10 +9,24 @@ import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
 import { THEMES, PROJECTS, applyTheme } from '../theme'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(Observer)
+
+// The rail renders the project list three times so there is always a full set of
+// cards on either side of the visible one. The middle set is the "real" one for
+// assistive tech; the flanking sets only exist to make the wrap invisible.
+const SETS = [0, 1, 2]
+const PRIMARY_SET = 1
 
 const Thumbnail = ({ src, alt }) => {
+    const imgRef = useRef(null)
     const [isLoaded, setIsLoaded] = useState(false)
+
+    // A copy of an already-cached image is complete before React can attach onLoad,
+    // so without this it would sit at opacity 0 behind a spinner and then fade in
+    // again the moment it slides into view.
+    useEffect(() => {
+        if (imgRef.current?.complete) setIsLoaded(true)
+    }, [])
 
     return (
         <>
@@ -22,9 +36,14 @@ const Thumbnail = ({ src, alt }) => {
                 </div>
             )}
             <img
+                ref={imgRef}
                 src={src}
                 alt={alt}
-                loading="lazy"
+                // The rail moves by transform on a page that never scrolls, so lazy
+                // loading only fires as a card is already sliding in — which reads as
+                // the images flashing. The whole set is ~270 KB, so fetch it up front.
+                loading="eager"
+                decoding="async"
                 onLoad={() => setIsLoaded(true)}
                 style={{ opacity: isLoaded ? 1 : 0 }}
             />
@@ -41,7 +60,6 @@ const Index = () => {
     const { setScaling } = useOutletContext()
     const [activeIndex, setActiveIndex] = useState(0)
     const railRef = useRef(null)
-    const pinRef = useRef(null)
     const barRef = useRef(null)
     const reducedMotion = typeof window !== 'undefined'
         && window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -57,33 +75,108 @@ const Index = () => {
         if (reducedMotion) return
 
         const rail = railRef.current
-        const distance = () => Math.max(0, rail.scrollWidth - window.innerWidth)
+        const slides = Array.from(rail.children)
+        const count = PROJECTS.length
+        const setX = gsap.quickSetter(rail, 'x', 'px')
 
-        const tween = gsap.to(rail, {
-            x: () => -distance(),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: pinRef.current,
-                pin: true,
-                scrub: 1,
-                start: 'top top',
-                end: () => `+=${distance()}`,
-                invalidateOnRefresh: true,
-                onUpdate: (self) => {
-                    if (barRef.current) barRef.current.style.width = `${self.progress * 100}%`
-                    const index = Math.min(
-                        PROJECTS.length - 1,
-                        Math.round(self.progress * (PROJECTS.length - 1))
-                    )
-                    setActiveIndex(prev => (prev === index ? prev : index))
-                }
+        // `period` is the distance between a card and its clone one set later, so
+        // shifting the rail by exactly that much renders a pixel-identical frame —
+        // that is the seam the loop hides behind.
+        let period = 1
+        let step = 1
+        let centerOffset = 0
+
+        const measure = () => {
+            period = slides[count].offsetLeft - slides[0].offsetLeft
+            step = period / count
+            centerOffset = window.innerWidth / 2 - slides[0].offsetLeft - slides[0].offsetWidth / 2
+        }
+
+        // `target` is where the rail wants to be, `current` follows it with a bit of
+        // lag. Both measure how far the rail has travelled from "first project dead
+        // centre", so 0 is the load state and every whole `step` centres the next
+        // card. They grow without bound in either direction; only the value written
+        // to the DOM is wrapped, which is what makes the loop endless both ways.
+        let target = 0
+        let current = 0
+        let dragDistance = 0
+
+        const render = () => {
+            setX(gsap.utils.wrap(-2 * period, -period, -period - current + centerOffset))
+            // half a step of offset puts the bar's reset at the same spot as the
+            // counter's, so "13 → 01" and "100% → 0%" always happen together
+            if (barRef.current) {
+                barRef.current.style.width = `${gsap.utils.wrap(0, 1, (current + step / 2) / period) * 100}%`
+            }
+            const index = gsap.utils.wrap(0, count, Math.round(current / step))
+            setActiveIndex(prev => (prev === index ? prev : index))
+        }
+
+        const tick = (time, deltaTime) => {
+            if (Math.abs(target - current) < 0.01) {
+                if (current === target) return
+                current = target
+            } else {
+                current += (target - current) * (1 - Math.pow(0.0018, deltaTime / 1000))
+            }
+            render()
+        }
+
+        const observer = Observer.create({
+            target: window,
+            type: 'wheel,touch,pointer',
+            preventDefault: true,
+            allowClicks: true,
+            dragMinimum: 3,
+            onWheel: (self) => {
+                target += Math.abs(self.deltaX) > Math.abs(self.deltaY) ? self.deltaX : self.deltaY
+            },
+            onDragStart: () => { dragDistance = 0 },
+            onDrag: (self) => {
+                // follow whichever axis the gesture is dominated by, so a vertical
+                // swipe on touch moves the rail just like a vertical wheel does
+                const delta = Math.abs(self.deltaX) >= Math.abs(self.deltaY) ? self.deltaX : self.deltaY
+                dragDistance += Math.abs(delta)
+                target -= delta
             }
         })
 
+        // a drag that ends on a card must not navigate to that project
+        const resetDrag = () => { dragDistance = 0 }
+        const swallowClickAfterDrag = (event) => {
+            if (dragDistance > 8) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+        }
+        rail.addEventListener('pointerdown', resetDrag, true)
+        rail.addEventListener('click', swallowClickAfterDrag, true)
+
+        // card widths are viewport-relative, so a resize changes what a pixel of
+        // travel is worth — rescale the position to keep the same card centred
+        const onResize = () => {
+            const previousStep = step
+            measure()
+            if (previousStep > 0) {
+                const ratio = step / previousStep
+                current *= ratio
+                target *= ratio
+            }
+            render()
+        }
+        window.addEventListener('resize', onResize)
+
+        measure()
+        render()
+        gsap.ticker.add(tick)
+
         return () => {
-            tween.scrollTrigger?.kill()
-            tween.kill()
-            ScrollTrigger.getAll().forEach(t => t.kill())
+            gsap.ticker.remove(tick)
+            observer.kill()
+            window.removeEventListener('resize', onResize)
+            rail.removeEventListener('pointerdown', resetDrag, true)
+            rail.removeEventListener('click', swallowClickAfterDrag, true)
+            gsap.set(rail, { x: 0 })
         }
     }, [reducedMotion])
 
@@ -91,7 +184,7 @@ const Index = () => {
         <PageTransition>
             <main className={`home${reducedMotion ? ' home--static' : ''}`}>
                 <div className="page-glow" aria-hidden="true"></div>
-                <div className="home__pin" ref={pinRef}>
+                <div className="home__pin">
                     <NavBar colorIdentifier={activeTheme} />
                     <header className="home__intro">
                         <p className="home__eyebrow">Hans Maas — Portfolio</p>
@@ -99,11 +192,13 @@ const Index = () => {
                     </header>
                     <div className="home__rail-viewport">
                         <div className="home__rail" ref={railRef}>
-                            {PROJECTS.map((project, index) => (
+                            {(reducedMotion ? [PRIMARY_SET] : SETS).map(set => PROJECTS.map((project, index) => (
                                 <TransitionLink
-                                    key={project.id}
+                                    key={`${set}-${project.id}`}
                                     to={`/project/${project.id}`}
                                     className="slide"
+                                    aria-hidden={set === PRIMARY_SET ? undefined : true}
+                                    tabIndex={set === PRIMARY_SET ? undefined : -1}
                                     onMouseEnter={() => setScaling(true)}
                                     onMouseLeave={() => setScaling(false)}
                                     onClick={() => setScaling(false)}
@@ -120,7 +215,7 @@ const Index = () => {
                                         <p className="slide__meta">{project.type}<br />{project.team} · {project.year}</p>
                                     </div>
                                 </TransitionLink>
-                            ))}
+                            )))}
                         </div>
                     </div>
                     <div className="home__bottom">

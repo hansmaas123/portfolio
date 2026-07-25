@@ -1,11 +1,58 @@
+# SPA fallback: serve index.html for any path that isn't a real file/folder,
+# so client-side routes like /hansmaas/about/trainworld work on direct load.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /hansmaas/
-  
+
   # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  
+
   # Rewrite everything else to index.html to allow html5 state links
   RewriteRule ^ index.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression — shrinks text assets over the wire (guarded so a missing
+# module can never 500 the site).
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Cache lifetimes. Vite fingerprints /assets/* filenames, so those are safe to
+# cache for a year (immutable). HTML and the project data file stay revalidated
+# so a new deploy / content update is picked up immediately.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType text/javascript         "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType image/x-icon            "access plus 1 year"
+  ExpiresByType font/woff2              "access plus 1 year"
+  ExpiresByType video/mp4               "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Long-lived, immutable caching for fingerprinted build assets
+  <FilesMatch "\.(js|css|woff2|jpg|jpeg|png|webp|svg|ico|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Always revalidate the entry document and live project data
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "strapi-data\.json$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>

@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Index from "./routes";
-import ProjectDetail from './routes/projectDetail';
-import About from './routes/about';
-import Contact from './routes/contact';
 import Root from "./routes/root";
 import ErrorPage from './routes/errorPage';
 
+// The landing route (Index) stays in the initial bundle; the other routes are
+// code-split so the homepage doesn't download their JS up front.
 const router = createBrowserRouter([
     {
         id: "root",
@@ -19,18 +18,24 @@ const router = createBrowserRouter([
             { index: true, element: <Index /> },
             {
                 path: "/project/:id",
-                element: <ProjectDetail />,
-                loader: ProjectDetail.loader
+                lazy: async () => {
+                    const { default: Component } = await import('./routes/projectDetail')
+                    return { Component, loader: Component.loader }
+                }
             },
             {
                 path: "/about/:colorIdentifier",
-                element: <About />,
-                loader: About.loader,
+                lazy: async () => {
+                    const { default: Component } = await import('./routes/about')
+                    return { Component }
+                }
             },
             {
                 path: "/contact/:colorIdentifier",
-                element: <Contact />,
-                loader: Contact.loader,
+                lazy: async () => {
+                    const { default: Component } = await import('./routes/contact')
+                    return { Component }
+                }
             },
         ]
     }
