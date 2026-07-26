@@ -52,6 +52,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Set while the homepage is mounted. It is exactly one screen tall and the rail
+   is endless, so the reserved gutter above would only ever show an empty track. */
+html.home-locked,
+html.home-locked body {
+    overflow: hidden;
+    scrollbar-gutter: auto;
+}
+
 ::selection {
     background: var(--accent);
     color: var(--on-accent);
@@ -404,6 +412,17 @@ video {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    /* a drag anywhere on the stage moves the rail, so it must never
+       start selecting the headline or the captions instead */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Hand every touch pan to the rail instead of letting the browser start a scroll
+   it would only have to cancel. Pinch to zoom is left alone. The static
+   reduced-motion fallback is excluded — that one is a real scroll container. */
+.home:not(.home--static) .home__pin {
+    touch-action: pinch-zoom;
 }
 
 .home__intro {

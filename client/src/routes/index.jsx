@@ -70,6 +70,12 @@ const Index = () => {
         applyTheme(activeTheme)
     }, [activeTheme])
 
+    // no vertical scrolling here, so drop the scrollbar gutter the other pages reserve
+    useEffect(() => {
+        document.documentElement.classList.add('home-locked')
+        return () => document.documentElement.classList.remove('home-locked')
+    }, [])
+
     useEffect(() => {
         window.scrollTo(0, 0)
         if (reducedMotion) return
@@ -124,7 +130,9 @@ const Index = () => {
 
         const observer = Observer.create({
             target: window,
-            type: 'wheel,touch,pointer',
+            // 'touch' without 'pointer' is Observer's touch-only switch: a mouse drag
+            // never moves the rail, so on desktop the wheel is the only input.
+            type: 'wheel,touch',
             preventDefault: true,
             allowClicks: true,
             dragMinimum: 3,
@@ -133,11 +141,9 @@ const Index = () => {
             },
             onDragStart: () => { dragDistance = 0 },
             onDrag: (self) => {
-                // follow whichever axis the gesture is dominated by, so a vertical
-                // swipe on touch moves the rail just like a vertical wheel does
-                const delta = Math.abs(self.deltaX) >= Math.abs(self.deltaY) ? self.deltaX : self.deltaY
-                dragDistance += Math.abs(delta)
-                target -= delta
+                // horizontal only — swiping up and down deliberately does nothing
+                dragDistance += Math.abs(self.deltaX)
+                target -= self.deltaX
             }
         })
 
