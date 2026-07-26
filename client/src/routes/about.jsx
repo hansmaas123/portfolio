@@ -168,17 +168,23 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className="about__contact--container">
-                    <div className="about__contact--wrapper">
-                        <h2 className="about__contact--title">Let&apos;s Talk</h2>
-                        <TransitionLink
-                            onMouseEnter={() => setScaling(true)}
-                            onMouseLeave={() => setScaling(false)}
-                            to={`/contact/${colorIdentifier}`}
-                            className="btn btn--inverse"
-                        >
-                            Contact me
-                        </TransitionLink>
+                <section className="about__cta">
+                    <div className="about__cta-inner">
+                        <p className="about__cta-eyebrow">Have a project in mind?</p>
+                        <h2 className="about__cta-title">LET&apos;S TALK</h2>
+                        <div className="about__cta-actions">
+                            <TransitionLink
+                                onMouseEnter={() => setScaling(true)}
+                                onMouseLeave={() => setScaling(false)}
+                                to={`/contact/${colorIdentifier}`}
+                                className="btn btn--inverse"
+                            >
+                                Contact me
+                                <svg className="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </TransitionLink>
+                        </div>
                     </div>
                 </section>
 

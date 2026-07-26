@@ -8,6 +8,7 @@ import NavBar from '../components/NavBar'
 import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
 import { THEMES, PROJECTS, applyTheme } from '../theme'
+import { useRootClass } from '../useRootClass'
 
 gsap.registerPlugin(Observer)
 
@@ -79,11 +80,8 @@ const Index = () => {
         applyTheme(activeTheme)
     }, [activeTheme])
 
-    // no vertical scrolling here, so drop the scrollbar gutter the other pages reserve
-    useEffect(() => {
-        document.documentElement.classList.add('home-locked')
-        return () => document.documentElement.classList.remove('home-locked')
-    }, [])
+    // one screen tall with an endless rail: nothing to scroll, nothing to reserve
+    useRootClass('no-gutter home-locked')
 
     useEffect(() => {
         window.scrollTo(0, 0)

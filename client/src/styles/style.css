@@ -52,12 +52,17 @@ body {
     overflow-x: hidden;
 }
 
-/* Set while the homepage is mounted. It is exactly one screen tall and the rail
-   is endless, so the reserved gutter above would only ever show an empty track. */
+/* Set by pages that fit the viewport: without a scrollbar to show, the reserved
+   gutter above is just an empty track down the side. */
+html.no-gutter,
+html.no-gutter body {
+    scrollbar-gutter: auto;
+}
+
+/* The homepage additionally never scrolls — the rail is endless. */
 html.home-locked,
 html.home-locked body {
     overflow: hidden;
-    scrollbar-gutter: auto;
 }
 
 ::selection {
@@ -259,39 +264,40 @@ video {
     color: var(--on-accent);
 }
 
-/* Hamburger — mobile only. Round to echo the desktop nav pill. */
+/* Hamburger — mobile only. Bare lines in the accent, which every theme picks to
+   read against its own background, so it stays visible without a chip behind it.
+   The 44px box keeps the tap target while the marks themselves stay small. */
 .hamburger {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
-    background: var(--accent);
+    gap: 5px;
+    background: transparent;
     border: none;
-    border-radius: 999px;
+    padding: 0;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 18px;
+    right: 18px;
     z-index: 10002;
-    width: 56px;
-    height: 56px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
-    transition: background-color var(--theme-fade) ease;
+    width: 44px;
+    height: 44px;
 }
 
 .hamburger__line {
-    width: 26px;
-    height: 3px;
+    width: 22px;
+    height: 2px;
     border-radius: 2px;
-    background-color: var(--on-accent);
+    background-color: var(--accent);
     display: block;
     position: relative;
-    transition: all .3s ease;
+    transition: transform .3s ease, top .3s ease, opacity .3s ease, background-color var(--theme-fade) ease;
 }
 
+/* half the line height plus the gap, so the two strokes meet in the middle */
 .hamburger.open .hamburger__line:nth-child(1) {
     transform: rotate(45deg);
-    top: 9px;
+    top: 7px;
 }
 
 .hamburger.open .hamburger__line:nth-child(2) {
@@ -301,7 +307,7 @@ video {
 
 .hamburger.open .hamburger__line:nth-child(3) {
     transform: rotate(-45deg);
-    top: -9px;
+    top: -7px;
 }
 
 .mobile-menu {
@@ -619,7 +625,10 @@ video {
     /* centred, not baseline-aligned: the meta is two lines against a one-line
        title, so a shared baseline leaves the block sitting high */
     align-items: center;
-    gap: 1rem;
+    /* the meta can't shrink (it is nowrap) and a long one-word title can't either,
+       so let the meta drop to its own line rather than overhang the card */
+    flex-wrap: wrap;
+    gap: .35rem 1rem;
     margin-top: 1.1rem;
     padding-inline: .2rem;
 }
@@ -723,6 +732,18 @@ video {
 
     .slide {
         width: min(78vw, 420px);
+    }
+
+    /* phone cards are too narrow for a title/meta row, and stacking every card
+       keeps the captions identical as you swipe instead of some wrapping */
+    .slide__caption {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slide__meta {
+        text-align: left;
+        white-space: normal;
     }
 
     /* Reserve two lines of title height so a role that wraps
@@ -1334,31 +1355,51 @@ video {
     margin-top: 1.8rem;
 }
 
-/* about contact CTA */
-.about__contact--container {
+/* about closing CTA — full-bleed accent band, centred */
+.about__cta {
     background-color: var(--accent);
     color: var(--on-accent);
     transition: background-color var(--theme-fade) ease, color var(--theme-fade) ease;
 }
 
-.about__contact--wrapper {
-    min-height: 72svh;
+.about__cta-inner {
+    min-height: 68svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 2rem;
-    padding: clamp(4rem, 9vw, 7rem) 1.5rem;
+    gap: clamp(1.4rem, 4vh, 2.4rem);
+    padding: clamp(4rem, 9vw, 7rem) clamp(1.2rem, 6vw, 6rem);
 }
 
-.about__contact--title {
+.about__cta-eyebrow {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    /* muted against the accent fill, mirroring --muted on the dark pages */
+    color: color-mix(in srgb, var(--on-accent) 62%, var(--accent));
+}
+
+.about__cta-title {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(56px, 12vw, 150px);
-    line-height: 1;
+    font-size: clamp(56px, 13vw, 180px);
+    line-height: .92;
+    letter-spacing: .01em;
     color: var(--on-accent);
+}
+
+/* stretched to the padded width so the rule spans the band instead of hugging
+   the button, which would read as an underline */
+.about__cta-actions {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    padding-top: clamp(1.6rem, 3.5vh, 2.4rem);
+    border-top: 1px solid color-mix(in srgb, var(--on-accent) 22%, transparent);
 }
 
 .btn--inverse {
@@ -1376,42 +1417,60 @@ video {
 }
 
 /* ---------------------------------------------------------------------------
-   Contact
+   Contact — statement on the left, the details as rows on the right
 --------------------------------------------------------------------------- */
-.contact__container {
+.contact {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
 
-.contact__wrapper {
+.contact__layout {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    align-content: center;
+    gap: clamp(2.8rem, 6vw, 5.5rem);
     padding: clamp(7rem, 14vh, 9rem) clamp(1.2rem, 6vw, 6rem) 3rem;
+}
+
+/* the two columns only pay off once there is room for both to breathe */
+@media (min-width: 900px) {
+    .contact__layout {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+        align-items: center;
+    }
+}
+
+/* same small-caps label as the homepage and the mobile menu */
+.contact__eyebrow {
+    margin: 0 0 1.2rem;
+    font-size: 12px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 
 .contact__title {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(52px, 11vw, 150px);
-    line-height: .98;
+    font-size: clamp(52px, 9vw, 128px);
+    line-height: .95;
+    letter-spacing: .01em;
     color: var(--text);
 }
 
-.contact__title2 {
+.contact__title-accent {
     color: var(--accent);
     transition: color var(--theme-fade) ease;
 }
 
 .contact__description {
-    margin: 2rem 0 0;
-    font-size: clamp(17px, 2vw, 24px);
+    margin: 1.8rem 0 0;
+    font-size: clamp(16px, 1.5vw, 20px);
     line-height: 1.6;
-    max-width: 48ch;
-    color: color-mix(in srgb, var(--text) 88%, var(--bg));
+    max-width: 38ch;
+    color: color-mix(in srgb, var(--text) 84%, var(--bg));
 }
 
 .contact__description .highlight {
@@ -1419,44 +1478,76 @@ video {
     font-weight: 700;
 }
 
-/* email and phone shown as the details themselves, not as buttons */
-.contact__details {
-    margin-top: clamp(2.4rem, 6vh, 3.4rem);
-    padding-top: clamp(1.6rem, 4vh, 2.2rem);
-    border-top: 1px solid var(--line);
+.contact__panel {
     display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1.8rem, 7vw, 5.5rem);
+    flex-direction: column;
 }
 
-.contact__detail-label {
-    margin: 0 0 .7rem;
+/* one hairline row per detail — label above the value, arrow pinned right */
+.contact__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .45rem 1.5rem;
+    padding: clamp(1.1rem, 2.4vh, 1.7rem) 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .25s ease;
+}
+
+.contact__row:last-of-type {
+    border-bottom: 1px solid var(--line);
+}
+
+.contact__row-label {
+    grid-column: 1;
     font-size: 12px;
     letter-spacing: .3em;
     text-transform: uppercase;
     color: var(--muted);
 }
 
-.contact__detail-value {
-    display: inline-block;
+.contact__row-value {
+    grid-column: 1;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(17px, 1.6vw, 23px);
-    letter-spacing: .01em;
+    font-size: clamp(19px, 1.9vw, 26px);
     line-height: 1.2;
-    color: var(--text);
-    text-decoration: none;
-    padding-bottom: .2rem;
-    border-bottom: 2px solid var(--accent-soft);
+    letter-spacing: .01em;
     overflow-wrap: anywhere;
-    transition: color .25s ease, border-color .25s ease;
+    transition: color .25s ease;
+}
+
+.contact__row-arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: clamp(20px, 2.2vw, 28px);
+    height: clamp(20px, 2.2vw, 28px);
+    color: var(--accent);
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1), color var(--theme-fade) ease;
 }
 
 @media (min-width: 768px) {
-    .contact__detail-value:hover {
-        color: var(--accent);
-        border-bottom-color: var(--accent);
+    .contact__row:hover {
+        border-color: var(--accent);
     }
+
+    .contact__row:hover+.contact__row {
+        border-top-color: var(--accent);
+    }
+
+    .contact__row:hover .contact__row-value {
+        color: var(--accent);
+    }
+
+    .contact__row:hover .contact__row-arrow {
+        transform: translate(5px, -5px);
+    }
+}
+
+.contact__elsewhere {
+    margin-top: clamp(2.2rem, 5vh, 3.2rem);
 }
 
 /* ---------------------------------------------------------------------------
