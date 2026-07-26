@@ -117,21 +117,10 @@ video {
     color: var(--on-accent);
 }
 
-.btn--ghost {
-    background-color: transparent;
-    color: var(--accent);
-}
-
 @media (min-width: 768px) {
     .btn--primary:hover {
         background-color: transparent;
         color: var(--accent);
-        transform: translateY(-2px);
-    }
-
-    .btn--ghost:hover {
-        background-color: var(--accent);
-        color: var(--on-accent);
         transform: translateY(-2px);
     }
 }

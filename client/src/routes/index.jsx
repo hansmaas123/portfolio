@@ -21,6 +21,11 @@ const PRIMARY_SET = 1
 // further than the thumb travels.
 const DRAG_SPEED = 1.8
 
+// Seconds of the release velocity carried into the snap, so a flick reaches the
+// next card instead of falling back to the current one. Tuned so an ordinary
+// swipe advances exactly one project and only a hard flick skips ahead.
+const FLICK_PROJECTION = 0.18
+
 const Thumbnail = ({ src, alt }) => {
     const imgRef = useRef(null)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -150,6 +155,15 @@ const Index = () => {
                 // click check below, not how far the rail travels.
                 dragDistance += Math.abs(self.deltaX)
                 target -= self.deltaX * DRAG_SPEED
+            },
+            onDragEnd: (self) => {
+                // Land on a card rather than wherever the finger stopped. The flick's
+                // velocity is projected forward first, so a quick swipe carries to the
+                // next project instead of springing back to the one it came from.
+                // velocityX is negative when dragging left, which is the direction
+                // that advances the rail — hence the sign flip.
+                const momentum = -self.velocityX * DRAG_SPEED * FLICK_PROJECTION
+                target = Math.round((target + momentum) / step) * step
             }
         })
 
