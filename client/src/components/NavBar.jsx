@@ -3,6 +3,7 @@ import { NavLink, useOutletContext, useNavigate, useLocation } from "react-route
 import "../styles/style.css"
 import PropTypes from 'prop-types';
 import { useTransition } from '../contexts/TransitionContext';
+import { EMAIL, PHONE, SOCIALS } from '../contact';
 
 // All colors come from the CSS theme variables set by applyTheme();
 // this component only needs the identifier to build About/Contact URLs.
@@ -93,16 +94,41 @@ const NavBar = ({ colorIdentifier }) => {
 
             <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu__content">
-                    {links.map(link => (
-                        <NavLink
-                            key={link.label}
-                            onClick={(e) => handleNavClick(e, link.to)}
-                            className="mobile-menu__link"
-                            to={link.to}
-                        >
-                            {link.label}
-                        </NavLink>
-                    ))}
+                    <p className="mobile-menu__eyebrow">Menu</p>
+                    <nav className="mobile-menu__nav">
+                        {links.map((link, index) => (
+                            <NavLink
+                                key={link.label}
+                                onClick={(e) => handleNavClick(e, link.to)}
+                                className="mobile-menu__link"
+                                to={link.to}
+                            >
+                                <span className="mobile-menu__index" aria-hidden="true">
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                {link.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+
+                    <div className="mobile-menu__contact">
+                        <p className="mobile-menu__eyebrow">Get in touch</p>
+                        <a className="mobile-menu__detail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                        <a className="mobile-menu__detail" href={`tel:${PHONE.replace(/\s/g, '')}`}>{PHONE}</a>
+                        <div className="mobile-menu__socials">
+                            {SOCIALS.map(social => (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mobile-menu__social"
+                                >
+                                    {social.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
 

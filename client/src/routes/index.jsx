@@ -17,6 +17,10 @@ gsap.registerPlugin(Observer)
 const SETS = [0, 1, 2]
 const PRIMARY_SET = 1
 
+// A 1:1 touch drag feels sluggish against a rail this wide — a swipe should carry
+// further than the thumb travels.
+const DRAG_SPEED = 1.8
+
 const Thumbnail = ({ src, alt }) => {
     const imgRef = useRef(null)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -141,9 +145,11 @@ const Index = () => {
             },
             onDragStart: () => { dragDistance = 0 },
             onDrag: (self) => {
-                // horizontal only — swiping up and down deliberately does nothing
+                // horizontal only — swiping up and down deliberately does nothing.
+                // dragDistance stays in real pixels: it measures intent for the
+                // click check below, not how far the rail travels.
                 dragDistance += Math.abs(self.deltaX)
-                target -= self.deltaX
+                target -= self.deltaX * DRAG_SPEED
             }
         })
 

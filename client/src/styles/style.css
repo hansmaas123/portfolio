@@ -270,7 +270,7 @@ video {
     color: var(--on-accent);
 }
 
-/* Hamburger — mobile only */
+/* Hamburger — mobile only. Round to echo the desktop nav pill. */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -279,7 +279,7 @@ video {
     gap: 6px;
     background: var(--accent);
     border: none;
-    border-radius: 16px;
+    border-radius: 999px;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -325,33 +325,115 @@ video {
     background-color: var(--bg);
     z-index: 10000;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: right .4s ease-in-out, background-color var(--theme-fade) ease;
+    /* visibility keeps the panel out of the tab order while it is off-screen,
+       and is delayed on close so the slide-out stays visible */
+    visibility: hidden;
+    transition: right .4s ease-in-out, visibility 0s linear .4s, background-color var(--theme-fade) ease;
 }
 
 .mobile-menu.open {
     right: 0;
+    visibility: visible;
+    transition: right .4s ease-in-out, visibility 0s, background-color var(--theme-fade) ease;
 }
 
+/* links sit under the label at the top, contact details are pushed to the bottom */
 .mobile-menu__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2.6rem;
-    align-items: center;
+    padding: 6.5rem clamp(1.6rem, 8vw, 3.5rem) clamp(2rem, 6vh, 3rem);
+}
+
+/* shared small-caps label, matching the homepage eyebrow */
+.mobile-menu__eyebrow {
+    margin: 0 0 1.4rem;
+    font-size: 12px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-menu__link {
-    font-size: 42px;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    /* generous rows: bigger tap targets and less dead space on tall phones */
+    padding: clamp(.9rem, 2.6vh, 1.7rem) 0;
+    border-top: 1px solid var(--line);
     font-family: var(--font-display);
-    font-weight: 500;
+    font-size: clamp(34px, 11vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: .01em;
+    text-transform: uppercase;
     text-decoration: none;
     color: var(--text);
+    transition: color .25s ease;
+}
+
+.mobile-menu__nav .mobile-menu__link:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.mobile-menu__index {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    color: var(--muted);
 }
 
 .mobile-menu__link.active {
     color: var(--accent);
-    font-weight: 700;
+}
+
+.mobile-menu__link.active .mobile-menu__index {
+    color: var(--accent);
+}
+
+.mobile-menu__contact {
+    margin-top: auto;
+    padding-top: clamp(2.5rem, 8vh, 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-menu__detail {
+    font-family: var(--font-body);
+    font-size: clamp(17px, 4.4vw, 20px);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text);
+    padding: .3rem 0;
+    /* underline sits away from the text so it reads as a detail, not a button */
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+
+.mobile-menu__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.6rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    width: 100%;
+}
+
+.mobile-menu__social {
+    font-size: 14px;
+    letter-spacing: .04em;
+    text-decoration: none;
+    color: var(--muted);
 }
 
 @media (max-width: 768px) {
@@ -396,7 +478,8 @@ video {
     width: 10px;
     height: 10px;
     background-color: var(--accent);
-    transition: background-color var(--theme-fade) ease;
+    /* only the scale eases — the translate that follows the pointer must not lag */
+    transition: background-color var(--theme-fade) ease, scale .25s ease;
 }
 
 /* ---------------------------------------------------------------------------
@@ -509,12 +592,14 @@ video {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform .6s cubic-bezier(.22, 1, .36, 1), opacity .4s ease;
+    transition: transform .6s cubic-bezier(.22, 1, .36, 1), opacity .4s ease, filter .35s ease;
 }
 
 @media (min-width: 768px) {
     .slide:hover .slide__media img {
         transform: scale(1.045);
+        /* dim on hover so the zoom reads as a state, not just drift */
+        filter: brightness(.72);
     }
 
     .slide:hover .slide__name {
@@ -542,7 +627,9 @@ video {
 .slide__caption {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    /* centred, not baseline-aligned: the meta is two lines against a one-line
+       title, so a shared baseline leaves the block sitting high */
+    align-items: center;
     gap: 1rem;
     margin-top: 1.1rem;
     padding-inline: .2rem;
@@ -565,12 +652,29 @@ video {
     white-space: nowrap;
 }
 
+/* Three tracks with equal side columns, so the hint lands in the true centre of
+   the screen instead of the gap left over between the name and the counter.
+   Columns are assigned explicitly because the hint is hidden on small screens. */
 .home__bottom {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(1rem, 3vw, 2rem);
     padding: 0 clamp(1.2rem, 4vw, 3rem) 1.4rem;
+}
+
+.home__bottom .home__name {
+    grid-column: 1;
+}
+
+.home__bottom .home__hint {
+    grid-column: 2;
+    justify-self: center;
+}
+
+.home__bottom .home__progress {
+    grid-column: 3;
+    justify-self: end;
 }
 
 .home__name {
@@ -1326,11 +1430,44 @@ video {
     font-weight: 700;
 }
 
-.button__wrapper {
-    margin-top: 3rem;
+/* email and phone shown as the details themselves, not as buttons */
+.contact__details {
+    margin-top: clamp(2.4rem, 6vh, 3.4rem);
+    padding-top: clamp(1.6rem, 4vh, 2.2rem);
+    border-top: 1px solid var(--line);
     display: flex;
-    gap: 1.2rem;
     flex-wrap: wrap;
+    gap: clamp(1.8rem, 7vw, 5.5rem);
+}
+
+.contact__detail-label {
+    margin: 0 0 .7rem;
+    font-size: 12px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.contact__detail-value {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(17px, 1.6vw, 23px);
+    letter-spacing: .01em;
+    line-height: 1.2;
+    color: var(--text);
+    text-decoration: none;
+    padding-bottom: .2rem;
+    border-bottom: 2px solid var(--accent-soft);
+    overflow-wrap: anywhere;
+    transition: color .25s ease, border-color .25s ease;
+}
+
+@media (min-width: 768px) {
+    .contact__detail-value:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
 }
 
 /* ---------------------------------------------------------------------------

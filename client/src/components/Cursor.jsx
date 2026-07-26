@@ -27,10 +27,15 @@ const Cursor = ({ scaling }) => {
                 }}
                 className="large_circle"
             ></motion.div>
+            {/* translate and scale are separate properties so the dot can keep
+                tracking the pointer exactly while only its size eases */}
             <div
                 className="small_circle"
                 style={{
-                    transform: `translate(${position.x - 5}px, ${position.y - 5}px) scale(1)`,
+                    translate: `${position.x - 5}px ${position.y - 5}px`,
+                    // string, not a number: React would append "px" to a bare
+                    // number and the browser would drop the whole declaration
+                    scale: scaling ? '1.9' : '1',
                 }}
             ></div>
         </div>

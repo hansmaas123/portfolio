@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar"
 import { useEffect } from 'react'
 import PageTransition from '../components/PageTransition'
 import { THEMES, applyTheme } from '../theme'
+import { EMAIL, PHONE, SOCIALS } from '../contact'
 
 const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -26,25 +27,47 @@ const Contact = () => {
                     <div className="contact__wrapper">
                         <h1 className="contact__title">LET&apos;S<br /><span className="contact__title2">CONNECT</span></h1>
                         <p className="contact__description">I&apos;m looking forward to meet you so we could build our <span className="highlight">next project together</span>.</p>
-                        <div className="button__wrapper">
-                            <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="mailto:maashans117@gmail.com" className="btn btn--primary">E-mail</a>
-                            <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="tel:+32499103827" className="btn btn--ghost">Message</a>
+                        <div className="contact__details">
+                            <div className="contact__detail">
+                                <p className="contact__detail-label">Email</p>
+                                <a
+                                    onMouseEnter={() => setScaling(true)}
+                                    onMouseLeave={() => setScaling(false)}
+                                    href={`mailto:${EMAIL}`}
+                                    className="contact__detail-value"
+                                >
+                                    {EMAIL}
+                                </a>
+                            </div>
+                            <div className="contact__detail">
+                                <p className="contact__detail-label">Phone</p>
+                                <a
+                                    onMouseEnter={() => setScaling(true)}
+                                    onMouseLeave={() => setScaling(false)}
+                                    href={`tel:${PHONE.replace(/\s/g, '')}`}
+                                    className="contact__detail-value"
+                                >
+                                    {PHONE}
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <footer className="site-footer">
                         <div className="socials">
-                            <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.instagram.com/maasdesign_studios/" target="_blank" rel="noopener noreferrer" className="social">
-                                <img src={getAssetPath(`instagram${iconSuffix}.svg`)} alt="" />
-                                Instagram
-                            </a>
-                            <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.behance.net/hansmaas" target="_blank" rel="noopener noreferrer" className="social">
-                                <img src={getAssetPath(`behance${iconSuffix}.svg`)} alt="" />
-                                Behance
-                            </a>
-                            <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://github.com/hansmaas123" target="_blank" rel="noopener noreferrer" className="social">
-                                <img src={getAssetPath(`github${iconSuffix}.svg`)} alt="" />
-                                Github
-                            </a>
+                            {SOCIALS.map(social => (
+                                <a
+                                    key={social.label}
+                                    onMouseEnter={() => setScaling(true)}
+                                    onMouseLeave={() => setScaling(false)}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social"
+                                >
+                                    <img src={getAssetPath(`${social.icon}${iconSuffix}.svg`)} alt="" />
+                                    {social.label}
+                                </a>
+                            ))}
                         </div>
                         <p className="site-footer__copy">All rights reserved — © Hans Maas</p>
                     </footer>
