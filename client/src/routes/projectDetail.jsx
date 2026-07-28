@@ -6,7 +6,7 @@ import { useLoaderData, useLocation, useOutletContext, useParams } from "react-r
 import NavBar from "../components/NavBar";
 import PageTransition from '../components/PageTransition';
 import TransitionLink from '../components/TransitionLink';
-import { THEMES, applyTheme, getProjectMetaById, getNextProjectId } from '../theme';
+import { THEMES, applyTheme, accentImage, getProjectMetaById, getNextProjectId } from '../theme';
 
 const loader = async ({ params }) => {
     const id = parseInt(params.id)
@@ -86,7 +86,10 @@ const ProjectDetail = () => {
     const isVideoGallery = VIDEO_GALLERIES.has(meta.theme);
 
     const getImageUrl = (imageData) => {
-        return imageData.attributes.formats?.large?.url || imageData.attributes.url;
+        const url = imageData.attributes.formats?.large?.url || imageData.attributes.url;
+        // Strapi images are absolute Cloudinary URLs; assets shot for a project
+        // ourselves live in public/ and are stored relative to it.
+        return /^https?:\/\//.test(url) ? url : `${import.meta.env.BASE_URL}${url}`;
     };
 
     const projectImages = project.attributes.images?.data || [];
@@ -223,7 +226,19 @@ const ProjectDetail = () => {
                     style={{ backgroundColor: nextTheme.bg, color: nextTheme.text }}
                 >
                     <div className="next-project__text--wrapper">
-                        <p className="next-project" style={{ color: nextTheme.accent }}>Next project</p>
+                        {/* This label wears the *next* theme's accent, so it is painted
+                            here rather than from --accent-image, which holds this one's. */}
+                        <p
+                            className="next-project"
+                            style={{
+                                backgroundImage: accentImage(nextTheme),
+                                WebkitBackgroundClip: 'text',
+                                backgroundClip: 'text',
+                                color: 'transparent'
+                            }}
+                        >
+                            Next project
+                        </p>
                         <h2 className="next-project__name" style={{ color: nextTheme.text }}>{nextProject.attributes.name}</h2>
                     </div>
                     <TransitionLink

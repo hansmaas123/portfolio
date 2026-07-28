@@ -1,6 +1,10 @@
 // Central theme system.
 // One palette per project, applied as CSS custom properties on <html>,
 // so every page and component restyles itself from the same variables.
+//
+// `accent` is the flat colour: it fills buttons, borders and rules, where a
+// gradient has nothing to run across. A theme may also set `accentGradient`,
+// which is what accent *text* is painted with — see --accent-image below.
 
 export const THEMES = {
     trainworld: {
@@ -58,14 +62,16 @@ export const THEMES = {
         bg: '#5E7A40', text: '#FBFCF2', accent: '#ECEDCE', onAccent: '#3C4A2A',
         isLight: false
     },
-    weatherdog: {
-        role: 'CREATIVE DEVELOPER',
-        bg: '#2B318C', text: '#F4F5FF', accent: '#F0A08F', onAccent: '#33150F',
-        isLight: false
+    aheadoftimes: {
+        role: 'FRONT-END DEVELOPER',
+        bg: '#C2DDC2', text: '#011902', accent: '#FE3700', onAccent: '#FFF4EF',
+        accentGradient: 'linear-gradient(90deg, #FF6E00 0%, #FD0000 100%)',
+        isLight: true
     },
     squarebracket: {
         role: 'WEB DEVELOPER',
-        bg: '#1E1E1E', text: '#EDEDED', accent: '#E9531F', onAccent: '#1E1E1E',
+        bg: '#1E1E1E', text: '#EDEDED', accent: '#EC6E26', onAccent: '#1E1E1E',
+        accentGradient: 'linear-gradient(90deg, #FD9831 0%, #DB411C 100%)',
         isLight: false
     }
 }
@@ -75,9 +81,9 @@ export const PROJECTS = [
     { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.webp' },
     { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp' },
     { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp' },
+    { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp' },
     { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.webp' },
     { id: 3, name: 'STINGSTITUTE', type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.webp' },
-    { id: 11, name: 'WEATHER DOG', type: 'Development', team: 'Solo', year: '2024', theme: 'weatherdog', thumb: 'home_weatherdog.webp' },
     { id: 5, name: 'EQUAL MELODIES', type: 'Design', team: 'Solo', year: '2023', theme: 'equalmelodies', thumb: 'home_equalmelodies.webp' },
     { id: 6, name: 'REACT ARTISTIQUE', type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique', thumb: 'home_reactartistique.webp' },
     { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob', thumb: 'home_dishknob.webp' },
@@ -97,6 +103,11 @@ export const getNextProjectId = (id) => {
     return PROJECTS[(index + 1) % PROJECTS.length].id
 }
 
+// What accent text is painted with: the theme's gradient, or a flat fill of its
+// accent so the same background-clip rules work for every theme.
+export const accentImage = (theme) =>
+    theme.accentGradient || `linear-gradient(${theme.accent}, ${theme.accent})`
+
 // Writes the palette to CSS variables and notifies listeners (nav, transition overlay).
 export const applyTheme = (identifier) => {
     const theme = THEMES[identifier] || THEMES.trainworld
@@ -104,6 +115,9 @@ export const applyTheme = (identifier) => {
     style.setProperty('--bg', theme.bg)
     style.setProperty('--text', theme.text)
     style.setProperty('--accent', theme.accent)
+    // Accent text is painted from an image so a theme can carry a gradient.
+    // Themes without one get a flat fill, which renders identically to a colour.
+    style.setProperty('--accent-image', accentImage(theme))
     style.setProperty('--on-accent', theme.onAccent)
     document.documentElement.dataset.theme = identifier
     style.colorScheme = theme.isLight ? 'light' : 'dark'

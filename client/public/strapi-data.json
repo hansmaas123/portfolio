@@ -4430,16 +4430,16 @@
     {
       "id": 11,
       "attributes": {
-        "createdAt": "2024-09-07T18:45:12.795Z",
-        "updatedAt": "2024-09-07T18:45:12.795Z",
-        "name": "WEATHER DOG",
-        "year": 2024,
-        "link": "https://youtu.be/d5vkDY-Ipvw",
-        "focus": "WebRTC - Weather API - ML5.JS - Google Teachable Machine",
-        "scope": "Creative development",
-        "location": "Kortrijk, Belgium",
-        "scope2": null,
-        "scope3": null,
+        "createdAt": "2025-07-28T10:00:00.000Z",
+        "updatedAt": "2025-07-28T10:00:00.000Z",
+        "name": "AHEAD OF TIMES",
+        "year": 2025,
+        "link": "https://tuinenko.be/aheadoftimes/",
+        "focus": "SvelteKit - GSAP - Interaction Engineering",
+        "scope": "Front-end Development",
+        "location": "Hilversum, The Netherlands",
+        "scope2": "Interaction Development",
+        "scope3": "Animation Engineering",
         "scope4": null,
         "assignment": [
           {
@@ -4447,26 +4447,118 @@
             "children": [
               {
                 "type": "text",
-                "text": "I had to control a javascript experience using a "
+                "text": "Ahead of Times is a concept by "
               },
               {
                 "type": "text",
-                "text": "WebRTC",
-                "italic": true,
+                "text": "Robot Kittens",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": " data channel. Through this channel, I could connect my phone with my pc. Previously I used web sockets to do this but for this assignment I used WebRTC. The design of the experience didn’t matter. It was all "
+                "text": " for a daily paper that reports the week that "
               },
               {
                 "type": "text",
-                "text": "about code",
+                "text": "has not happened yet",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ". A new edition appears every day, dated seven days from now, with seven or eight stories written by AI from where the present seems to be heading. Politics, energy, transport, health, sport, culture,... The same beats a national paper covers, reported as "
+              },
+              {
+                "type": "text",
+                "text": "forecast rather than record",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I built this during my internship at "
+              },
+              {
+                "type": "text",
+                "text": "Robot Kittens",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", so please don’t mind the quickly drawn illustrations and the design of the website."
+                "text": " in Hilversum. The studio delivered the visual language. The typography, the palette, the card grid and the motion language that holds it together. The brief for me was to turn that into a "
+              },
+              {
+                "type": "text",
+                "text": "complete, working front end",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I worked closely with "
+              },
+              {
+                "type": "text",
+                "text": "the studio's designer",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " throughout. The motion is theirs, not mine — it reached me as "
+              },
+              {
+                "type": "text",
+                "text": "video references",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ", one per interaction: the card stacks fanning open, the timeline walking back through the days, the handover from the overview into the front page. Each clip showed exactly how the thing should feel."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "So the job was not to invent the animation but to "
+              },
+              {
+                "type": "text",
+                "text": "reproduce it faithfully",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " in a live browser: matching the timing, the easing and the order things move in, then making that same movement survive a real scroll position, a resize and a slow phone. Where a reference could not be rebuilt exactly as it was rendered, I raised it early and we agreed on the version that kept the intent."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The hard part was never the content. It was making a printed newspaper behave like an interface: an archive you can scroll through a week at a time, where each day is its own stack of cards, and opening one has to fan out into a full front page without ever breaking the illusion that you are handling paper."
               }
             ]
           }
@@ -4477,64 +4569,99 @@
             "children": [
               {
                 "type": "text",
-                "text": "I came up with the random idea to draw a simple scene with a dog floating by balloons. I connected a "
+                "text": "The entire front end is built in "
               },
               {
                 "type": "text",
-                "text": "weather API",
+                "text": "SvelteKit",
                 "bold": true,
                 "italic": true
               },
               {
                 "type": "text",
-                "text": " to my web experience and based the height of the dog on the current temperature. The dog also wiggles and it’s wiggle speed is based on the current wind speed. When you connect your phone with the website by scanning the "
+                "text": " and animated with "
               },
               {
                 "type": "text",
-                "text": "QR-code",
+                "text": "GSAP",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ". Every piece of interaction and animation engineering on the site is mine: the "
+              },
+              {
+                "type": "text",
+                "text": "fanning card stacks",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ", you will be able to manipulate the dog’s position with your phone with the buttons, or by pointing up or down in the camera of your phone. To achieve this, I trained a "
+                "text": ", the diagonal timeline of days, the parallax columns that loop without a visible seam, and the handover between the overview and the front page."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The overview is a "
               },
               {
                 "type": "text",
-                "text": "learning model",
+                "text": "diagonal timeline",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": " using "
+                "text": ". Each day sits on it as its own stack of cards, and scrolling walks backwards through the archive. Clicking a stack hands off to the front page: the cards fan out into a grid of parallax columns that scroll endlessly, so the paper never runs out of page."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Getting that loop seamless meant measuring the exact distance at which a column renders a pixel-identical frame and wrapping the transform there, rather than resetting the scroll. The same thinking runs through the rest of the build."
               },
               {
                 "type": "text",
-                "text": "Google Teachable Machine",
-                "italic": true,
+                "text": " Clip-path insets over polygons",
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " so the browser interpolates four numbers instead of re-rasterising a shape each frame, and heavy card sets mounted on idle so the intro animations never stutter."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The site is fully "
+              },
+              {
+                "type": "text",
+                "text": "responsive",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": " and "
+                "text": ", statically pre-rendered per article so a link keeps working after the front page has rotated on, and it ships with an "
               },
               {
                 "type": "text",
-                "text": "ML5.JS",
-                "italic": true,
+                "text": "accuracy panel",
                 "bold": true
               },
               {
                 "type": "text",
-                "text": ". The video is sent to the computer with a WebRTC data channel. There is also a button on the phone which enables the dog’s position to be changed with the phone’s "
-              },
-              {
-                "type": "text",
-                "text": "gyroscope",
-                "bold": true
-              },
-              {
-                "type": "text",
-                "text": "."
+                "text": " that measures each prediction against whatever actually occurred."
               }
             ]
           }
@@ -4542,43 +4669,164 @@
         "cover": {
           "data": [
             {
-              "id": 88,
+              "id": 1100,
               "attributes": {
-                "name": "weatherdog.jpg",
-                "alternativeText": null,
+                "name": "aheadoftimes_cover.webp",
+                "alternativeText": "Ahead of Times billboard",
                 "caption": null,
-                "width": 1229,
-                "height": 960,
+                "width": 2000,
+                "height": 1337,
                 "formats": {
                   "large": {
-                    "name": "large_weatherdog.jpg",
-                    "hash": "large_weatherdog_c6a31fda52",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 1000,
-                    "height": 781,
-                    "size": 46.97,
-                    "sizeInBytes": 46969,
-                    "url": "https://res.cloudinary.com/dbdwf6s2v/image/upload/v1726315557/weatherdog/kxefy2j6jbfmdfsjyrlz.jpg"
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247594/aot_cover_ubakbf.webp",
+                    "hash": "aheadoftimes_cover_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_cover.webp",
+                    "width": 2000,
+                    "height": 1337
                   }
                 },
-                "hash": "weatherdog_c6a31fda52",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 60.74,
-                "url": "/uploads/weatherdog_c6a31fda52.jpg",
-                "previewUrl": null,
-                "provider": "local",
-                "provider_metadata": null,
-                "createdAt": "2024-09-07T18:43:54.550Z",
-                "updatedAt": "2024-09-07T18:43:54.550Z"
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247594/aot_cover_ubakbf.webp"
               }
             }
           ]
         },
         "images": {
-          "data": null
+          "data": [
+            {
+              "id": 1101,
+              "attributes": {
+                "name": "aheadoftimes_homepage.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247592/aot_1_homepage_dwpmyr.webp",
+                    "hash": "aheadoftimes_homepage_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_homepage.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247592/aot_1_homepage_dwpmyr.webp"
+              }
+            },
+            {
+              "id": 1102,
+              "attributes": {
+                "name": "aheadoftimes_timeline.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247592/aot_2_timeline_oxtuii.webp",
+                    "hash": "aheadoftimes_timeline_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_timeline.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247592/aot_2_timeline_oxtuii.webp"
+              }
+            },
+            {
+              "id": 1103,
+              "attributes": {
+                "name": "aheadoftimes_article.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_3_article_aqwg8t.webp",
+                    "hash": "aheadoftimes_article_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_article.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_3_article_aqwg8t.webp"
+              }
+            },
+            {
+              "id": 1104,
+              "attributes": {
+                "name": "aheadoftimes_accuracy.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_4_accuracy_yhxflh.webp",
+                    "hash": "aheadoftimes_accuracy_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_accuracy.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_4_accuracy_yhxflh.webp"
+              }
+            },
+            {
+              "id": 1105,
+              "attributes": {
+                "name": "aheadoftimes_about.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_5_about_ytsqe9.webp",
+                    "hash": "aheadoftimes_about_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_about.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247593/aot_5_about_ytsqe9.webp"
+              }
+            },
+            {
+              "id": 1106,
+              "attributes": {
+                "name": "aheadoftimes_studio.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247594/aot_6_studio_kpltua.webp",
+                    "hash": "aheadoftimes_studio_large",
+                    "mime": "image/webp",
+                    "name": "aheadoftimes_studio.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1785247594/aot_6_studio_kpltua.webp"
+              }
+            }
+          ]
         }
       }
     },
@@ -4776,109 +5024,10 @@
                 "formats": {
                   "large": {
                     "ext": ".jpg",
-                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-06_at_13.27.03_srgbb7.jpg",
+                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/catSceneFirstIteration_1_kjiuwt.jpg",
                     "hash": "internship_0_large",
                     "mime": "image/jpeg",
                     "name": "internship_0.jpg",
-                    "path": null,
-                    "size": 100,
-                    "width": 1000,
-                    "height": 563
-                  }
-                },
-                "hash": "internship_0",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 150,
-                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-06_at_13.27.03_srgbb7.jpg",
-                "previewUrl": null,
-                "provider": "cloudinary",
-                "provider_metadata": null,
-                "createdAt": "2025-01-28T10:00:00.000Z",
-                "updatedAt": "2025-01-28T10:00:00.000Z"
-              }
-            },
-            {
-              "id": 102,
-              "attributes": {
-                "name": "internship_1.jpg",
-                "alternativeText": null,
-                "caption": null,
-                "width": 1920,
-                "height": 1080,
-                "formats": {
-                  "large": {
-                    "ext": ".jpg",
-                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.16_yd23ap.jpg",
-                    "hash": "internship_1_large",
-                    "mime": "image/jpeg",
-                    "name": "internship_1.jpg",
-                    "path": null,
-                    "size": 100,
-                    "width": 1000,
-                    "height": 563
-                  }
-                },
-                "hash": "internship_1",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 150,
-                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.16_yd23ap.jpg",
-                "previewUrl": null,
-                "provider": "cloudinary",
-                "provider_metadata": null,
-                "createdAt": "2025-01-28T10:00:00.000Z",
-                "updatedAt": "2025-01-28T10:00:00.000Z"
-              }
-            },
-            {
-              "id": 103,
-              "attributes": {
-                "name": "internship_2.jpg",
-                "alternativeText": null,
-                "caption": null,
-                "width": 1920,
-                "height": 1080,
-                "formats": {
-                  "large": {
-                    "ext": ".jpg",
-                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.24_slful0.jpg",
-                    "hash": "internship_2_large",
-                    "mime": "image/jpeg",
-                    "name": "internship_2.jpg",
-                    "path": null,
-                    "size": 100,
-                    "width": 1000,
-                    "height": 563
-                  }
-                },
-                "hash": "internship_2",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 150,
-                "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/Screenshot_2025-05-06_at_13.27.24_slful0.jpg",
-                "previewUrl": null,
-                "provider": "cloudinary",
-                "provider_metadata": null,
-                "createdAt": "2025-01-28T10:00:00.000Z",
-                "updatedAt": "2025-01-28T10:00:00.000Z"
-              }
-            },
-            {
-              "id": 104,
-              "attributes": {
-                "name": "internship_3.jpg",
-                "alternativeText": null,
-                "caption": null,
-                "width": 1920,
-                "height": 1080,
-                "formats": {
-                  "large": {
-                    "ext": ".jpg",
-                    "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/catSceneFirstIteration_1_kjiuwt.jpg",
-                    "hash": "internship_3_large",
-                    "mime": "image/jpeg",
-                    "name": "internship_3.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -4898,9 +5047,9 @@
               }
             },
             {
-              "id": 105,
+              "id": 102,
               "attributes": {
-                "name": "internship_4.jpg",
+                "name": "internship_1.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -4909,9 +5058,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640567/renderIteration_1_hi3fwy.jpg",
-                    "hash": "internship_4_large",
+                    "hash": "internship_1_large",
                     "mime": "image/jpeg",
-                    "name": "internship_4.jpg",
+                    "name": "internship_1.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -4931,9 +5080,9 @@
               }
             },
             {
-              "id": 106,
+              "id": 103,
               "attributes": {
-                "name": "internship_5.jpg",
+                "name": "internship_2.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -4942,9 +5091,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640564/Screenshot_2025-03-24_at_17.22.13_1_bebx8g.jpg",
-                    "hash": "internship_5_large",
+                    "hash": "internship_2_large",
                     "mime": "image/jpeg",
-                    "name": "internship_5.jpg",
+                    "name": "internship_2.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -4964,9 +5113,9 @@
               }
             },
             {
-              "id": 107,
+              "id": 104,
               "attributes": {
-                "name": "internship_6.jpg",
+                "name": "internship_3.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -4975,9 +5124,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640566/Screenshot_2025-03-24_at_17.20.11_vjyioh.jpg",
-                    "hash": "internship_6_large",
+                    "hash": "internship_3_large",
                     "mime": "image/jpeg",
-                    "name": "internship_6.jpg",
+                    "name": "internship_3.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -4997,9 +5146,9 @@
               }
             },
             {
-              "id": 108,
+              "id": 105,
               "attributes": {
-                "name": "internship_7.jpg",
+                "name": "internship_4.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5008,9 +5157,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640565/Screenshot_2025-04-01_at_10.53.35_1_lt7zyz.jpg",
-                    "hash": "internship_7_large",
+                    "hash": "internship_4_large",
                     "mime": "image/jpeg",
-                    "name": "internship_7.jpg",
+                    "name": "internship_4.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5030,9 +5179,9 @@
               }
             },
             {
-              "id": 109,
+              "id": 106,
               "attributes": {
-                "name": "internship_8.jpg",
+                "name": "internship_5.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5041,9 +5190,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641659/Screenshot_2025-04-08_at_10.19.56_1_xtec57.jpg",
-                    "hash": "internship_8_large",
+                    "hash": "internship_5_large",
                     "mime": "image/jpeg",
-                    "name": "internship_8.jpg",
+                    "name": "internship_5.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5063,9 +5212,9 @@
               }
             },
             {
-              "id": 110,
+              "id": 107,
               "attributes": {
-                "name": "internship_9.jpg",
+                "name": "internship_6.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5074,9 +5223,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.52.49_1_hxatcc.jpg",
-                    "hash": "internship_9_large",
+                    "hash": "internship_6_large",
                     "mime": "image/jpeg",
-                    "name": "internship_9.jpg",
+                    "name": "internship_6.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5096,9 +5245,9 @@
               }
             },
             {
-              "id": 111,
+              "id": 108,
               "attributes": {
-                "name": "internship_10.jpg",
+                "name": "internship_7.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5107,9 +5256,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-04-01_at_10.50.37_1_kbnp1y.jpg",
-                    "hash": "internship_10_large",
+                    "hash": "internship_7_large",
                     "mime": "image/jpeg",
-                    "name": "internship_10.jpg",
+                    "name": "internship_7.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5129,9 +5278,9 @@
               }
             },
             {
-              "id": 112,
+              "id": 109,
               "attributes": {
-                "name": "internship_11.jpg",
+                "name": "internship_8.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5140,9 +5289,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769641658/Screenshot_2025-03-24_at_17.20.29_jyurag.jpg",
-                    "hash": "internship_11_large",
+                    "hash": "internship_8_large",
                     "mime": "image/jpeg",
-                    "name": "internship_11.jpg",
+                    "name": "internship_8.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5162,9 +5311,9 @@
               }
             },
             {
-              "id": 113,
+              "id": 110,
               "attributes": {
-                "name": "internship_12.jpg",
+                "name": "internship_9.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5173,9 +5322,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640568/Screenshot_2025-05-13_at_20.29.14_hzfm78.jpg",
-                    "hash": "internship_12_large",
+                    "hash": "internship_9_large",
                     "mime": "image/jpeg",
-                    "name": "internship_12.jpg",
+                    "name": "internship_9.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5195,9 +5344,9 @@
               }
             },
             {
-              "id": 114,
+              "id": 111,
               "attributes": {
-                "name": "internship_13.jpg",
+                "name": "internship_10.jpg",
                 "alternativeText": null,
                 "caption": null,
                 "width": 1920,
@@ -5206,9 +5355,9 @@
                   "large": {
                     "ext": ".jpg",
                     "url": "https://res.cloudinary.com/drgoebsxm/image/upload/v1769640569/Screenshot_2025-05-13_at_20.34.36_1_hmuzvb.jpg",
-                    "hash": "internship_13_large",
+                    "hash": "internship_10_large",
                     "mime": "image/jpeg",
-                    "name": "internship_13.jpg",
+                    "name": "internship_10.jpg",
                     "path": null,
                     "size": 100,
                     "width": 1000,
@@ -5335,6 +5484,24 @@
               {
                 "type": "text",
                 "text": ", so the hero, services, project showcase and even the contact-form fields are fully editable from an admin panel. I modelled the content, wired up the API layer and built the studio's project pages on top of it."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The CMS does more than swap copy. Every section of a page is a "
+              },
+              {
+                "type": "text",
+                "text": "pre-made component",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " the team can add, remove and reorder from the admin panel, so the page is composed rather than fixed. If they want a contact section between the intro and the services, they drop one in, fill its fields and it appears — no deploy, no developer. I built the section library and the renderer that maps whatever order they save onto the page."
               }
             ]
           },

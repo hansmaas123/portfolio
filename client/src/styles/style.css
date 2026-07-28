@@ -9,6 +9,9 @@
     --text: #FDFDFD;
     --accent: #E8E661;
     --on-accent: #232323;
+    /* What accent *text* is painted with. A theme may swap this for a gradient;
+       the flat fill here matches --accent exactly, so both render the same. */
+    --accent-image: linear-gradient(#E8E661, #E8E661);
 
     /* derived tones */
     --muted: color-mix(in srgb, var(--text) 62%, var(--bg));
@@ -1226,6 +1229,233 @@ video {
     transition: color var(--theme-fade) ease;
 }
 
+/* experience timeline — a dated rail between the intro and the skillset.
+   The rail is a single element on the container, so the accent line can be
+   drawn down the whole section as it scrolls. Both layouts hang off --rail-x
+   (where the line sits) and --rail-gap (how far the entry clears it), so the
+   dots, the line and the text stay locked together at every width. */
+.about__experience--wrapper {
+    padding: 0 clamp(1.2rem, 5vw, 4rem) clamp(4rem, 9vw, 8rem);
+    max-width: 1500px;
+    margin-inline: auto;
+}
+
+.timeline {
+    --rail-x: 5px;
+    --rail-gap: 1.5rem;
+    --dot: 11px;
+    position: relative;
+    padding-left: calc(var(--rail-x) + var(--rail-gap));
+}
+
+.timeline__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* the unlit track; the progress line is painted over it */
+.timeline__rail {
+    position: absolute;
+    left: var(--rail-x);
+    top: .5rem;
+    bottom: 0;
+    width: 2px;
+    border-radius: 2px;
+    background-color: var(--line);
+    overflow: hidden;
+}
+
+.timeline__rail-progress {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: var(--accent-image);
+    transform: scaleY(0);
+    transform-origin: top center;
+    will-change: transform;
+}
+
+/* Without motion there is nothing to draw, so the rail is simply lit. */
+.timeline--static .timeline__rail-progress {
+    transform: scaleY(1);
+}
+
+.timeline__item {
+    position: relative;
+    padding-bottom: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__dot {
+    position: absolute;
+    top: .5rem;
+    left: calc(-1 * var(--rail-gap) - (var(--dot) - 2px) / 2);
+    width: var(--dot);
+    height: var(--dot);
+    border-radius: 50%;
+    background-color: var(--accent);
+    /* a ring in the page colour so the dot sits on the rail rather than in it */
+    box-shadow: 0 0 0 4px var(--bg);
+    transition: background-color var(--theme-fade) ease, box-shadow var(--theme-fade) ease;
+}
+
+/* Mobile: the period rides the rail as a header row above the entry, so the
+   line and its stops survive without stealing reading width from the content. */
+.timeline__aside {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: .2rem .7rem;
+    margin-bottom: .7rem;
+}
+
+.timeline__kind {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.timeline__years {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(18px, 2vw, 24px);
+    letter-spacing: .02em;
+    white-space: nowrap;
+}
+
+.timeline__place {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(21px, 2.8vw, 34px);
+    line-height: 1.1;
+    letter-spacing: .02em;
+    color: var(--text);
+}
+
+.timeline__role {
+    margin: .3rem 0 0;
+    font-size: clamp(16px, 1.7vw, 19px);
+    font-weight: 600;
+    color: color-mix(in srgb, var(--text) 88%, var(--bg));
+}
+
+.timeline__location {
+    margin: .15rem 0 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* contract/period chips — outlined, so they read as facts rather than as the
+   filled accent tags used for skills further down the page */
+.timeline__terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline__term {
+    padding: .4rem .9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: clamp(12px, 1.3vw, 14px);
+    font-weight: 500;
+    color: color-mix(in srgb, var(--text) 82%, var(--bg));
+}
+
+.timeline__team {
+    margin-top: 1.4rem;
+}
+
+.timeline__team-label {
+    margin: 0 0 .6rem;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.timeline__team-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline__member {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: clamp(14px, 1.5vw, 16px);
+    color: color-mix(in srgb, var(--text) 85%, var(--bg));
+}
+
+.timeline__count {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1.65rem;
+    height: 1.65rem;
+    padding: 0 .35rem;
+    border-radius: 8px;
+    background-color: var(--accent-soft);
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    transition: color var(--theme-fade) ease, background-color var(--theme-fade) ease;
+}
+
+/* the one thing about a role that the dates cannot say */
+.timeline__note {
+    margin: 1.2rem 0 0;
+    padding-left: .9rem;
+    border-left: 2px solid var(--accent);
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--text) 82%, var(--bg));
+    max-width: 52ch;
+    transition: border-color var(--theme-fade) ease;
+}
+
+/* Desktop: the period moves out into its own column left of the rail, so the
+   dates scan down one edge. The entry keeps the same offset from the line. */
+@media (min-width: 761px) {
+    .timeline {
+        --rail-x: 200px;
+        --rail-gap: clamp(1.6rem, 3vw, 2.6rem);
+    }
+
+    .timeline__aside {
+        position: absolute;
+        left: calc(-1 * (var(--rail-x) + var(--rail-gap)));
+        top: 0;
+        width: var(--rail-x);
+        display: block;
+        margin-bottom: 0;
+        padding-right: 1.5rem;
+        padding-top: .3rem;
+    }
+
+    .timeline__kind {
+        margin-bottom: .35rem;
+    }
+}
+
 /* skillset accordions */
 .about__skillset--wrapper {
     padding: 0 clamp(1.2rem, 5vw, 4rem) clamp(5rem, 10vw, 9rem);
@@ -1610,4 +1840,30 @@ video {
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* ---------------------------------------------------------------------------
+   Accent text
+   Painted from --accent-image rather than --accent, so a theme can run a
+   gradient across its display type. Themes without a gradient set a flat fill,
+   which renders identically to the plain colour these rules replace.
+
+   Only steady accent text is listed. Hover states keep the flat colour: the
+   clip needs `color: transparent`, which a colour transition would fade to.
+   Text-stroke accents (.section-label__num, .error__title) are left alone too —
+   a stroke cannot be clipped to a background, and neither is .highlighted, whose
+   tinted chip would be clipped away along with the fill.
+--------------------------------------------------------------------------- */
+.home__title,
+.slide__index,
+.detail__eyebrow,
+.section-label__text,
+.about__title .accent,
+.about__intro--body .highlight,
+.contact__title-accent,
+.contact__description .highlight {
+    background-image: var(--accent-image);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

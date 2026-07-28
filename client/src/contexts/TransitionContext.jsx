@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
-import { THEMES } from '../theme'
+import { THEMES, getProjectMetaById } from '../theme'
 
 const QUOTES = [
     "Design is not just what it looks like. Design is how it works.",
@@ -55,14 +55,9 @@ export const TransitionProvider = ({ children }) => {
         // For /project/:id - extract project id and map to color
         const projectMatch = pathname.match(/^\/project\/(\d+)$/)
         if (projectMatch) {
-            const projectId = parseInt(projectMatch[1])
-            // Map project IDs to their themes
-            const projectThemes = {
-                1: 'trainworld', 12: 'internship', 2: 'mixbox', 3: 'stingstitute', 4: 'rotterdans',
-                5: 'equalmelodies', 6: 'reactartistique', 7: 'dishknob', 8: 'trimcraft',
-                9: 'smashabutton', 10: 'chessbase', 11: 'weatherdog'
-            }
-            return projectThemes[projectId] || 'trainworld'
+            // Read the theme from the project list rather than a second copy of
+            // it here, so adding or swapping a project only has to be done once.
+            return getProjectMetaById(projectMatch[1]).theme
         }
         
         // Default to trainworld for home and other pages
