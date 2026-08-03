@@ -90,7 +90,7 @@ const Contact = () => {
                 </div>
 
                 <footer className="site-footer">
-                    <p className="site-footer__copy">All rights reserved — © Hans Maas</p>
+                    <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
                 </footer>
             </main>
         </PageTransition>

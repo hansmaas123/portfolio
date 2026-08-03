@@ -122,7 +122,7 @@ const ProjectDetail = () => {
                 </TransitionLink>
 
                 <section className="detail__hero">
-                    <p className="detail__eyebrow">{project.attributes.year} — {project.attributes.focus}</p>
+                    <p className="detail__eyebrow">{project.attributes.year} - {project.attributes.focus}</p>
                     <h1 className="detail__title">{project.attributes.name}</h1>
                     <div className="detail__actions">
                         <a

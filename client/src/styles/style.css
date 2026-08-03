@@ -2,7 +2,7 @@
    Fallbacks below are applied until the web fonts finish loading. */
 
 /* ---------------------------------------------------------------------------
-   Theme variables — overwritten per project by applyTheme() in src/theme.js.
+   Theme variables. Overwritten per project by applyTheme() in src/theme.js.
 --------------------------------------------------------------------------- */
 :root {
     --bg: #232323;
@@ -62,7 +62,7 @@ html.no-gutter body {
     scrollbar-gutter: auto;
 }
 
-/* The homepage additionally never scrolls — the rail is endless. */
+/* The homepage additionally never scrolls. The rail is endless. */
 html.home-locked,
 html.home-locked body {
     overflow: hidden;
@@ -138,7 +138,7 @@ video {
     height: 1em;
 }
 
-/* "01 — Label" editorial section marker */
+/* "01 - Label" editorial section marker */
 .section-label {
     display: flex;
     align-items: baseline;
@@ -267,7 +267,7 @@ video {
     color: var(--on-accent);
 }
 
-/* Hamburger — mobile only. Bare lines in the accent, which every theme picks to
+/* Hamburger. Mobile only. Bare lines in the accent, which every theme picks to
    read against its own background, so it stays visible without a chip behind it.
    The 44px box keeps the tap target while the marks themselves stay small. */
 .hamburger {
@@ -476,12 +476,12 @@ video {
     width: 10px;
     height: 10px;
     background-color: var(--accent);
-    /* only the scale eases — the translate that follows the pointer must not lag */
+    /* only the scale eases. The translate that follows the pointer must not lag */
     transition: background-color var(--theme-fade) ease, scale .25s ease;
 }
 
 /* ---------------------------------------------------------------------------
-   Homepage — endless horizontal project rail
+   Homepage. Endless horizontal project rail
 --------------------------------------------------------------------------- */
 .home {
     width: 100%;
@@ -501,7 +501,7 @@ video {
 
 /* Hand every touch pan to the rail instead of letting the browser start a scroll
    it would only have to cancel. Pinch to zoom is left alone. The static
-   reduced-motion fallback is excluded — that one is a real scroll container. */
+   reduced-motion fallback is excluded. That one is a real scroll container. */
 .home:not(.home--static) .home__pin {
     touch-action: pinch-zoom;
 }
@@ -524,7 +524,7 @@ video {
     font-family: var(--font-display);
     font-weight: 900;
     /* the dvh cap keeps the role from eating the rail's headroom on short,
-       wide screens — a 13" laptop is the tight case, not a phone */
+       wide screens. A 13" laptop is the tight case, not a phone */
     font-size: clamp(38px, min(7vw, 11dvh), 108px);
     line-height: 1.02;
     letter-spacing: .01em;
@@ -916,7 +916,7 @@ video {
     color: var(--text);
 }
 
-/* story — assignment & approach */
+/* story - assignment & approach */
 .story {
     padding: clamp(2rem, 6vw, 5rem) clamp(1.2rem, 5vw, 4rem);
     display: grid;
@@ -994,7 +994,7 @@ video {
     }
 }
 
-/* gallery — masonry columns; images keep natural ratio (never squeezed) */
+/* gallery - masonry columns; images keep natural ratio (never squeezed) */
 .images {
     padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 4rem);
 }
@@ -1229,7 +1229,7 @@ video {
     transition: color var(--theme-fade) ease;
 }
 
-/* experience timeline — a dated rail between the intro and the skillset.
+/* experience timeline - a dated rail between the intro and the skillset.
    The rail is a single element on the container, so the accent line can be
    drawn down the whole section as it scrolls. Both layouts hang off --rail-x
    (where the line sits) and --rail-gap (how far the entry clears it), so the
@@ -1354,7 +1354,7 @@ video {
     color: var(--muted);
 }
 
-/* contract/period chips — outlined, so they read as facts rather than as the
+/* contract/period chips - outlined, so they read as facts rather than as the
    filled accent tags used for skills further down the page */
 .timeline__terms {
     display: flex;
@@ -1585,7 +1585,7 @@ video {
     margin-top: 1.8rem;
 }
 
-/* about closing CTA — full-bleed accent band, centred */
+/* about closing CTA - full-bleed accent band, centred */
 .about__cta {
     background-color: var(--accent);
     color: var(--on-accent);
@@ -1647,7 +1647,7 @@ video {
 }
 
 /* ---------------------------------------------------------------------------
-   Contact — statement on the left, the details as rows on the right
+   Contact - statement on the left, the details as rows on the right
 --------------------------------------------------------------------------- */
 .contact {
     min-height: 100dvh;
@@ -1713,7 +1713,7 @@ video {
     flex-direction: column;
 }
 
-/* one hairline row per detail — label above the value, arrow pinned right */
+/* one hairline row per detail. Label above the value, arrow pinned right */
 .contact__row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1850,8 +1850,8 @@ video {
 
    Only steady accent text is listed. Hover states keep the flat colour: the
    clip needs `color: transparent`, which a colour transition would fade to.
-   Text-stroke accents (.section-label__num, .error__title) are left alone too —
-   a stroke cannot be clipped to a background, and neither is .highlighted, whose
+   Text-stroke accents (.section-label__num, .error__title) are left alone too.
+   A stroke cannot be clipped to a background, and neither is .highlighted, whose
    tinted chip would be clipped away along with the fill.
 --------------------------------------------------------------------------- */
 .home__title,

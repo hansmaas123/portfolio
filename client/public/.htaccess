@@ -13,7 +13,7 @@
 </IfModule>
 
 # ---------------------------------------------------------------------------
-# Compression — shrinks text assets over the wire (guarded so a missing
+# Compression - shrinks text assets over the wire (guarded so a missing
 # module can never 500 the site).
 # ---------------------------------------------------------------------------
 <IfModule mod_deflate.c>

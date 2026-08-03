@@ -88,10 +88,10 @@ TagList.propTypes = {
 const EXPERIENCE = [
     {
         kind: 'education',
-        period: '2022 — 2025',
+        period: '2022 - 2025',
         place: 'HOWEST UNIVERSITY OF APPLIED SCIENCES',
         location: 'Kortrijk, Belgium',
-        role: 'Bachelor — Digital Design and Development (Devine)',
+        role: 'Bachelor - Digital Design and Development (Devine)',
         terms: ['Graduated 2025']
     },
     {
@@ -100,7 +100,7 @@ const EXPERIENCE = [
         place: 'ROBOT KITTENS',
         location: 'Hilversum, The Netherlands',
         role: 'Front-end Developer',
-        terms: ['Internship — Feb to May 2025', 'Student job — Jun to Jul 2025'],
+        terms: ['Internship - Feb to May 2025', 'Student job - Jun to Jul 2025'],
         team: [
             { count: 1, label: 'Lead developer' },
             { count: 1, label: 'Senior front-end developer' },
@@ -110,16 +110,16 @@ const EXPERIENCE = [
     },
     {
         kind: 'work',
-        period: '2025 — 2026',
+        period: '2025 - 2026',
         place: 'SQUAREBRACKET',
         location: 'Mechelen, Belgium',
         role: 'Front-end Developer & Designer',
-        terms: ['Student job — Aug 2025', 'Full-time — Oct 2025 to Jun 2026'],
+        terms: ['Student job - Aug 2025', 'Full-time - Oct 2025 to Jun 2026'],
         team: [
             { count: 2, label: 'Back-end developers' },
             { count: 1, label: 'Front-end developer' }
         ],
-        note: 'No in-house designer, so every design was mine as well — two roles in one seat.'
+        note: 'No in-house designer, so every design was mine as well. Two roles in one seat.'
     }
 ];
 
@@ -369,7 +369,7 @@ const About = () => {
                             Github
                         </a>
                     </div>
-                    <p className="site-footer__copy">All rights reserved — © Hans Maas</p>
+                    <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
                 </footer>
             </main>
         </PageTransition>

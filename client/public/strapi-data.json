@@ -4521,7 +4521,7 @@
               },
               {
                 "type": "text",
-                "text": " throughout. The motion is theirs, not mine — it reached me as "
+                "text": " throughout. The motion is theirs, not mine. It reached me as "
               },
               {
                 "type": "text",
@@ -5501,7 +5501,7 @@
               },
               {
                 "type": "text",
-                "text": " the team can add, remove and reorder from the admin panel, so the page is composed rather than fixed. If they want a contact section between the intro and the services, they drop one in, fill its fields and it appears — no deploy, no developer. I built the section library and the renderer that maps whatever order they save onto the page."
+                "text": " the team can add, remove and reorder from the admin panel, so the page is composed rather than fixed. If they want a contact section between the intro and the services, they drop one in, fill its fields and it appears. No deploy, no developer. I built the section library and the renderer that maps whatever order they save onto the page."
               }
             ]
           },

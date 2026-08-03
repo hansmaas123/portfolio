@@ -4,7 +4,7 @@
 //
 // `accent` is the flat colour: it fills buttons, borders and rules, where a
 // gradient has nothing to run across. A theme may also set `accentGradient`,
-// which is what accent *text* is painted with — see --accent-image below.
+// which is what accent *text* is painted with. See --accent-image below.
 
 export const THEMES = {
     trainworld: {

@@ -18,7 +18,7 @@ gsap.registerPlugin(Observer)
 const SETS = [0, 1, 2]
 const PRIMARY_SET = 1
 
-// A 1:1 touch drag feels sluggish against a rail this wide — a swipe should carry
+// A 1:1 touch drag feels sluggish against a rail this wide. A swipe should carry
 // further than the thumb travels.
 const DRAG_SPEED = 1.8
 
@@ -50,7 +50,7 @@ const Thumbnail = ({ src, alt }) => {
                 src={src}
                 alt={alt}
                 // The rail moves by transform on a page that never scrolls, so lazy
-                // loading only fires as a card is already sliding in — which reads as
+                // loading only fires as a card is already sliding in. Which reads as
                 // the images flashing. The whole set is ~270 KB, so fetch it up front.
                 loading="eager"
                 decoding="async"
@@ -93,8 +93,8 @@ const Index = () => {
         const setX = gsap.quickSetter(rail, 'x', 'px')
 
         // `period` is the distance between a card and its clone one set later, so
-        // shifting the rail by exactly that much renders a pixel-identical frame —
-        // that is the seam the loop hides behind.
+        // shifting the rail by exactly that much renders a pixel-identical frame.
+        // That is the seam the loop hides behind.
         let period = 1
         let step = 1
         let centerOffset = 0
@@ -148,7 +148,7 @@ const Index = () => {
             },
             onDragStart: () => { dragDistance = 0 },
             onDrag: (self) => {
-                // horizontal only — swiping up and down deliberately does nothing.
+                // horizontal only. Swiping up and down deliberately does nothing.
                 // dragDistance stays in real pixels: it measures intent for the
                 // click check below, not how far the rail travels.
                 dragDistance += Math.abs(self.deltaX)
@@ -159,7 +159,7 @@ const Index = () => {
                 // velocity is projected forward first, so a quick swipe carries to the
                 // next project instead of springing back to the one it came from.
                 // velocityX is negative when dragging left, which is the direction
-                // that advances the rail — hence the sign flip.
+                // that advances the rail. Hence the sign flip.
                 const momentum = -self.velocityX * DRAG_SPEED * FLICK_PROJECTION
                 target = Math.round((target + momentum) / step) * step
             }
@@ -177,7 +177,7 @@ const Index = () => {
         rail.addEventListener('click', swallowClickAfterDrag, true)
 
         // card widths are viewport-relative, so a resize changes what a pixel of
-        // travel is worth — rescale the position to keep the same card centred
+        // travel is worth. Rescale the position to keep the same card centred
         const onResize = () => {
             const previousStep = step
             measure()
@@ -211,7 +211,7 @@ const Index = () => {
                 <div className="home__pin">
                     <NavBar colorIdentifier={activeTheme} />
                     <header className="home__intro">
-                        <p className="home__eyebrow">Hans Maas — Portfolio</p>
+                        <p className="home__eyebrow">Hans Maas - Portfolio</p>
                         <h1 className="home__title" key={activeTheme}>{THEMES[activeTheme].role}</h1>
                     </header>
                     <div className="home__rail-viewport">
