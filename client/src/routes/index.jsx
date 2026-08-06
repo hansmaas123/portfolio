@@ -165,7 +165,7 @@ const Index = () => {
             }
         })
 
-        // a drag that ends on a card must not navigate to that project
+        // a drag that ends on a card must not navigate to that project.
         const resetDrag = () => { dragDistance = 0 }
         const swallowClickAfterDrag = (event) => {
             if (dragDistance > 8) {
