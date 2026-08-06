@@ -1971,7 +1971,10 @@ video {
     font-weight: 700;
 }
 
-.legal__body a {
+/* Body links only. A .btn in here brings its own fill and label colour, and
+   this rule outranks .btn--primary, which painted the label in the very accent
+   the button is filled with. */
+.legal__body a:not(.btn) {
     color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 3px;

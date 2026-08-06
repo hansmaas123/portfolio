@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
 import { THEMES, applyTheme } from '../theme'
+import { SOCIALS } from '../contact'
 
 const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -355,19 +356,24 @@ const About = () => {
                 </section>
 
                 <footer className="site-footer">
+                    {/* driven by SOCIALS, like the contact page and the mobile
+                        menu — this footer used to hardcode its own copy of the
+                        list, which is how it drifted out of step */}
                     <div className="socials">
-                        <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.instagram.com/maasdesign_studios/" target="_blank" rel="noopener noreferrer" className="social">
-                            <img src={getAssetPath(`instagram${iconSuffix}.svg`)} alt="" />
-                            Instagram
-                        </a>
-                        <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://www.behance.net/hansmaas" target="_blank" rel="noopener noreferrer" className="social">
-                            <img src={getAssetPath(`behance${iconSuffix}.svg`)} alt="" />
-                            Behance
-                        </a>
-                        <a onMouseEnter={() => setScaling(true)} onMouseLeave={() => setScaling(false)} href="https://github.com/hansmaas123" target="_blank" rel="noopener noreferrer" className="social">
-                            <img src={getAssetPath(`github${iconSuffix}.svg`)} alt="" />
-                            Github
-                        </a>
+                        {SOCIALS.map(social => (
+                            <a
+                                key={social.label}
+                                onMouseEnter={() => setScaling(true)}
+                                onMouseLeave={() => setScaling(false)}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social"
+                            >
+                                <img src={getAssetPath(`${social.icon}${iconSuffix}.svg`)} alt="" />
+                                {social.label}
+                            </a>
+                        ))}
                     </div>
                     <div className="site-footer__end">
                         <TransitionLink

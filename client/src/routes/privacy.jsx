@@ -166,7 +166,7 @@ const Privacy = () => {
                             </li>
                         </ul>
                         <p>
-                            Links to Instagram, Behance, GitHub and YouTube are plain
+                            Links to Instagram, LinkedIn, GitHub and YouTube are plain
                             links. Nothing is loaded from those platforms until you click
                             through, at which point their own privacy policies apply.
                         </p>
