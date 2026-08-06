@@ -37,6 +37,15 @@ const router = createBrowserRouter([
                     return { Component }
                 }
             },
+            // Themed like the rest of the site when reached from a page, but
+            // also reachable bare — a policy has to work as a plain URL.
+            {
+                path: "/privacy/:colorIdentifier?",
+                lazy: async () => {
+                    const { default: Component } = await import('./routes/privacy')
+                    return { Component }
+                }
+            },
         ]
     }
 ], {

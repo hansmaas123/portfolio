@@ -57,11 +57,6 @@ export const THEMES = {
         bg: '#1F4230', text: '#F4FAF6', accent: '#FEA500', onAccent: '#22331F',
         isLight: false
     },
-    chessbase: {
-        role: 'WEB DEVELOPER',
-        bg: '#5E7A40', text: '#FBFCF2', accent: '#ECEDCE', onAccent: '#3C4A2A',
-        isLight: false
-    },
     aheadoftimes: {
         role: 'FRONT-END DEVELOPER',
         bg: '#C2DDC2', text: '#011902', accent: '#FE3700', onAccent: '#FFF4EF',
@@ -89,7 +84,6 @@ export const PROJECTS = [
     { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob', thumb: 'home_dishknob.webp' },
     { id: 8, name: 'TRIMCRAFT', type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft', thumb: 'home_trimcraft.webp' },
     { id: 9, name: 'SMASH A BUTTON', type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton', thumb: 'home_smashabutton.webp' },
-    { id: 10, name: 'CHESSBASE', type: 'Development', team: 'Solo', year: '2023', theme: 'chessbase', thumb: 'home_chessbase.webp' },
     { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans', thumb: 'home_rotterdans.webp' }
 ]
 

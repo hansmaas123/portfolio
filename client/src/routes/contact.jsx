@@ -2,6 +2,7 @@ import { useOutletContext, useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 import { useEffect } from 'react'
 import PageTransition from '../components/PageTransition'
+import TransitionLink from '../components/TransitionLink'
 import { THEMES, applyTheme } from '../theme'
 import { EMAIL, PHONE, SOCIALS } from '../contact'
 import { useRootClass } from '../useRootClass'
@@ -90,7 +91,16 @@ const Contact = () => {
                 </div>
 
                 <footer className="site-footer">
-                    <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
+                    <div className="site-footer__end">
+                        <TransitionLink
+                            {...cursor}
+                            to={`/privacy/${colorIdentifier || 'trainworld'}`}
+                            className="site-footer__link"
+                        >
+                            Privacy policy
+                        </TransitionLink>
+                        <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
+                    </div>
                 </footer>
             </main>
         </PageTransition>

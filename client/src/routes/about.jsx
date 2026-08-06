@@ -369,7 +369,17 @@ const About = () => {
                             Github
                         </a>
                     </div>
-                    <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
+                    <div className="site-footer__end">
+                        <TransitionLink
+                            onMouseEnter={() => setScaling(true)}
+                            onMouseLeave={() => setScaling(false)}
+                            to={`/privacy/${colorIdentifier}`}
+                            className="site-footer__link"
+                        >
+                            Privacy policy
+                        </TransitionLink>
+                        <p className="site-footer__copy">All rights reserved - © Hans Maas</p>
+                    </div>
                 </footer>
             </main>
         </PageTransition>

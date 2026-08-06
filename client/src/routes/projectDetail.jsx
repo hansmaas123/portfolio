@@ -19,8 +19,7 @@ const loader = async ({ params }) => {
 const NOTES = {
     stingstitute: 'Note: this website is only made for desktop.',
     reactartistique: 'Note: development only, not design. Desktop only.',
-    trimcraft: 'Note: development only, not design. Desktop only.',
-    chessbase: 'Note: development only, not design. Desktop only.'
+    trimcraft: 'Note: development only, not design. Desktop only.'
 };
 
 // Projects whose gallery contains videos instead of images
