@@ -5363,6 +5363,639 @@
           ]
         }
       }
+    },
+    {
+      "id": 14,
+      "attributes": {
+        "createdAt": "2026-09-24T10:00:00.000Z",
+        "updatedAt": "2026-09-24T10:00:00.000Z",
+        "name": "FACE FILTER LAB",
+        "year": 2025,
+        "link": null,
+        "focus": "UX Research - Interface & Brand Design - AR Face Painting - Hologram",
+        "scope": "UX Research",
+        "location": "Antwerp, Belgium",
+        "scope2": "Interface & Brand Design",
+        "scope3": "Development",
+        "scope4": "Physical Build",
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The Face Filter Lab is my "
+              },
+              {
+                "type": "text",
+                "text": "bachelor's thesis",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", made in a team for a real client: "
+              },
+              {
+                "type": "text",
+                "text": "JEF",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", for their Jeugdfilmfestival (youth film festival) in Antwerp. The brief was an installation for the festival's media lab that lets "
+              },
+              {
+                "type": "text",
+                "text": "kids express themselves creatively",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " — something interactive and captivating enough to hold their attention on a busy festival floor."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Our answer was a large interactive kiosk where you can "
+              },
+              {
+                "type": "text",
+                "text": "digitally face paint",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " someone in real time. One child sits in front of a camera on one side of the kiosk; on the other side, a friend paints on their face on a tablet. In the middle, the result floats as a live "
+              },
+              {
+                "type": "text",
+                "text": "hologram",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " that both of them — and everyone walking past — can watch."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "We took the project through every phase ourselves. It started with "
+              },
+              {
+                "type": "text",
+                "text": "UX research",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " into our young target audience and the festival setting, and those insights shaped every design and build decision that followed."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Then came the design: the "
+              },
+              {
+                "type": "text",
+                "text": "interfaces",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " for the tablet, the "
+              },
+              {
+                "type": "text",
+                "text": "kiosk",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " itself, and a complete "
+              },
+              {
+                "type": "text",
+                "text": "brand identity",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " for the installation. We chose a warm cream base with vivid colours, playful worm characters, a curly heading font and a rounded body font — bright enough to attract kids from across the hall, calm enough that the painting stays the focus."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Finally we "
+              },
+              {
+                "type": "text",
+                "text": "developed and built the machine",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ". The camera feeds a live, cut-out image of the child's face to both the tablet and the hologram. On the tablet you pick a brush and a colour and draw straight onto that face — and the drawing "
+              },
+              {
+                "type": "text",
+                "text": "follows the face as it moves",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ", like a Snapchat or Instagram filter, so a painted-on moustache stays put when the child laughs or turns their head."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The hologram is made with "
+              },
+              {
+                "type": "text",
+                "text": "plexiglass plates",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " set as a pyramid above a screen, reflecting the live face into the centre of the kiosk. We built the wooden frame, painted it and fitted the panels ourselves, then ran the installation at the festival, where the finished drawings were saved so kids could find their filter afterwards."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 1400,
+              "attributes": {
+                "name": "facefilterlab_cover.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 832,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_cover.webp",
+                    "hash": "facefilterlab_cover_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_cover.webp",
+                    "width": 1280,
+                    "height": 832
+                  }
+                },
+                "url": "ffl_cover.webp"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 1401,
+              "attributes": {
+                "name": "facefilterlab_01.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 991,
+                "height": 634,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_01.webp",
+                    "hash": "facefilterlab_01_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_01.webp",
+                    "width": 991,
+                    "height": 634
+                  }
+                },
+                "url": "ffl_01.webp"
+              }
+            },
+            {
+              "id": 1402,
+              "attributes": {
+                "name": "facefilterlab_02.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1000,
+                "height": 1250,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_02.webp",
+                    "hash": "facefilterlab_02_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_02.webp",
+                    "width": 1000,
+                    "height": 1250
+                  }
+                },
+                "url": "ffl_02.webp"
+              }
+            },
+            {
+              "id": 1403,
+              "attributes": {
+                "name": "facefilterlab_03.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1000,
+                "height": 1250,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_03.webp",
+                    "hash": "facefilterlab_03_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_03.webp",
+                    "width": 1000,
+                    "height": 1250
+                  }
+                },
+                "url": "ffl_03.webp"
+              }
+            },
+            {
+              "id": 1404,
+              "attributes": {
+                "name": "facefilterlab_04.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1200,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_04.webp",
+                    "hash": "facefilterlab_04_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_04.webp",
+                    "width": 900,
+                    "height": 1200
+                  }
+                },
+                "url": "ffl_04.webp"
+              }
+            },
+            {
+              "id": 1405,
+              "attributes": {
+                "name": "facefilterlab_05.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1572,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_05.webp",
+                    "hash": "facefilterlab_05_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_05.webp",
+                    "width": 900,
+                    "height": 1572
+                  }
+                },
+                "url": "ffl_05.webp"
+              }
+            },
+            {
+              "id": 1406,
+              "attributes": {
+                "name": "facefilterlab_06.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1586,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_06.webp",
+                    "hash": "facefilterlab_06_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_06.webp",
+                    "width": 900,
+                    "height": 1586
+                  }
+                },
+                "url": "ffl_06.webp"
+              }
+            },
+            {
+              "id": 1407,
+              "attributes": {
+                "name": "facefilterlab_07.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1558,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_07.webp",
+                    "hash": "facefilterlab_07_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_07.webp",
+                    "width": 900,
+                    "height": 1558
+                  }
+                },
+                "url": "ffl_07.webp"
+              }
+            },
+            {
+              "id": 1408,
+              "attributes": {
+                "name": "facefilterlab_08.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1572,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_08.webp",
+                    "hash": "facefilterlab_08_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_08.webp",
+                    "width": 900,
+                    "height": 1572
+                  }
+                },
+                "url": "ffl_08.webp"
+              }
+            },
+            {
+              "id": 1409,
+              "attributes": {
+                "name": "facefilterlab_09.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 834,
+                "height": 1194,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_09.webp",
+                    "hash": "facefilterlab_09_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_09.webp",
+                    "width": 834,
+                    "height": 1194
+                  }
+                },
+                "url": "ffl_09.webp"
+              }
+            },
+            {
+              "id": 1410,
+              "attributes": {
+                "name": "facefilterlab_10.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 834,
+                "height": 1194,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_10.webp",
+                    "hash": "facefilterlab_10_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_10.webp",
+                    "width": 834,
+                    "height": 1194
+                  }
+                },
+                "url": "ffl_10.webp"
+              }
+            },
+            {
+              "id": 1411,
+              "attributes": {
+                "name": "facefilterlab_11.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 834,
+                "height": 1194,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_11.webp",
+                    "hash": "facefilterlab_11_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_11.webp",
+                    "width": 834,
+                    "height": 1194
+                  }
+                },
+                "url": "ffl_11.webp"
+              }
+            },
+            {
+              "id": 1412,
+              "attributes": {
+                "name": "facefilterlab_12.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 834,
+                "height": 1194,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_12.webp",
+                    "hash": "facefilterlab_12_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_12.webp",
+                    "width": 834,
+                    "height": 1194
+                  }
+                },
+                "url": "ffl_12.webp"
+              }
+            },
+            {
+              "id": 1413,
+              "attributes": {
+                "name": "facefilterlab_13.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1179,
+                "height": 630,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_13.webp",
+                    "hash": "facefilterlab_13_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_13.webp",
+                    "width": 1179,
+                    "height": 630
+                  }
+                },
+                "url": "ffl_13.webp"
+              }
+            },
+            {
+              "id": 1414,
+              "attributes": {
+                "name": "facefilterlab_14.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_14.webp",
+                    "hash": "facefilterlab_14_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_14.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "ffl_14.webp"
+              }
+            },
+            {
+              "id": 1415,
+              "attributes": {
+                "name": "facefilterlab_15.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 870,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_15.webp",
+                    "hash": "facefilterlab_15_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_15.webp",
+                    "width": 1280,
+                    "height": 870
+                  }
+                },
+                "url": "ffl_15.webp"
+              }
+            },
+            {
+              "id": 1416,
+              "attributes": {
+                "name": "facefilterlab_16.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 870,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_16.webp",
+                    "hash": "facefilterlab_16_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_16.webp",
+                    "width": 1280,
+                    "height": 870
+                  }
+                },
+                "url": "ffl_16.webp"
+              }
+            },
+            {
+              "id": 1417,
+              "attributes": {
+                "name": "facefilterlab_17.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 870,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_17.webp",
+                    "hash": "facefilterlab_17_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_17.webp",
+                    "width": 1280,
+                    "height": 870
+                  }
+                },
+                "url": "ffl_17.webp"
+              }
+            },
+            {
+              "id": 1418,
+              "attributes": {
+                "name": "facefilterlab_18.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 870,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_18.webp",
+                    "hash": "facefilterlab_18_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_18.webp",
+                    "width": 1280,
+                    "height": 870
+                  }
+                },
+                "url": "ffl_18.webp"
+              }
+            },
+            {
+              "id": 1419,
+              "attributes": {
+                "name": "facefilterlab_19.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 832,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "ffl_19.webp",
+                    "hash": "facefilterlab_19_large",
+                    "mime": "image/webp",
+                    "name": "facefilterlab_19.webp",
+                    "width": 1280,
+                    "height": 832
+                  }
+                },
+                "url": "ffl_19.webp"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {

@@ -57,6 +57,11 @@ export const THEMES = {
         bg: '#1F4230', text: '#F4FAF6', accent: '#FEA500', onAccent: '#22331F',
         isLight: false
     },
+    facefilterlab: {
+        role: 'CREATIVE DEVELOPER',
+        bg: '#F6EADF', text: '#2F2A35', accent: '#8B5CF0', onAccent: '#FFFFFF',
+        isLight: true
+    },
     aheadoftimes: {
         role: 'FRONT-END DEVELOPER',
         bg: '#C2DDC2', text: '#011902', accent: '#FE3700', onAccent: '#FFF4EF',
@@ -72,22 +77,28 @@ export const THEMES = {
 }
 
 // Homepage order. `id` matches the Strapi project ids.
-export const PROJECTS = [
+// `hidden: true` takes a project off the homepage and out of the next-project
+// chain without deleting it — its data and images stay, so it can come back.
+const ALL_PROJECTS = [
     { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.webp' },
     { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp' },
     { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp' },
     { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp' },
+    { id: 14, name: 'FACE FILTER LAB', type: 'Design & Development', team: 'Team', year: '2025', theme: 'facefilterlab', thumb: 'home_facefilterlab.webp' },
     { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.webp' },
     { id: 3, name: 'STINGSTITUTE', type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.webp' },
     { id: 5, name: 'EQUAL MELODIES', type: 'Design', team: 'Solo', year: '2023', theme: 'equalmelodies', thumb: 'home_equalmelodies.webp' },
-    { id: 6, name: 'REACT ARTISTIQUE', type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique', thumb: 'home_reactartistique.webp' },
+    { id: 6, name: 'REACT ARTISTIQUE', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique', thumb: 'home_reactartistique.webp' },
     { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob', thumb: 'home_dishknob.webp' },
-    { id: 8, name: 'TRIMCRAFT', type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft', thumb: 'home_trimcraft.webp' },
-    { id: 9, name: 'SMASH A BUTTON', type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton', thumb: 'home_smashabutton.webp' },
+    { id: 8, name: 'TRIMCRAFT', hidden: true, type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft', thumb: 'home_trimcraft.webp' },
+    { id: 9, name: 'SMASH A BUTTON', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton', thumb: 'home_smashabutton.webp' },
     { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans', thumb: 'home_rotterdans.webp' }
 ]
 
-export const getProjectMetaById = (id) => PROJECTS.find(p => p.id === Number(id)) || PROJECTS[0]
+export const PROJECTS = ALL_PROJECTS.filter(p => !p.hidden)
+
+// Looks through hidden projects too, so a direct link to one still gets its theme.
+export const getProjectMetaById = (id) => ALL_PROJECTS.find(p => p.id === Number(id)) || PROJECTS[0]
 
 // The "next project" follows homepage order in PROJECTS and wraps around,
 // so adding/reordering projects here keeps the detail-page chain correct.

@@ -124,6 +124,8 @@ const ProjectDetail = () => {
                     <p className="detail__eyebrow">{project.attributes.year} - {project.attributes.focus}</p>
                     <h1 className="detail__title">{project.attributes.name}</h1>
                     <div className="detail__actions">
+                        {/* physical work (an installation) has nothing to visit */}
+                        {project.attributes.link && (
                         <a
                             onMouseEnter={() => setScaling(true)}
                             onMouseLeave={() => setScaling(false)}
@@ -137,6 +139,7 @@ const ProjectDetail = () => {
                                 <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </a>
+                        )}
                         {note && <p className="detail__note">{note}</p>}
                     </div>
                     <div className="cover__wrapper">
