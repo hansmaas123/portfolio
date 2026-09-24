@@ -31,6 +31,7 @@ const DEV_TOOLS = [
     { name: 'QUASAR', icon: 'quasar.svg' },
     { name: 'SVELTEKIT', icon: 'sveltekit.svg' },
     { name: 'DIRECTUS', icon: 'directus.svg' },
+    { name: 'SUPABASE', icon: 'supabase.svg' },
     { name: 'WORDPRESS', icon: 'wordpress.svg' }
 ];
 
