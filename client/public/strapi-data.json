@@ -5996,6 +5996,342 @@
           ]
         }
       }
+    },
+    {
+      "id": 15,
+      "attributes": {
+        "createdAt": "2026-10-11T10:00:00.000Z",
+        "updatedAt": "2026-10-11T10:00:00.000Z",
+        "name": "TUINEN KOBE",
+        "year": 2026,
+        "link": "https://www.tuinenko.be/",
+        "focus": "Web Design - React - TypeScript",
+        "scope": "Web Design",
+        "location": "Ranst, Belgium",
+        "scope2": "Front-End Development",
+        "scope3": null,
+        "scope4": null,
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Tuinen Kobe is a starting gardener from "
+              },
+              {
+                "type": "text",
+                "text": "Ranst",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", offering garden maintenance: pruning, mowing, laying lawns, planting and more. He needed a "
+              },
+              {
+                "type": "text",
+                "text": "first website",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " that would make a one-person business look established and trustworthy, and make it easy for people in the area to get in touch."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The site had to feel as calm and well kept as a finished garden: show the work, explain the services clearly, and lead every visitor to "
+              },
+              {
+                "type": "text",
+                "text": "one simple next step",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " — calling or emailing to plan an appointment."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I designed and built the site end to end in "
+              },
+              {
+                "type": "text",
+                "text": "React and TypeScript",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " with Vite and React Router. The visual language is quiet on purpose: a warm cream background, a deep olive green taken from the leaf in the logo, generous whitespace and large, friendly type."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Small interactions do the selling. Hovering a service on desktop brings up a "
+              },
+              {
+                "type": "text",
+                "text": "photo that follows the cursor",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", so visitors see the result while they read what the service is. Sections reveal themselves as they scroll into view, and the homepage carries carousels of real work and the reasons to choose Tuinen Kobe."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Beyond the homepage there is a full services overview, a "
+              },
+              {
+                "type": "text",
+                "text": "photo gallery",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " of finished gardens, a contact page, a shared footer with every route to an appointment, and the privacy policy and terms a Belgian business needs. The whole site is "
+              },
+              {
+                "type": "text",
+                "text": "fully responsive",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 1500,
+              "attributes": {
+                "name": "tuinenkobe_cover.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 2000,
+                "height": 1250,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_cover.webp",
+                    "hash": "tuinenkobe_cover_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_cover.webp",
+                    "width": 2000,
+                    "height": 1250
+                  }
+                },
+                "url": "tk_cover.webp"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 1501,
+              "attributes": {
+                "name": "tuinenkobe_1.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_1.webp",
+                    "hash": "tuinenkobe_1_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_1.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_1.webp"
+              }
+            },
+            {
+              "id": 1502,
+              "attributes": {
+                "name": "tuinenkobe_2.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_2.webp",
+                    "hash": "tuinenkobe_2_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_2.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_2.webp"
+              }
+            },
+            {
+              "id": 1503,
+              "attributes": {
+                "name": "tuinenkobe_3.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_3.webp",
+                    "hash": "tuinenkobe_3_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_3.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_3.webp"
+              }
+            },
+            {
+              "id": 1504,
+              "attributes": {
+                "name": "tuinenkobe_4.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_4.webp",
+                    "hash": "tuinenkobe_4_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_4.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_4.webp"
+              }
+            },
+            {
+              "id": 1505,
+              "attributes": {
+                "name": "tuinenkobe_5.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_5.webp",
+                    "hash": "tuinenkobe_5_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_5.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_5.webp"
+              }
+            },
+            {
+              "id": 1506,
+              "attributes": {
+                "name": "tuinenkobe_6.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_6.webp",
+                    "hash": "tuinenkobe_6_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_6.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_6.webp"
+              }
+            },
+            {
+              "id": 1507,
+              "attributes": {
+                "name": "tuinenkobe_7.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_7.webp",
+                    "hash": "tuinenkobe_7_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_7.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_7.webp"
+              }
+            },
+            {
+              "id": 1508,
+              "attributes": {
+                "name": "tuinenkobe_8.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "tk_8.webp",
+                    "hash": "tuinenkobe_8_large",
+                    "mime": "image/webp",
+                    "name": "tuinenkobe_8.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "tk_8.webp"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {

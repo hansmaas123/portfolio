@@ -4,7 +4,10 @@
     {
       "name": "portfolio-client",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 5173
     },
     {
@@ -34,6 +37,20 @@
         "5176"
       ],
       "port": 5176
+    },
+    {
+      "name": "tuinenkobe-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/hansmaas/Downloads/DOCUMENTS/Personal/Clients/Tuinenkobe/tuinenkobe/development/tuinenkobe-dev",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5177"
+      ],
+      "port": 5177
     }
   ]
 }
