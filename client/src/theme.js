@@ -58,7 +58,7 @@ export const THEMES = {
         isLight: false
     },
     tuinenkobe: {
-        role: 'WEB DESIGNER & DEVELOPER',
+        role: 'DESIGNER & DEVELOPER',
         bg: '#FFFEEE', text: '#1A170F', accent: '#898522', onAccent: '#FFFEEE',
         isLight: true
     },
@@ -89,7 +89,7 @@ const ALL_PROJECTS = [
     { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp' },
     { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp' },
     { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp' },
-    { id: 15, name: 'TUINEN KOBE', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'tuinenkobe', thumb: 'home_tuinenkobe.webp' },
+    { id: 15, name: 'TUINENKOBE', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'tuinenkobe', thumb: 'home_tuinenkobe.webp' },
     { id: 14, name: 'FACE FILTER LAB', type: 'Design & Development', team: 'Team', year: '2024', theme: 'facefilterlab', thumb: 'home_facefilterlab.webp' },
     { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.webp' },
     { id: 3, name: 'STINGSTITUTE', hidden: true, type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.webp' },
