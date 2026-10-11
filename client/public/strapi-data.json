@@ -6133,8 +6133,8 @@
                 "name": "tuinenkobe_cover.webp",
                 "alternativeText": null,
                 "caption": null,
-                "width": 2000,
-                "height": 1250,
+                "width": 1280,
+                "height": 832,
                 "formats": {
                   "large": {
                     "ext": ".webp",
@@ -6142,8 +6142,8 @@
                     "hash": "tuinenkobe_cover_large",
                     "mime": "image/webp",
                     "name": "tuinenkobe_cover.webp",
-                    "width": 2000,
-                    "height": 1250
+                    "width": 1280,
+                    "height": 832
                   }
                 },
                 "url": "tk_cover.webp"
