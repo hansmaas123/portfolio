@@ -7,7 +7,7 @@ import '../styles/style.css'
 import NavBar from '../components/NavBar'
 import PageTransition from '../components/PageTransition'
 import TransitionLink from '../components/TransitionLink'
-import { THEMES, PROJECTS, applyTheme, accentImage } from '../theme'
+import { THEMES, PROJECTS, applyTheme } from '../theme'
 import { useRootClass } from '../useRootClass'
 
 gsap.registerPlugin(Observer)
@@ -228,14 +228,8 @@ const Index = () => {
                                     onClick={() => setScaling(false)}
                                 >
                                     <div className="slide__media">
-                                        {/* painted in this card's own theme, so it stays put while the page theme changes */}
-                                        <p
-                                            className="slide__index"
-                                            style={{
-                                                color: THEMES[project.theme].onAccent,
-                                                backgroundImage: accentImage(THEMES[project.theme])
-                                            }}
-                                        >
+                                        {/* coloured for this card's own thumbnail, so it stays put while the page theme changes */}
+                                        <p className="slide__index" style={{ color: project.indexColor }}>
                                             {String(index + 1).padStart(2, '0')}
                                         </p>
                                         <Thumbnail

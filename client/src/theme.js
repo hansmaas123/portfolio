@@ -82,23 +82,26 @@ export const THEMES = {
 }
 
 // Homepage order. `id` matches the Strapi project ids.
+// `indexColor` is the card-number colour, picked against that thumbnail's
+// top-left corner for at least 4.5:1 contrast (the card's own accent wins
+// when it passes). Re-check it when a thumbnail changes.
 // `hidden: true` takes a project off the homepage and out of the next-project
 // chain without deleting it — its data and images stay, so it can come back.
 const ALL_PROJECTS = [
-    { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.webp' },
-    { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp' },
-    { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp' },
-    { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp' },
-    { id: 15, name: 'TUINENKOBE', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'tuinenkobe', thumb: 'home_tuinenkobe.webp' },
-    { id: 14, name: 'FACE FILTER LAB', type: 'Design & Development', team: 'Team', year: '2024', theme: 'facefilterlab', thumb: 'home_facefilterlab.webp' },
-    { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.webp' },
-    { id: 3, name: 'STINGSTITUTE', hidden: true, type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.webp' },
-    { id: 5, name: 'EQUAL MELODIES', type: 'Design', team: 'Solo', year: '2023', theme: 'equalmelodies', thumb: 'home_equalmelodies.webp' },
-    { id: 6, name: 'REACT ARTISTIQUE', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique', thumb: 'home_reactartistique.webp' },
-    { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob', thumb: 'home_dishknob.webp' },
-    { id: 8, name: 'TRIMCRAFT', hidden: true, type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft', thumb: 'home_trimcraft.webp' },
-    { id: 9, name: 'SMASH A BUTTON', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton', thumb: 'home_smashabutton.webp' },
-    { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans', thumb: 'home_rotterdans.webp' }
+    { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.webp', indexColor: '#232323' },
+    { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp', indexColor: '#1E1E1E' },
+    { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp', indexColor: '#123137' },
+    { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp', indexColor: '#FFFFFF' },
+    { id: 15, name: 'TUINENKOBE', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'tuinenkobe', thumb: 'home_tuinenkobe.webp', indexColor: '#1A1A1A' },
+    { id: 14, name: 'FACE FILTER LAB', type: 'Design & Development', team: 'Team', year: '2024', theme: 'facefilterlab', thumb: 'home_facefilterlab.webp', indexColor: '#1A1A1A' },
+    { id: 2, name: 'MIXBOX', type: 'Design', team: 'Solo', year: '2024', theme: 'mixbox', thumb: 'home_mixbox.webp', indexColor: '#3B3D14' },
+    { id: 3, name: 'STINGSTITUTE', hidden: true, type: 'Design & Development', team: 'Solo', year: '2023', theme: 'stingstitute', thumb: 'home_stingstitute.webp', indexColor: '#FF53B7' },
+    { id: 5, name: 'EQUAL MELODIES', type: 'Design', team: 'Solo', year: '2023', theme: 'equalmelodies', thumb: 'home_equalmelodies.webp', indexColor: '#FFFFFF' },
+    { id: 6, name: 'REACT ARTISTIQUE', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'reactartistique', thumb: 'home_reactartistique.webp', indexColor: '#8FE682' },
+    { id: 7, name: 'DISHKNOB', type: 'Motion Design', team: 'Solo', year: '2024', theme: 'dishknob', thumb: 'home_dishknob.webp', indexColor: '#1A1A1A' },
+    { id: 8, name: 'TRIMCRAFT', hidden: true, type: 'Development', team: 'Solo', year: '2023', theme: 'trimcraft', thumb: 'home_trimcraft.webp', indexColor: '#EEEC76' },
+    { id: 9, name: 'SMASH A BUTTON', hidden: true, type: 'Development', team: 'Solo', year: '2024', theme: 'smashabutton', thumb: 'home_smashabutton.webp', indexColor: '#22331F' },
+    { id: 4, name: 'ROTTERDANS', type: 'Design & Development', team: 'Team', year: '2024', theme: 'rotterdans', thumb: 'home_rotterdans.webp', indexColor: '#1E1E1E' }
 ]
 
 export const PROJECTS = ALL_PROJECTS.filter(p => !p.hidden)
