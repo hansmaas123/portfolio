@@ -615,16 +615,9 @@ video {
     font-weight: 900;
     font-size: clamp(1.4rem, 2.6vw, 2rem);
     line-height: 1;
-    /* A solid accent chip with the on-accent colour on top: every theme picks
-       that pair to contrast, so the number reads whatever the thumbnail behind
-       it looks like (a translucent chip let olive-on-olive disappear). */
-    color: var(--on-accent);
-    background-color: var(--accent);
-    background-image: var(--accent-image);
+    /* colour and fill come inline from the card's own theme (see index.jsx) */
     padding: .45rem .7rem;
     border-radius: 10px;
-    /* ring keeps the chip's edge when a thumbnail is the accent colour itself */
-    box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--on-accent) 45%, transparent), 0 6px 18px rgba(0, 0, 0, .18);
 }
 
 .slide__caption {
