@@ -605,19 +605,6 @@ video {
     }
 }
 
-.slide__index {
-    position: absolute;
-    top: 1.1rem;
-    left: 1.3rem;
-    z-index: 2;
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(1.4rem, 2.6vw, 2rem);
-    line-height: 1;
-    /* colour comes inline per card (indexColor in theme.js); no tile behind it */
-}
-
 .slide__caption {
     display: flex;
     justify-content: space-between;

@@ -216,7 +216,7 @@ const Index = () => {
                     </header>
                     <div className="home__rail-viewport">
                         <div className="home__rail" ref={railRef}>
-                            {(reducedMotion ? [PRIMARY_SET] : SETS).map(set => PROJECTS.map((project, index) => (
+                            {(reducedMotion ? [PRIMARY_SET] : SETS).map(set => PROJECTS.map(project => (
                                 <TransitionLink
                                     key={`${set}-${project.id}`}
                                     to={`/project/${project.id}`}
@@ -228,10 +228,6 @@ const Index = () => {
                                     onClick={() => setScaling(false)}
                                 >
                                     <div className="slide__media">
-                                        {/* coloured for this card's own thumbnail, so it stays put while the page theme changes */}
-                                        <p className="slide__index" style={{ color: project.indexColor }}>
-                                            {String(index + 1).padStart(2, '0')}
-                                        </p>
                                         <Thumbnail
                                             src={`${import.meta.env.BASE_URL}${project.thumb}`}
                                             alt={`${project.name} project thumbnail`}
