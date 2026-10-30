@@ -802,10 +802,13 @@ video {
 
 .detail__hero {
     min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: clamp(7rem, 14vh, 9rem) clamp(1.2rem, 5vw, 4rem) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 6rem);
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: clamp(7rem, 14vh, 9rem) clamp(1.2rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem);
 }
 
 .detail__eyebrow {
@@ -820,11 +823,14 @@ video {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(44px, 10vw, 132px);
+    font-size: clamp(44px, 5.6vw, 104px);
     line-height: .98;
     letter-spacing: .01em;
     color: var(--text);
-    overflow-wrap: anywhere;
+    /* break between words, never inside one: names sit in a narrow column */
+    overflow-wrap: break-word;
+    hyphens: manual;
+    text-wrap: balance;
 }
 
 .detail__actions {
@@ -832,7 +838,7 @@ video {
     align-items: center;
     gap: 1.4rem;
     flex-wrap: wrap;
-    margin: 2.2rem 0 3.5rem;
+    margin: 2.2rem 0 0;
 }
 
 .detail__note {
@@ -841,24 +847,31 @@ video {
     color: var(--muted);
 }
 
+/* capped so the cover stops growing on large external screens */
 .cover__wrapper {
-    margin-top: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-self: center;
 }
 
-@media (max-width: 700px) {
+/* stacked: text first, cover below it at full width */
+@media (max-width: 900px) {
     .detail__hero {
         min-height: 0;
-        justify-content: flex-start;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        gap: 2.5rem;
         padding-top: clamp(7rem, 16vh, 9rem);
+        padding-bottom: 0;
     }
 
-    .detail__actions {
-        margin-bottom: 2.5rem;
+    .detail__title {
+        font-size: clamp(44px, 10vw, 104px);
     }
 }
 
 .cover__image {
-    border-radius: var(--radius) var(--radius) 0 0;
+    border-radius: var(--radius);
     overflow: hidden;
     background-color: var(--surface);
     box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
@@ -1053,6 +1066,184 @@ video {
 
     .gallery__item {
         margin-bottom: 1rem;
+    }
+}
+
+/* gallery images open the fullscreen viewer */
+.gallery__item--zoom {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    cursor: zoom-in;
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s ease;
+}
+
+.gallery__item--zoom:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) {
+    .gallery__item--zoom:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, .3);
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Fullscreen image viewer
+--------------------------------------------------------------------------- */
+.viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    /* one definite cell, so the image's max-height has a height to resolve against */
+    display: grid;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    padding: clamp(4.5rem, 9vh, 6rem) clamp(1rem, 7vw, 7rem);
+    background: color-mix(in srgb, var(--bg) 25%, rgba(8, 8, 8, .94));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overscroll-behavior: contain;
+    touch-action: pan-y pinch-zoom;
+    animation: viewer-in .3s ease both;
+}
+
+.viewer--closing {
+    animation: viewer-out .22s ease both;
+}
+
+.viewer__stage {
+    margin: 0;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewer__image {
+    display: block;
+    /* contain: the whole image always fits, however tall or wide */
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, .5);
+    animation: viewer-image-in .35s cubic-bezier(.2, .7, .2, 1) both;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.viewer__counter {
+    position: absolute;
+    top: clamp(1.4rem, 3vh, 2rem);
+    left: 50%;
+    translate: -50% 0;
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .2em;
+    color: rgba(255, 255, 255, .72);
+    font-variant-numeric: tabular-nums;
+}
+
+.viewer__btn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.viewer__btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.viewer__btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+}
+
+.viewer__btn:active {
+    transform: scale(.94);
+}
+
+.viewer__btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.viewer__close {
+    top: clamp(.9rem, 2.4vh, 1.4rem);
+    right: clamp(.9rem, 2.4vw, 1.6rem);
+}
+
+.viewer__arrow {
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.viewer__arrow--prev {
+    left: clamp(.9rem, 2.4vw, 2rem);
+}
+
+.viewer__arrow--next {
+    right: clamp(.9rem, 2.4vw, 2rem);
+}
+
+/* On phones the arrows move under the image, out of the way of the photo
+   and within thumb reach; swiping works as well. */
+@media (max-width: 700px) {
+    .viewer {
+        padding: 4.5rem .75rem 6.5rem;
+    }
+
+    .viewer__arrow {
+        top: auto;
+        bottom: calc(1.4rem + env(safe-area-inset-bottom));
+        translate: none;
+    }
+
+    .viewer__arrow--prev {
+        left: calc(50% - 64px);
+    }
+
+    .viewer__arrow--next {
+        right: calc(50% - 64px);
+    }
+
+    .viewer__image {
+        border-radius: 8px;
+    }
+}
+
+@keyframes viewer-in {
+    from { opacity: 0; }
+}
+
+@keyframes viewer-out {
+    to { opacity: 0; }
+}
+
+@keyframes viewer-image-in {
+    from {
+        opacity: 0;
+        transform: scale(.97);
     }
 }
 

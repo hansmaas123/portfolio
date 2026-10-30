@@ -57,6 +57,11 @@ export const THEMES = {
         bg: '#1F4230', text: '#F4FAF6', accent: '#FEA500', onAccent: '#22331F',
         isLight: false
     },
+    osso: {
+        role: 'DESIGNER & DEVELOPER',
+        bg: '#123F32', text: '#FCFAF5', accent: '#E4B23F', onAccent: '#0C2A22',
+        isLight: false
+    },
     tuinenkobe: {
         role: 'DESIGNER & DEVELOPER',
         bg: '#FFFEEE', text: '#1A170F', accent: '#898522', onAccent: '#FFFEEE',
@@ -86,6 +91,7 @@ export const THEMES = {
 // chain without deleting it — its data and images stay, so it can come back.
 const ALL_PROJECTS = [
     { id: 1, name: 'TRAINWORLD', type: 'Design & Development', team: 'Solo', year: '2024', theme: 'trainworld', thumb: 'home_trainworld.webp' },
+    { id: 16, name: 'OSSO', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'osso', thumb: 'home_osso.webp' },
     { id: 13, name: 'SQUAREBRACKET', type: 'Design & Development', team: 'Solo', year: '2026', theme: 'squarebracket', thumb: 'home_squarebracket.webp' },
     { id: 12, name: 'DEV INTERNSHIP', type: 'Development', team: 'Team', year: '2025', theme: 'internship', thumb: 'home_internship.webp' },
     { id: 11, name: 'AHEAD OF TIMES', type: 'Development', team: 'Team', year: '2025', theme: 'aheadoftimes', thumb: 'home_aheadoftimes.webp' },

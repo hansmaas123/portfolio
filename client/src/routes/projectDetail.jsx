@@ -6,6 +6,7 @@ import { useLoaderData, useLocation, useOutletContext, useParams } from "react-r
 import NavBar from "../components/NavBar";
 import PageTransition from '../components/PageTransition';
 import TransitionLink from '../components/TransitionLink';
+import ImageViewer from '../components/ImageViewer';
 import { THEMES, applyTheme, accentImage, getProjectMetaById, getNextProjectId } from '../theme';
 
 const loader = async ({ params }) => {
@@ -92,11 +93,18 @@ const ProjectDetail = () => {
     };
 
     const projectImages = project.attributes.images?.data || [];
+    const viewerImages = projectImages.map((projectImage, index) => ({
+        src: getImageUrl(projectImage),
+        alt: `${project.attributes.name} detail ${index + 1}`
+    }));
+    // index of the image open in the fullscreen viewer, null while it's closed
+    const [viewerIndex, setViewerIndex] = useState(null);
     const cover = getImageUrl(project.attributes.cover.data[0]);
     const nextCover = getImageUrl(nextProject.attributes.cover.data[0]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setViewerIndex(null);
     }, [pathname]);
 
     useEffect(() => {
@@ -121,6 +129,7 @@ const ProjectDetail = () => {
                 </TransitionLink>
 
                 <section className="detail__hero">
+                    <div className="detail__intro">
                     <p className="detail__eyebrow">{project.attributes.year} - {project.attributes.focus}</p>
                     <h1 className="detail__title">{project.attributes.name}</h1>
                     <div className="detail__actions">
@@ -141,6 +150,7 @@ const ProjectDetail = () => {
                         </a>
                         )}
                         {note && <p className="detail__note">{note}</p>}
+                    </div>
                     </div>
                     <div className="cover__wrapper">
                         <div className="cover__image">
@@ -211,16 +221,33 @@ const ProjectDetail = () => {
                                     </video>
                                 </div>
                             ) : (
-                                <div className="gallery__item" key={index}>
+                                <button
+                                    type="button"
+                                    className="gallery__item gallery__item--zoom"
+                                    key={index}
+                                    onClick={() => setViewerIndex(index)}
+                                    onMouseEnter={() => setScaling(true)}
+                                    onMouseLeave={() => setScaling(false)}
+                                    aria-label={`Open image ${index + 1} fullscreen`}
+                                >
                                     <ImageWithLoader
-                                        src={getImageUrl(projectImage)}
+                                        src={viewerImages[index].src}
                                         className="gallery__image"
-                                        alt={`${project.attributes.name} detail ${index + 1}`}
+                                        alt={viewerImages[index].alt}
                                     />
-                                </div>
+                                </button>
                             )
                         ))}
                     </div>
+                    {viewerIndex !== null && (
+                        <ImageViewer
+                            images={viewerImages}
+                            index={viewerIndex}
+                            onIndexChange={setViewerIndex}
+                            onClose={() => setViewerIndex(null)}
+                            setScaling={setScaling}
+                        />
+                    )}
                 </section>
 
                 <section

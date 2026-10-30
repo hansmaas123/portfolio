@@ -6332,6 +6332,329 @@
           ]
         }
       }
+    },
+    {
+      "id": 16,
+      "attributes": {
+        "createdAt": "2026-10-30T10:00:00.000Z",
+        "updatedAt": "2026-10-30T10:00:00.000Z",
+        "name": "OSSO",
+        "year": 2026,
+        "link": "https://osso-app.be/",
+        "focus": "App Design - React Native - Supabase",
+        "scope": "App Design",
+        "location": "Belgium",
+        "scope2": "App Development",
+        "scope3": "Back-End",
+        "scope4": "Branding & Marketing",
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Osso is a "
+              },
+              {
+                "type": "text",
+                "text": "matching app for shared living in Belgium",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ": apartments, houses and studios, not only student rooms. The classic case is two friends renting together when one moves out. The one who stays needs someone new to split the rent with, and somewhere else a person is looking for exactly that place."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Existing listing sites sort by price and square metres, but those don't tell you whether you can live with someone. Osso had to bring both sides together on "
+              },
+              {
+                "type": "text",
+                "text": "who they are",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ", let them get to know each other before anyone moves in, and do it safely: nobody gets messages they didn't ask for, and an exact address is never shown to a match."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I designed and built Osso on my own, from the first wireframe to the "
+              },
+              {
+                "type": "text",
+                "text": "App Store and Google Play",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": " releases. The app is written in "
+              },
+              {
+                "type": "text",
+                "text": "React Native with Expo",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " and TypeScript, on a "
+              },
+              {
+                "type": "text",
+                "text": "Supabase",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " back end: Postgres with row-level security, edge functions for push notifications, photo moderation, translations and subscriptions, and a small admin console to keep it running."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "At its core is a swipe deck with two sides. Seekers swipe through places, listers swipe through candidates, and every card carries a "
+              },
+              {
+                "type": "text",
+                "text": "match score",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " from a short lifestyle quiz: do you cook together, are you a night owl, how tidy are you. A chat only opens after a mutual match, and a viewing proposed in the chat lands in both agendas. On iOS the tab bar is the native "
+              },
+              {
+                "type": "text",
+                "text": "Liquid Glass",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " bar, and the whole app is available in Dutch, French and English."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I also built the brand around it: two interlocking rings with the shared part in gold, pine and gold on warm cream, set in Bricolage Grotesque and Plus Jakarta Sans. That identity carried into the "
+              },
+              {
+                "type": "text",
+                "text": "launch campaign",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ": Instagram and TikTok carousels, motion videos, posters and store listings, all made from the same templates as the app."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 1600,
+              "attributes": {
+                "name": "osso_cover.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 832,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_cover.webp",
+                    "hash": "osso_cover_large",
+                    "mime": "image/webp",
+                    "name": "osso_cover.webp",
+                    "width": 1280,
+                    "height": 832
+                  }
+                },
+                "url": "osso_cover.webp"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 1601,
+              "attributes": {
+                "name": "osso_1.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_1.webp",
+                    "hash": "osso_1_large",
+                    "mime": "image/webp",
+                    "name": "osso_1.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "osso_1.webp"
+              }
+            },
+            {
+              "id": 1602,
+              "attributes": {
+                "name": "osso_2.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_2.webp",
+                    "hash": "osso_2_large",
+                    "mime": "image/webp",
+                    "name": "osso_2.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "osso_2.webp"
+              }
+            },
+            {
+              "id": 1603,
+              "attributes": {
+                "name": "osso_3.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1200,
+                "height": 1500,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_3.webp",
+                    "hash": "osso_3_large",
+                    "mime": "image/webp",
+                    "name": "osso_3.webp",
+                    "width": 1200,
+                    "height": 1500
+                  }
+                },
+                "url": "osso_3.webp"
+              }
+            },
+            {
+              "id": 1605,
+              "attributes": {
+                "name": "osso_5.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_5.webp",
+                    "hash": "osso_5_large",
+                    "mime": "image/webp",
+                    "name": "osso_5.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "osso_5.webp"
+              }
+            },
+            {
+              "id": 1606,
+              "attributes": {
+                "name": "osso_6.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_6.webp",
+                    "hash": "osso_6_large",
+                    "mime": "image/webp",
+                    "name": "osso_6.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "osso_6.webp"
+              }
+            },
+            {
+              "id": 1607,
+              "attributes": {
+                "name": "osso_7.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1200,
+                "height": 1500,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_7.webp",
+                    "hash": "osso_7_large",
+                    "mime": "image/webp",
+                    "name": "osso_7.webp",
+                    "width": 1200,
+                    "height": 1500
+                  }
+                },
+                "url": "osso_7.webp"
+              }
+            },
+            {
+              "id": 1608,
+              "attributes": {
+                "name": "osso_8.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1600,
+                "height": 1000,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_8.webp",
+                    "hash": "osso_8_large",
+                    "mime": "image/webp",
+                    "name": "osso_8.webp",
+                    "width": 1600,
+                    "height": 1000
+                  }
+                },
+                "url": "osso_8.webp"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -6339,7 +6662,7 @@
       "page": 1,
       "pageSize": 25,
       "pageCount": 1,
-      "total": 13
+      "total": 15
     }
   }
 }
