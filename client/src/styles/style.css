@@ -1006,7 +1006,8 @@ video {
     margin-inline: auto;
 }
 
-.gallery--mixbox {
+.gallery--mixbox,
+.gallery--osso {
     columns: 3;
 }
 
@@ -1042,11 +1043,13 @@ video {
 @media (max-width: 700px) {
 
     .gallery,
-    .gallery--mixbox {
+    .gallery--mixbox,
+    .gallery--osso {
         columns: 1;
     }
 
-    .gallery--mixbox {
+    .gallery--mixbox,
+    .gallery--osso {
         columns: 2;
         column-gap: 1rem;
     }

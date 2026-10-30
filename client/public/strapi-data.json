@@ -6332,6 +6332,439 @@
           ]
         }
       }
+    },
+    {
+      "id": 16,
+      "attributes": {
+        "createdAt": "2026-10-30T10:00:00.000Z",
+        "updatedAt": "2026-10-30T10:00:00.000Z",
+        "name": "OSSO",
+        "year": 2026,
+        "link": "https://www.osso-app.be",
+        "focus": "App Design - React Native - Supabase - Ads",
+        "scope": "App Design",
+        "location": "Belgium",
+        "scope2": "App Development",
+        "scope3": "Back-end Development",
+        "scope4": "Marketing & Ads",
+        "assignment": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Osso is my own product: a "
+              },
+              {
+                "type": "text",
+                "text": "cohousing app for Belgium",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ". Finding a place in a shared house usually means viewing after viewing, only to hear that they went with someone else. And when you do find a room, you often only learn after moving in that you live completely differently from the people you share a kitchen, a bathroom and a bin with."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Classified sites show photos and a price, not the people. Osso turns that around: you swipe through shared houses "
+              },
+              {
+                "type": "text",
+                "text": "and the people who live in them",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ". Someone looking for a place and a house looking for a new housemate both swipe, and when it clicks on both sides it is a match."
+              }
+            ]
+          }
+        ],
+        "approach": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "I designed and built Osso end to end. The app is made in "
+              },
+              {
+                "type": "text",
+                "text": "React Native with Expo",
+                "bold": true,
+                "italic": true
+              },
+              {
+                "type": "text",
+                "text": ", on a "
+              },
+              {
+                "type": "text",
+                "text": "Supabase",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " back end: a Postgres database with row-level security on every table, edge functions for push notifications and photo moderation, and a test suite that runs every migration against an empty database."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "Around the swipe deck sit the things that make it work in real life: a chat with icebreakers, planning a "
+              },
+              {
+                "type": "text",
+                "text": "viewing",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " straight from the conversation, a Belgian-style "
+              },
+              {
+                "type": "text",
+                "text": "hospi",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " group vote so the whole house picks its new housemate, and a premium subscription. Everything is available in Dutch, French and English, and a small admin console keeps an eye on users, listings and reports."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "The brand is Pine and Gold on warm cream, with Bricolage Grotesque for headings and Plus Jakarta Sans for text. I carried it into a "
+              },
+              {
+                "type": "text",
+                "text": "website with a waitlist",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": ", and into the "
+              },
+              {
+                "type": "text",
+                "text": "ads",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "text": " that fill it: TikTok and Instagram carousels about the small dramas of shared living, Meta feed and story ads, and posters with QR codes. Every ad is tracked back to the signups it brings in."
+              }
+            ]
+          }
+        ],
+        "cover": {
+          "data": [
+            {
+              "id": 1600,
+              "attributes": {
+                "name": "osso_cover.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1280,
+                "height": 832,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_cover.webp",
+                    "hash": "osso_cover_large",
+                    "mime": "image/webp",
+                    "name": "osso_cover.webp",
+                    "width": 1280,
+                    "height": 832
+                  }
+                },
+                "url": "osso_cover.webp"
+              }
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 1601,
+              "attributes": {
+                "name": "osso_01.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1125,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_01.webp",
+                    "hash": "osso_01_large",
+                    "mime": "image/webp",
+                    "name": "osso_01.webp",
+                    "width": 900,
+                    "height": 1125
+                  }
+                },
+                "url": "osso_01.webp"
+              }
+            },
+            {
+              "id": 1602,
+              "attributes": {
+                "name": "osso_02.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_02.webp",
+                    "hash": "osso_02_large",
+                    "mime": "image/webp",
+                    "name": "osso_02.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_02.webp"
+              }
+            },
+            {
+              "id": 1603,
+              "attributes": {
+                "name": "osso_03.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1955,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_03.webp",
+                    "hash": "osso_03_large",
+                    "mime": "image/webp",
+                    "name": "osso_03.webp",
+                    "width": 900,
+                    "height": 1955
+                  }
+                },
+                "url": "osso_03.webp"
+              }
+            },
+            {
+              "id": 1604,
+              "attributes": {
+                "name": "osso_04.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_04.webp",
+                    "hash": "osso_04_large",
+                    "mime": "image/webp",
+                    "name": "osso_04.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_04.webp"
+              }
+            },
+            {
+              "id": 1605,
+              "attributes": {
+                "name": "osso_05.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_05.webp",
+                    "hash": "osso_05_large",
+                    "mime": "image/webp",
+                    "name": "osso_05.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_05.webp"
+              }
+            },
+            {
+              "id": 1606,
+              "attributes": {
+                "name": "osso_06.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_06.webp",
+                    "hash": "osso_06_large",
+                    "mime": "image/webp",
+                    "name": "osso_06.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_06.webp"
+              }
+            },
+            {
+              "id": 1607,
+              "attributes": {
+                "name": "osso_07.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1273,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_07.webp",
+                    "hash": "osso_07_large",
+                    "mime": "image/webp",
+                    "name": "osso_07.webp",
+                    "width": 900,
+                    "height": 1273
+                  }
+                },
+                "url": "osso_07.webp"
+              }
+            },
+            {
+              "id": 1608,
+              "attributes": {
+                "name": "osso_08.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_08.webp",
+                    "hash": "osso_08_large",
+                    "mime": "image/webp",
+                    "name": "osso_08.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_08.webp"
+              }
+            },
+            {
+              "id": 1609,
+              "attributes": {
+                "name": "osso_09.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1955,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_09.webp",
+                    "hash": "osso_09_large",
+                    "mime": "image/webp",
+                    "name": "osso_09.webp",
+                    "width": 900,
+                    "height": 1955
+                  }
+                },
+                "url": "osso_09.webp"
+              }
+            },
+            {
+              "id": 1610,
+              "attributes": {
+                "name": "osso_10.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_10.webp",
+                    "hash": "osso_10_large",
+                    "mime": "image/webp",
+                    "name": "osso_10.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_10.webp"
+              }
+            },
+            {
+              "id": 1611,
+              "attributes": {
+                "name": "osso_11.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_11.webp",
+                    "hash": "osso_11_large",
+                    "mime": "image/webp",
+                    "name": "osso_11.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_11.webp"
+              }
+            },
+            {
+              "id": 1612,
+              "attributes": {
+                "name": "osso_12.webp",
+                "alternativeText": null,
+                "caption": null,
+                "width": 900,
+                "height": 1600,
+                "formats": {
+                  "large": {
+                    "ext": ".webp",
+                    "url": "osso_12.webp",
+                    "hash": "osso_12_large",
+                    "mime": "image/webp",
+                    "name": "osso_12.webp",
+                    "width": 900,
+                    "height": 1600
+                  }
+                },
+                "url": "osso_12.webp"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "meta": {
